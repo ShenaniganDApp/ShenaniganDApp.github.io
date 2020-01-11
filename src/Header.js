@@ -2,29 +2,42 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-    background: #595959;
-    margin:0;
-    padding:1rem;
-    width: 100%;
-    display: inline-block;
+  background: #595959;
+  margin: 0;
+  padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 `;
-const Logo = styled.img`
-`;
+
+const Logo = styled.img``;
 const Tab = styled.div`
-    color:#e6ffff;
-    padding: 0.5 rem
-    text-align: center;
-    font-size: 1rem
-    font-family: 'Roboto', sans-serif;
+  margin: 0 1.5rem;
+  text-align: center;
 `;
+
+const Text = styled.div`
+  color: #e6ffff;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+`;
+
+
 
 function Header() {
   return (
     <Wrapper>
-      <Logo src=""/>
-      <Tab>Home</Tab>
-      <Tab>Contact</Tab>
-      <Tab>About</Tab>
+      <Logo src="./images/logo180.png" />
+      <Tab>
+        <Text>Home</Text>
+      </Tab>
+      <Tab>
+        <Text>Contact</Text>
+      </Tab>
+      <Tab>
+        <Text>About</Text>
+      </Tab>
     </Wrapper>
   );
 }

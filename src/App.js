@@ -1,16 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import Home from "./Home";
-import Header from "./Header"
+import Header from "./Header";
 
-
-const AppWrapper = styled.div``;
-
+const AppWrapper = styled.div`
+`;
 function App() {
   return (
     <AppWrapper>
-      <Header/>
-      <Home/>
+      <Header />
+      <Home />
     </AppWrapper>
   );
 }
