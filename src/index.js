@@ -7,4 +7,5 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // register allows for quicker loads, but removes ability to hot load updates
-serviceWorker.register();
+//change to unregister to switch
+serviceWorker.unregister();
