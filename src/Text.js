@@ -8,11 +8,12 @@ function Text(props) {
     text-decoration: none;
     color: ${props.color};
     -webkit-text-stroke: 1px #ff006c;
-    font-weight: 200;
+    font-weight: 400;
     font-size: ${props.fontSize};
     font-family: ${props.fontFamily};
     margin:0;
     padding:0;
+    min-height:80%;
   `;
   return <TextItem>{props.content}</TextItem>;
  

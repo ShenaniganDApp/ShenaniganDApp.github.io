@@ -24,8 +24,8 @@ const Nav = styled.div`
   width:100% ;
   
   &:last-child {
-    border-right: none;
-  }
+    border: none;
+  }3
 `;
 
 const Frame = styled.div`
@@ -44,8 +44,14 @@ const Frame = styled.div`
   }
 `;
 
+const ButtonLine = styled.div`
+  border-left:1px solid rgb(256,256,256);
+  height:100%;
+  transition: all .2s ease-in-out;
+`
+
 const Tab = styled.div`
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   transition: all .2s ease-in-out;
@@ -54,9 +60,9 @@ const Tab = styled.div`
   padding-right: 1em;
   height: 100%;
   min-width: 50px;
-  border-right: 1px solid #a29f9fd4;
+
   &:hover {
-    background-color: #a29f9fd4;
+    background-color: rgba(256,256,256,0.7);
     height:150%
   }
 
@@ -77,6 +83,7 @@ function Header() {
             fontSize={"5vw"}
           ></Text>
         </Tab>
+        <ButtonLine/>
         <Tab>
           <Text
             content={"Contact"}
@@ -85,6 +92,7 @@ function Header() {
             fontSize={"5vw"}
           ></Text>
         </Tab>
+        <ButtonLine/>
         <Tab>
           <Text
             content={"About"}
