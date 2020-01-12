@@ -11,6 +11,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 35%;
+  background-color: black;
 }
 
 @media (max-width: 768px) {
