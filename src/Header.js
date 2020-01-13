@@ -3,11 +3,14 @@ import styled from "styled-components";
 import Text from "./Text";
 import { HashLink as Link } from "react-router-hash-link";
 
+
 const Wrapper = styled.div`
   display: flex;
   height:5vw
   justify-content: flex-start
   min-height:3rem
+  top:0;
+  position:sticky;
   `;
 
 const Logo = styled.img`
@@ -77,13 +80,13 @@ const StyledLink = styled(Link)`
 function Header() {
   return (
     <Wrapper>
-      <Link to="/">
+      <Link to="/#">
         <Frame>
           <Logo src="logo180.png" />
         </Frame>
       </Link>
       <Nav>
-        <StyledLink to="/">
+        <StyledLink to="/#">
           <Tab>
             <Text
               content={"Home"}
@@ -105,7 +108,7 @@ function Header() {
           </Tab>
         </StyledLink>
         <ButtonLine />
-        <StyledLink to="about">
+        <StyledLink to="/#about">
           <Tab>
             <Text
               content={"About"}
