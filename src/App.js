@@ -3,19 +3,16 @@ import styled from "styled-components";
 import Home from "./Home";
 import Header from "./Header";
 import Contact from "./Contact";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const AppWrapper = styled.div``;
 function App() {
   return (
-    <Router basename="/">
+    <Router>
       <AppWrapper>
         <Header />
-        
-        <Route path="/" exact component={Home}></Route>
-        
-        <Route path="contact" component={Contact}></Route>
-        <Contact />
+        <Route path="/" component={Home}></Route>
+        <Contact id="contact"/>
       </AppWrapper>
     </Router>
   );

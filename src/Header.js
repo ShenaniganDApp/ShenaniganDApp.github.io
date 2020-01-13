@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Text from "./Text";
-import Contact from "./Contact";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Wrapper = styled.div`
@@ -95,7 +94,7 @@ function Header() {
           </Tab>
         </StyledLink>
         <ButtonLine />
-        <StyledLink to="contact">
+        <StyledLink to="/#contact">
           <Tab>
             <Text
               content={"Contact"}

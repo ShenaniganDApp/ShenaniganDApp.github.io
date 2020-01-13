@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const Wrapper = styled.div``;
 const Backdrop = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
@@ -36,7 +37,6 @@ function Home() {
       <Backdrop />
       <Slogan>a community driven, talent support service</Slogan>
       <Title>SHE</Title>
-      
     </Wrapper>
   );
 }
