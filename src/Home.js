@@ -33,7 +33,7 @@ const Slogan = styled.p`
 
 function Home() {
   return (
-    <Wrapper>
+    <Wrapper id="/">
       <Backdrop />
       <Slogan>a community driven, talent support service</Slogan>
       <Title>SHE</Title>
