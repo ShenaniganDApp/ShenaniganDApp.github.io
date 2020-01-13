@@ -9,13 +9,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 const AppWrapper = styled.div``;
 const MainWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
 `;
 
 function App() {
   return (
     <Router>
-      <AppWrapper>
+      <AppWrapper id="top">
         <Header />
 
         <Home />

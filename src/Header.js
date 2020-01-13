@@ -80,13 +80,13 @@ const StyledLink = styled(Link)`
 function Header() {
   return (
     <Wrapper>
-      <Link to="/#">
+      <Link to="/#top">
         <Frame>
           <Logo src="logo180.png" />
         </Frame>
       </Link>
       <Nav>
-        <StyledLink to="/#">
+        <StyledLink to="/#top">
           <Tab>
             <Text
               content={"Home"}

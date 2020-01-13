@@ -21,7 +21,7 @@ const Title = styled.h1`
 const Main = styled.p`
     color:#e6ffff;
     text-align: center;
-    margin:15% 10% 0% 10%
+  
     font-size: 6vw
     font-family: 'Roboto', sans-serif;
 

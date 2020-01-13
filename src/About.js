@@ -3,7 +3,9 @@ import styled from "styled-components";
 import Slide from './Slide';
 
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+    height:100vh
+`;
 
 function About() {
   return (
