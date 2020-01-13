@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Text from "./Text";
+import Contact from "./Contact";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Wrapper = styled.div`
   display: flex;
@@ -45,16 +47,16 @@ const Frame = styled.div`
 `;
 
 const ButtonLine = styled.div`
-  border-left:1px solid rgb(256,256,256);
-  height:100%;
-  transition: all .2s ease-in-out;
-`
+  border-left: 1px solid rgb(256, 256, 256);
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+`;
 
 const Tab = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   flex: 1;
   padding-left: 1em;
   padding-right: 1em;
@@ -62,47 +64,60 @@ const Tab = styled.div`
   min-width: 50px;
 
   &:hover {
-    background-color: rgba(256,256,256,0.7);
-    height:150%
+    background-color: rgba(256, 256, 256, 0.7);
+    height: 150%;
   }
+`;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
 `;
 
 function Header() {
   return (
     <Wrapper>
-      <Frame>
-        <Logo src="logo180.png" />
-      </Frame>
+      <Link to="/">
+        <Frame>
+          <Logo src="logo180.png" />
+        </Frame>
+      </Link>
       <Nav>
-        <Tab>
-          <Text
-            content={"Home"}
-            color={"#e6ffff"}
-            fontFamily={"Roboto, sans-serif"}
-            fontSize={"5vw"}
-          ></Text>
-        </Tab>
-        <ButtonLine/>
-        <Tab>
-          <Text
-            content={"Contact"}
-            color={"#e6ffff"}
-            fontFamily={"Roboto, sans-serif"}
-            fontSize={"5vw"}
-          ></Text>
-        </Tab>
-        <ButtonLine/>
-        <Tab>
-          <Text
-            content={"About"}
-            color={"#e6ffff"}
-            fontFamily={"Roboto, sans-serif"}
-            fontSize={"5vw"}
-          >
-            About
-          </Text>
-        </Tab>
+        <StyledLink to="/">
+          <Tab>
+            <Text
+              content={"Home"}
+              color={"#e6ffff"}
+              fontFamily={"Roboto, sans-serif"}
+              fontSize={"5vw"}
+            ></Text>
+          </Tab>
+        </StyledLink>
+        <ButtonLine />
+        <StyledLink to="contact">
+          <Tab>
+            <Text
+              content={"Contact"}
+              color={"#e6ffff"}
+              fontFamily={"Roboto, sans-serif"}
+              fontSize={"5vw"}
+            ></Text>
+          </Tab>
+        </StyledLink>
+        <ButtonLine />
+        <StyledLink to="about">
+          <Tab>
+            <Text
+              content={"About"}
+              color={"#e6ffff"}
+              fontFamily={"Roboto, sans-serif"}
+              fontSize={"5vw"}
+            >
+              About
+            </Text>
+          </Tab>
+        </StyledLink>
       </Nav>
     </Wrapper>
   );
