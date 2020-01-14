@@ -6,7 +6,10 @@ const Wrapper = styled.div`
   height: 60vh;
   width: 50vw;
   display: flex;
-  margin-right: 20%;
+  margin-right: 13%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url(${props => props.img})
 `;
 const Title = styled.h1`
   color: #e6ffff;
@@ -33,8 +36,8 @@ const exampleText = `Lorem Ipsum is simply dummy text of the printing and typese
 
 function Contact() {
   return (
-    <Wrapper id="contact">
-      <Backdrop img={"./images/scoreboard.jpg"} backgroundColor={"black"} linearGradient={"black, #ff006c"}>
+    <Wrapper img={"./images/scoreboard.jpg"} id="contact">
+      <Backdrop  backgroundColor={"rgba(208,0,108,0.7)"} >
         <Main>{exampleText}</Main>
         <Title>What is Lorem Ipsum?</Title>
       </Backdrop>

@@ -9,12 +9,13 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
+  margin: 0;
   color: #e6ffff;
   text-align: center;
   font-size: 3vw;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  margin:0;
+  
 `;
 const Main = styled.p`
   color: #e6ffff;
