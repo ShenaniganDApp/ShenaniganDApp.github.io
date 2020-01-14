@@ -91,7 +91,7 @@ function Header() {
             <Text           
               color={"#e6ffff"}
               fontFamily={"Roboto, sans-serif"}
-              fontSize={"3"}
+              fontSize={"2.5vw"}
             >Home</Text>
           </Tab>
         </StyledLink>
@@ -101,7 +101,7 @@ function Header() {
             <Text
               color={"#e6ffff"}
               fontFamily={"Roboto, sans-serif"}
-              fontSize={"3vw"}
+              fontSize={"2.5vw"}
             >Contact</Text>
           </Tab>
         </StyledLink>
@@ -111,7 +111,7 @@ function Header() {
             <Text
               color={"#e6ffff"}
               fontFamily={"Roboto, sans-serif"}
-              fontSize={"3vw"}
+              fontSize={"2.5vw"}
             >
               About
             </Text>
