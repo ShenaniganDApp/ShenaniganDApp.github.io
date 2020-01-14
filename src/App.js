@@ -4,6 +4,7 @@ import Home from "./Home";
 import Header from "./Header";
 import Contact from "./Contact";
 import About from "./About";
+import Slide from "./Slide"
 import { BrowserRouter as Router } from "react-router-dom";
 
 const AppWrapper = styled.div``;
@@ -24,6 +25,8 @@ function App() {
         <MainWrapper>
           <Contact />
           <About />
+          <Slide />
+          <Slide />
         </MainWrapper>
       </AppWrapper>
     </Router>

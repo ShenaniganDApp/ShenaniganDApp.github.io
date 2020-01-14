@@ -88,30 +88,27 @@ function Header() {
       <Nav>
         <StyledLink to="/#top">
           <Tab>
-            <Text
-              content={"Home"}
+            <Text           
               color={"#e6ffff"}
               fontFamily={"Roboto, sans-serif"}
               fontSize={"5vw"}
-            ></Text>
+            >Home</Text>
           </Tab>
         </StyledLink>
         <ButtonLine />
         <StyledLink to="/#contact">
           <Tab>
             <Text
-              content={"Contact"}
               color={"#e6ffff"}
               fontFamily={"Roboto, sans-serif"}
               fontSize={"5vw"}
-            ></Text>
+            >Contact</Text>
           </Tab>
         </StyledLink>
         <ButtonLine />
         <StyledLink to="/#about">
           <Tab>
             <Text
-              content={"About"}
               color={"#e6ffff"}
               fontFamily={"Roboto, sans-serif"}
               fontSize={"5vw"}
