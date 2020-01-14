@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Text from "./Text";
+import Text from "./styles/Text";
 import { HashLink as Link } from "react-router-hash-link";
 
 

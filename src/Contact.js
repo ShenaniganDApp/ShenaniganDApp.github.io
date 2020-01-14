@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Backdrop from './Backdrop';
+import Backdrop from './styles/Backdrop';
 
 const Wrapper = styled.div`
   height: 60vh;
