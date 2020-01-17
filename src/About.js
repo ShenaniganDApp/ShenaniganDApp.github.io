@@ -1,29 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import Backdrop from "./styles/Backdrop"
-
+import Backdrop from "./styles/Backdrop";
+import Section from "./styles/Section";
+import Text from "./styles/Text";
 
 const Wrapper = styled.div`
     height:100vh
     width:80%;
+   
+`;
+const TextSection = styled(Section)`
+  background-color: #e6ffff;
+  x
 `;
 
-const Title = styled.h1`
-  margin: 0;
-  color: #e6ffff;
-  text-align: center;
-  font-size: 3vw;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  
-`;
-const Main = styled.p`
-  color: #e6ffff;
-  text-align: center;
-  font-size: 12px;
-  font-size: 1.5vw;
-  font-family: "Roboto", sans-serif;
-`;
 
 const exampleText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -35,13 +25,16 @@ const exampleText = `Lorem Ipsum is simply dummy text of the printing and typese
 
 function About() {
   return (
-    <Wrapper  id="about">
-      <Backdrop linearGradient={"#ff006c,#1f331f"} >
-        <Title>What is Lorem Ipsum?</Title>
+    <Wrapper id="about">
+      <Backdrop linearGradient={"#ff006c,#ff4"}>
+        <TextSection large>
+          <Text title>What is Lorem Ipsum?</Text>
 
-        <Main>{exampleText}</Main>
+          <Text main>{exampleText}</Text>
+        </TextSection>
+        <Section small backgroundColor={"#ff4"}></Section>
       </Backdrop>
-      </Wrapper>
+    </Wrapper>
   );
 }
 

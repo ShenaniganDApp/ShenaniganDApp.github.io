@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Text from "./styles/Text";
 import { HashLink as Link } from "react-router-hash-link";
 
-
 const Wrapper = styled.div`
   display: flex;
   height:5vw
@@ -88,33 +87,19 @@ function Header() {
       <Nav>
         <StyledLink to="/#top">
           <Tab>
-            <Text           
-              color={"#e6ffff"}
-              fontFamily={"Roboto, sans-serif"}
-              fontSize={"2.5vw"}
-            >Home</Text>
+            <Text header color={"#e6ffff"}>Home</Text>
           </Tab>
         </StyledLink>
         <ButtonLine />
         <StyledLink to="/#contact">
           <Tab>
-            <Text
-              color={"#e6ffff"}
-              fontFamily={"Roboto, sans-serif"}
-              fontSize={"2.5vw"}
-            >Contact</Text>
+            <Text header color={"#e6ffff"}>Contact</Text>
           </Tab>
         </StyledLink>
         <ButtonLine />
         <StyledLink to="/#about">
           <Tab>
-            <Text
-              color={"#e6ffff"}
-              fontFamily={"Roboto, sans-serif"}
-              fontSize={"2.5vw"}
-            >
-              About
-            </Text>
+            <Text header color={"#e6ffff"}>About</Text>
           </Tab>
         </StyledLink>
       </Nav>
