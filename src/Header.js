@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useScrollPosition } from "./hooks/useScrollPosition";
 import styled, { css } from "styled-components";
 import Text from "./styles/Text";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Wrapper = styled.div`
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   display: flex;
   height:5vw
   justify-content: ${props =>
@@ -11,6 +13,15 @@ const Wrapper = styled.div`
   min-height:3rem
   top:0;
   position:sticky;
+  
+  ${props =>
+    props.scrolled &&
+    css`
+      backdrop-filter: blur(20px);
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 0px;
+    `}
+  
   `;
 
 const Logo = styled.img`
@@ -106,6 +117,7 @@ const CollapsableWrapper = styled.div`
 function Header() {
   const [headerOn, setHeader] = useState(0);
   const [collapsed, setCollapsed] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleHeaderChange = selection => {
     if (!collapsed) {
@@ -155,8 +167,17 @@ function Header() {
       } else return headers[headerOn];
     }
   };
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    if (currPos.y < -50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  });
+
   return (
-    <Wrapper collapsed={collapsed}>
+    <Wrapper scrolled={scrolled} collapsed={collapsed}>
       <Link onClick={() => handleHeaderChange(0)} to="/#top">
         <Frame>
           <Logo src="logo180.png" />
