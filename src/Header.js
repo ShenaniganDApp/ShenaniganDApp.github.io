@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   min-height:3rem
   top:0;
   position:sticky;
+  z-index: 100;
   
   ${props =>
     props.scrolled &&
