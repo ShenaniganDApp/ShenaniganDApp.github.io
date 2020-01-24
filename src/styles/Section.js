@@ -2,30 +2,33 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const Section = styled.div`
-  width: 50%;
-  height: 50%;
+  width: 35%;
+  height: auto;
   max-width: 450px;
   background-color: ${props => props.backgroundColor};
+  margin: ${props => props.margin};
+  padding: ${props => props.padding};
+  z-index: 1;
   ${props =>
     (props.xLarge &&
       css`
-        width: 100%;
-        height: 100%;
+        width: 75%;
+        height: auto;
       `) ||
     (props.large &&
       css`
-        width: 75%;
-        height: 75%;
+        width: 50%;
+        height: auto;
         max-width: 500px;
         min-width: 150px;
       `) ||
     (props.small &&
       css`
         width: 30%;
-        height: 30%;
+        height: auto;
         max-width: 500px;
         min-width: 75px;
-      `)}
+      `)};
 `;
 
 const exampleText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
