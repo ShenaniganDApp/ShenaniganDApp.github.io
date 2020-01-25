@@ -1,6 +1,5 @@
-import React from "react";
-import styled from "styled-components";
-
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div``;
 const Backdrop = styled.div`
@@ -10,17 +9,15 @@ const Backdrop = styled.div`
   height: 100%;
   position: absolute;
   top: 0;
-  z-index:-1;
+  z-index: -1;
 `;
 const Title = styled.h1`
-    color:#e6ffff; 
-    text-align:center; 
-    -webkit-text-stroke: 3px #ff006c; 
-    font-size: 10rem; 
-    font-family: 'Roboto', sans-serif; 
-    font-weight: 900;
-    
-    
+  color: #e6ffff;
+  text-align: center;
+  -webkit-text-stroke: 3px #ff006c;
+  font-size: 10rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
 `;
 const Slogan = styled.p`
     color:#e6ffff;
@@ -28,6 +25,8 @@ const Slogan = styled.p`
     margin:15% 10% 0% 10%
     font-size: 6vw
     font-family: 'Roboto', sans-serif;
+    text-shadow: white 0px 0px 10px;
+    
 
 `;
 
@@ -35,7 +34,9 @@ function Home() {
   return (
     <Wrapper>
       <Backdrop />
-      <Slogan>An Ethereum Dapp driving athletes to jump higher, run faster, and throw farther.</Slogan>
+      <Slogan>
+        Driving Athletes to Jump Higher, Run Faster, and Throw Farther.
+      </Slogan>
       <Title>SHE</Title>
     </Wrapper>
   );
