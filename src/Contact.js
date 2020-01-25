@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Backdrop from "./styles/Backdrop";
-import Section from "./styles/Section";
-import Text from "./styles/Text";
+import React from 'react';
+import styled from 'styled-components';
+import Backdrop from './styles/Backdrop';
+import Section from './styles/Section';
+import Text from './styles/Text';
 
 const Wrapper = styled.div`
   height: auto;
@@ -13,6 +13,8 @@ const Wrapper = styled.div`
   background-image: url(${props => props.img});
   padding-bottom: 5%;
   justify-content: center;
+  flex-wrap:wrap;
+  
 `;
 const Title = styled(Text)`
   margin: 1rem;
@@ -21,7 +23,7 @@ const Main = styled(Text)`
   margin: 1rem;
 `;
 const StyledSection = styled(Section)`
-  border: 2rem solid #e6ffff;
+  border: 5vw solid #e6ffff;
   z-index: 0;
 `;
 
@@ -35,28 +37,28 @@ const exampleText = `Lorem Ipsum is simply dummy text of the printing and typese
 
 function Contact() {
   return (
-    <Wrapper img={"./images/scoreboard.jpg"} id="contact">
-      <Section large margin={"0 -2rem 0 0"} backgroundColor={"#e6ffff"}>
-        <Title title color={"black"}>
-          What is Lorem Ipsum?
-        </Title>
-        <Main main color={"black"}>
+    <Wrapper img={'./images/scoreboard.jpg'} id="contact">
+        <Section large margin={'0 -2rem 0 0'} backgroundColor={'#e6ffff'}>
+          <Title title color={'black'}>
+            What is Lorem Ipsum?
+          </Title>
+          <Main main color={'black'}>
+            {exampleText}
+          </Main>
+        </Section>
+        <StyledSection backgroundColor={'rgba(208,0,108,0.7)'}>
+          <Main main color={'#e6ffff'}>
+            {exampleText}
+          </Main>
+          <Title title color={'#e6ffff'}>
+            What is Lorem Ipsum?
+          </Title>
+        </StyledSection>
+      <StyledSection xLarge backgroundColor={'rgba(208,0,108,0.7)'}>
+        <Main main color={'#e6ffff'}>
           {exampleText}
         </Main>
-      </Section>
-      <StyledSection backgroundColor={"rgba(208,0,108,0.7)"}>
-        <Main main color={"#e6ffff"}>
-          {exampleText}
-        </Main>
-        <Title title color={"#e6ffff"}>
-          What is Lorem Ipsum?
-        </Title>
-      </StyledSection>
-      <StyledSection xLarge backgroundColor={"rgba(208,0,108,0.7)"}>
-        <Main main color={"#e6ffff"}>
-          {exampleText}
-        </Main>
-        <Title title color={"#e6ffff"}>
+        <Title title color={'#e6ffff'}>
           What is Lorem Ipsum?
         </Title>
       </StyledSection>

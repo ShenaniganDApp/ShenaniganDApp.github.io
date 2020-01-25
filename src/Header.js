@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useScrollPosition } from "./hooks/useScrollPosition";
-import styled, { css } from "styled-components";
-import Text from "./styles/Text";
-import { HashLink as Link } from "react-router-hash-link";
+import React, { useState, useEffect } from 'react';
+import { useScrollPosition } from './hooks/useScrollPosition';
+import styled, { css } from 'styled-components';
+import Text from './styles/Text';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Wrapper = styled.div`
   transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   display: flex;
-  height:5vw;
+  height: 5vw;
   justify-content: ${props =>
-    props.collapsed ? "space-between" : " flex-start"};
-  min-height:3rem;
-  top:0;
-  position:sticky;
+    props.collapsed ? 'space-between' : ' flex-start'};
+  min-height: 3rem;
+  top: 0;
+  position: sticky;
   z-index: 100;
-  
+
   ${props =>
     props.scrolled &&
     css`
@@ -22,11 +22,10 @@ const Wrapper = styled.div`
       background: rgba(0, 0, 0, 0.8);
       padding: 1rem 0px;
     `}
-  
-  `;
+`;
 
 const Logo = styled.img`
-  display: block
+  display: block;
   width: auto;
   height: 90%;
   max-width: 90%;
@@ -46,7 +45,7 @@ const Frame = styled.div`
   top: 0;
   display: flex;
   align-items: center;
-  height:100%
+  height:100%;
   width: 10vw;
   margin-left: 1%;
   background:linear-gradient(#ff006c, #ff4);
@@ -89,17 +88,17 @@ const StyledLink = styled(Link)`
 `;
 
 const MenuToggle = styled.div`
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   top: 0;
-  right:0;
+  right: 0;
   display: flex;
-  height:100%;
+  height: 100%;
   width: 10vw;
   margin-right: 1%;
-  background:linear-gradient(#ff006c, #ff4);
+  background: linear-gradient(#ff006c, #ff4);
 
   &:hover {
-    width:150%
+    width: 150%;
   }
 `;
 
@@ -136,7 +135,7 @@ function Header() {
     const home = (
       <StyledLink onClick={() => handleHeaderChange(0)} to="/#top">
         <Tab>
-          <Text header color={"#e6ffff"}>
+          <Text header color={'#e6ffff'}>
             Home
           </Text>
         </Tab>
@@ -145,7 +144,7 @@ function Header() {
     const contact = (
       <StyledLink onClick={() => handleHeaderChange(1)} to="/#contact">
         <Tab>
-          <Text header color={"#e6ffff"}>
+          <Text header color={'#e6ffff'}>
             Contact
           </Text>
         </Tab>
@@ -154,7 +153,7 @@ function Header() {
     const about = (
       <StyledLink onClick={() => handleHeaderChange(2)} to="/#about">
         <Tab>
-          <Text header color={"#e6ffff"}>
+          <Text header color={'#e6ffff'}>
             About
           </Text>
         </Tab>
