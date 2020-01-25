@@ -7,10 +7,10 @@ import { HashLink as Link } from "react-router-hash-link";
 const Wrapper = styled.div`
   transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   display: flex;
-  height:5vw
+  height:5vw;
   justify-content: ${props =>
     props.collapsed ? "space-between" : " flex-start"};
-  min-height:3rem
+  min-height:3rem;
   top:0;
   position:sticky;
   z-index: 100;
@@ -93,7 +93,7 @@ const MenuToggle = styled.div`
   top: 0;
   right:0;
   display: flex;
-  height:100%
+  height:100%;
   width: 10vw;
   margin-right: 1%;
   background:linear-gradient(#ff006c, #ff4);

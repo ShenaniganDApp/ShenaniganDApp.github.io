@@ -22,10 +22,10 @@ const Title = styled.h1`
 const Slogan = styled.p`
     color:#e6ffff;
     text-align: center;
-    margin:15% 10% 0% 10%
-    font-size: 6vw
+    margin:15% 10% 0% 10%;
+    font-size: 6vw;
     font-family: 'Roboto', sans-serif;
-    text-shadow: white 0px 0px 10px;
+    text-shadow: black 0px 0px 10px;
     
 
 `;
@@ -35,7 +35,7 @@ function Home() {
     <Wrapper>
       <Backdrop />
       <Slogan>
-        Driving Athletes to Jump Higher, Run Faster, and Throw Farther.
+        Powering Athletes to Jump Higher, Run Faster, and Throw Farther.
       </Slogan>
       <Title>SHE</Title>
     </Wrapper>

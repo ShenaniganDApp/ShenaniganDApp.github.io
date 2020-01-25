@@ -5,13 +5,12 @@ import Section from "./styles/Section";
 import Text from "./styles/Text";
 
 const Wrapper = styled.div`
-    height:100vh
+    height:100vh;
     width:80%;
    
 `;
 const TextSection = styled(Section)`
   background-color: #e6ffff;
-  x
 `;
 
 
