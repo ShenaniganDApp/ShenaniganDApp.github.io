@@ -35,7 +35,7 @@ function Home() {
   return (
     <Wrapper>
       <Backdrop />
-      <Slogan>a community driven, talent support service</Slogan>
+      <Slogan>An Ethereum Dapp driving athletes to jump higher, run faster, and throw farther.</Slogan>
       <Title>SHE</Title>
     </Wrapper>
   );
