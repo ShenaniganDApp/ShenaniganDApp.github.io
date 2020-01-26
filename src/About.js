@@ -5,12 +5,31 @@ import Section from './styles/Section';
 import Text from './styles/Text';
 
 const Wrapper = styled.div`
-  height: 100vh;
-  width: 80%;
-  background-image: url(${require('./images/scoreboard.jpg')});
+  height: auto;
+  width: 100%;
+  padding-top: 50rem;
+  display: flex;
+  justify-content: center;
 `;
 const TextSection = styled(Section)`
+  width: 80%;
   background-color: #e6ffff;
+  background-image: url(${require('./images/scoreboard.jpg')});
+  background-size: cover;
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+`;
+
+const StyledBackdrop = styled(Backdrop)`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const ContentSection = styled(Section)`
+  margin: 1rem 2rem;
+  padding: 4rem;
 `;
 
 const exampleText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -25,20 +44,57 @@ function About(props, ref) {
   const aboutRef = useRef();
   useImperativeHandle(ref, () => ({
     boundingTop: () => {
-      return aboutRef.current.getBoundingClientRect().top
+      return aboutRef.current.getBoundingClientRect().top;
     }
   }));
 
   return (
     <Wrapper ref={aboutRef} id="about">
-      <Backdrop linearGradient={'#ff006c,#ff4'}>
-        <TextSection large>
-          <Text title>What is Lorem Ipsum?</Text>
+      <StyledBackdrop
+        background={
+          'radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%)'
+        }
+      >
+        <TextSection shadowed large>
+          <Text title color={'#e6ffff'}>
+            What is Lorem Ipsum?
+          </Text>
 
-          <Text main>{exampleText}</Text>
+          <Text color={'#e6ffff'} main>
+            {exampleText}
+          </Text>
+          <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
+            <Text title color={'#e6ffff'}>
+              What is Lorem Ipsum?
+            </Text>
+          </ContentSection>
+          <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
+            <Text title color={'#e6ffff'}>
+              What is Lorem Ipsum?
+            </Text>
+          </ContentSection>
+          <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
+            <Text title color={'#e6ffff'}>
+              What is Lorem Ipsum?
+            </Text>
+          </ContentSection>
+          <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
+            <Text title color={'#e6ffff'}>
+              What is Lorem Ipsum?
+            </Text>
+          </ContentSection>
+          <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
+            <Text title color={'#e6ffff'}>
+              What is Lorem Ipsum?
+            </Text>
+          </ContentSection>
+          <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
+            <Text title color={'#e6ffff'}>
+              What is Lorem Ipsum?
+            </Text>
+          </ContentSection>
         </TextSection>
-        <Section small backgroundColor={'#ff4'}></Section>
-      </Backdrop>
+      </StyledBackdrop>
     </Wrapper>
   );
 }
