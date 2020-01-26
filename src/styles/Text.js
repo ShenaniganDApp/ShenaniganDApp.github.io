@@ -17,7 +17,7 @@ const Text = styled.p`
         -ms-user-select: none; /* IE 10+ */
         user-select: none;
         @media (max-width: 768px) {
-          font-size: 5vw;
+          font-size: 3.5vw;
         }
       `) ||
     (props.main &&

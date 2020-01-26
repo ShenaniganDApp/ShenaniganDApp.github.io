@@ -16,13 +16,13 @@ const Wrapper = styled.div`
 `;
 
 const Logo = styled.img`
-  display: block;
   width: auto;
-  height: 90%;
-  max-width: 90%;
+  height: 80%;
+  max-width: 80%;
 `;
 const Nav = styled.div`
-  transition: backdrop-filter background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+  transition: backdrop-filter, background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
+    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   z-index: 1;
   margin: 0;
   height: 100%;
@@ -102,15 +102,23 @@ const TabLink = styled(Link)`
 
 const HomeLink = styled(Link)`
   z-index: 100;
+  margin-left: 2%;
+`;
+
+const Hamburger = styled.img`
+  width: auto;
+  height: 80%;
+  max-width: 80%;
 `;
 
 function Header(props) {
   const [headerOn, setHeader] = useState();
   const [collapsed, setCollapsed] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
-    if (!scrolled) {
+    if (!scrolled && headerOn == 0) {
       setCollapsed(false);
     }
   }, [scrolled, headerOn]);
@@ -119,8 +127,13 @@ function Header(props) {
     if (!collapsed) {
       setCollapsed(true);
     }
-
+    setOpenMenu(false);
     setHeader(selection);
+  };
+
+  const toggleMenu = () => {
+    setHeader(0);
+    setOpenMenu(true);
   };
 
   const headerSelected = () => {
@@ -181,13 +194,19 @@ function Header(props) {
       setScrolled(true);
     } else {
       setScrolled(false);
+      setHeader(0);
     }
-    if (currPos.y < props.heights.contact) {
-      setCollapsed(true);
-      setHeader(1);
-    } else if (currPos.y < props.heights.about) {
-      setCollapsed(true);
-      setHeader(2);
+    if (!openMenu) {
+      if (
+        currPos.y < props.heights.contact + 200 &&
+        currPos.y > props.heights.about + 2
+      ) {
+        setCollapsed(true);
+        setHeader(1);
+      } else if (currPos.y < props.heights.about + 100) {
+        setCollapsed(true);
+        setHeader(2);
+      }
     }
   });
 
@@ -201,7 +220,9 @@ function Header(props) {
       {collapsed ? (
         [
           headerSelected(),
-          <HeaderToggle onClick={() => handleHeaderChange(0)} />
+          <HeaderToggle onClick={() => toggleMenu()}>
+            <Hamburger src={require('./svg/hamburger.svg')} />
+          </HeaderToggle>
         ]
       ) : (
         <Nav collapsed={collapsed} scrolled={scrolled}>

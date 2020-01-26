@@ -8,7 +8,6 @@ const LogoFrame = styled.div`
   align-items: center;
   height: 100%;
   width: 10vw;
-  margin-left: 1%;
   background: radial-gradient(circle at 30% 107%, #ff4 0%, #ff006c 90%);
   justify-content: center;
   border-radius: 0px 0px 10px 10px;
@@ -17,6 +16,9 @@ const LogoFrame = styled.div`
   &:hover {
     height: 150%;
   }
+  @media (max-width: 768px) {
+          width: 20vw;
+        }
 `;
 
 export default LogoFrame;
