@@ -1,18 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import Backdrop from "./styles/Backdrop";
-import Section from "./styles/Section";
-import Text from "./styles/Text";
+import React, { useRef, useImperativeHandle, forwardRef } from 'react';
+import styled from 'styled-components';
+import Backdrop from './styles/Backdrop';
+import Section from './styles/Section';
+import Text from './styles/Text';
 
 const Wrapper = styled.div`
-    height:100vh;
-    width:80%;
-   
+  height: 100vh;
+  width: 80%;
+  background-image: url(${require('./images/scoreboard.jpg')});
 `;
 const TextSection = styled(Section)`
   background-color: #e6ffff;
 `;
-
 
 const exampleText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -22,19 +21,26 @@ const exampleText = `Lorem Ipsum is simply dummy text of the printing and typese
     containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
     including versions of Lorem Ipsum.`;
 
-function About() {
+function About(props, ref) {
+  const aboutRef = useRef();
+  useImperativeHandle(ref, () => ({
+    boundingTop: () => {
+      return aboutRef.current.getBoundingClientRect().top
+    }
+  }));
+
   return (
-    <Wrapper id="about">
-      <Backdrop linearGradient={"#ff006c,#ff4"}>
+    <Wrapper ref={aboutRef} id="about">
+      <Backdrop linearGradient={'#ff006c,#ff4'}>
         <TextSection large>
           <Text title>What is Lorem Ipsum?</Text>
 
           <Text main>{exampleText}</Text>
         </TextSection>
-        <Section small backgroundColor={"#ff4"}></Section>
+        <Section small backgroundColor={'#ff4'}></Section>
       </Backdrop>
     </Wrapper>
   );
 }
 
-export default About;
+export default forwardRef(About);

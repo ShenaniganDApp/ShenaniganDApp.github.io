@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
 import Backdrop from './styles/Backdrop';
 import Section from './styles/Section';
@@ -13,8 +13,7 @@ const Wrapper = styled.div`
   background-image: url(${props => props.img});
   padding-bottom: 5%;
   justify-content: center;
-  flex-wrap:wrap;
-  
+  flex-wrap: wrap;
 `;
 const Title = styled(Text)`
   margin: 1rem;
@@ -35,25 +34,32 @@ const exampleText = `Lorem Ipsum is simply dummy text of the printing and typese
     containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
     including versions of Lorem Ipsum.`;
 
-function Contact() {
+function Contact(props, ref) {
+  const contactRef = useRef();
+  useImperativeHandle(ref, () => ({
+    boundingTop: () => {
+      return contactRef.current.getBoundingClientRect().top
+    }
+  }));
+
   return (
-    <Wrapper img={'./images/scoreboard.jpg'} id="contact">
-        <Section large margin={'0 -2rem 0 0'} backgroundColor={'#e6ffff'}>
-          <Title title color={'black'}>
-            What is Lorem Ipsum?
-          </Title>
-          <Main main color={'black'}>
-            {exampleText}
-          </Main>
-        </Section>
-        <StyledSection backgroundColor={'rgba(208,0,108,0.7)'}>
-          <Main main color={'#e6ffff'}>
-            {exampleText}
-          </Main>
-          <Title title color={'#e6ffff'}>
-            What is Lorem Ipsum?
-          </Title>
-        </StyledSection>
+    <Wrapper ref={contactRef} img={'./images/scoreboard.jpg'} id="contact">
+      <Section large margin={'0 -2rem 0 0'} backgroundColor={'#e6ffff'}>
+        <Title title color={'black'}>
+          What is Lorem Ipsum?
+        </Title>
+        <Main main color={'black'}>
+          {exampleText}
+        </Main>
+      </Section>
+      <StyledSection backgroundColor={'rgba(208,0,108,0.7)'}>
+        <Main main color={'#e6ffff'}>
+          {exampleText}
+        </Main>
+        <Title title color={'#e6ffff'}>
+          What is Lorem Ipsum?
+        </Title>
+      </StyledSection>
       <StyledSection xLarge backgroundColor={'rgba(208,0,108,0.7)'}>
         <Main main color={'#e6ffff'}>
           {exampleText}
@@ -66,4 +72,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default forwardRef(Contact);
