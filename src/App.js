@@ -21,9 +21,11 @@ function App() {
   const aboutRef = useRef();
 
   useEffect(() => {
+    const contactHeight = -contactRef.current.boundingTop() - window.pageYOffset;
+    const aboutHeight = -aboutRef.current.boundingTop() - window.pageYOffset;
     setHeights({
-      contact: -contactRef.current.boundingTop(),
-      about: -aboutRef.current.boundingTop()
+      contact: contactHeight,
+      about: aboutHeight
     });
   }, [contactRef, aboutRef]);
 
