@@ -1,27 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useScrollPosition } from './hooks/useScrollPosition';
-import styled, { css } from 'styled-components';
-import Text from './styles/Text';
+import styled, { css, keyframes } from 'styled-components';
+import { Text, HeaderToggle, LogoFrame } from './styles';
 import { HashLink as Link } from 'react-router-hash-link';
 
 const Wrapper = styled.div`
-  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   display: flex;
   height: 5vw;
-  justify-content: ${props =>
-    props.collapsed ? 'space-between' : ' flex-start'};
   min-height: 3rem;
-  top: 0;
   position: sticky;
   z-index: 100;
-
-  ${props =>
-    props.scrolled &&
-    css`
-      backdrop-filter: blur(20px);
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem 0px;
-    `}
+  top: 0;
+  justify-content: ${props =>
+    props.collapsed ? 'space-between' : ' flex-start'};
 `;
 
 const Logo = styled.img`
@@ -31,29 +22,28 @@ const Logo = styled.img`
   max-width: 90%;
 `;
 const Nav = styled.div`
-  transition: all 0.2s ease-in-out;
+  transition: backdrop-filter background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+  z-index: 1;
   margin: 0;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
-`;
-
-const Frame = styled.div`
-  transition: all .2s ease-in-out;
-  top: 0;
-  display: flex;
-  align-items: center;
-  height:100%;
-  width: 10vw;
-  margin-left: 1%;
-  background:linear-gradient(#ff006c, #ff4);
-  justify-content: center;
-
-  &:hover {
-    height:150%
-  }
+  width: 0;
+  overflow: hidden;
+  ${props =>
+    props.scrolled &&
+    css`
+      backdrop-filter: blur(20px);
+      background: rgba(0, 0, 0, 0.8);
+    `}
+  ${props =>
+    !props.collapsed &&
+    css`
+      transition: 1s;
+      width: 100%;
+      margin-left: -1rem;
+    `}
 `;
 
 const ButtonLine = styled.div`
@@ -63,6 +53,7 @@ const ButtonLine = styled.div`
 `;
 
 const Tab = styled.div`
+  transition: 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,59 +64,60 @@ const Tab = styled.div`
   height: 100%;
   min-width: 50px;
 
-  ${props => props.collapsed && !props.selected}
+  ${props =>
+    props.scrolled &&
+    css`
+      margin-top: -1rem 0px;
+    `}
 
   &:hover {
-    background-color: rgba(256, 256, 256, 0.7);
-    height: 150%;
+    transform: scale(1.1);
   }
 `;
 
-const StyledLink = styled(Link)`
+const growSelected = keyframes`
+  from {
+    width: 0px;
+  }
+  to {
+    width: 50%;
+  }
+`;
+const TabLink = styled(Link)`
+  transition: 0.3s;
   text-decoration: none;
   height: 100%;
   width: 100%;
-`;
-
-const MenuToggle = styled.div`
-  transition: all 0.2s ease-in-out;
-  top: 0;
-  right: 0;
-  display: flex;
-  height: 100%;
-  width: 10vw;
-  margin-right: 1%;
-  background: linear-gradient(#ff006c, #ff4);
-
-  &:hover {
-    width: 150%;
-  }
-`;
-
-const CollapsableWrapper = styled.div`
-  transition: all 0.2s ease-in-out;
-  width: 100%;
-  height: 100%;
-  display: flex;
   ${props =>
-    props.collapsed &&
+    props.selected &&
     css`
-    max-width:0px;
-    overflow:hidden:`}
+      backdrop-filter: blur(20px);
+      background: rgba(0, 0, 0, 0.8);
+      ${'' /* animation: ${growSelected} 1s linear; */}
+      width:20%;
+      margin-left: auto;
+      border-radius: 0px 0px 0px 30px;
+    `}
 `;
 
-function Header() {
-  const [headerOn, setHeader] = useState(0);
+const HomeLink = styled(Link)`
+  z-index: 100;
+`;
+
+function Header(props) {
+  const [headerOn, setHeader] = useState();
   const [collapsed, setCollapsed] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (!scrolled) {
+      setCollapsed(false);
+    }
+  }, [scrolled, headerOn]);
 
   const handleHeaderChange = selection => {
     if (!collapsed) {
       setCollapsed(true);
-    }
-
-    if (selection == 0) {
-      setCollapsed(false);
     }
 
     setHeader(selection);
@@ -133,68 +125,121 @@ function Header() {
 
   const headerSelected = () => {
     const home = (
-      <StyledLink onClick={() => handleHeaderChange(0)} to="/#top">
+      <TabLink
+        scrolled={scrolled}
+        selected
+        onClick={() => handleHeaderChange(0)}
+        to="/#top"
+      >
         <Tab>
           <Text header color={'#e6ffff'}>
             Home
           </Text>
         </Tab>
-      </StyledLink>
+      </TabLink>
     );
     const contact = (
-      <StyledLink onClick={() => handleHeaderChange(1)} to="/#contact">
+      <TabLink
+        scrolled={scrolled}
+        selected
+        onClick={() => handleHeaderChange(1)}
+        to="/#contact"
+      >
         <Tab>
           <Text header color={'#e6ffff'}>
             Contact
           </Text>
         </Tab>
-      </StyledLink>
+      </TabLink>
     );
     const about = (
-      <StyledLink onClick={() => handleHeaderChange(2)} to="/#about">
+      <TabLink
+        scrolled={scrolled}
+        selected
+        onClick={() => handleHeaderChange(2)}
+        to="/#about"
+      >
         <Tab>
           <Text header color={'#e6ffff'}>
             About
           </Text>
         </Tab>
-      </StyledLink>
+      </TabLink>
     );
 
     const headers = [home, contact, about];
     for (let i = 0; i < headers.length; i++) {
       if (headerOn == 0) {
-        return [home, contact, about];
+        setCollapsed(false);
+        return;
       } else return headers[headerOn];
     }
   };
 
   useScrollPosition(({ prevPos, currPos }) => {
-    if (currPos.y < -50) {
+    if (currPos.y < -150) {
       setScrolled(true);
     } else {
       setScrolled(false);
+    }
+    if (currPos.y < props.heights.contact) {
+      setCollapsed(true);
+      setHeader(1);
+    } else if (currPos.y < props.heights.about) {
+      setCollapsed(true);
+      setHeader(2);
     }
   });
 
   return (
     <Wrapper scrolled={scrolled} collapsed={collapsed}>
-      <Link onClick={() => handleHeaderChange(0)} to="/#top">
-        <Frame>
+      <HomeLink onClick={() => handleHeaderChange(0)} to="/#top">
+        <LogoFrame>
           <Logo src="logo180.png" />
-        </Frame>
-      </Link>
-      <Nav>
-        {collapsed ? (
-          [
-            headerSelected(),
-            <MenuToggle onClick={() => handleHeaderChange(0)} />
-          ]
-        ) : (
-          <CollapsableWrapper collapsed={collapsed}>
-            {headerSelected()}
-          </CollapsableWrapper>
-        )}
-      </Nav>
+        </LogoFrame>
+      </HomeLink>
+      {collapsed ? (
+        [
+          headerSelected(),
+          <HeaderToggle onClick={() => handleHeaderChange(0)} />
+        ]
+      ) : (
+        <Nav collapsed={collapsed} scrolled={scrolled}>
+          <TabLink
+            scrolled={scrolled}
+            onClick={() => handleHeaderChange(0)}
+            to="/#top"
+          >
+            <Tab>
+              <Text header color={'#e6ffff'}>
+                Home
+              </Text>
+            </Tab>
+          </TabLink>
+          <TabLink
+            scrolled={scrolled}
+            onClick={() => handleHeaderChange(1)}
+            to="/#contact"
+          >
+            <Tab>
+              <Text header color={'#e6ffff'}>
+                Contact
+              </Text>
+            </Tab>
+          </TabLink>
+          <TabLink
+            scrolled={scrolled}
+            onClick={() => handleHeaderChange(2)}
+            to="/#about"
+          >
+            <Tab>
+              <Text header color={'#e6ffff'}>
+                About
+              </Text>
+            </Tab>
+          </TabLink>
+        </Nav>
+      )}
     </Wrapper>
   );
 }
