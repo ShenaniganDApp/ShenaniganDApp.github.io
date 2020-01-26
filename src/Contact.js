@@ -14,15 +14,36 @@ const Wrapper = styled.div`
   padding-bottom: 5%;
   justify-content: center;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 const Title = styled(Text)`
-  margin: 1rem;
+  margin: 1rem -1rem 1rem 1rem;
+  @media (max-width: 768px) {
+    margin: 1rem;
+  }
 `;
 const Main = styled(Text)`
-  margin: 1rem;
+  margin: 1rem -1rem 1rem 1rem;
+  @media (max-width: 768px) {
+    margin: 1rem;
+  }
 `;
-const StyledSection = styled(Section)`
+const TopSection = styled(Section)`
   border: 5vw solid #e6ffff;
+  z-index: 0;
+  @media (max-width: 768px) {
+    margin: 1rem;
+  }
+`;
+
+const BottomSection = styled(Section)`
+  border: 2.5vw solid #e6ffff;
+  width: 90%;
   z-index: 0;
 `;
 
@@ -38,13 +59,19 @@ function Contact(props, ref) {
   const contactRef = useRef();
   useImperativeHandle(ref, () => ({
     boundingTop: () => {
-      return contactRef.current.getBoundingClientRect().top
+      return contactRef.current.getBoundingClientRect().top;
     }
   }));
 
   return (
     <Wrapper ref={contactRef} img={'./images/scoreboard.jpg'} id="contact">
-      <Section large margin={'0 -2rem 0 0'} backgroundColor={'#e6ffff'}>
+      <Section
+        curved
+        shadowed
+        large
+        margin={'0 0 0 0'}
+        backgroundColor={'#e6ffff'}
+      >
         <Title title color={'black'}>
           What is Lorem Ipsum?
         </Title>
@@ -52,22 +79,28 @@ function Contact(props, ref) {
           {exampleText}
         </Main>
       </Section>
-      <StyledSection backgroundColor={'rgba(208,0,108,0.7)'}>
+      <TopSection curved shadowed backgroundColor={'rgba(208,0,108,0.7)'}>
         <Main main color={'#e6ffff'}>
           {exampleText}
         </Main>
         <Title title color={'#e6ffff'}>
           What is Lorem Ipsum?
         </Title>
-      </StyledSection>
-      <StyledSection xLarge backgroundColor={'rgba(208,0,108,0.7)'}>
+      </TopSection>
+      <BottomSection
+        curved
+        shadowed
+        margin={'1rem 0'}
+        xLarge
+        backgroundColor={'rgba(208,0,108,0.7)'}
+      >
         <Main main color={'#e6ffff'}>
           {exampleText}
         </Main>
         <Title title color={'#e6ffff'}>
           What is Lorem Ipsum?
         </Title>
-      </StyledSection>
+      </BottomSection>
     </Wrapper>
   );
 }

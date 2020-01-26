@@ -199,7 +199,7 @@ function Header(props) {
     if (!openMenu) {
       if (
         currPos.y < props.heights.contact + 200 &&
-        currPos.y > props.heights.about + 2
+        currPos.y > props.heights.about + 200
       ) {
         setCollapsed(true);
         setHeader(1);

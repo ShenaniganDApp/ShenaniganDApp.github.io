@@ -10,9 +10,25 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const AppWrapper = styled.div``;
 
 const MainWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const HomeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Spacer = styled.img`
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
 `;
 
 function App() {
@@ -21,7 +37,8 @@ function App() {
   const aboutRef = useRef();
 
   useEffect(() => {
-    const contactHeight = -contactRef.current.boundingTop() - window.pageYOffset;
+    const contactHeight =
+      -contactRef.current.boundingTop() - window.pageYOffset;
     const aboutHeight = -aboutRef.current.boundingTop() - window.pageYOffset;
     setHeights({
       contact: contactHeight,
@@ -34,8 +51,11 @@ function App() {
       <AppWrapper id="top">
         <Header heights={heights} />
         <Home />
-        <MainWrapper>
+        <HomeWrapper>
           <Contact ref={contactRef} />
+        </HomeWrapper>
+        <Spacer src={require('./svg/spacer.svg')}></Spacer>
+        <MainWrapper>
           <About ref={aboutRef} />
         </MainWrapper>
       </AppWrapper>
