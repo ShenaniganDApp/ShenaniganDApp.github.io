@@ -25,7 +25,7 @@ const Text = styled.p`
     (props.main &&
       css`
         font-size: 12px;
-        font-size: 2vw;
+        font-size: 2.2vw;
 
         font-family: 'Roboto', sans-serif;
       `) ||

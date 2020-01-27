@@ -98,7 +98,7 @@ function Header(props) {
   const [openMenu, setOpenMenu] = useState(false);
   const isPhone = window.innerWidth <= 768;
   useEffect(() => {
-    if (!scrolled && headerOn == 0 && !isPhone) {
+    if (!scrolled && headerOn === 0 && !isPhone) {
       setCollapsed(false);
     }
     if (isPhone) {
@@ -165,7 +165,7 @@ function Header(props) {
 
     const headers = [energy, milestone, milestone];
     for (let i = 0; i < headers.length; i++) {
-      if ((headerOn == 0 && !isPhone) || openMenu) {
+      if ((headerOn === 0 && !isPhone) || openMenu) {
         setCollapsed(false);
         return;
       } else return headers[headerOn - 1];

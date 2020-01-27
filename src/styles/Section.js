@@ -8,6 +8,7 @@ const Section = styled.div`
   margin: ${props => props.margin};
   padding: ${props => props.padding};
   border-radius: ${props => props.curved};
+  overflow: ${props => props.overflow};
   z-index: 1;
   flex: ${props => props.flex};
   ${props =>
