@@ -1,9 +1,9 @@
 import React, { useRef, useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
-import Home from './Home';
+import HomeSection from './Sections/HomeSection';
 import Header from './Header';
-import Contact from './Contact';
-import About from './About';
+import EnergySection from './Sections/EnergySection';
+import MilestoneSection from './Sections/MilestoneSection';
 import Section from './styles/Section';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -33,30 +33,30 @@ const Spacer = styled.img`
 
 function App() {
   const [heights, setHeights] = useState({});
-  const contactRef = useRef();
-  const aboutRef = useRef();
+  const energyRef = useRef();
+  const milestoneRef = useRef();
 
   useEffect(() => {
-    const contactHeight =
-      -contactRef.current.boundingTop() - window.pageYOffset;
-    const aboutHeight = -aboutRef.current.boundingTop() - window.pageYOffset;
+    const energyHeight =
+      -energyRef.current.boundingTop() - window.pageYOffset;
+    const milestoneHeight = -milestoneRef.current.boundingTop() - window.pageYOffset;
     setHeights({
-      contact: contactHeight,
-      about: aboutHeight
+      energy: energyHeight,
+      milestone: milestoneHeight
     });
-  }, [contactRef, aboutRef]);
+  }, [energyRef, milestoneRef]);
 
   return (
     <Router>
       <AppWrapper id="top">
         <Header heights={heights} />
-        <Home />
+        <HomeSection />
         <HomeWrapper>
-          <Contact ref={contactRef} />
+          <EnergySection ref={energyRef} />
         </HomeWrapper>
         <Spacer src={require('./svg/spacer.svg')}></Spacer>
         <MainWrapper>
-          <About ref={aboutRef} />
+          <MilestoneSection ref={milestoneRef} />
         </MainWrapper>
       </AppWrapper>
     </Router>
