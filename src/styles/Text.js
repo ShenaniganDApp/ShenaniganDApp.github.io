@@ -1,16 +1,18 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
 const Text = styled.p`
   text-decoration: none;
   margin: 0;
+  margin: ${props => props.margin};
   padding: 0;
   color: ${props => props.color};
+  font-size: ${props => props.size};
   ${props =>
     (props.header &&
       css`
         font-weight: 800;
-        font-size: 2.5vw;
+        font-size: 1.75vw;
         font-family: Roboto, sans-serif;
         -webkit-user-select: none; /* Chrome all / Safari all */
         -moz-user-select: none; /* Firefox all */
@@ -23,14 +25,16 @@ const Text = styled.p`
     (props.main &&
       css`
         font-size: 12px;
-        font-size: 1.5vw;
-        font-family: "Roboto", sans-serif;
+        font-size: 2vw;
+
+        font-family: 'Roboto', sans-serif;
       `) ||
     (props.title &&
       css`
         font-size: 20px;
-        font-size: 2.5vw;
-        font-family: "Roboto", sans-serif;
+        font-size: 5vw;
+        font-weight: 900;
+        font-family: 'Roboto', sans-serif;
       `)};
 `;
 

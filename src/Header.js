@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   height: 5vw;
   min-height: 3rem;
+  max-height: 4rem;
   position: sticky;
   z-index: 100;
   top: 0;
@@ -21,7 +22,7 @@ const Logo = styled.img`
   max-width: 80%;
 `;
 const Nav = styled.div`
-  transition: backdrop-filter, background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
+  transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
     background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   z-index: 1;
   margin: 0;
@@ -29,31 +30,17 @@ const Nav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 0;
-  overflow: hidden;
+  width: 100%;
   ${props =>
     props.scrolled &&
     css`
       backdrop-filter: blur(20px);
       background: rgba(0, 0, 0, 0.8);
+      margin: 0 0 0 -1rem;
     `}
-  ${props =>
-    !props.collapsed &&
-    css`
-      transition: 1s;
-      width: 100%;
-      margin-left: -1rem;
-    `}
-`;
-
-const ButtonLine = styled.div`
-  border-left: 1px solid rgb(256, 256, 256);
-  height: 100%;
-  transition: all 0.2s ease-in-out;
 `;
 
 const Tab = styled.div`
-  transition: 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +50,7 @@ const Tab = styled.div`
   padding-right: 1em;
   height: 100%;
   min-width: 50px;
+  margin: 0 -1em;
 
   ${props =>
     props.scrolled &&
@@ -75,28 +63,20 @@ const Tab = styled.div`
   }
 `;
 
-const growSelected = keyframes`
-  from {
-    width: 0px;
-  }
-  to {
-    width: 50%;
-  }
-`;
 const TabLink = styled(Link)`
-  transition: 0.3s;
   text-decoration: none;
   height: 100%;
   width: 100%;
+  min-width: 5rem;
   ${props =>
     props.selected &&
     css`
       backdrop-filter: blur(20px);
       background: rgba(0, 0, 0, 0.8);
-      ${'' /* animation: ${growSelected} 1s linear; */}
-      width:20%;
+      width: 20%;
       margin-left: auto;
       border-radius: 0px 0px 0px 30px;
+      height: 100%;
     `}
 `;
 
@@ -116,12 +96,15 @@ function Header(props) {
   const [collapsed, setCollapsed] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-
+  const isPhone = window.innerWidth <= 768;
   useEffect(() => {
-    if (!scrolled && headerOn == 0) {
+    if (!scrolled && headerOn == 0 && !isPhone) {
       setCollapsed(false);
     }
-  }, [scrolled, headerOn]);
+    if (isPhone) {
+      setCollapsed(true);
+    }
+  }, [scrolled, headerOn, isPhone]);
 
   const handleHeaderChange = selection => {
     if (!collapsed) {
@@ -137,30 +120,30 @@ function Header(props) {
   };
 
   const headerSelected = () => {
-    const home = (
-      <TabLink
-        scrolled={scrolled}
-        selected
-        onClick={() => handleHeaderChange(0)}
-        to="/#top"
-      >
-        <Tab>
-          <Text header color={'#e6ffff'}>
-            Home
-          </Text>
-        </Tab>
-      </TabLink>
-    );
-    const contact = (
+    const energy = (
       <TabLink
         scrolled={scrolled}
         selected
         onClick={() => handleHeaderChange(1)}
-        to="/#contact"
+        to="/#energy"
       >
-        <Tab>
+        <Tab selected>
           <Text header color={'#e6ffff'}>
-            Contact
+            Energy
+          </Text>
+        </Tab>
+      </TabLink>
+    );
+    const milestone = (
+      <TabLink
+        scrolled={scrolled}
+        selected
+        onClick={() => handleHeaderChange(2)}
+        to="/#roadmap"
+      >
+        <Tab selected>
+          <Text header color={'#e6ffff'}>
+            Road Map
           </Text>
         </Tab>
       </TabLink>
@@ -169,10 +152,10 @@ function Header(props) {
       <TabLink
         scrolled={scrolled}
         selected
-        onClick={() => handleHeaderChange(2)}
-        to="/#about"
+        onClick={() => handleHeaderChange(3)}
+        to=""
       >
-        <Tab>
+        <Tab selected>
           <Text header color={'#e6ffff'}>
             About
           </Text>
@@ -180,12 +163,12 @@ function Header(props) {
       </TabLink>
     );
 
-    const headers = [home, contact, about];
+    const headers = [energy, milestone, milestone];
     for (let i = 0; i < headers.length; i++) {
-      if (headerOn == 0) {
+      if ((headerOn == 0 && !isPhone) || openMenu) {
         setCollapsed(false);
         return;
-      } else return headers[headerOn];
+      } else return headers[headerOn - 1];
     }
   };
 
@@ -198,12 +181,12 @@ function Header(props) {
     }
     if (!openMenu) {
       if (
-        currPos.y < props.heights.contact + 200 &&
-        currPos.y > props.heights.about + 200
+        currPos.y < props.heights.energy + 200 &&
+        currPos.y > props.heights.milestone + 200
       ) {
         setCollapsed(true);
         setHeader(1);
-      } else if (currPos.y < props.heights.about + 100) {
+      } else if (currPos.y < props.heights.milestone + 100) {
         setCollapsed(true);
         setHeader(2);
       }
@@ -212,6 +195,7 @@ function Header(props) {
 
   return (
     <Wrapper scrolled={scrolled} collapsed={collapsed}>
+      {console.log(headerOn)}
       <HomeLink onClick={() => handleHeaderChange(0)} to="/#top">
         <LogoFrame>
           <Logo src="logo180.png" />
@@ -228,30 +212,30 @@ function Header(props) {
         <Nav collapsed={collapsed} scrolled={scrolled}>
           <TabLink
             scrolled={scrolled}
-            onClick={() => handleHeaderChange(0)}
-            to="/#top"
-          >
-            <Tab>
-              <Text header color={'#e6ffff'}>
-                Home
-              </Text>
-            </Tab>
-          </TabLink>
-          <TabLink
-            scrolled={scrolled}
             onClick={() => handleHeaderChange(1)}
-            to="/#contact"
+            to="/#energy"
           >
             <Tab>
               <Text header color={'#e6ffff'}>
-                Contact
+                Energy
               </Text>
             </Tab>
           </TabLink>
           <TabLink
             scrolled={scrolled}
             onClick={() => handleHeaderChange(2)}
-            to="/#about"
+            to="/#roadmap"
+          >
+            <Tab>
+              <Text header color={'#e6ffff'}>
+                Road Map
+              </Text>
+            </Tab>
+          </TabLink>
+          <TabLink
+            scrolled={scrolled}
+            onClick={() => handleHeaderChange(3)}
+            to=""
           >
             <Tab>
               <Text header color={'#e6ffff'}>

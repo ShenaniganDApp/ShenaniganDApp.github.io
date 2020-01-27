@@ -12,7 +12,8 @@ const HeaderToggle = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 0px 0px 30px 0px;
-  min-width:2.5rem;
+  min-width:2rem;
+  
 
   &:hover {
     width: 9vw;

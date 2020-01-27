@@ -2,12 +2,14 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const Section = styled.div`
-  width: 35%;
+  width: ${props => props.width};
   height: auto;
   background-color: ${props => props.backgroundColor};
   margin: ${props => props.margin};
   padding: ${props => props.padding};
+  border-radius: ${props => props.curved};
   z-index: 1;
+  flex: ${props => props.flex};
   ${props =>
     (props.xLarge &&
       css`
@@ -22,7 +24,7 @@ const Section = styled.div`
       `) ||
     (props.small &&
       css`
-        width: 30%;
+        width: 35%;
         height: auto;
         min-width: 75px;
       `) ||
@@ -32,10 +34,9 @@ const Section = styled.div`
         -moz-box-shadow: -7px 2px 5px 0px rgba(0, 0, 0, 1);
         box-shadow: -7px 2px 5px 0px rgba(0, 0, 0, 1);
       `) ||
-    (props.curved &&
+    (props.textCentered &&
       css`
-        border-radius: 15px, 15px, 15px, 15px;
-      `)};
+        text-align: center;
+      `)}
 `;
-
 export default Section;
