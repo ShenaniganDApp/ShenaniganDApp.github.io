@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useScrollPosition } from './hooks/useScrollPosition';
-import styled, { css, keyframes } from 'styled-components';
-import { Text, HeaderToggle, LogoFrame } from './styles';
+import styled, { css } from 'styled-components';
+import { HeaderToggle, LogoFrame } from './styles';
 import { HashLink as Link } from 'react-router-hash-link';
+import { Transition, TransitionGroup } from 'react-transition-group';
+import { HeaderTab } from './components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,60 +25,22 @@ const Logo = styled.img`
 `;
 const Nav = styled.div`
   transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
-    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s, width 1s;
   z-index: 1;
   margin: 0;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
+  margin: 0 0 0 -1rem;
+  width: ${({ state }) =>
+    state === 'entering' || state === 'entered' ? 100 : 0}%;
+
   ${props =>
     props.scrolled &&
     css`
       backdrop-filter: blur(20px);
       background: rgba(0, 0, 0, 0.8);
-      margin: 0 0 0 -1rem;
-    `}
-`;
-
-const Tab = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  flex: 1;
-  padding-left: 1em;
-  padding-right: 1em;
-  height: 100%;
-  min-width: 50px;
-  margin: 0 -1em;
-
-  ${props =>
-    props.scrolled &&
-    css`
-      margin-top: -1rem 0px;
-    `}
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const TabLink = styled(Link)`
-  text-decoration: none;
-  height: 100%;
-  width: 100%;
-  min-width: 5rem;
-  ${props =>
-    props.selected &&
-    css`
-      backdrop-filter: blur(20px);
-      background: rgba(0, 0, 0, 0.8);
-      width: 20%;
-      margin-left: auto;
-      border-radius: 0px 0px 0px 30px;
-      height: 100%;
     `}
 `;
 
@@ -120,55 +84,75 @@ function Header(props) {
   };
 
   const headerSelected = () => {
-    const energy = (
-      <TabLink
-        scrolled={scrolled}
-        selected
-        onClick={() => handleHeaderChange(1)}
-        to="/#energy"
+    const Energy = (
+      <Transition
+        key={'energy'}
+        in={collapsed && headerOn == 1}
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
       >
-        <Tab selected>
-          <Text header color={'#e6ffff'}>
-            Energy
-          </Text>
-        </Tab>
-      </TabLink>
+        <HeaderTab
+          scrolled={scrolled}
+          selected
+          onClick={() => handleHeaderChange(1)}
+          to="/#energy"
+          text={'Energy'}
+        />
+      </Transition>
     );
-    const milestone = (
-      <TabLink
-        scrolled={scrolled}
-        selected
-        onClick={() => handleHeaderChange(2)}
-        to="/#roadmap"
+    const Milestone = (
+      <Transition
+        key={'milestone'}
+        in={collapsed && headerOn == 2}
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
       >
-        <Tab selected>
-          <Text header color={'#e6ffff'}>
-            Road Map
-          </Text>
-        </Tab>
-      </TabLink>
+        <HeaderTab
+          scrolled={scrolled}
+          selected
+          onClick={() => handleHeaderChange(2)}
+          to="/#roadmap"
+          text={'Road Map'}
+        />
+      </Transition>
     );
-    const about = (
-      <TabLink
-        scrolled={scrolled}
-        selected
-        onClick={() => handleHeaderChange(3)}
-        to=""
+    const About = (
+      <Transition
+        key={'about'}
+        in={collapsed && headerOn == 3}
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
       >
-        <Tab selected>
-          <Text header color={'#e6ffff'}>
-            About
-          </Text>
-        </Tab>
-      </TabLink>
+        <HeaderTab
+          scrolled={scrolled}
+          selected
+          onClick={() => handleHeaderChange(3)}
+          to=""
+          key={'about'}
+          text={'About'}
+        />
+      </Transition>
     );
 
-    const headers = [energy, milestone, milestone];
+    const HeaderToggleButton = (
+      <Transition
+        key={'toggle'}
+        in={collapsed}
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
+      >
+        <HeaderToggle onClick={() => toggleMenu()}>
+          <Hamburger src={require('./svg/hamburger.svg')} />
+        </HeaderToggle>{' '}
+      </Transition>
+    );
+
+    const headers = [Energy, Milestone, About];
     for (let i = 0; i < headers.length; i++) {
       if ((headerOn === 0 && !isPhone) || openMenu) {
         setCollapsed(false);
         return;
-      } else return headers[headerOn - 1];
+      } else return [headers[headerOn - 1], HeaderToggleButton];
     }
   };
 
@@ -195,56 +179,49 @@ function Header(props) {
 
   return (
     <Wrapper scrolled={scrolled} collapsed={collapsed}>
-      {console.log(headerOn)}
       <HomeLink onClick={() => handleHeaderChange(0)} to="/#top">
         <LogoFrame>
           <Logo src="logo180.png" />
         </LogoFrame>
       </HomeLink>
-      {collapsed ? (
-        [
-          headerSelected(),
-          <HeaderToggle onClick={() => toggleMenu()}>
-            <Hamburger src={require('./svg/hamburger.svg')} />
-          </HeaderToggle>
-        ]
-      ) : (
-        <Nav collapsed={collapsed} scrolled={scrolled}>
-          <TabLink
+      <TransitionGroup component={null}>{headerSelected()}</TransitionGroup>
+      <Transition
+        in={!collapsed}
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
+      >
+        {state => (
+          <Nav
+            state={state}
+            collapsed={collapsed}
             scrolled={scrolled}
-            onClick={() => handleHeaderChange(1)}
-            to="/#energy"
+            key="nav"
           >
-            <Tab>
-              <Text header color={'#e6ffff'}>
-                Energy
-              </Text>
-            </Tab>
-          </TabLink>
-          <TabLink
-            scrolled={scrolled}
-            onClick={() => handleHeaderChange(2)}
-            to="/#roadmap"
-          >
-            <Tab>
-              <Text header color={'#e6ffff'}>
-                Road Map
-              </Text>
-            </Tab>
-          </TabLink>
-          <TabLink
-            scrolled={scrolled}
-            onClick={() => handleHeaderChange(3)}
-            to=""
-          >
-            <Tab>
-              <Text header color={'#e6ffff'}>
-                About
-              </Text>
-            </Tab>
-          </TabLink>
-        </Nav>
-      )}
+            {console.log(state)}
+            <HeaderTab
+              scrolled={scrolled}
+              onClick={() => handleHeaderChange(1)}
+              to="/#energy"
+              key="energy"
+              text={'Energy'}
+            />
+            <HeaderTab
+              scrolled={scrolled}
+              onClick={() => handleHeaderChange(2)}
+              to="/#roadmap"
+              key="milestone"
+              text={'Road Map'}
+            />
+            <HeaderTab
+              scrolled={scrolled}
+              onClick={() => handleHeaderChange(3)}
+              to=""
+              key="about"
+              text={'About'}
+            />
+          </Nav>
+        )}
+      </Transition>
     </Wrapper>
   );
 }
