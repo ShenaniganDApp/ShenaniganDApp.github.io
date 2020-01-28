@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   padding-bottom: 5%;
   justify-content: center;
   flex-wrap: wrap;
+  max-width:1600px; 
   @media (max-width: 768px) {
     flex-direction: column;
     width: 100%;
@@ -37,7 +38,7 @@ const TopLeftSection = styled(Section)`
 const TopRightSection = styled(Section)`
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  border: 5vw solid #e6ffff;
+  border: 2.5vw solid #e6ffff;
   z-index: 0;
   @media (max-width: 768px) {
     -webkit-box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
@@ -60,6 +61,7 @@ const SecondTopSection = styled(Section)`
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   z-index: 0;
+  margin-top: 30vh;
   @media (max-width: 768px) {
     width: calc(60% - 5vw);
   }
@@ -88,6 +90,7 @@ const BoldText = styled(Text)`
   background: -webkit-radial-gradient(#e6ffff 50%, rgb(208, 0, 108));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Electro-Shackle', sans-serif;
   @media (max-width: 768px) {
     font-size: 5vw;
   }

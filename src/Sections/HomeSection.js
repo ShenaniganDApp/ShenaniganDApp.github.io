@@ -21,10 +21,10 @@ const Title = styled.h1`
   color: #e6ffff;
   text-align: center;
   -webkit-text-stroke: 3px #ff006c;
-  font-size: 5rem;
-  font-family: 'Roboto', sans-serif;
+  font-size: calc(3rem + 20vw);
+  font-family: 'Electro-Shackle', sans-serif;
   font-weight: 900;
-  width: 100%;
+  width:100%;
 `;
 const Slogan = styled.p`
   color: #e6ffff;
@@ -46,7 +46,7 @@ function HomeSection() {
       <Slogan>
         Powering Athletes to Jump Higher, Run Faster, and Throw Farther.
       </Slogan>
-      <Title>SHE</Title>
+      <Title>She</Title>
       <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
         <Text title color={'black'}>
           Give
