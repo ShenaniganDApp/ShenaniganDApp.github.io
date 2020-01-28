@@ -40,6 +40,9 @@ const TopRightSection = styled(Section)`
   border: 5vw solid #e6ffff;
   z-index: 0;
   @media (max-width: 768px) {
+    -webkit-box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
     z-index: 1;
     margin-top: -0.5rem;
     width: 60%;
@@ -85,6 +88,9 @@ const BoldText = styled(Text)`
   background: -webkit-radial-gradient(#e6ffff 50%, rgb(208, 0, 108));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  @media (max-width: 768px) {
+    font-size: 5vw;
+  }
 `;
 const StyledImg = styled.img`
   display: block;
@@ -126,18 +132,18 @@ function EnergySection(props, ref) {
           </Text>
 
           <Section margin={'1rem 0'}>
-            <Text size={'3vw'} color={'black'}>
+            <Text size={'2.5vw'} color={'black'}>
               + show support for your favorite athletes
             </Text>
-            <Text size={'3vw'} color={'black'}>
+            <Text size={'2.5vw'} color={'black'}>
               + give to see the impossible
             </Text>
           </Section>
           <Section margin={'3rem 0'}>
-            <Text size={'3vw'} color={'black'}>
+            <Text size={'2.5vw'} color={'black'}>
               -- be the voice of reason
             </Text>
-            <Text size={'3vw'} color={'black'}>
+            <Text size={'2.5vw'} color={'black'}>
               -- failure is a necessary step to success
             </Text>
           </Section>

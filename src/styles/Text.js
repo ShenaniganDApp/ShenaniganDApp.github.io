@@ -8,6 +8,9 @@ const Text = styled.p`
   padding: 0;
   color: ${props => props.color};
   font-size: ${props => props.size};
+  @media (max-width: 768px) {
+    font-size: 3vw;
+  }
   ${props =>
     (props.header &&
       css`
@@ -28,14 +31,19 @@ const Text = styled.p`
         font-size: 2.2vw;
 
         font-family: 'Roboto', sans-serif;
+        @media (max-width: 768px) {
+          font-size: 3vw;
+        }
       `) ||
     (props.title &&
       css`
         font-size: 20px;
-        font-size: 5vw;
+        font-size: 3vw;
         font-weight: 900;
         font-family: 'Roboto', sans-serif;
-      `)};
+        @media (max-width: 768px) {
+          font-size: 5vw;
+        }`)};
 `;
 
 export default Text;
