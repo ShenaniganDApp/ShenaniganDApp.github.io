@@ -16,7 +16,7 @@ const Text = styled.p`
       css`
         font-weight: 800;
         font-size: 1.75vw;
-        font-family: Roboto, sans-serif;
+        font-family: Electro-Shackle, sans-serif;
         -webkit-user-select: none; /* Chrome all / Safari all */
         -moz-user-select: none; /* Firefox all */
         -ms-user-select: none; /* IE 10+ */
@@ -38,9 +38,9 @@ const Text = styled.p`
     (props.title &&
       css`
         font-size: 20px;
-        font-size: 3vw;
+        font-size: 4vw;
         font-weight: 900;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Electro-Shackle', sans-serif;
         @media (max-width: 768px) {
           font-size: 5vw;
         }`)};
