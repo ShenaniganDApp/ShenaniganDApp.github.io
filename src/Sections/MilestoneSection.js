@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   background-color: black;
   background-image: url(${require('../images/scoreboard.jpg')});
   background-size: cover;
-  background-position: 50% 35%;
   background-repeat: no-repeat;
   background-origin: content-box;
 `;

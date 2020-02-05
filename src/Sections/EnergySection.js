@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   padding-bottom: 5%;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 1600px;
   @media (max-width: 768px) {
     flex-direction: column;
     width: 100%;
@@ -27,7 +28,7 @@ const TopLeftSection = styled(Section)`
   z-index: 1;
   @media (max-width: 768px) {
     z-index: 0;
-    width: 60%;
+    width: 80%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 0px;
@@ -37,12 +38,16 @@ const TopLeftSection = styled(Section)`
 const TopRightSection = styled(Section)`
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  border: 5vw solid #e6ffff;
+  border: 2.5vw solid #e6ffff;
   z-index: 0;
+
   @media (max-width: 768px) {
+    -webkit-box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
     z-index: 1;
     margin-top: -0.5rem;
-    width: 60%;
+    width: 80%;
     border: none;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -57,8 +62,9 @@ const SecondTopSection = styled(Section)`
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   z-index: 0;
+  margin-top: 30vh;
   @media (max-width: 768px) {
-    width: calc(60% - 5vw);
+    width: calc(80% - 5vw);
   }
 `;
 const SecondBottomSection = styled(Section)`
@@ -69,7 +75,7 @@ const SecondBottomSection = styled(Section)`
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   @media (max-width: 768px) {
-    width: calc(60% - 5vw);
+    width: calc(80% - 5vw);
   }
 `;
 
@@ -85,6 +91,10 @@ const BoldText = styled(Text)`
   background: -webkit-radial-gradient(#e6ffff 50%, rgb(208, 0, 108));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Electro-Shackle', sans-serif;
+  @media (max-width: 768px) {
+    font-size: 5vw;
+  }
 `;
 const StyledImg = styled.img`
   display: block;
@@ -126,18 +136,18 @@ function EnergySection(props, ref) {
           </Text>
 
           <Section margin={'1rem 0'}>
-            <Text size={'3vw'} color={'black'}>
+            <Text size={'2.5vw'} color={'black'}>
               + show support for your favorite athletes
             </Text>
-            <Text size={'3vw'} color={'black'}>
+            <Text size={'2.5vw'} color={'black'}>
               + give to see the impossible
             </Text>
           </Section>
           <Section margin={'3rem 0'}>
-            <Text size={'3vw'} color={'black'}>
+            <Text size={'2.5vw'} color={'black'}>
               -- be the voice of reason
             </Text>
-            <Text size={'3vw'} color={'black'}>
+            <Text size={'2.5vw'} color={'black'}>
               -- failure is a necessary step to success
             </Text>
           </Section>
@@ -151,18 +161,27 @@ function EnergySection(props, ref) {
         <StyledImg src={require('../svg/ethereumLogo.svg')} />
         <Section margin={'.5rem'}>
           <BoldText size={'3vw'} color={'#e6ffff'}>
-            iOns
+            iOns &nbsp;
           </BoldText>
-          <Text size={'2.5vw'} color={'#e6ffff'}>
-            need both
+          <Text size={'2vw'} color={'#e6ffff'}>
+            need both &nbsp;
           </Text>
-          <Text size={'2.5vw'} color={'#e6ffff'}>
-            positive and negative particles to exist
+          <Text size={'2vw'} color={'#e6ffff'}>
+            positive and negative &nbsp;
           </Text>
-          <Section textCentered width={'100%'} margin={'2rem 0 0 0'}>
+          <Text size={'2vw'} color={'#e6ffff'}>
+            particles to exist
+          </Text>
+          <Section width={'100%'} margin={'2rem 0 0 0'}>
             <Text main color={'#e6ffff'}>
-              You can earn Ethereum and energize yourself to push further as an
-              iOn. Just livestream your next goal.
+              You can earn &nbsp;
+            </Text>
+            <BoldText size={'2.7vw'} color={'#e6ffff'}>
+              Ethereum &nbsp;
+            </BoldText>
+            <Text main color={'#e6ffff'}>
+              and energize yourself to push further as an athlete. iOns are the
+              center of attention.
             </Text>
           </Section>
         </Section>
@@ -175,7 +194,7 @@ function EnergySection(props, ref) {
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
         <Text title color={'#e6ffff'}>
-          What is an iOn?
+          What Is an iOn?
         </Text>
         <Text main color={'#e6ffff'}>
           {exampleText}
@@ -188,7 +207,7 @@ function EnergySection(props, ref) {
         backgroundColor={'rgba(31,51,31,0.7)'}
       >
         <Text title color={'#e6ffff'}>
-          What are Particles?
+          What are PartIcles?
         </Text>
         <Text main color={'#e6ffff'}>
           {exampleText}

@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom:8rem;
+  margin-bottom: 8rem;
 `;
 const Backdrop = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
@@ -21,15 +21,16 @@ const Title = styled.h1`
   color: #e6ffff;
   text-align: center;
   -webkit-text-stroke: 3px #ff006c;
+
   font-size: 5rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
-  width: 100%;
+  padding:0;
+
 `;
 const Slogan = styled.p`
   color: #e6ffff;
-  text-align: center;
-  margin: 15% 10% 0% 10%;
+  margin: 10% 10% 0% 10%;
   font-size: 6vw;
   font-family: 'Roboto', sans-serif;
   text-shadow: black 0px 0px 10px;
@@ -37,6 +38,20 @@ const Slogan = styled.p`
 const ContentSection = styled(Section)`
   margin: 1rem 2rem;
   padding: 4rem;
+`;
+const StyledImg = styled.img`
+  margin: 1rem 0;
+  height:100%;
+  width: auto;
+`;
+
+const TitleSection = styled(Section)`
+  margin: 0rem 5%;
+  padding: 10% 0 25% 0;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  height:10vw;
 `;
 
 function HomeSection() {
@@ -46,7 +61,11 @@ function HomeSection() {
       <Slogan>
         Powering Athletes to Jump Higher, Run Faster, and Throw Farther.
       </Slogan>
-      <Title>SHE</Title>
+      <TitleSection width={'100%'}>
+        <Title>Sh</Title>{' '}
+        <StyledImg src={require('../images/logo.png')} />
+        <Title>nanIgan</Title>
+      </TitleSection>
       <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
         <Text title color={'black'}>
           Give
@@ -57,16 +76,12 @@ function HomeSection() {
           Athletes
         </Text>
       </ContentSection>
-      <ContentSection
-        backgroundColor={'rgba(255,255,68,0.7)'}
-      >
+      <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
         <Text title color={'black'}>
           Your
         </Text>
       </ContentSection>
-      <ContentSection
-        backgroundColor={'rgba(255,255,68,0.7)'}
-      >
+      <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
         <Text title color={'black'}>
           Energy
         </Text>
