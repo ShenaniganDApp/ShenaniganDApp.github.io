@@ -10,7 +10,8 @@ const Section = styled.div`
   border-radius: ${props => props.curved};
   overflow: ${props => props.overflow};
   z-index: 1;
-  flex: ${props => props.flex};
+  display: flex;
+  flex-wrap: wrap;
   ${props =>
     (props.xLarge &&
       css`

@@ -21,8 +21,12 @@ const TabLink = styled(Link)`
 `;
 
 const HeaderTab = props => (
-  <TabLink>
-    <Tab selected={props.selected}>
+  <TabLink
+    selected={props.selected}
+    to={props.to}
+    onClick={() => props.handleHeaderChange(props.num)}
+  >
+    <Tab scrolled={props.scrolled}>
       <Text header color={'#e6ffff'}>
         {props.text}
       </Text>
