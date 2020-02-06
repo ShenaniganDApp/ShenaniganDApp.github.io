@@ -24,18 +24,18 @@ const Logo = styled.img`
 `;
 const Nav = styled.div`
   transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
-    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s, width 1s;
+    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s, width 0.5s;
   z-index: 1;
-  margin: 0;
-  height: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   margin: 0 0 0 -1rem;
+  border-bottom-left-radius: 30px;
+  overflow: hidden;
 
   width: ${({ state }) =>
     state === 'entering' || state === 'entered' ? 100 : 0}%;
 
+  
   ${props =>
     props.scrolled &&
     css`
@@ -63,98 +63,78 @@ const Hamburger = styled.img`
 
 function Header(props) {
   const [headerOn, setHeader] = useState();
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsedStart, setCollapsedStart] = useState(false);
   const [collapsedDone, setCollapsedDone] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [headerToggle, setHeaderToggle] = useState(false);
   const isPhone = window.innerWidth <= 768;
+  const pagePositionTop = window.pageYOffset < 150;
   useEffect(() => {
-    console.log(collapsedDone);
-    console.log(collapsed);
-    if (headerOn === 0 && !isPhone) {
-      setCollapsed(false);
+    if (isPhone && pagePositionTop) {
+      setCollapsedStart(true);
+      setHeader(0);
     }
-    if (isPhone) {
-      setCollapsed(true);
-    }
-  }, [scrolled, headerOn, isPhone]);
+  }, [isPhone, pagePositionTop]);
 
   const handleHeaderChange = selection => {
     setHeader(selection);
-    if (!collapsed && selection !== 0) {
-      setCollapsed(true);
+    if (!collapsedDone && selection !== 0) {
+      setCollapsedStart(true);
     }
     setHeaderToggle(false);
   };
 
   const toggleHeader = () => {
-    setCollapsed(false);
+    setCollapsedStart(false);
+    setCollapsedDone(false);
     setHeaderToggle(true);
   };
 
   const headerCollapsed = () => {
     const Home = (
-      <Transition key={'home'} timeout={{ enter: 1000, exit: 1000 }}>
-        <HeaderTab
-          scrolled={scrolled}
-          selected
-          num={0}
-          handleHeaderChange={handleHeaderChange}
-          to=""
-          text={'ShenanIgan'}
-        />
-      </Transition>
+      <HeaderTab
+        scrolled={scrolled}
+        selected
+        num={0}
+        handleHeaderChange={handleHeaderChange}
+        to=""
+        text={'ShenanIgan'}
+      />
     );
     const Energy = (
-      <Transition key={'energy'} timeout={{ enter: 1000, exit: 1000 }}>
-        <HeaderTab
-          scrolled={scrolled}
-          selected
-          handleHeaderChange={handleHeaderChange}
-          to="/#energy"
-          num={1}
-          text={'Energy'}
-        />
-      </Transition>
+      <HeaderTab
+        scrolled={scrolled}
+        selected
+        handleHeaderChange={handleHeaderChange}
+        to="/#energy"
+        num={1}
+        text={'Energy'}
+      />
     );
     const Milestone = (
-      <Transition key={'milestone'} timeout={{ enter: 1000, exit: 1000 }}>
-        <HeaderTab
-          scrolled={scrolled}
-          selected
-          num={2}
-          handleHeaderChange={handleHeaderChange}
-          to="/#roadmap"
-          text={'Road Map'}
-        />
-      </Transition>
+      <HeaderTab
+        scrolled={scrolled}
+        selected
+        num={2}
+        handleHeaderChange={handleHeaderChange}
+        to="/#roadmap"
+        text={'Road Map'}
+      />
     );
     const Team = (
-      <Transition key={'about'} timeout={{ enter: 1000, exit: 1000 }}>
-        <HeaderTab
-          scrolled={scrolled}
-          selected
-          num={3}
-          handleHeaderChange={handleHeaderChange}
-          to=""
-          text={'Team'}
-        />
-      </Transition>
-    );
-
-    const headerToggle = (
-      <Transition key={'toggle'} timeout={{ enter: 1000, exit: 1000 }}>
-        {state => (
-          <HeaderToggle state={state} onClick={() => toggleHeader()}>
-            <Hamburger src={require('./svg/hamburger.svg')} />
-          </HeaderToggle>
-        )}
-      </Transition>
+      <HeaderTab
+        scrolled={scrolled}
+        selected
+        num={3}
+        handleHeaderChange={handleHeaderChange}
+        to=""
+        text={'Team'}
+      />
     );
 
     const headers = [Home, Energy, Milestone, Team];
     if (collapsedDone) {
-      return [headers[headerOn], headerToggle];
+      return headers[headerOn];
     } else {
       return null;
     }
@@ -163,10 +143,15 @@ function Header(props) {
   useScrollPosition(({ prevPos, currPos }) => {
     if (currPos.y < -150) {
       setScrolled(true);
+    } else if (isPhone) {
+      setCollapsedStart(true);
+      setHeader(0);
     } else {
-      if (headerOn !== 0 && !isPhone) {
+      if (headerOn !== 0) {
         setScrolled(false);
         setHeader(0);
+        setCollapsedStart(false);
+        setCollapsedDone(false);
       }
     }
     if (!headerToggle) {
@@ -174,32 +159,35 @@ function Header(props) {
         currPos.y < props.heights.energy + 200 &&
         currPos.y > props.heights.milestone + 200
       ) {
-        setCollapsed(true);
+        setCollapsedStart(true);
         setHeader(1);
       } else if (currPos.y < props.heights.milestone + 100) {
-        setCollapsed(true);
+        setCollapsedStart(true);
         setHeader(2);
       }
     }
   });
 
   return (
-    <Wrapper scrolled={scrolled} collapsed={collapsed}>
+    <Wrapper scrolled={scrolled} collapsed={collapsedStart}>
       <HomeLink onClick={() => handleHeaderChange(0)} to="/#top">
         <LogoFrame>
           <Logo src={require('./images/logo_Filled.png')} />
         </LogoFrame>
       </HomeLink>
-      <TransitionGroup component={null}>{headerCollapsed()}</TransitionGroup>
+      {headerCollapsed()}
+
       <Transition
-        in={!collapsed}
-        timeout={{ exit: 1000 }}
-        onExited={() => setCollapsedDone(true)}
-       
-        onEnter={() => setCollapsedDone(false)}
+        in={!collapsedStart}
+        timeout={500}
+        onExited={() => {
+          setCollapsedDone(true);
+        }}
+        unmountOnExit
+        mountOnEnter
       >
         {state => (
-          <Nav state={state} collapsed={collapsed} scrolled={scrolled}>
+          <Nav state={state} scrolled={scrolled}>
             <HeaderTab
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
@@ -210,7 +198,6 @@ function Header(props) {
             <HeaderTab
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
-              
               to="/#roadmap"
               num={2}
               text={'Road Map'}
@@ -223,6 +210,13 @@ function Header(props) {
               text={'Team'}
             />
           </Nav>
+        )}
+      </Transition>
+      <Transition in={collapsedDone} timeout={500}>
+        {state => (
+          <HeaderToggle state={state} onClick={() => toggleHeader()}>
+            <Hamburger src={require('./svg/hamburger.svg')} />
+          </HeaderToggle>
         )}
       </Transition>
     </Wrapper>

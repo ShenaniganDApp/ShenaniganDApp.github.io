@@ -21,9 +21,8 @@ const Title = styled.h1`
   color: #e6ffff;
   text-align: center;
   -webkit-text-stroke: 3px #ff006c;
-
-  font-size: 5rem;
-  font-family: 'Roboto', sans-serif;
+  font-size: calc(1rem + 10vw);
+  font-family: 'Electro-Shackle', sans-serif;
   font-weight: 900;
   padding:0;
 
@@ -46,7 +45,7 @@ const StyledImg = styled.img`
 `;
 
 const TitleSection = styled(Section)`
-  margin: 0rem 5%;
+  margin: 0rem 2vw;
   padding: 10% 0 25% 0;
   display: flex;
   align-items:center;
