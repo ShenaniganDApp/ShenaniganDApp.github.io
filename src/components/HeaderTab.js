@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Tab } from '../styles';
 import { HashLink as Link } from 'react-router-hash-link';
 import styled, { css } from 'styled-components';
+import { Transition } from 'react-transition-group';
 
 const TabLink = styled(Link)`
   text-decoration: none;
@@ -13,10 +14,10 @@ const TabLink = styled(Link)`
     css`
       backdrop-filter: blur(20px);
       background: rgba(0, 0, 0, 0.8);
-      width: 20%;
+      width: 25%;
       margin-left: auto;
       border-radius: 0px 0px 0px 30px;
-      height: 100%;
+      max-width: 15rem;
     `}
 `;
 
