@@ -42,20 +42,27 @@ function App() {
   const contactRef = useRef();
 
   useEffect(() => {
-    const energyHeight = -energyRef.current.boundingTop() - window.pageYOffset;
-    const milestoneHeight =
-      -milestoneRef.current.boundingTop() - window.pageYOffset;
-    const teamHeight = -teamRef.current.boundingTop() - window.pageYOffset;
-    const contactHeight =
-      -contactRef.current.boundingTop() - window.pageYOffset;
-    setHeights({
-      energy: energyHeight,
-      milestone: milestoneHeight,
-      team: teamHeight,
-      contact: contactHeight
-    });
+    const handleContentHeights = () => {
+      const energyHeight =
+        -energyRef.current.boundingTop() - window.pageYOffset;
+      const milestoneHeight =
+        -milestoneRef.current.boundingTop() - window.pageYOffset;
+      const teamHeight = -teamRef.current.boundingTop() - window.pageYOffset;
+      const contactHeight =
+        -contactRef.current.boundingTop() - window.pageYOffset;
+      setHeights({
+        energy: energyHeight,
+        milestone: milestoneHeight,
+        team: teamHeight,
+        contact: contactHeight
+      });
+    };
+    handleContentHeights();
+    window.addEventListener('resize', handleContentHeights);
+    return _ => {
+      window.removeEventListener('resize', handleContentHeights);
+    };
   }, [energyRef, milestoneRef, teamRef, contactRef]);
-
   return (
     <Router>
       <AppWrapper id="top">

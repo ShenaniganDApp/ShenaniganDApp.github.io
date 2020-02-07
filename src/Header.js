@@ -24,13 +24,15 @@ const Logo = styled.img`
 `;
 const Nav = styled.div`
   transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
-    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s, opacity 0.75s;
   z-index: 1;
   display: flex;
   justify-content: space-evenly;
   margin: 0 0 0 -1rem;
   border-bottom-left-radius: 30px;
   width: 100%;
+  opacity: ${({ state }) =>
+    state === 'entering' || state === 'entered' ? 1 : 0};
   ${props =>
     props.scrolled &&
     css`
@@ -161,24 +163,24 @@ function Header(props) {
     }
     if (!headerToggle) {
       if (
-        currPos.y < props.heights.energy + 200 &&
-        currPos.y > props.heights.milestone + 200
+        currPos.y <= props.heights.energy + 100 &&
+        currPos.y > props.heights.milestone + 100
       ) {
         setCollapsedStart(true);
         setHeader(1);
       } else if (
-        currPos.y < props.heights.milestone + 100 &&
-        currPos.y > props.heights.team + 200
+        currPos.y <= props.heights.milestone + 100 &&
+        currPos.y > props.heights.team + 100
       ) {
         setCollapsedStart(true);
         setHeader(2);
       } else if (
-        currPos.y < props.heights.team + 100 &&
-        currPos.y > props.heights.contact + 200
+        currPos.y <= props.heights.team + 100 &&
+        currPos.y > props.heights.contact + 100
       ) {
         setCollapsedStart(true);
         setHeader(3);
-      } else if (currPos.y < props.heights.contact + 100) {
+      } else if (currPos.y <= props.heights.contact + 100) {
         setCollapsedStart(true);
         setHeader(4);
       }

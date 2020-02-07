@@ -173,14 +173,14 @@ function EnergySection(props, ref) {
             particles to exist
           </Text>
           <Section width={'100%'} margin={'2rem 0 0 0'}>
-            <Text main color={'#e6ffff'}>
-              You can earn &nbsp;
-            </Text>
+            <BoldText size={'2.7vw'} color={'#e6ffff'}>
+              Energy = &nbsp;
+            </BoldText>
             <BoldText size={'2.7vw'} color={'#e6ffff'}>
               Ethereum &nbsp;
             </BoldText>
             <Text main color={'#e6ffff'}>
-              and energize yourself to push further as an athlete. iOns are the
+              Energize yourself to push further as an athlete. iOns are the
               center of attention.
             </Text>
           </Section>
@@ -193,12 +193,22 @@ function EnergySection(props, ref) {
         xLarge
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
-        <Text title color={'#e6ffff'}>
-          What Is an iOn?
-        </Text>
-        <Text main color={'#e6ffff'}>
-          {exampleText}
-        </Text>
+        <TextSection>
+          <Text title color={'#e6ffff'}>
+            What Is an iOn?
+          </Text>
+        </TextSection>
+        <TextSection>
+          <Text main color={'#e6ffff'}>
+            1. iOns set goals
+          </Text>
+          <Text main color={'#e6ffff'}>
+            2. iOns livestream their attempts
+          </Text>
+          <Text main color={'#e6ffff'}>
+            3. iOns get energy if their goal is met
+          </Text>
+        </TextSection>
       </SecondTopSection>
       <SecondBottomSection
         textCentered
@@ -206,12 +216,17 @@ function EnergySection(props, ref) {
         xLarge
         backgroundColor={'rgba(31,51,31,0.7)'}
       >
-        <Text title color={'#e6ffff'}>
-          What are PartIcles?
-        </Text>
-        <Text main color={'#e6ffff'}>
-          {exampleText}
-        </Text>
+        <TextSection>
+          <Text title color={'#e6ffff'}>
+            What are PartIcles?
+          </Text>
+        </TextSection>
+        <TextSection>
+          <Text main color={'#e6ffff'}>
+            Particles create a community. A community of particles around an iOn
+            athlete will power the streamer, and also share the energy.
+          </Text>
+        </TextSection>
       </SecondBottomSection>
     </Wrapper>
   );
