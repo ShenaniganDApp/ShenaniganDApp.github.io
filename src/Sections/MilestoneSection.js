@@ -10,11 +10,13 @@ const Wrapper = styled.div`
   margin-top: 20rem;
   display: flex;
   justify-content: center;
-  background-color: black;
-  background-image: url(${require('../images/scoreboard.jpg')});
+  background: black url(${require('../images/scoreboard.jpg')});
   background-size: cover;
+  background-position: 50% 35%;
   background-repeat: no-repeat;
-  background-origin: content-box;
+  @media (max-width: 768px) {
+    background-position: 26% 25%;
+  }
 `;
 const TextSection = styled(Section)`
   width: 80%;

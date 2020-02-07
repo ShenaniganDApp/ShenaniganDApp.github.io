@@ -15,6 +15,12 @@ const HeaderToggle = styled.div`
   display: flex;
   height: ${({ state }) =>
     state === 'entering' || state === 'entered' ? 100 : 0}%;
+  ${props =>
+    !props.collapsed &&
+    css`
+      min-width: 0;
+      width: 0;
+    `}
 
   &:hover {
     max-width: 9vw;
