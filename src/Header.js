@@ -122,7 +122,7 @@ function Header(props) {
         selected
         num={3}
         handleHeaderChange={handleHeaderChange}
-        to=""
+        to="/#team"
         text={'Team'}
       />
     );
@@ -132,7 +132,7 @@ function Header(props) {
         selected
         num={4}
         handleHeaderChange={handleHeaderChange}
-        to=""
+        to="/#contact"
         text={'Contact'}
       />
     );
@@ -169,6 +169,12 @@ function Header(props) {
       } else if (currPos.y < props.heights.milestone + 100) {
         setCollapsedStart(true);
         setHeader(2);
+      } else if (currPos.y < props.heights.team + 100) {
+        setCollapsedStart(true);
+        setHeader(3);
+      } else if (currPos.y < props.heights.contact + 100) {
+        setCollapsedStart(true);
+        setHeader(4);
       }
     }
   });
@@ -216,7 +222,7 @@ function Header(props) {
               collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
-              to=""
+              to="/#team"
               num={3}
               text={'Team'}
             />
@@ -225,7 +231,7 @@ function Header(props) {
               collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
-              to=""
+              to="/#contact"
               num={4}
               text={'Contact'}
             />

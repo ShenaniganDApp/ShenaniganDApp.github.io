@@ -7,7 +7,6 @@ import {
   TeamSection
 } from './Sections';
 import Header from './Header';
-import Section from './styles/Section';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const AppWrapper = styled.div``;
