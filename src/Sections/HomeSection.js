@@ -21,7 +21,7 @@ const Title = styled.h1`
   color: #e6ffff;
   text-align: center;
   -webkit-text-stroke: 3px #ff006c;
-  font-size: calc(0.75rem + 10vw);
+  font-size: calc(1rem + 10vw);
   font-family: 'Electro-Shackle', sans-serif;
   font-weight: 900;
   margin: 0;
