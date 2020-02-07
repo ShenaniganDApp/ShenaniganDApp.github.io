@@ -8,9 +8,6 @@ const Text = styled.p`
   padding: 0;
   color: ${props => props.color};
   font-size: ${props => props.size};
-  @media (max-width: 768px) {
-    font-size: 3vw;
-  }
   ${props =>
     (props.header &&
       css`
