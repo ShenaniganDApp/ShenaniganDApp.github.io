@@ -24,18 +24,13 @@ const Logo = styled.img`
 `;
 const Nav = styled.div`
   transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
-    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s, width 0.5s;
+    background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   z-index: 1;
   display: flex;
   justify-content: space-evenly;
   margin: 0 0 0 -1rem;
   border-bottom-left-radius: 30px;
-  overflow: hidden;
-
-  width: ${({ state }) =>
-    state === 'entering' || state === 'entered' ? 100 : 0}%;
-
-  
+  width: 100%;
   ${props =>
     props.scrolled &&
     css`
@@ -179,7 +174,7 @@ function Header(props) {
 
       <Transition
         in={!collapsedStart}
-        timeout={500}
+        timeout={700}
         onExited={() => {
           setCollapsedDone(true);
         }}
@@ -189,6 +184,8 @@ function Header(props) {
         {state => (
           <Nav state={state} scrolled={scrolled}>
             <HeaderTab
+              state={state}
+              collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
               to="/#energy"
@@ -196,6 +193,8 @@ function Header(props) {
               text={'Energy'}
             />
             <HeaderTab
+              state={state}
+              collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
               to="/#roadmap"
@@ -203,6 +202,8 @@ function Header(props) {
               text={'Road Map'}
             />
             <HeaderTab
+              state={state}
+              collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
               to=""
@@ -214,7 +215,11 @@ function Header(props) {
       </Transition>
       <Transition in={collapsedDone} timeout={500}>
         {state => (
-          <HeaderToggle state={state} onClick={() => toggleHeader()}>
+          <HeaderToggle
+            state={state}
+            collapsed={collapsedDone}
+            onClick={() => toggleHeader()}
+          >
             <Hamburger src={require('./svg/hamburger.svg')} />
           </HeaderToggle>
         )}
