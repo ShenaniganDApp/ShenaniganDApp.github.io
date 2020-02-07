@@ -8,7 +8,7 @@ const Tab = styled.div`
   padding-left: 1em;
   padding-right: 1em;
   height: 100%;
-  min-width: 50px;
+  min-width: 0.5rem;
   margin: 0 -1em;
   ${props =>
     props.scrolled &&
@@ -17,6 +17,10 @@ const Tab = styled.div`
     `}
   &:hover {
     transform: scale(1.1);
+  }
+  @media (max-width: 768px) {
+    padding-left: 1em;
+    padding-right: 0.5em;
   }
 `;
 
