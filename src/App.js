@@ -1,10 +1,13 @@
 import React, { useRef, useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
-import HomeSection from './Sections/HomeSection';
+import {
+  HomeSection,
+  EnergySection,
+  MilestoneSection,
+  TeamSection,
+  ContactSection
+} from './Sections';
 import Header from './Header';
-import EnergySection from './Sections/EnergySection';
-import MilestoneSection from './Sections/MilestoneSection';
-import Section from './styles/Section';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const AppWrapper = styled.div``;
@@ -35,16 +38,23 @@ function App() {
   const [heights, setHeights] = useState({});
   const energyRef = useRef();
   const milestoneRef = useRef();
+  const teamRef = useRef();
+  const contactRef = useRef();
 
   useEffect(() => {
-    const energyHeight =
-      -energyRef.current.boundingTop() - window.pageYOffset;
-    const milestoneHeight = -milestoneRef.current.boundingTop() - window.pageYOffset;
+    const energyHeight = -energyRef.current.boundingTop() - window.pageYOffset;
+    const milestoneHeight =
+      -milestoneRef.current.boundingTop() - window.pageYOffset;
+    const teamHeight = -teamRef.current.boundingTop() - window.pageYOffset;
+    const contactHeight =
+      -contactRef.current.boundingTop() - window.pageYOffset;
     setHeights({
       energy: energyHeight,
-      milestone: milestoneHeight
+      milestone: milestoneHeight,
+      team: teamHeight,
+      contact: contactHeight
     });
-  }, [energyRef, milestoneRef]);
+  }, [energyRef, milestoneRef, teamRef, contactRef]);
 
   return (
     <Router>
@@ -57,6 +67,8 @@ function App() {
         <Spacer src={require('./svg/spacer.svg')}></Spacer>
         <MainWrapper>
           <MilestoneSection ref={milestoneRef} />
+          <TeamSection ref={teamRef} />
+          <ContactSection ref={contactRef} />
         </MainWrapper>
       </AppWrapper>
     </Router>

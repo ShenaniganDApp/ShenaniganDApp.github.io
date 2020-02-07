@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin-top: 20rem;
+
   display: flex;
   justify-content: center;
   background: black url(${require('../images/scoreboard.jpg')});
@@ -23,8 +24,10 @@ const TextSection = styled(Section)`
 `;
 
 const StyledBackdrop = styled(Backdrop)`
+
   width: 100%;
   padding-top: 20rem;
+  padding-bottom: 10rem;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -54,10 +57,11 @@ function MilestoneSection(props, ref) {
     <Wrapper ref={aboutRef} id="roadmap">
       <StyledBackdrop
         background={
-          'radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%)'
+          `radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%), 
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0) 70.71%)`
         }
       >
-        <TextSection shadowed large>
+        <TextSection large>
           <Text title color={'#e6ffff'}>
             What is Lorem Ipsum?
           </Text>

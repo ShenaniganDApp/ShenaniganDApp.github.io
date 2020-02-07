@@ -38,12 +38,12 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.8);
     `}
 `;
-const CollapsedNav = styled.div`
-  display: flex;
-  height: 100%;
-  margin-left: auto;
-  width: auto;
-`;
+// const CollapsedNav = styled.div`
+//   display: flex;
+//   height: 100%;
+//   margin-left: auto;
+//   width: auto;
+// `;
 
 const HomeLink = styled(Link)`
   z-index: 100;
@@ -59,7 +59,7 @@ const Hamburger = styled.img`
 function Header(props) {
   const [headerOn, setHeader] = useState();
   const [collapsedStart, setCollapsedStart] = useState(false);
-  const [collapsedDone, setCollapsedDone] = useState(false);
+  const [collapsedEnd, setCollapsedEnd] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [headerToggle, setHeaderToggle] = useState(false);
   const isPhone = window.innerWidth <= 768;
@@ -73,7 +73,7 @@ function Header(props) {
 
   const handleHeaderChange = selection => {
     setHeader(selection);
-    if (!collapsedDone && selection !== 0) {
+    if (!collapsedEnd && selection !== 0) {
       setCollapsedStart(true);
     }
     setHeaderToggle(false);
@@ -81,7 +81,7 @@ function Header(props) {
 
   const toggleHeader = () => {
     setCollapsedStart(false);
-    setCollapsedDone(false);
+    setCollapsedEnd(false);
     setHeaderToggle(true);
   };
 
@@ -122,13 +122,23 @@ function Header(props) {
         selected
         num={3}
         handleHeaderChange={handleHeaderChange}
-        to=""
+        to="/#team"
         text={'Team'}
       />
     );
+    const Contact = (
+      <HeaderTab
+        scrolled={scrolled}
+        selected
+        num={4}
+        handleHeaderChange={handleHeaderChange}
+        to="/#contact"
+        text={'Contact'}
+      />
+    );
 
-    const headers = [Home, Energy, Milestone, Team];
-    if (collapsedDone) {
+    const headers = [Home, Energy, Milestone, Team, Contact];
+    if (collapsedEnd) {
       return headers[headerOn];
     } else {
       return null;
@@ -146,7 +156,7 @@ function Header(props) {
         setScrolled(false);
         setHeader(0);
         setCollapsedStart(false);
-        setCollapsedDone(false);
+        setCollapsedEnd(false);
       }
     }
     if (!headerToggle) {
@@ -156,9 +166,21 @@ function Header(props) {
       ) {
         setCollapsedStart(true);
         setHeader(1);
-      } else if (currPos.y < props.heights.milestone + 100) {
+      } else if (
+        currPos.y < props.heights.milestone + 100 &&
+        currPos.y > props.heights.team + 200
+      ) {
         setCollapsedStart(true);
         setHeader(2);
+      } else if (
+        currPos.y < props.heights.team + 100 &&
+        currPos.y > props.heights.contact + 200
+      ) {
+        setCollapsedStart(true);
+        setHeader(3);
+      } else if (currPos.y < props.heights.contact + 100) {
+        setCollapsedStart(true);
+        setHeader(4);
       }
     }
   });
@@ -176,7 +198,7 @@ function Header(props) {
         in={!collapsedStart}
         timeout={700}
         onExited={() => {
-          setCollapsedDone(true);
+          setCollapsedEnd(true);
         }}
         unmountOnExit
         mountOnEnter
@@ -206,18 +228,27 @@ function Header(props) {
               collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
-              to=""
+              to="/#team"
               num={3}
               text={'Team'}
+            />
+            <HeaderTab
+              state={state}
+              collapsed={collapsedStart}
+              scrolled={scrolled}
+              handleHeaderChange={handleHeaderChange}
+              to="/#contact"
+              num={4}
+              text={'Contact'}
             />
           </Nav>
         )}
       </Transition>
-      <Transition in={collapsedDone} timeout={500}>
+      <Transition in={collapsedEnd} timeout={500}>
         {state => (
           <HeaderToggle
             state={state}
-            collapsed={collapsedDone}
+            collapsed={collapsedEnd}
             onClick={() => toggleHeader()}
           >
             <Hamburger src={require('./svg/hamburger.svg')} />

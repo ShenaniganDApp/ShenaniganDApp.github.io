@@ -5,11 +5,11 @@ import styled, { css } from 'styled-components';
 import { Transition } from 'react-transition-group';
 
 const TabLink = styled(Link)`
-  transition: width .7s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+  transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   text-decoration: none;
   height: 100%;
   width: 100%;
-  min-width: 5rem;
+  min-width: 3rem;
   overflow: hidden;
   ${props =>
     props.selected &&
@@ -37,6 +37,7 @@ const HeaderTab = props => (
     collapsed={props.collapsed}
     selected={props.selected}
     to={props.to}
+    smooth
     onClick={() => props.handleHeaderChange(props.num)}
   >
     <Tab scrolled={props.scrolled}>
