@@ -166,10 +166,16 @@ function Header(props) {
       ) {
         setCollapsedStart(true);
         setHeader(1);
-      } else if (currPos.y < props.heights.milestone + 100) {
+      } else if (
+        currPos.y < props.heights.milestone + 100 &&
+        currPos.y > props.heights.team + 200
+      ) {
         setCollapsedStart(true);
         setHeader(2);
-      } else if (currPos.y < props.heights.team + 100) {
+      } else if (
+        currPos.y < props.heights.team + 100 &&
+        currPos.y > props.heights.contact + 200
+      ) {
         setCollapsedStart(true);
         setHeader(3);
       } else if (currPos.y < props.heights.contact + 100) {
