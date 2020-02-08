@@ -79,9 +79,17 @@ const SecondBottomSection = styled(Section)`
   }
 `;
 
-const TextSection = styled(Section)`
+const UpperTextSection = styled(Section)`
   width: 100%;
-  margin: 1rem -1rem 1rem 1rem;
+  margin: 1rem -1rem 0rem 1rem;
+  @media (max-width: 768px) {
+    margin: 1rem;
+  }
+`;
+
+const LowerTextSection = styled(Section)`
+  width: 100%;
+  margin: 1rem 1rem 1rem 1rem;
   @media (max-width: 768px) {
     margin: 1rem;
   }
@@ -98,9 +106,20 @@ const BoldText = styled(Text)`
 `;
 const StyledImg = styled.img`
   display: block;
-  margin: 1rem auto;
+  margin: 1rem auto 0;
   flex: 0 auto;
-  width: 5vw;
+  width: 10vw;
+  max-width: 10rem;
+  
+`;
+
+const MockupImg = styled.img`
+  display: block;
+  margin-top: 2rem;
+  flex: 0 auto;
+  height: auto;
+  width: 30vw;
+  max-width: 15rem;
 `;
 
 const exampleText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -127,31 +146,16 @@ function EnergySection(props, ref) {
         margin={'0 0 0 0'}
         backgroundColor={'#e6ffff'}
       >
-        <TextSection>
+        <UpperTextSection centered>
           <Text title color={'black'}>
-            What
+            What&nbsp;
           </Text>
           <Text title color={'black'}>
             Charges You?
           </Text>
 
-          <Section margin={'1rem 0'}>
-            <Text size={'2.5vw'} color={'black'}>
-              + show support for your favorite athletes
-            </Text>
-            <Text size={'2.5vw'} color={'black'}>
-              + give to see the impossible
-            </Text>
-          </Section>
-          <Section margin={'3rem 0'}>
-            <Text size={'2.5vw'} color={'black'}>
-              -- be the voice of reason
-            </Text>
-            <Text size={'2.5vw'} color={'black'}>
-              -- failure is a necessary step to success
-            </Text>
-          </Section>
-        </TextSection>
+          <MockupImg src={require('../images/iphoneMockup.png')} />
+        </UpperTextSection>
       </TopLeftSection>
       <TopRightSection
         width={'35%'}
@@ -161,23 +165,23 @@ function EnergySection(props, ref) {
         <StyledImg src={require('../svg/ethereumLogo.svg')} />
         <Section margin={'.5rem'}>
           <BoldText size={'3vw'} color={'#e6ffff'}>
-            iOns &nbsp;
+            iOns&nbsp;
           </BoldText>
-          <Text size={'2vw'} color={'#e6ffff'}>
-            need both &nbsp;
+          <Text main color={'#e6ffff'}>
+            need both&nbsp;
           </Text>
-          <Text size={'2vw'} color={'#e6ffff'}>
-            positive and negative &nbsp;
+          <Text main color={'#e6ffff'}>
+            positive and negative&nbsp;
           </Text>
-          <Text size={'2vw'} color={'#e6ffff'}>
+          <Text main color={'#e6ffff'}>
             particles to exist
           </Text>
-          <Section width={'100%'} margin={'2rem 0 0 0'}>
+          <Section width={'100%'} margin={'1rem 0 0 0'}>
             <BoldText size={'2.7vw'} color={'#e6ffff'}>
-              Energy = &nbsp;
+              Energy =&nbsp;
             </BoldText>
             <BoldText size={'2.7vw'} color={'#e6ffff'}>
-              Ethereum &nbsp;
+              Ethereum&nbsp;
             </BoldText>
             <Text main color={'#e6ffff'}>
               Energize yourself to push further as an athlete. iOns are the
@@ -193,22 +197,22 @@ function EnergySection(props, ref) {
         xLarge
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
-        <TextSection>
+        <LowerTextSection>
           <Text title color={'#e6ffff'}>
             What Is an iOn?
           </Text>
-        </TextSection>
-        <TextSection>
-          <Text main color={'#e6ffff'}>
+        </LowerTextSection>
+        <LowerTextSection>
+          <Text width={'100%'} main color={'#e6ffff'}>
             1. iOns set goals
           </Text>
-          <Text main color={'#e6ffff'}>
+          <Text width={'100%'} main color={'#e6ffff'}>
             2. iOns livestream their attempts
           </Text>
-          <Text main color={'#e6ffff'}>
+          <Text width={'100%'} main color={'#e6ffff'}>
             3. iOns get energy if their goal is met
           </Text>
-        </TextSection>
+        </LowerTextSection>
       </SecondTopSection>
       <SecondBottomSection
         textCentered
@@ -216,17 +220,17 @@ function EnergySection(props, ref) {
         xLarge
         backgroundColor={'rgba(31,51,31,0.7)'}
       >
-        <TextSection>
+        <LowerTextSection>
           <Text title color={'#e6ffff'}>
             What are PartIcles?
           </Text>
-        </TextSection>
-        <TextSection>
+        </LowerTextSection>
+        <LowerTextSection>
           <Text main color={'#e6ffff'}>
             Particles create a community. A community of particles around an iOn
             athlete will power the streamer, and also share the energy.
           </Text>
-        </TextSection>
+        </LowerTextSection>
       </SecondBottomSection>
     </Wrapper>
   );
