@@ -20,11 +20,15 @@ const Wrapper = styled.div`
   }
 `;
 const TextSection = styled(Section)`
-  width: 80%;
+  margin-bottom: 10rem;
+  width: 100%;
+  font-size: 9vw;
+  font-weight: 900;
+  font-family: 'Electro-Shackle', sans-serif;
+  justify-content: center;
 `;
 
 const StyledBackdrop = styled(Backdrop)`
-
   width: 100%;
   padding-top: 20rem;
   padding-bottom: 10rem;
@@ -56,42 +60,49 @@ function MilestoneSection(props, ref) {
   return (
     <Wrapper ref={aboutRef} id="roadmap">
       <StyledBackdrop
-        background={
-          `radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%), 
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0) 70.71%)`
-        }
+        background={`radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%), 
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0) 70.71%)`}
       >
-        <TextSection large>
-          <Text title color={'#e6ffff'}>
-            What is Lorem Ipsum?
-          </Text>
-
-          <Text color={'#e6ffff'} main>
-            {exampleText}
-          </Text>
+        <TextSection width={'100%'}>
+          <Text color={'#e6ffff'}>2020 Road Map</Text>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
             <Text title color={'#e6ffff'}>
-              What is Lorem Ipsum?
+              Q1 2020:
+            </Text>
+            <Text title color={'#e6ffff'}>
+              Deliver our message to the world
             </Text>
           </ContentSection>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
             <Text title color={'#e6ffff'}>
-              What is Lorem Ipsum?
+              Q2 2020:
+            </Text>
+            <Text title color={'#e6ffff'}>
+              Build, Build, Build
             </Text>
           </ContentSection>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
             <Text title color={'#e6ffff'}>
-              What is Lorem Ipsum?
+              Q3 2020:
+            </Text>
+            <Text title color={'#e6ffff'}>
+              Open Source our code for review
             </Text>
           </ContentSection>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
             <Text title color={'#e6ffff'}>
-              What is Lorem Ipsum?
+              Q4 2020:
+            </Text>
+            <Text title color={'#e6ffff'}>
+              Go live with beta
             </Text>
           </ContentSection>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
             <Text title color={'#e6ffff'}>
-              What is Lorem Ipsum?
+              2021:
+            </Text>
+            <Text title color={'#e6ffff'}>
+              Shenanigan releases on google play and apple app store.
             </Text>
           </ContentSection>
         </TextSection>
