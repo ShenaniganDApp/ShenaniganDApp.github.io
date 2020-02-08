@@ -39,6 +39,10 @@ const Section = styled.div`
     (props.textCentered &&
       css`
         text-align: center;
+      `) ||
+    (props.centered &&
+      css`
+        justify-content: center;
       `)}
 `;
 export default Section;
