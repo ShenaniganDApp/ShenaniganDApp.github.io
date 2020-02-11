@@ -29,7 +29,7 @@ const Nav = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: 0 0 0 -1rem;
-  border-bottom-left-radius: 30px;
+  border-bottom-left-radius: 15px;
   width: 100%;
   opacity: ${({ state }) =>
     state === 'entering' || state === 'entered' ? 1 : 0};
@@ -81,7 +81,7 @@ function Header(props) {
     setHeaderToggle(false);
   };
 
-  const toggleHeader = () => {
+  const handleHeaderToggle = () => {
     setCollapsedStart(false);
     setCollapsedEnd(false);
     setHeaderToggle(true);
@@ -251,7 +251,7 @@ function Header(props) {
           <HeaderToggle
             state={state}
             collapsed={collapsedEnd}
-            onClick={() => toggleHeader()}
+            onClick={() => handleHeaderToggle()}
           >
             <Hamburger src={require('./svg/hamburger.svg')} />
           </HeaderToggle>

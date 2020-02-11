@@ -1,7 +1,6 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
-import Section from '../styles/Section';
-import Text from '../styles/Text';
+import { Section, Text, colors } from '../styles';
 
 const Wrapper = styled.div`
   height: auto;
@@ -26,6 +25,7 @@ const TopLeftSection = styled(Section)`
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   z-index: 1;
+  width: 55%;
   @media (max-width: 768px) {
     z-index: 0;
     width: 80%;
@@ -38,7 +38,7 @@ const TopLeftSection = styled(Section)`
 const TopRightSection = styled(Section)`
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  border: 2.5vw solid #e6ffff;
+  border: 2.5vw solid ${colors.lightcyan};
   z-index: 0;
 
   @media (max-width: 768px) {
@@ -57,7 +57,7 @@ const TopRightSection = styled(Section)`
 
 const SecondTopSection = styled(Section)`
   text-align: center;
-  border: 2.5vw solid #e6ffff;
+  border: 2.5vw solid ${colors.lightcyan};
   width: 100%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -69,11 +69,11 @@ const SecondTopSection = styled(Section)`
 `;
 const SecondBottomSection = styled(Section)`
   text-align: center;
-  border: 2.5vw solid #e6ffff;
+  border: 2.5vw solid ${colors.lightcyan};
   width: 100%;
   z-index: 0;
   border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius:s 15px;
   @media (max-width: 768px) {
     width: calc(80% - 5vw);
   }
@@ -96,7 +96,7 @@ const LowerTextSection = styled(Section)`
 `;
 const BoldText = styled(Text)`
   font-weight: 900;
-  background: -webkit-radial-gradient(#e6ffff 50%, rgb(208, 0, 108));
+  background: -webkit-radial-gradient(${colors.lightcyan} 50%, rgb(208, 0, 108));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Electro-Shackle', sans-serif;
@@ -110,7 +110,6 @@ const StyledImg = styled.img`
   flex: 0 auto;
   width: 10vw;
   max-width: 10rem;
-  
 `;
 
 const MockupImg = styled.img`
@@ -118,17 +117,8 @@ const MockupImg = styled.img`
   margin-top: 2rem;
   flex: 0 auto;
   height: auto;
-  width: 30vw;
-  max-width: 15rem;
+  width: 50%;
 `;
-
-const exampleText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-   when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-   It has survived not only five centuries, but also the leap into electronic typesetting,
-    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-    containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
-    including versions of Lorem Ipsum.`;
 
 function EnergySection(props, ref) {
   const energyRef = useRef();
@@ -142,9 +132,8 @@ function EnergySection(props, ref) {
     <Wrapper ref={energyRef} img={'./images/scoreboard.jpg'} id="energy">
       <TopLeftSection
         shadowed
-        large
         margin={'0 0 0 0'}
-        backgroundColor={'#e6ffff'}
+        backgroundColor={colors.lightcyan}
       >
         <UpperTextSection centered>
           <Text title color={'black'}>
@@ -164,26 +153,26 @@ function EnergySection(props, ref) {
       >
         <StyledImg src={require('../svg/ethereumLogo.svg')} />
         <Section margin={'.5rem'}>
-          <BoldText size={'3vw'} color={'#e6ffff'}>
+          <BoldText size={'3vw'} color={colors.lightcyan}>
             iOns&nbsp;
           </BoldText>
-          <Text main color={'#e6ffff'}>
+          <Text shadowed main color={colors.lightcyan}>
             need both&nbsp;
           </Text>
-          <Text main color={'#e6ffff'}>
+          <Text shadowed main color={colors.lightcyan}>
             positive and negative&nbsp;
           </Text>
-          <Text main color={'#e6ffff'}>
+          <Text shadowed main color={colors.lightcyan}>
             particles to exist
           </Text>
           <Section width={'100%'} margin={'1rem 0 0 0'}>
-            <BoldText size={'2.7vw'} color={'#e6ffff'}>
+            <BoldText size={'2.7vw'} color={colors.lightcyan}>
               Energy =&nbsp;
             </BoldText>
-            <BoldText size={'2.7vw'} color={'#e6ffff'}>
+            <BoldText size={'2.7vw'} color={colors.lightcyan}>
               Ethereum&nbsp;
             </BoldText>
-            <Text main color={'#e6ffff'}>
+            <Text shadowed main color={colors.lightcyan}>
               Energize yourself to push further as an athlete. iOns are the
               center of attention.
             </Text>
@@ -198,18 +187,18 @@ function EnergySection(props, ref) {
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
         <LowerTextSection>
-          <Text title color={'#e6ffff'}>
+          <Text shadowed title color={colors.lightcyan}>
             What Is an iOn?
           </Text>
         </LowerTextSection>
         <LowerTextSection>
-          <Text width={'100%'} main color={'#e6ffff'}>
+          <Text shadowed width={'100%'} main color={colors.lightcyan}>
             1. iOns set goals
           </Text>
-          <Text width={'100%'} main color={'#e6ffff'}>
+          <Text shadowed width={'100%'} main color={colors.lightcyan}>
             2. iOns livestream their attempts
           </Text>
-          <Text width={'100%'} main color={'#e6ffff'}>
+          <Text shadowed width={'100%'} main color={colors.lightcyan}>
             3. iOns get energy if their goal is met
           </Text>
         </LowerTextSection>
@@ -221,12 +210,12 @@ function EnergySection(props, ref) {
         backgroundColor={'rgba(31,51,31,0.7)'}
       >
         <LowerTextSection>
-          <Text title color={'#e6ffff'}>
+          <Text shadowed title color={colors.lightcyan}>
             What are PartIcles?
           </Text>
         </LowerTextSection>
         <LowerTextSection>
-          <Text main color={'#e6ffff'}>
+          <Text shadowed main color={colors.lightcyan}>
             Particles create a community. A community of particles around an iOn
             athlete will power the streamer, and also share the energy.
           </Text>

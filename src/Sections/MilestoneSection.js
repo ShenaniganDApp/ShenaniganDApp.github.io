@@ -1,8 +1,6 @@
 import React, { useRef, useImperativeHandle, forwardRef } from 'react';
 import styled from 'styled-components';
-import Backdrop from '../styles/Backdrop';
-import Section from '../styles/Section';
-import Text from '../styles/Text';
+import { Backdrop, Section, Text, colors } from '../styles';
 
 const Wrapper = styled.div`
   height: auto;
@@ -64,44 +62,44 @@ function MilestoneSection(props, ref) {
           linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0) 70.71%)`}
       >
         <TextSection width={'100%'}>
-          <Text color={'#e6ffff'}>2020 Road Map</Text>
+          <Text color={colors.lightcyan}>2020 Road Map</Text>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Q1 2020:
             </Text>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Deliver our message to the world
             </Text>
           </ContentSection>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Q2 2020:
             </Text>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Build, Build, Build
             </Text>
           </ContentSection>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Q3 2020:
             </Text>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Open Source our code for review
             </Text>
           </ContentSection>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Q4 2020:
             </Text>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Go live with beta
             </Text>
           </ContentSection>
           <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               2021:
             </Text>
-            <Text title color={'#e6ffff'}>
+            <Text title color={colors.lightcyan}>
               Shenanigan releases on google play and apple app store.
             </Text>
           </ContentSection>

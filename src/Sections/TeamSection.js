@@ -1,6 +1,6 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
-import { Section, Text, Backdrop } from '../styles';
+import { Section, Text, Backdrop, colors } from '../styles';
 
 const Wrapper = styled.div`
   height: auto;
@@ -64,9 +64,24 @@ function TeamSection(props, ref) {
           'radial-gradient(circle at 65% -7%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%)'
         }
       >
-        <TextSection>
-          <Text color={'#e6ffff'}>Team</Text>
+        <TextSection margin={'0 100%'}>
+          <Text color={colors.lightcyan}>Team</Text>
         </TextSection>
+        <ContentSection
+          backgroundColor={'rgba(255,255,68,0.7)'}
+        ></ContentSection>
+        <ContentSection
+          backgroundColor={'rgba(255,255,68,0.7)'}
+        ></ContentSection>
+        <ContentSection
+          backgroundColor={'rgba(255,255,68,0.7)'}
+        ></ContentSection>
+        <ContentSection
+          backgroundColor={'rgba(255,255,68,0.7)'}
+        ></ContentSection>
+        <ContentSection
+          backgroundColor={'rgba(255,255,68,0.7)'}
+        ></ContentSection>
         <ContentSection
           backgroundColor={'rgba(255,255,68,0.7)'}
         ></ContentSection>

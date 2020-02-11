@@ -1,6 +1,6 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
-import { Section, Text, Backdrop } from '../styles';
+import { Section, Text, Backdrop, colors } from '../styles';
 
 const Wrapper = styled.div`
   height: auto;
@@ -53,8 +53,8 @@ function ContactSection(props, ref) {
     <Wrapper ref={contactRef} img={'./images/scoreboard.jpg'} id="contact">
       <Divider />
       <StyledBackdrop background={'black'}>
-        <TextSection>
-          <Text color={'#e6ffff'}>Contact</Text>
+        <TextSection margin={'0 100%'}>
+          <Text color={colors.lightcyan}>Contact</Text>
         </TextSection>
         <ContentSection
           backgroundColor={'rgba(255,255,68,0.7)'}
