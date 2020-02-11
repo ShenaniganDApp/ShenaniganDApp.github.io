@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Section, Text } from '../styles';
+import { Section, Text, colors } from '../styles';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,53 +18,64 @@ const Backdrop = styled.div`
   z-index: -1;
 `;
 const Title = styled.h1`
-  color: #e6ffff;
+  color: ${colors.lightcyan};
   text-align: center;
   -webkit-text-stroke: 3px #ff006c;
   font-size: calc(1rem + 10vw);
   font-family: 'Electro-Shackle', sans-serif;
   font-weight: 900;
-  padding:0;
-
+  padding: 0;
 `;
 const Slogan = styled.p`
-  color: #e6ffff;
-  margin: 10% 10% 0% 10%;
-  font-size: 6vw;
+  color: ${colors.lightcyan};
+  margin: 12% 15% 100%;
+  font-size: 4vw;
   font-family: 'Roboto', sans-serif;
   text-shadow: black 0px 0px 10px;
 `;
 const ContentSection = styled(Section)`
-  margin: 1rem 2rem;
+  margin: 0 100%;
   padding: 4rem;
 `;
 const StyledImg = styled.img`
   margin: 1rem 0;
-  height:100%;
+  height: 100%;
   width: auto;
 `;
 
 const TitleSection = styled(Section)`
-  margin: 0rem 1vw;
-  padding: 10% 0 25% 0;
+  margin: 2rem 1vw 0rem;
   display: flex;
-  align-items:center;
-  justify-content:center;
-  height:10vw;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 10vw;
+`;
+
+const SloganSection = styled(Section)`
+  margin: 0 auto;
 `;
 
 function HomeSection() {
   return (
     <Wrapper>
       <Backdrop />
-      <Slogan>
-        Powering Athletes to Jump Higher, Run Faster, and Throw Farther.
-      </Slogan>
       <TitleSection width={'100%'}>
-        <Title>Sh</Title>{' '}
-        <StyledImg src={require('../images/logo.png')} />
+        <Title>Sh</Title> <StyledImg src={require('../images/logo.png')} />
         <Title>nanIgan</Title>
       </TitleSection>
+      <SloganSection>
+        <Slogan>Powering Athletes to</Slogan>
+      </SloganSection>
+      <SloganSection>
+        <Slogan>Jump Higher,</Slogan>
+      </SloganSection>
+      <SloganSection>
+        <Slogan>Run Faster, and</Slogan>
+      </SloganSection>
+      <SloganSection>
+        <Slogan>Throw Farther.</Slogan>
+      </SloganSection>
       <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
         <Text title color={'black'}>
           Give
