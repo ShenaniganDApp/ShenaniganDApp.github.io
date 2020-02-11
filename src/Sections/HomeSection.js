@@ -28,13 +28,15 @@ const Title = styled.h1`
 `;
 const Slogan = styled.p`
   color: ${colors.lightcyan};
-  margin: 12% 15% 100%;
+  width:100%;
   font-size: 4vw;
   font-family: 'Roboto', sans-serif;
   text-shadow: black 0px 0px 10px;
+  padding:0; 
+  margin:0;
 `;
 const ContentSection = styled(Section)`
-  margin: 0 100%;
+  margin: 2rem 100%;
   padding: 4rem;
 `;
 const StyledImg = styled.img`
@@ -53,7 +55,9 @@ const TitleSection = styled(Section)`
 `;
 
 const SloganSection = styled(Section)`
-  margin: 0 auto;
+  width: 100%;
+  height: 10%;
+
 `;
 
 function HomeSection() {
@@ -64,17 +68,17 @@ function HomeSection() {
         <Title>Sh</Title> <StyledImg src={require('../images/logo.png')} />
         <Title>nanIgan</Title>
       </TitleSection>
-      <SloganSection>
+      <SloganSection margin={"1rem 0 0 15%"}>
         <Slogan>Powering Athletes to</Slogan>
       </SloganSection>
-      <SloganSection>
-        <Slogan>Jump Higher,</Slogan>
+      <SloganSection margin={"0 0 0 25%"}>
+        <Slogan> &nbsp; Jump Higher</Slogan>
       </SloganSection>
-      <SloganSection>
-        <Slogan>Run Faster, and</Slogan>
+      <SloganSection margin={"0 0 0 25%"}>
+        <Slogan> &nbsp; &nbsp; &nbsp;Throw Farther</Slogan>
       </SloganSection>
-      <SloganSection>
-        <Slogan>Throw Farther.</Slogan>
+      <SloganSection margin={"0 0 0 25%"}>
+        <Slogan> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Run Faster</Slogan>
       </SloganSection>
       <ContentSection backgroundColor={'rgba(255,255,68,0.7)'}>
         <Text title color={'black'}>
