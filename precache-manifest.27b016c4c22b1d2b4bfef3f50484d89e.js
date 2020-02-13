@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ccd6be69eb2ab3615b49d10cc373ab4c",
+    "revision": "24c44bbbe88e7702f864c8fb9588433a",
     "url": "/index.html"
   },
   {
-    "revision": "fe970e38b314fc583773",
-    "url": "/static/css/main.48512cb6.chunk.css"
+    "revision": "bc1e86938eb615a0070a",
+    "url": "/static/css/main.2c500255.chunk.css"
   },
   {
-    "revision": "c4618d22ea688057b1ff",
-    "url": "/static/js/2.3182447c.chunk.js"
+    "revision": "8d37d376676de9becd69",
+    "url": "/static/js/2.5243202b.chunk.js"
   },
   {
     "revision": "fd228f9b9a68ce6b23a6cf8b0a38a0e3",
-    "url": "/static/js/2.3182447c.chunk.js.LICENSE"
+    "url": "/static/js/2.5243202b.chunk.js.LICENSE"
   },
   {
-    "revision": "fe970e38b314fc583773",
-    "url": "/static/js/main.f1ddf860.chunk.js"
+    "revision": "bc1e86938eb615a0070a",
+    "url": "/static/js/main.6062f529.chunk.js"
   },
   {
     "revision": "81e533c300a6f73e3621",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/background.3264e29b.jpg"
   },
   {
-    "revision": "802c6eacbb13c83b27c39be505228231",
-    "url": "/static/media/ethereumLogo.802c6eac.svg"
+    "revision": "fb666fbbba79266577c1547543666976",
+    "url": "/static/media/ethereumLogo.fb666fbb.svg"
   },
   {
     "revision": "8659515094d85059439811bbedcbbc39",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/iphoneMockup.e385a353.png"
   },
   {
-    "revision": "ee3b5f7991b54b645edc320f9954de4e",
-    "url": "/static/media/logo.ee3b5f79.png"
+    "revision": "40296eecf5abcf1985dfd846378d8abd",
+    "url": "/static/media/logoCut.40296eec.png"
   },
   {
     "revision": "64f1f5c6eb291163333151a88e02fba6",
@@ -56,7 +56,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/scoreboard.4e6184e5.jpg"
   },
   {
-    "revision": "ad2edaec4f1b753e97b42fafe57005d1",
-    "url": "/static/media/spacer.ad2edaec.svg"
+    "revision": "0c9fa1ee1e421c65167f4e0335e837f1",
+    "url": "/static/media/spacer.0c9fa1ee.svg"
   }
 ]);

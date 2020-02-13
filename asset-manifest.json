@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.48512cb6.chunk.css",
-    "main.js": "/static/js/main.f1ddf860.chunk.js",
-    "main.js.map": "/static/js/main.f1ddf860.chunk.js.map",
+    "main.css": "/static/css/main.2c500255.chunk.css",
+    "main.js": "/static/js/main.6062f529.chunk.js",
+    "main.js.map": "/static/js/main.6062f529.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7ae70540.js",
     "runtime-main.js.map": "/static/js/runtime-main.7ae70540.js.map",
-    "static/js/2.3182447c.chunk.js": "/static/js/2.3182447c.chunk.js",
-    "static/js/2.3182447c.chunk.js.map": "/static/js/2.3182447c.chunk.js.map",
+    "static/js/2.5243202b.chunk.js": "/static/js/2.5243202b.chunk.js",
+    "static/js/2.5243202b.chunk.js.map": "/static/js/2.5243202b.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.de61a3253d72451581848a9dbf5b6639.js": "/precache-manifest.de61a3253d72451581848a9dbf5b6639.js",
+    "precache-manifest.27b016c4c22b1d2b4bfef3f50484d89e.js": "/precache-manifest.27b016c4c22b1d2b4bfef3f50484d89e.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.48512cb6.chunk.css.map": "/static/css/main.48512cb6.chunk.css.map",
-    "static/js/2.3182447c.chunk.js.LICENSE": "/static/js/2.3182447c.chunk.js.LICENSE",
+    "static/css/main.2c500255.chunk.css.map": "/static/css/main.2c500255.chunk.css.map",
+    "static/js/2.5243202b.chunk.js.LICENSE": "/static/js/2.5243202b.chunk.js.LICENSE",
     "static/media/index.css": "/static/media/background.3264e29b.jpg",
-    "static/media/ethereumLogo.svg": "/static/media/ethereumLogo.802c6eac.svg",
+    "static/media/ethereumLogo.svg": "/static/media/ethereumLogo.fb666fbb.svg",
     "static/media/hamburger.svg": "/static/media/hamburger.86595150.svg",
     "static/media/iphoneMockup.png": "/static/media/iphoneMockup.e385a353.png",
-    "static/media/logo.png": "/static/media/logo.ee3b5f79.png",
+    "static/media/logoCut.png": "/static/media/logoCut.40296eec.png",
     "static/media/logo_Filled.png": "/static/media/logo_Filled.64f1f5c6.png",
     "static/media/scoreboard.jpg": "/static/media/scoreboard.4e6184e5.jpg",
-    "static/media/spacer.svg": "/static/media/spacer.ad2edaec.svg"
+    "static/media/spacer.svg": "/static/media/spacer.0c9fa1ee.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7ae70540.js",
-    "static/js/2.3182447c.chunk.js",
-    "static/css/main.48512cb6.chunk.css",
-    "static/js/main.f1ddf860.chunk.js"
+    "static/js/2.5243202b.chunk.js",
+    "static/css/main.2c500255.chunk.css",
+    "static/js/main.6062f529.chunk.js"
   ]
 }
