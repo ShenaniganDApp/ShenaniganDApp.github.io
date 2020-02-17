@@ -1,30 +1,35 @@
 {
   "files": {
     "main.css": "/static/css/main.2c500255.chunk.css",
-    "main.js": "/static/js/main.e12d5658.chunk.js",
-    "main.js.map": "/static/js/main.e12d5658.chunk.js.map",
+    "main.js": "/static/js/main.bc4084d5.chunk.js",
+    "main.js.map": "/static/js/main.bc4084d5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7ae70540.js",
     "runtime-main.js.map": "/static/js/runtime-main.7ae70540.js.map",
-    "static/js/2.5243202b.chunk.js": "/static/js/2.5243202b.chunk.js",
-    "static/js/2.5243202b.chunk.js.map": "/static/js/2.5243202b.chunk.js.map",
+    "static/js/2.7b38857d.chunk.js": "/static/js/2.7b38857d.chunk.js",
+    "static/js/2.7b38857d.chunk.js.map": "/static/js/2.7b38857d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.cfce1d5f242a09ed8f6efbf4a778dd05.js": "/precache-manifest.cfce1d5f242a09ed8f6efbf4a778dd05.js",
+    "precache-manifest.48231961977db17549496fab0d854d5b.js": "/precache-manifest.48231961977db17549496fab0d854d5b.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.2c500255.chunk.css.map": "/static/css/main.2c500255.chunk.css.map",
-    "static/js/2.5243202b.chunk.js.LICENSE": "/static/js/2.5243202b.chunk.js.LICENSE",
+    "static/js/2.7b38857d.chunk.js.LICENSE": "/static/js/2.7b38857d.chunk.js.LICENSE",
     "static/media/index.css": "/static/media/background.3264e29b.jpg",
     "static/media/ethereumLogo.svg": "/static/media/ethereumLogo.fb666fbb.svg",
+    "static/media/facebook.svg": "/static/media/facebook.ec0c188d.svg",
+    "static/media/github.svg": "/static/media/github.9686b31e.svg",
     "static/media/hamburger.svg": "/static/media/hamburger.86595150.svg",
+    "static/media/instagram.svg": "/static/media/instagram.725d9c80.svg",
     "static/media/iphoneMockup.png": "/static/media/iphoneMockup.e385a353.png",
     "static/media/logoCut.png": "/static/media/logoCut.40296eec.png",
     "static/media/logo_Filled.png": "/static/media/logo_Filled.64f1f5c6.png",
+    "static/media/reddit.svg": "/static/media/reddit.b17ddd00.svg",
     "static/media/scoreboard.jpg": "/static/media/scoreboard.4e6184e5.jpg",
-    "static/media/spacer.svg": "/static/media/spacer.0c9fa1ee.svg"
+    "static/media/spacer.svg": "/static/media/spacer.0c9fa1ee.svg",
+    "static/media/twitter.svg": "/static/media/twitter.d1d12ce1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7ae70540.js",
-    "static/js/2.5243202b.chunk.js",
+    "static/js/2.7b38857d.chunk.js",
     "static/css/main.2c500255.chunk.css",
-    "static/js/main.e12d5658.chunk.js"
+    "static/js/main.bc4084d5.chunk.js"
   ]
 }
