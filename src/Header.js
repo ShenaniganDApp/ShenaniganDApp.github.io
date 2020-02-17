@@ -63,7 +63,7 @@ function Header(props) {
   const [collapsedStart, setCollapsedStart] = useState(false);
   const [collapsedEnd, setCollapsedEnd] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [headerToggle, setHeaderToggle] = useState(false);
+  const [headerLock, setHeaderToggle] = useState(false);
   const isPhone = window.innerWidth <= 768;
   const pagePositionTop = window.pageYOffset < 150;
   useEffect(() => {
@@ -150,9 +150,11 @@ function Header(props) {
   useScrollPosition(({ prevPos, currPos }) => {
     if (currPos.y < -150) {
       setScrolled(true);
-    } else if (isPhone && !headerToggle) {
-      setCollapsedStart(true);
-      setHeader(0);
+    } else if (isPhone) {
+      if (!headerLock) {
+        setCollapsedStart(true);
+        setHeader(0);
+      }
     } else {
       if (headerOn !== 0) {
         setScrolled(false);
@@ -161,7 +163,7 @@ function Header(props) {
         setCollapsedEnd(false);
       }
     }
-    if (!headerToggle) {
+    if (!headerLock) {
       if (
         currPos.y <= props.heights.energy + 100 &&
         currPos.y > props.heights.milestone + 100
