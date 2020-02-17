@@ -19,7 +19,7 @@ const LogoFrame = styled.div`
     height: 170%;
   }
   @media (max-width: 768px) {
-    width: 12vw;
+    width: 15vw;
   }
 `;
 

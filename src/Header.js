@@ -50,6 +50,10 @@ const Nav = styled.div`
 const HomeLink = styled(Link)`
   z-index: 100;
   margin-left: 2%;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+  
 `;
 
 const Hamburger = styled.img`
