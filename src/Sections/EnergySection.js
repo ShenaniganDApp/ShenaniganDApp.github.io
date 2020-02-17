@@ -1,14 +1,11 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
-import { Section, Text, colors } from '../styles';
+import { Section, Text, Backdrop, colors } from '../styles';
 
 const Wrapper = styled.div`
   height: auto;
   width: 70vw;
   display: flex;
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: url(${props => props.img});
   padding-bottom: 5%;
   justify-content: center;
   flex-wrap: wrap;
@@ -39,8 +36,13 @@ const TopLeftSection = styled(Section)`
 const TopRightSection = styled(Section)`
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  border: 2.5vw solid ${colors.lightcyan};
+  border: 2vw solid ${colors.lightcyan};
   z-index: 0;
+  background: rgba(208, 0, 108, 0.7) url(${require('../svg/ethereumLogo.svg')});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(5px);
 
   @media (max-width: 768px) {
     -webkit-box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
@@ -74,7 +76,7 @@ const SecondBottomSection = styled(Section)`
   width: 100%;
   z-index: 0;
   border-bottom-left-radius: 15px;
-  border-bottom-right-radius:s 15px;
+  border-bottom-right-radius: s 15px;
   @media (max-width: 768px) {
     width: calc(80% - 5vw);
   }
@@ -97,7 +99,10 @@ const LowerTextSection = styled(Section)`
 `;
 const BoldText = styled(Text)`
   font-weight: 900;
-  background: -webkit-radial-gradient(${colors.lightcyan} 50%, rgb(208, 0, 108));
+  background: -webkit-radial-gradient(
+    ${colors.lightcyan} 50%,
+    rgb(208, 0, 108)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Electro-Shackle', sans-serif;
@@ -130,7 +135,7 @@ function EnergySection(props, ref) {
   }));
 
   return (
-    <Wrapper ref={energyRef} img={'./images/scoreboard.jpg'} id="energy">
+    <Wrapper ref={energyRef} id="energy">
       <TopLeftSection
         shadowed
         margin={'0 0 0 0'}
@@ -152,33 +157,37 @@ function EnergySection(props, ref) {
         curved
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
-        <StyledImg src={require('../svg/ethereumLogo.svg')} />
-        <Section margin={'.5rem'}>
-          <BoldText size={'3vw'} color={colors.lightcyan}>
-            iOns&nbsp;
-          </BoldText>
-          <Text shadowed main color={colors.lightcyan}>
-            need both&nbsp;
-          </Text>
-          <Text shadowed main color={colors.lightcyan}>
-            positive and negative&nbsp;
-          </Text>
-          <Text shadowed main color={colors.lightcyan}>
-            particles to exist
-          </Text>
-          <Section width={'100%'} margin={'1rem 0 0 0'}>
-            <BoldText size={'2.7vw'} color={colors.lightcyan}>
-              Energy =&nbsp;
-            </BoldText>
-            <BoldText size={'2.7vw'} color={colors.lightcyan}>
-              Ethereum&nbsp;
+        {/* <StyledImg src={require('../svg/ethereumLogo.svg')} /> */}
+        <Backdrop
+          background={`rgba(208,0,108,0.2)`}
+        >
+          <Section  margin={'.5rem'}>
+            <BoldText size={'3vw'} color={colors.lightcyan}>
+              iOns&nbsp;
             </BoldText>
             <Text shadowed main color={colors.lightcyan}>
-              Energize yourself to push further as an athlete. iOns are the
-              center of attention.
+              need both&nbsp;
             </Text>
+            <Text shadowed main color={colors.lightcyan}>
+              positive and negative&nbsp;
+            </Text>
+            <Text shadowed main color={colors.lightcyan}>
+              particles to exist
+            </Text>
+            <Section width={'100%'} margin={'1rem 0 0 0'}>
+              <BoldText size={'2.7vw'} color={colors.lightcyan}>
+                Energy =&nbsp;
+              </BoldText>
+              <BoldText size={'2.7vw'} color={colors.lightcyan}>
+                Ethereum&nbsp;
+              </BoldText>
+              <Text shadowed main color={colors.lightcyan}>
+                Energize yourself to push further as an athlete. iOns are the
+                center of attention.
+              </Text>
+            </Section>
           </Section>
-        </Section>
+        </Backdrop>
       </TopRightSection>
       <SecondTopSection
         textCentered
