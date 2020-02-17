@@ -50,7 +50,6 @@ const SocialImg = styled.img`
 
   &:hover {
       transform: scale(1.2);
-      color: white;
     }
 `
 

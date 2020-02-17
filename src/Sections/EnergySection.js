@@ -1,6 +1,7 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
 import { Section, Text, Backdrop, colors } from '../styles';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: auto;
@@ -38,10 +39,7 @@ const TopRightSection = styled(Section)`
   border-bottom-right-radius: 15px;
   border: 2vw solid ${colors.lightcyan};
   z-index: 0;
-  background: rgba(208, 0, 108, 0.7) url(${require('../svg/ethereumLogo.svg')});
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: rgba(208, 0, 108, 0.7);
   backdrop-filter: blur(5px);
 
   @media (max-width: 768px) {
@@ -58,6 +56,20 @@ const TopRightSection = styled(Section)`
   }
 `;
 
+const BackdropSection = styled(Section)`
+  margin:-2rem;
+  @media (max-width: 768px) {
+    margin:3rem 0rem;
+  }
+`
+const EthLogoBackdrop = styled(Backdrop)`
+  margin:0rem 3rem;
+  background: url(${require('../svg/ethereumLogo.svg')});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align:center;
+`;
 const SecondTopSection = styled(Section)`
   text-align: center;
   border: 2.5vw solid ${colors.lightcyan};
@@ -110,13 +122,6 @@ const BoldText = styled(Text)`
     font-size: 5vw;
   }
 `;
-const StyledImg = styled.img`
-  display: block;
-  margin: 1rem auto 0;
-  flex: 0 auto;
-  width: 10vw;
-  max-width: 10rem;
-`;
 
 const MockupImg = styled.img`
   display: block;
@@ -124,6 +129,26 @@ const MockupImg = styled.img`
   flex: 0 auto;
   height: auto;
   width: 50%;
+`;
+const Button = styled.div`
+  transition: 0.3s;
+  margin-bottom: -2rem;
+  width: 100%;
+  height: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 20px;
+  border-radius: 15px;
+  border: 2px solid ${colors.deeppink};
+  color: ${colors.lightcyan};
+  text-align: center;
+  display: inline-block;
+  &:hover {
+    transform: scale(0.9);
+    background-color: ${colors.lightcyan};
+    color: ${colors.deeppink};
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 function EnergySection(props, ref) {
@@ -157,11 +182,9 @@ function EnergySection(props, ref) {
         curved
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
-        {/* <StyledImg src={require('../svg/ethereumLogo.svg')} /> */}
-        <Backdrop
-          background={`rgba(208,0,108,0.2)`}
-        >
-          <Section  margin={'.5rem'}>
+        
+        <EthLogoBackdrop background={`rgba(208,0,108,0.0)`}>
+          <BackdropSection margin={'-2rem'}>
             <BoldText size={'3vw'} color={colors.lightcyan}>
               iOns&nbsp;
             </BoldText>
@@ -174,7 +197,7 @@ function EnergySection(props, ref) {
             <Text shadowed main color={colors.lightcyan}>
               particles to exist
             </Text>
-            <Section width={'100%'} margin={'1rem 0 0 0'}>
+            <Section centered width={'100%'} margin={'3rem 0 0 0'}>
               <BoldText size={'2.7vw'} color={colors.lightcyan}>
                 Energy =&nbsp;
               </BoldText>
@@ -186,8 +209,13 @@ function EnergySection(props, ref) {
                 center of attention.
               </Text>
             </Section>
-          </Section>
-        </Backdrop>
+          </BackdropSection>
+          <Link style={{ textDecoration: 'none' }} to="/explain">
+            <Button>
+              <Text main>Learn More</Text>
+            </Button>
+          </Link>
+        </EthLogoBackdrop>
       </TopRightSection>
       <SecondTopSection
         textCentered
