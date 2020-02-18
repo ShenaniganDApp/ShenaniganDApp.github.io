@@ -29,7 +29,7 @@ const Title = styled.h1`
   /* background: linear-gradient(to right, ${colors.gold} 20%, ${colors.deeppink} 40%, ${colors.deeppink} 60%, ${colors.gold} 80%); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: calc(1rem + 10vw);
+  font-size: calc(0.8rem + 10vw);
   font-family: 'Electro-Shackle', sans-serif;
   font-weight: 500;
   padding: 0;
@@ -38,7 +38,7 @@ const Title = styled.h1`
 const Slogan = styled.p`
   color: ${colors.lightcyan};
   width: 100%;
-  font-size: 4vw;
+  font-size: calc(0.4rem + 4vw);
   font-family: 'Roboto', sans-serif;
   text-shadow: black 0px 0px 10px;
   padding: 0;
