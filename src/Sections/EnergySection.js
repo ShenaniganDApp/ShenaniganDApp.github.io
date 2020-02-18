@@ -57,18 +57,18 @@ const TopRightSection = styled(Section)`
 `;
 
 const BackdropSection = styled(Section)`
-  margin:-2rem;
+  margin: -2rem;
   @media (max-width: 768px) {
-    margin:3rem 0rem;
+    margin: 3rem 0rem;
   }
-`
+`;
 const EthLogoBackdrop = styled(Backdrop)`
-  margin:0rem 3rem;
+  margin: 0rem 3rem;
   background: url(${require('../svg/ethereumLogo.svg')});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  text-align:center;
+  text-align: center;
 `;
 const SecondTopSection = styled(Section)`
   text-align: center;
@@ -86,9 +86,9 @@ const SecondBottomSection = styled(Section)`
   text-align: center;
   border: 2.5vw solid ${colors.lightcyan};
   width: 100%;
-  z-index: 0;
+  z-index: 1;
   border-bottom-left-radius: 15px;
-  border-bottom-right-radius: s 15px;
+  border-bottom-right-radius: 15px;
   @media (max-width: 768px) {
     width: calc(80% - 5vw);
   }
@@ -130,17 +130,22 @@ const MockupImg = styled.img`
   height: auto;
   width: 50%;
 `;
+
+const StyledLink = styled(Link)`
+  width: 100%;
+`;
 const Button = styled.div`
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: -2rem;
   width: 100%;
-  height: 2rem;
+  height: 4vw;
   box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 20px;
   border-radius: 15px;
   border: 2px solid ${colors.deeppink};
   color: ${colors.lightcyan};
-  text-align: center;
-  display: inline-block;
   &:hover {
     transform: scale(0.9);
     background-color: ${colors.lightcyan};
@@ -182,9 +187,8 @@ function EnergySection(props, ref) {
         curved
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
-        
         <EthLogoBackdrop background={`rgba(208,0,108,0.0)`}>
-          <BackdropSection margin={'-2rem'}>
+          <BackdropSection>
             <BoldText size={'3vw'} color={colors.lightcyan}>
               iOns&nbsp;
             </BoldText>
@@ -197,7 +201,7 @@ function EnergySection(props, ref) {
             <Text shadowed main color={colors.lightcyan}>
               particles to exist
             </Text>
-            <Section centered width={'100%'} margin={'3rem 0 0 0'}>
+            <Section centered width={'100%'} margin={'2rem 0 0 0'}>
               <BoldText size={'2.7vw'} color={colors.lightcyan}>
                 Energy =&nbsp;
               </BoldText>
@@ -210,16 +214,15 @@ function EnergySection(props, ref) {
               </Text>
             </Section>
           </BackdropSection>
-          <Link style={{ textDecoration: 'none' }} to="/explain">
+          <StyledLink style={{ textDecoration: 'none' }} to="/explain">
             <Button>
-              <Text main>Learn More</Text>
+              <Text size={'1.75vw'}>Read More</Text>
             </Button>
-          </Link>
+          </StyledLink>
         </EthLogoBackdrop>
       </TopRightSection>
       <SecondTopSection
         textCentered
-        shadowed
         margin={'4rem 0 0 0'}
         xLarge
         backgroundColor={'rgba(208,0,108,0.7)'}
@@ -243,7 +246,6 @@ function EnergySection(props, ref) {
       </SecondTopSection>
       <SecondBottomSection
         textCentered
-        shadowed
         xLarge
         backgroundColor={'rgba(31,51,31,0.7)'}
       >
