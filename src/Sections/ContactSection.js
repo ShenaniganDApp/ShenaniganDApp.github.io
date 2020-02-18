@@ -46,7 +46,8 @@ const SocialImg = styled.img`
   transition:.3s;
   background: rgba(0,0,0,0);
   width:4vw;
-  margin: 1rem 2rem;
+  min-width: 1rem;
+  margin: 1rem 2vw;
 
   &:hover {
       transform: scale(1.2);
