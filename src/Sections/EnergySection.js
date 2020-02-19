@@ -39,7 +39,10 @@ const TopRightSection = styled(Section)`
   border-bottom-right-radius: 15px;
   border: 2vw solid ${colors.lightcyan};
   z-index: 0;
-  background: rgba(208, 0, 108, 0.7);
+  background: rgba(208, 0, 108, 0.7) url(${require('../svg/ethereumLogo.svg')});
+  background-size: 85% 85%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   backdrop-filter: blur(5px);
 
   @media (max-width: 768px) {
@@ -56,20 +59,6 @@ const TopRightSection = styled(Section)`
   }
 `;
 
-const BackdropSection = styled(Section)`
-  margin: -2rem;
-  @media (max-width: 768px) {
-    margin: 3rem 0rem;
-  }
-`;
-const EthLogoBackdrop = styled(Backdrop)`
-  margin: 0rem 3rem;
-  background: url(${require('../svg/ethereumLogo.svg')});
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-`;
 const SecondTopSection = styled(Section)`
   text-align: center;
   border: 2.5vw solid ${colors.lightcyan};
@@ -132,27 +121,31 @@ const MockupImg = styled.img`
 `;
 
 const StyledLink = styled(Link)`
-  width: 100%;
+  width: 80%;
+  margin: 1rem auto 0rem;
+  border-radius: 15px;
 `;
 const Button = styled.div`
   transition: 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: -2rem;
   width: 100%;
   height: 4vw;
   box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 20px;
   border-radius: 15px;
   border: 2px solid ${colors.deeppink};
   color: ${colors.lightcyan};
+  min-height: 2.5rem;
+  margin: 1rem auto 0rem;
+  backdrop-filter:blur(5px);
   &:hover {
     transform: scale(0.9);
     background-color: ${colors.lightcyan};
     color: ${colors.deeppink};
   }
   @media (max-width: 768px) {
-    margin-bottom: 2rem;
+    
   }
 `;
 
@@ -187,39 +180,37 @@ function EnergySection(props, ref) {
         curved
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
-        <EthLogoBackdrop background={`rgba(208,0,108,0.0)`}>
-          <BackdropSection>
-            <BoldText size={'3vw'} color={colors.lightcyan}>
-              iOns&nbsp;
+        <Section margin={"1rem 1rem"}>
+          <BoldText size={'3vw'} color={colors.lightcyan}>
+            iOns&nbsp;
+          </BoldText>
+          <Text shadowed main color={colors.lightcyan}>
+            need both&nbsp;
+          </Text>
+          <Text shadowed main color={colors.lightcyan}>
+            positive and negative&nbsp;
+          </Text>
+          <Text shadowed main color={colors.lightcyan}>
+            particles to exist
+          </Text>
+          <Section centered width={'100%'} margin={'2rem 0 0 0'}>
+            <BoldText size={'2.7vw'} color={colors.lightcyan}>
+              Energy =&nbsp;
+            </BoldText>
+            <BoldText size={'2.7vw'} color={colors.lightcyan}>
+              Ethereum&nbsp;
             </BoldText>
             <Text shadowed main color={colors.lightcyan}>
-              need both&nbsp;
+              Energize yourself to push further as an athlete. iOns are the
+              center of attention.
             </Text>
-            <Text shadowed main color={colors.lightcyan}>
-              positive and negative&nbsp;
-            </Text>
-            <Text shadowed main color={colors.lightcyan}>
-              particles to exist
-            </Text>
-            <Section centered width={'100%'} margin={'2rem 0 0 0'}>
-              <BoldText size={'2.7vw'} color={colors.lightcyan}>
-                Energy =&nbsp;
-              </BoldText>
-              <BoldText size={'2.7vw'} color={colors.lightcyan}>
-                Ethereum&nbsp;
-              </BoldText>
-              <Text shadowed main color={colors.lightcyan}>
-                Energize yourself to push further as an athlete. iOns are the
-                center of attention.
-              </Text>
-            </Section>
-          </BackdropSection>
+          </Section>
           <StyledLink style={{ textDecoration: 'none' }} to="/explain">
             <Button>
-              <Text size={'1.75vw'}>Read More</Text>
+              <Text main>Read More</Text>
             </Button>
           </StyledLink>
-        </EthLogoBackdrop>
+        </Section>
       </TopRightSection>
       <SecondTopSection
         textCentered
