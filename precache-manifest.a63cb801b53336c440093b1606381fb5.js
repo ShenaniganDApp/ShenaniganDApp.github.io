@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "15df2fc9ca57a62fda3ab7d98e1e1c32",
+    "revision": "f525e20921388e07c2abd950091b7efe",
     "url": "/index.html"
   },
   {
-    "revision": "d7010e278252244dc881",
-    "url": "/static/css/main.2c500255.chunk.css"
+    "revision": "630e098e83bfdd085baa",
+    "url": "/static/css/main.5347c77d.chunk.css"
   },
   {
-    "revision": "534771380483e198c6b6",
-    "url": "/static/js/2.82204aeb.chunk.js"
+    "revision": "ec3e1829ee07399a6875",
+    "url": "/static/js/2.0139d5a4.chunk.js"
   },
   {
     "revision": "fd228f9b9a68ce6b23a6cf8b0a38a0e3",
-    "url": "/static/js/2.82204aeb.chunk.js.LICENSE"
+    "url": "/static/js/2.0139d5a4.chunk.js.LICENSE"
   },
   {
-    "revision": "d7010e278252244dc881",
-    "url": "/static/js/main.eb31117f.chunk.js"
+    "revision": "630e098e83bfdd085baa",
+    "url": "/static/js/main.7384ca5f.chunk.js"
   },
   {
     "revision": "81e533c300a6f73e3621",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/background.3264e29b.jpg"
   },
   {
-    "revision": "fb666fbbba79266577c1547543666976",
-    "url": "/static/media/ethereumLogo.fb666fbb.svg"
+    "revision": "802c6eacbb13c83b27c39be505228231",
+    "url": "/static/media/ethereumLogo.802c6eac.svg"
   },
   {
     "revision": "ec0c188daf70ada2deb84d12f963dd2d",
@@ -72,8 +72,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/scoreboard.4e6184e5.jpg"
   },
   {
-    "revision": "0c9fa1ee1e421c65167f4e0335e837f1",
-    "url": "/static/media/spacer.0c9fa1ee.svg"
+    "revision": "ad2edaec4f1b753e97b42fafe57005d1",
+    "url": "/static/media/spacer.ad2edaec.svg"
   },
   {
     "revision": "d1d12ce1ba2af990b4eb003f4883f97e",
