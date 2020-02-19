@@ -15,7 +15,7 @@ const Backdrop = styled.div`
   height: 100%;
   position: absolute;
   top: 0;
-  z-index: -1;
+  z-index:0;
 `;
 const Title = styled.h1`
   color: ${colors.deeppink};
@@ -43,10 +43,6 @@ const Slogan = styled.p`
   text-shadow: black 0px 0px 10px;
   padding: 0;
   margin: 0;
-`;
-const ContentSection = styled(Section)`
-  margin: 2rem 100%;
-  padding: 4rem;
 `;
 const StyledImg = styled.img`
   margin: 1rem 0;
@@ -89,7 +85,7 @@ function HomeSection() {
         <Title>nanIgan</Title>
       </TitleSection>
       <SloganSection margin={'1rem 0 0 15%'}>
-        <Slogan>Powering Athletes to</Slogan>
+        <Slogan>Energizing Athletes to</Slogan>
       </SloganSection>
 
       <Transition

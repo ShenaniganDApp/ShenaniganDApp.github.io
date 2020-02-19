@@ -86,7 +86,7 @@ function ContactSection(props, ref) {
           backgroundColor={'rgba(255,255,68,0.7)'}
         ></ContentSection>
         <Section margin={"2rem 0"} centered width={"100%"}>
-          <Text size={"calc(1rem + 1vw)"} color={colors.lightcyan}>We're on all popular social media outlets</Text>
+          <Text main color={colors.lightcyan}>We're on all popular social media outlets</Text>
         </Section>
         <Section title centered width={"100%"}>
             <a href="https://www.facebook.com/shenanigan.dapp/">
@@ -106,11 +106,11 @@ function ContactSection(props, ref) {
             </a>
         </Section>
         <Section margin={"2rem 0"} centered width={"100%"}>
-          <Text size={"calc(1rem + 1vw)"} color={colors.lightcyan}>Coming Soon</Text>
+          <Text main color={colors.lightcyan}>Coming Soon</Text>
         </Section>
         <Section margin={"2rem 0"} centered width={"100%"}>
-          <Text size={"calc(1rem + 1vw)"} color={colors.lightcyan}>MMXX - No Rights Reserved -&nbsp;</Text>
-          <Text size={"calc(1rem + 1vw)"} color={colors.deeppink}> Shenanigan</Text>
+          <Text main color={colors.lightcyan}>MMXX - No Rights Reserved -&nbsp;</Text>
+          <Text main color={colors.deeppink}> Shenanigan</Text>
         </Section>
       </StyledBackdrop>
     </Wrapper>
