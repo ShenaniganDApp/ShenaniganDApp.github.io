@@ -31,7 +31,7 @@ const Text = styled.p`
 
         font-family: 'Roboto', sans-serif;
         @media (max-width: 768px) {
-          font-size: 3vw;
+          font-size: 4vw;
         }
       `) ||
     (props.title &&
