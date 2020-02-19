@@ -60,7 +60,6 @@ const TopRightSection = styled(Section)`
 `;
 
 const SecondTopSection = styled(Section)`
-  text-align: center;
   border: 2.5vw solid ${colors.lightcyan};
   width: 100%;
   border-top-left-radius: 15px;
@@ -72,8 +71,9 @@ const SecondTopSection = styled(Section)`
   }
 `;
 const SecondBottomSection = styled(Section)`
-  text-align: center;
-  border: 2.5vw solid ${colors.lightcyan};
+  border-width: 0vw 2.5vw 2.5vw 2.5vw ;
+  border-style: solid;
+  border-color:${colors.lightcyan};
   width: 100%;
   z-index: 1;
   border-bottom-left-radius: 15px;
@@ -138,15 +138,29 @@ const Button = styled.div`
   color: ${colors.lightcyan};
   min-height: 2.5rem;
   margin: 1rem auto 0rem;
-  backdrop-filter:blur(5px);
+  backdrop-filter: blur(5px);
   &:hover {
     transform: scale(0.9);
     background-color: ${colors.lightcyan};
     color: ${colors.deeppink};
   }
+`;
+
+const ChargeSection = styled(Section)`
+  font-size: 12px;
+  font-size: 2.2vw;
+  font-family: Electro-Shackle, sans-serif;
+
   @media (max-width: 768px) {
-    
+    font-size: 4vw;
   }
+`;
+const Divider = styled.div`
+  width: 50%;
+  height: 0.5vw;
+  max-height: 0.3rem;
+  background-color: black;
+  margin-top: 1rem;
 `;
 
 function EnergySection(props, ref) {
@@ -165,14 +179,26 @@ function EnergySection(props, ref) {
         backgroundColor={colors.lightcyan}
       >
         <UpperTextSection centered>
-          <Text title color={'black'}>
-            What&nbsp;
+          <Section centered width={'100%'}>
+            <Text title color={'black'}>
+              What&nbsp;
+            </Text>
+          </Section>
+          <Text title color={colors.deeppink}>
+            Charges&nbsp;
           </Text>
           <Text title color={'black'}>
-            Charges You?
+            You?
           </Text>
-
-          <MockupImg src={require('../images/iphoneMockup.png')} />
+          <Divider />
+          <Section width={'100%'}>
+            <ChargeSection margin={'1rem -1rem 1rem 1rem;'} width={'50%'}>
+              <Text>REach PErsonal Goals</Text>
+              <Text>GaIn CommunIty Support</Text>
+              <Text>BEcomE Your BEst</Text>
+            </ChargeSection>
+            <MockupImg src={require('../images/iphoneMockup.png')} />
+          </Section>
         </UpperTextSection>
       </TopLeftSection>
       <TopRightSection
@@ -180,7 +206,7 @@ function EnergySection(props, ref) {
         curved
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
-        <Section margin={"1rem 1rem"}>
+        <Section margin={'1rem 1rem'}>
           <BoldText size={'3vw'} color={colors.lightcyan}>
             iOns&nbsp;
           </BoldText>
@@ -213,12 +239,11 @@ function EnergySection(props, ref) {
         </Section>
       </TopRightSection>
       <SecondTopSection
-        textCentered
         margin={'4rem 0 0 0'}
         xLarge
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
-        <LowerTextSection>
+        <LowerTextSection textCentered>
           <Text shadowed title color={colors.lightcyan}>
             What Is an iOn?
           </Text>
@@ -235,17 +260,13 @@ function EnergySection(props, ref) {
           </Text>
         </LowerTextSection>
       </SecondTopSection>
-      <SecondBottomSection
-        textCentered
-        xLarge
-        backgroundColor={'rgba(31,51,31,0.7)'}
-      >
-        <LowerTextSection>
+      <SecondBottomSection xLarge backgroundColor={'rgba(31,51,31,0.7)'}>
+        <LowerTextSection textCentered>
           <Text shadowed title color={colors.lightcyan}>
             What are PartIcles?
           </Text>
         </LowerTextSection>
-        <LowerTextSection>
+        <LowerTextSection textCentered>
           <Text shadowed main color={colors.lightcyan}>
             Particles create a community. A community of particles around an iOn
             athlete will power the streamer, and also share the energy.
