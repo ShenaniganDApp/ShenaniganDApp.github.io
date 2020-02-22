@@ -43,6 +43,9 @@ const TopRightSection = styled(Section)`
   background-size: 85% 85%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  /* Preserve aspect ratio */
+  min-width: 100%;
+  min-height: 100%;
   backdrop-filter: blur(5px);
 
   @media (max-width: 768px) {
@@ -71,9 +74,9 @@ const SecondTopSection = styled(Section)`
   }
 `;
 const SecondBottomSection = styled(Section)`
-  border-width: 0vw 2.5vw 2.5vw 2.5vw ;
+  border-width: 0vw 2.5vw 2.5vw 2.5vw;
   border-style: solid;
-  border-color:${colors.lightcyan};
+  border-color: ${colors.lightcyan};
   width: 100%;
   z-index: 1;
   border-bottom-left-radius: 15px;
@@ -193,9 +196,12 @@ function EnergySection(props, ref) {
           <Divider />
           <Section width={'100%'}>
             <ChargeSection margin={'1rem -1rem 1rem 1rem;'} width={'50%'}>
-              <Text>REach PErsonal Goals</Text>
-              <Text>GaIn CommunIty Support</Text>
-              <Text>BEcomE Your BEst</Text>
+              <Text>
+                {' '}
+                <Text>REach PErsonal Goals</Text>
+                <Text>GaIn CommunIty Support</Text>
+                <Text>BEcomE Your BEst</Text>
+              </Text>
             </ChargeSection>
             <MockupImg src={require('../images/iphoneMockup.png')} />
           </Section>
@@ -207,17 +213,19 @@ function EnergySection(props, ref) {
         backgroundColor={'rgba(208,0,108,0.7)'}
       >
         <Section margin={'1rem 1rem'}>
-          <BoldText size={'3vw'} color={colors.lightcyan}>
-            iOns&nbsp;
-          </BoldText>
-          <Text shadowed main color={colors.lightcyan}>
-            need both&nbsp;
-          </Text>
-          <Text shadowed main color={colors.lightcyan}>
-            positive and negative&nbsp;
-          </Text>
-          <Text shadowed main color={colors.lightcyan}>
-            particles to exist
+          <Text>
+            <BoldText size={'3vw'} color={colors.lightcyan}>
+              iOns&nbsp;
+            </BoldText>
+            <Text shadowed main color={colors.lightcyan}>
+              need both&nbsp;
+            </Text>
+            <Text shadowed main color={colors.lightcyan}>
+              positive and negative&nbsp;
+            </Text>
+            <Text shadowed main color={colors.lightcyan}>
+              particles to exist
+            </Text>
           </Text>
           <Section centered width={'100%'} margin={'2rem 0 0 0'}>
             <BoldText size={'2.7vw'} color={colors.lightcyan}>

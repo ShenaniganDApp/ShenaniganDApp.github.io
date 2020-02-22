@@ -11,6 +11,9 @@ const AppWrapper = styled.div`
   background-size: cover;
   background-position: 50% 35%;
   z-index: -1;
+  /* Preserve aspect ratio */
+  min-width: 100%;
+  min-height: 100%;
   @media (max-width: 768px) {
     body {
       height: 100vh;
