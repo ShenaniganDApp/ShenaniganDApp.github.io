@@ -44,8 +44,6 @@ const TopRightSection = styled(Section)`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   /* Preserve aspect ratio */
-  min-width: 100%;
-  min-height: 100%;
   backdrop-filter: blur(5px);
 
   @media (max-width: 768px) {
@@ -116,11 +114,10 @@ const BoldText = styled(Text)`
 `;
 
 const MockupImg = styled.img`
-  display: block;
   margin-top: 2rem;
   flex: 0 auto;
-  height: auto;
   width: 50%;
+  max-height: 100% ;
 `;
 
 const StyledLink = styled(Link)`
@@ -197,10 +194,9 @@ function EnergySection(props, ref) {
           <Section width={'100%'}>
             <ChargeSection margin={'1rem -1rem 1rem 1rem;'} width={'50%'}>
               <Text>
-                {' '}
-                <Text>REach PErsonal Goals</Text>
-                <Text>GaIn CommunIty Support</Text>
-                <Text>BEcomE Your BEst</Text>
+                <Text margin={"1rem 0"}>REach PErsonal Goals</Text>
+                <Text margin={"1rem 0"}>GaIn CommunIty Support</Text>
+                <Text margin={"1rem 0"}>BEcomE Your BEst</Text>
               </Text>
             </ChargeSection>
             <MockupImg src={require('../images/iphoneMockup.png')} />

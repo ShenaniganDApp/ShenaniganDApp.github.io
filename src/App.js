@@ -12,12 +12,16 @@ const AppWrapper = styled.div`
   background-position: 50% 35%;
   z-index: -1;
   /* Preserve aspect ratio */
-  min-width: 100%;
-  min-height: 100%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   @media (max-width: 768px) {
     body {
       height: 100vh;
     }
+    background-size:contain;
   }
 `;
 

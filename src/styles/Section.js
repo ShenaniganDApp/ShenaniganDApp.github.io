@@ -46,6 +46,7 @@ const Section = styled.div`
     (props.centered &&
       css`
         justify-content: center;
+        align-items: center;
       `)}
 `;
 export default Section;
