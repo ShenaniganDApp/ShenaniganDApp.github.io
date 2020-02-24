@@ -19,6 +19,7 @@ const AppWrapper = styled.div`
   @media (max-width: 768px) {
     background-image: url(${require('./images/background_mobile.png')});
     background-repeat: no-repeat;
+    background-position: 0 0,50% 0;
     background-size: auto,auto 30%;
   }
 `;
