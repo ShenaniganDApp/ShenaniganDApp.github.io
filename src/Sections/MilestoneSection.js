@@ -53,29 +53,37 @@ const Divider = styled.div`
 const TextSection = styled(Section)`
   justify-content: space-between;
   width: 100%;
-  margin: 2rem 1rem;
+  margin: 5vw 1rem;
 `;
 
 function MilestoneSection(props, ref) {
-  const aboutRef = useRef();
+  const milestoneRef = useRef();
   useImperativeHandle(ref, () => ({
     boundingTop: () => {
-      return aboutRef.current.getBoundingClientRect().top;
+      return milestoneRef.current.getBoundingClientRect().top;
     }
   }));
 
   return (
-    <Wrapper ref={aboutRef} id="roadmap">
+    <Wrapper ref={milestoneRef} id="roadmap">
       <StyledBackdrop
         background={`radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%), 
           linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0) 70.71%)`}
       >
         <MilestoneMainSection width={'100%'}>
-          <Text color={colors.gold}>2020&nbsp;</Text>
-          <Text color={colors.deeppink}> Road Map</Text>
+          <Section margin={'0 0 25vw 0'}>
+            <Text color={colors.gold}>2020&nbsp;</Text>
+            <Text color={colors.deeppink}>Roadmap</Text>
+          </Section>
           <TextSection centered>
             <Section centered textCentered width={'40%'}>
-              <Text shadowed margin={'0 0rem 1rem 0'} title color={colors.gold}>
+              <Text
+                width={'100%'}
+                shadowed
+                margin={'0 0rem 1rem 0'}
+                title
+                color={colors.gold}
+              >
                 Q1 2020
               </Text>
               <Text shadowed main color={colors.lightcyan}>
@@ -87,7 +95,13 @@ function MilestoneSection(props, ref) {
           <TextSection centered>
             <Divider />
             <Section centered textCentered width={'40%'}>
-              <Text shadowed margin={'0 0rem 1rem 0'} title color={colors.gold}>
+              <Text
+                width={'100%'}
+                shadowed
+                margin={'0 0rem 1rem 0'}
+                title
+                color={colors.gold}
+              >
                 Q2 2020
               </Text>
               <Text shadowed main color={colors.lightcyan}>
@@ -97,7 +111,13 @@ function MilestoneSection(props, ref) {
           </TextSection>
           <TextSection centered>
             <Section centered textCentered width={'40%'}>
-              <Text shadowed margin={'0 0rem 1rem 0'} title color={colors.gold}>
+              <Text
+                width={'100%'}
+                shadowed
+                margin={'0 0rem 1rem 0'}
+                title
+                color={colors.gold}
+              >
                 Q3 2020
               </Text>
               <Text shadowed main color={colors.lightcyan}>
@@ -109,7 +129,13 @@ function MilestoneSection(props, ref) {
           <TextSection centered>
             <Divider />
             <Section centered textCentered width={'40%'}>
-              <Text shadowed margin={'0 0rem 1rem 0'} title color={colors.gold}>
+              <Text
+                width={'100%'}
+                shadowed
+                margin={'0 0rem 1rem 0'}
+                title
+                color={colors.gold}
+              >
                 Q4 2020
               </Text>
               <Text shadowed main color={colors.lightcyan}>
@@ -119,7 +145,13 @@ function MilestoneSection(props, ref) {
           </TextSection>
           <Section centered textCentered>
             <Section centered width={'80%'}>
-              <Text shadowed margin={'5rem 0 1rem 0'} title color={colors.lightcyan}>
+              <Text
+                width={'100%'}
+                shadowed
+                margin={'5rem 0 1rem 0'}
+                title
+                color={colors.lightcyan}
+              >
                 2021
               </Text>
             </Section>

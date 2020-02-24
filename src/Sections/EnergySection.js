@@ -67,6 +67,8 @@ const SecondTopSection = styled(Section)`
   border-top-right-radius: 15px;
   z-index: 0;
   margin-top: 30vh;
+  backdrop-filter: blur(5px);
+
   @media (max-width: 768px) {
     width: calc(80% - 5vw);
   }
@@ -79,6 +81,7 @@ const SecondBottomSection = styled(Section)`
   z-index: 1;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  backdrop-filter: blur(5px);
   @media (max-width: 768px) {
     width: calc(80% - 5vw);
   }
@@ -95,6 +98,7 @@ const UpperTextSection = styled(Section)`
 const LowerTextSection = styled(Section)`
   width: 100%;
   margin: 1rem 1rem 1rem 1rem;
+
   @media (max-width: 768px) {
     margin: 1rem;
   }
@@ -117,7 +121,11 @@ const MockupImg = styled.img`
   margin-top: 2rem;
   flex: 0 auto;
   width: 50%;
-  max-height: 100% ;
+  @media (max-width: 768px) {
+    display: block;
+    width: 50%;
+    height: 50%;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -194,9 +202,9 @@ function EnergySection(props, ref) {
           <Section width={'100%'}>
             <ChargeSection margin={'1rem -1rem 1rem 1rem;'} width={'50%'}>
               <Text>
-                <Text margin={"1rem 0"}>REach PErsonal Goals</Text>
-                <Text margin={"1rem 0"}>GaIn CommunIty Support</Text>
-                <Text margin={"1rem 0"}>BEcomE Your BEst</Text>
+                <Text margin={'1rem 0'}>REach Your Goals</Text>
+                <Text margin={'1rem 0'}>Build Your CommunIty</Text>
+                <Text margin={'1rem 0'}>BEcomE Your BEst</Text>
               </Text>
             </ChargeSection>
             <MockupImg src={require('../images/iphoneMockup.png')} />
@@ -204,6 +212,7 @@ function EnergySection(props, ref) {
         </UpperTextSection>
       </TopLeftSection>
       <TopRightSection
+        shadowed
         width={'35%'}
         curved
         backgroundColor={'rgba(208,0,108,0.7)'}
