@@ -119,7 +119,7 @@ function Header(props) {
         num={2}
         handleHeaderChange={handleHeaderChange}
         to="/#roadmap"
-        text={"Road Map"}
+        text={"Roadmap"}
       />
     );
     const Team = (
@@ -197,7 +197,7 @@ function Header(props) {
     <Wrapper scrolled={scrolled} collapsed={collapsedStart}>
       <HomeLink onClick={() => handleHeaderChange(0)} to="/#top">
         <LogoFrame>
-          <Logo src={require("./images/logo_Filled.png")} />
+          <Logo src={require("./images/She_Logo.png")} />
         </LogoFrame>
       </HomeLink>
       {headerCollapsed()}
@@ -229,7 +229,7 @@ function Header(props) {
               handleHeaderChange={handleHeaderChange}
               to="/#roadmap"
               num={2}
-              text={"Road Map"}
+              text={"Roadmap"}
             />
             <HeaderTab
               state={state}

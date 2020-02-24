@@ -46,7 +46,7 @@ const Slogan = styled.p`
 `;
 const StyledImg = styled.img`
   margin: 1rem 0;
-  height: 100%;
+  height: 150%;
   width: auto;
 `;
 
@@ -81,7 +81,7 @@ function HomeSection() {
     <Wrapper>
       <Backdrop />
       <TitleSection width={'100%'}>
-        <Title>Sh</Title> <StyledImg src={require('../images/logoCut.png')} />
+        <Title>Sh</Title> <StyledImg src={require('../images/She_Logo.png')} />
         <Title>nanIgan</Title>
       </TitleSection>
       <SloganSection margin={'1rem 0 0 15%'}>
