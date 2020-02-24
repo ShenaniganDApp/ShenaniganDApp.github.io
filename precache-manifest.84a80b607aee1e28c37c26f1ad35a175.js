@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6c37c05862a2419e231b6cee4b98f85e",
+    "revision": "0d3abd3a291b2be719a7de5a3577d06d",
     "url": "/index.html"
   },
   {
-    "revision": "019490245f508ce75730",
+    "revision": "840add95deb468bbfbdb",
     "url": "/static/css/main.c3810ce2.chunk.css"
   },
   {
-    "revision": "0759518ef208b630639d",
-    "url": "/static/js/2.92fc56c0.chunk.js"
+    "revision": "68fbff7a7b73362e40b9",
+    "url": "/static/js/2.b66bac6a.chunk.js"
   },
   {
     "revision": "fd228f9b9a68ce6b23a6cf8b0a38a0e3",
-    "url": "/static/js/2.92fc56c0.chunk.js.LICENSE"
+    "url": "/static/js/2.b66bac6a.chunk.js.LICENSE"
   },
   {
-    "revision": "019490245f508ce75730",
-    "url": "/static/js/main.41960654.chunk.js"
+    "revision": "840add95deb468bbfbdb",
+    "url": "/static/js/main.909eb4c8.chunk.js"
   },
   {
     "revision": "81e533c300a6f73e3621",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d0405f5192af34db32cb031e03f7ec22",
     "url": "/static/media/Electro-Shackle.ttf.d0405f51.woff"
+  },
+  {
+    "revision": "ca05b23d5b4186229ae91351c90fb3f8",
+    "url": "/static/media/She_Logo.ca05b23d.png"
   },
   {
     "revision": "3264e29b3fa14fa9eb73ac942dd83843",
@@ -58,14 +62,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e385a353c06900acb1fc06572c1e2142",
     "url": "/static/media/iphoneMockup.e385a353.png"
-  },
-  {
-    "revision": "40296eecf5abcf1985dfd846378d8abd",
-    "url": "/static/media/logoCut.40296eec.png"
-  },
-  {
-    "revision": "64f1f5c6eb291163333151a88e02fba6",
-    "url": "/static/media/logo_Filled.64f1f5c6.png"
   },
   {
     "revision": "b17ddd008290508680679b9b2e7b994a",

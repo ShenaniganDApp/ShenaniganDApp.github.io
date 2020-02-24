@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.c3810ce2.chunk.css",
-    "main.js": "/static/js/main.41960654.chunk.js",
-    "main.js.map": "/static/js/main.41960654.chunk.js.map",
+    "main.js": "/static/js/main.909eb4c8.chunk.js",
+    "main.js.map": "/static/js/main.909eb4c8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7ae70540.js",
     "runtime-main.js.map": "/static/js/runtime-main.7ae70540.js.map",
-    "static/js/2.92fc56c0.chunk.js": "/static/js/2.92fc56c0.chunk.js",
-    "static/js/2.92fc56c0.chunk.js.map": "/static/js/2.92fc56c0.chunk.js.map",
+    "static/js/2.b66bac6a.chunk.js": "/static/js/2.b66bac6a.chunk.js",
+    "static/js/2.b66bac6a.chunk.js.map": "/static/js/2.b66bac6a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1dbb9e40b009834e2187ed9ad7adac93.js": "/precache-manifest.1dbb9e40b009834e2187ed9ad7adac93.js",
+    "precache-manifest.84a80b607aee1e28c37c26f1ad35a175.js": "/precache-manifest.84a80b607aee1e28c37c26f1ad35a175.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.c3810ce2.chunk.css.map": "/static/css/main.c3810ce2.chunk.css.map",
-    "static/js/2.92fc56c0.chunk.js.LICENSE": "/static/js/2.92fc56c0.chunk.js.LICENSE",
+    "static/js/2.b66bac6a.chunk.js.LICENSE": "/static/js/2.b66bac6a.chunk.js.LICENSE",
     "static/media/index.css": "/static/media/Electro-Shackle.ttf.d0405f51.woff",
+    "static/media/She_Logo.png": "/static/media/She_Logo.ca05b23d.png",
     "static/media/background.jpg": "/static/media/background.3264e29b.jpg",
     "static/media/background_mobile.png": "/static/media/background_mobile.00a08211.png",
     "static/media/ethereumLogo.svg": "/static/media/ethereumLogo.802c6eac.svg",
@@ -21,8 +22,6 @@
     "static/media/hamburger.svg": "/static/media/hamburger.86595150.svg",
     "static/media/instagram.svg": "/static/media/instagram.725d9c80.svg",
     "static/media/iphoneMockup.png": "/static/media/iphoneMockup.e385a353.png",
-    "static/media/logoCut.png": "/static/media/logoCut.40296eec.png",
-    "static/media/logo_Filled.png": "/static/media/logo_Filled.64f1f5c6.png",
     "static/media/reddit.svg": "/static/media/reddit.b17ddd00.svg",
     "static/media/scoreboard.jpg": "/static/media/scoreboard.4e6184e5.jpg",
     "static/media/spacer.svg": "/static/media/spacer.ad2edaec.svg",
@@ -30,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7ae70540.js",
-    "static/js/2.92fc56c0.chunk.js",
+    "static/js/2.b66bac6a.chunk.js",
     "static/css/main.c3810ce2.chunk.css",
-    "static/js/main.41960654.chunk.js"
+    "static/js/main.909eb4c8.chunk.js"
   ]
 }
