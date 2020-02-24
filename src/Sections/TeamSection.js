@@ -40,6 +40,17 @@ const TextSection = styled(Section)`
   justify-content: center;
 `;
 
+const TeamImg = styled.img`
+  margin-top: 2rem;
+  flex: 0 auto;
+  width: 30%;
+  @media (max-width: 768px) {
+    display:block;
+    width:80%;
+    max-height: 30%;
+  }
+`;
+
 const exampleText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
@@ -67,36 +78,10 @@ function TeamSection(props, ref) {
         <TextSection margin={'0 100%'}>
           <Text color={colors.lightcyan}>Team</Text>
         </TextSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
+        <TextSection width={"100%"}>
+          <Text color={colors.deeppink}>ComIng Soon</Text>
+        </TextSection>
+       
       </StyledBackdrop>
     </Wrapper>
   );

@@ -46,8 +46,8 @@ const SocialImg = styled.img`
   transition:.3s;
   background: rgba(0,0,0,0);
   width:4vw;
-  min-width: 1rem;
-  margin: 1rem 2vw;
+  min-width: 2rem;
+  margin: 1rem 4vw;
 
   &:hover {
       transform: scale(1.2);
@@ -67,24 +67,6 @@ function ContactSection(props, ref) {
     <Wrapper ref={contactRef} img={'./images/scoreboard.jpg'} id="contact">
       <Divider />
       <StyledBackdrop background={'black'}>
-        <TextSection margin={'0 100%'}>
-          <Text color={colors.lightcyan}>Contact</Text>
-        </TextSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
-        <ContentSection
-          backgroundColor={'rgba(255,255,68,0.7)'}
-        ></ContentSection>
         <Section margin={"2rem 0"} centered width={"100%"}>
           <Text main color={colors.lightcyan}>We're on all popular social media outlets</Text>
         </Section>
