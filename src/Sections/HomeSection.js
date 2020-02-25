@@ -45,8 +45,8 @@ const Slogan = styled.p`
   margin: 0;
 `;
 const StyledImg = styled.img`
-  margin: 1rem 0;
-  height: 150%;
+  margin: 1rem 0.5rem 1rem 0rem;
+  height: 100%;
   width: auto;
 `;
 
@@ -56,7 +56,7 @@ const TitleSection = styled(Section)`
   align-items: center;
   align-content: center;
   justify-content: center;
-  height: 10vw;
+  height: 20vw;
 `;
 
 const SloganSection = styled(Section)`

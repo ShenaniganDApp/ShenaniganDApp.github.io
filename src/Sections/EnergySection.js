@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: auto;
-  width: 70vw;
+  width: 85vw;
   display: flex;
   padding-bottom: 5%;
   justify-content: center;
@@ -164,11 +164,11 @@ const ChargeSection = styled(Section)`
   }
 `;
 const Divider = styled.div`
-  width: 50%;
+  width: 75%;
   height: 0.5vw;
   max-height: 0.3rem;
   background-color: black;
-  margin-top: 1rem;
+  margin: 1rem 0 0 1rem;
 `;
 
 function EnergySection(props, ref) {
@@ -186,25 +186,34 @@ function EnergySection(props, ref) {
         margin={'0 0 0 0'}
         backgroundColor={colors.lightcyan}
       >
-        <UpperTextSection centered>
+        <UpperTextSection>
           <Section centered width={'100%'}>
             <Text title color={'black'}>
               What&nbsp;
             </Text>
           </Section>
-          <Text title color={colors.deeppink}>
-            Charges&nbsp;
-          </Text>
-          <Text title color={'black'}>
-            You?
-          </Text>
+          <Section centered width={'100%'}>
+            <Text title color={colors.deeppink}>
+              Charges&nbsp;
+            </Text>
+            <Text title color={'black'}>
+              You?
+            </Text>
+          </Section>
           <Divider />
           <Section width={'100%'}>
-            <ChargeSection margin={'1rem -1rem 1rem 1rem;'} width={'50%'}>
+            <ChargeSection
+              centered
+              margin={'1rem -1rem 1rem 1rem;'}
+              width={'50%'}
+            >
               <Text>
-                <Text margin={'1rem 0'}>REach Your Goals</Text>
-                <Text margin={'1rem 0'}>Build Your CommunIty</Text>
-                <Text margin={'1rem 0'}>BEcomE Your BEst</Text>
+                <Text main margin={'0 1rem'}>
+                  Set a goal and livestream while you practice and
+                  Shenanigan will pay you money when you reach that goal.
+                </Text>
+                {/* <Text margin={'1rem 0'}>Build Your CommunIty</Text>
+                <Text margin={'1rem 0'}>BEcomE Your BEst</Text> */}
               </Text>
             </ChargeSection>
             <MockupImg src={require('../images/iphoneMockup.png')} />
