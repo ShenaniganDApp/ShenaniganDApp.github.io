@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Section, Text, colors } from '../styles';
-import { Transition, TransitionGroup } from 'react-transition-group';
+import { Transition, } from 'react-transition-group';
+import ReactPlayer from 'react-player';
+
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 8rem;
 `;
 const Backdrop = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
@@ -15,7 +16,7 @@ const Backdrop = styled.div`
   height: 100%;
   position: absolute;
   top: 0;
-  z-index:0;
+  z-index: 0;
 `;
 const Title = styled.h1`
   color: ${colors.deeppink};
@@ -38,8 +39,8 @@ const Title = styled.h1`
 const Slogan = styled.p`
   color: ${colors.lightcyan};
   width: 100%;
-  font-size: calc(0.4rem + 4vw);
-  font-family: 'Roboto', sans-serif;
+  font-size: calc(0.4rem + 3vw);
+  font-family: 'GreenScreen';
   text-shadow: black 0px 0px 10px;
   padding: 0;
   margin: 0;
@@ -57,6 +58,13 @@ const TitleSection = styled(Section)`
   align-content: center;
   justify-content: center;
   height: 20vw;
+`;
+
+const PlayerContainer = styled.div`
+  width: 80vw;
+  height: 45vw;
+  margin-top: 10rem;
+  z-index: 1;
 `;
 
 const SloganSection = styled(Section)`
@@ -99,7 +107,7 @@ function HomeSection() {
         }}
       >
         {state => (
-          <SloganSection state={state} margin={'0 0 0 33%'}>
+          <SloganSection state={state} margin={'0 0 0 42%'}>
             <Slogan> Jump Higher</Slogan>
           </SloganSection>
         )}
@@ -115,7 +123,7 @@ function HomeSection() {
         }}
       >
         {state => (
-          <SloganSection state={state} margin={'0 0 0 33%'}>
+          <SloganSection state={state} margin={'0 0 0 42%'}>
             <Slogan>Throw Farther</Slogan>
           </SloganSection>
         )}
@@ -131,13 +139,19 @@ function HomeSection() {
         }}
       >
         {state => (
-          <SloganSection state={state} margin={'0 0 0 33%'}>
+          <SloganSection state={state} margin={'0 0 0 42%'}>
             <Slogan>Run Faster</Slogan>
           </SloganSection>
         )}
       </Transition>
+      <PlayerContainer>
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+          width="100%"
+          height="100%"
 
-
+        />
+      </PlayerContainer>
     </Wrapper>
   );
 }
