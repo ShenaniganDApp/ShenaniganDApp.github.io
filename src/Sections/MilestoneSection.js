@@ -72,7 +72,7 @@ function MilestoneSection(props, ref) {
       >
         <MilestoneMainSection width={'100%'}>
           <Section margin={'0 0 25vw 0'}>
-            <Text color={colors.gold}>2020{' '};</Text>
+            <Text color={colors.gold}>2020{' '}</Text>
             <Text color={colors.deeppink}>Roadmap</Text>
           </Section>
           <TextSection centered>
