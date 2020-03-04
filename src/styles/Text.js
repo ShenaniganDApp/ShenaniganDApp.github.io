@@ -15,7 +15,7 @@ const Text = styled.p`
       css`
         font-weight: 800;
         font-size: 1.5vw;
-        font-family: Electro-Shackle, sans-serif;
+        font-family: Electro-Shackle;
         -webkit-user-select: none; /* Chrome all / Safari all */
         -moz-user-select: none; /* Firefox all */
         -ms-user-select: none; /* IE 10+ */
@@ -27,11 +27,11 @@ const Text = styled.p`
     (props.main &&
       css`
         font-size: 12px;
-        font-size: 2.2vw;
-
-        font-family: 'Roboto', sans-serif;
+        font-size: 1.75vw;
+        background-color: "black";
+        font-family: GreenScreen;
         @media (max-width: 768px) {
-          font-size: 4vw;
+          font-size: 3vw;
         }
       `) ||
     (props.title &&
@@ -39,7 +39,7 @@ const Text = styled.p`
         font-size: 20px;
         font-size: 4vw;
         font-weight: 900;
-        font-family: 'Electro-Shackle', sans-serif;
+        font-family: Electro-Shackle;
         @media (max-width: 768px) {
           font-size: 5vw;
         }
