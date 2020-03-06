@@ -11,7 +11,6 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1600px;
-  margin-top: 30rem;
   @media (max-width: 768px) {
     flex-direction: column;
     width: 100%;
@@ -27,21 +26,22 @@ const TopLeftSection = styled(Section)`
   width: 55%;
   @media (max-width: 768px) {
     z-index: 0;
-    width: 80%;
+    width: 90%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 0px;
     border: none;
   }
 `;
+
 const TopRightSection = styled(Section)`
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border: 2vw solid ${colors.lightcyan};
   z-index: 0;
   background: rgba(208, 0, 108, 0.7) url(${require('../svg/ethereumLogo.svg')});
-  background-size: 85% 85%;
-  background-position: 50% 50%;
+  background-size: 60% 60%;
+  background-position: 50% 80%;
   background-repeat: no-repeat;
   /* Preserve aspect ratio */
   backdrop-filter: blur(5px);
@@ -52,11 +52,12 @@ const TopRightSection = styled(Section)`
     box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.75);
     z-index: 1;
     margin-top: -0.5rem;
-    width: 80%;
+    width: 90%;
     border: none;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 0px;
+    background-position: 50% 50%;
   }
 `;
 
@@ -70,7 +71,7 @@ const SecondTopSection = styled(Section)`
   backdrop-filter: blur(5px);
 
   @media (max-width: 768px) {
-    width: calc(80% - 5vw);
+    width: calc(90% - 5vw);
   }
 `;
 const SecondBottomSection = styled(Section)`
@@ -83,16 +84,14 @@ const SecondBottomSection = styled(Section)`
   border-bottom-right-radius: 15px;
   backdrop-filter: blur(5px);
   @media (max-width: 768px) {
-    width: calc(80% - 5vw);
+    width: calc(90% - 5vw);
   }
 `;
 
 const UpperTextSection = styled(Section)`
-  width: 100%;
-  margin: 1rem -1rem 0rem 1rem;
-  @media (max-width: 768px) {
-    margin: 1rem;
-  }
+  width: 40%;
+  margin: 1rem -5rem 0rem 1rem;
+  align-items: flex-start;
 `;
 
 const LowerTextSection = styled(Section)`
@@ -117,14 +116,21 @@ const BoldText = styled(Text)`
   }
 `;
 
+const MockupSection = styled(Section)`
+   margin: 1rem 0rem 1rem -5rem;
+  @media (max-width: 768px) {
+    margin: 1rem 0rem 1rem -2rem;
+  }
+`
+
 const MockupImg = styled.img`
-  margin-top: 2rem;
+  margin-top: auto;
   flex: 0 auto;
-  width: 50%;
+  width: 100%;
   @media (max-width: 768px) {
     display: block;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 100%;
   }
 `;
 
@@ -164,11 +170,10 @@ const ChargeSection = styled(Section)`
   }
 `;
 const Divider = styled.div`
-  width: 75%;
+  width: 70%;
   height: 0.5vw;
   max-height: 0.3rem;
   background-color: black;
-  margin: 1rem 0 0 1rem;
 `;
 
 function EnergySection(props, ref) {
@@ -186,37 +191,33 @@ function EnergySection(props, ref) {
         margin={'0 0 0 0'}
         backgroundColor={colors.lightcyan}
       >
+        <MockupSection centered width={'60%'}>
+          <MockupImg src={require('../images/iphoneMockup.png')} />
+        </MockupSection>
         <UpperTextSection>
-          <Section centered width={'100%'}>
-            <Text title color={'black'}>
-              What&nbsp;
-            </Text>
-          </Section>
-          <Section centered width={'100%'}>
-            <Text title color={colors.deeppink}>
-              Charges&nbsp;
-            </Text>
-            <Text title color={'black'}>
-              You?
+          <Section width={'100%'}>
+            <Text width={'100%'}>
+              <Text width={'100%'} title color={'black'}>
+                What
+              </Text>
+              <Text width={'100%'} title color={colors.deeppink}>
+                Charges
+              </Text>
+              <Text width={'100%'} title color={'black'}>
+                You?
+              </Text>
             </Text>
           </Section>
           <Divider />
           <Section width={'100%'}>
-            <ChargeSection
-              centered
-              margin={'1rem -1rem 1rem 1rem;'}
-              width={'50%'}
-            >
-              <Text>
-                <Text main margin={'0 1rem'}>
-                  Set a goal and livestream while you practice and
-                  Shenanigan will pay you money when you reach that goal.
-                </Text>
-                {/* <Text margin={'1rem 0'}>Build Your CommunIty</Text>
-                <Text margin={'1rem 0'}>BEcomE Your BEst</Text> */}
+            <ChargeSection centered margin={'0rem -1rem 1rem 0remx'}>
+              <Text main>
+                Set a goal and livestream while you practice and Shenanigan will
+                pay you money when you reach that goal.
               </Text>
+              {/* <Text margin={'1rem 0'}>Build Your CommunIty</Text>
+                <Text margin={'1rem 0'}>BEcomE Your BEst</Text> */}
             </ChargeSection>
-            <MockupImg src={require('../images/iphoneMockup.png')} />
           </Section>
         </UpperTextSection>
       </TopLeftSection>
@@ -232,18 +233,18 @@ function EnergySection(props, ref) {
               iOns&nbsp;
             </BoldText>
             <Text shadowed main color={colors.lightcyan}>
-              need both&nbsp;
+              in nature need both{' '}
             </Text>
             <Text shadowed main color={colors.lightcyan}>
-              positive and negative&nbsp;
+              positive and negative{' '}
             </Text>
             <Text shadowed main color={colors.lightcyan}>
               particles to exist
             </Text>
           </Text>
-          <Section centered width={'100%'} margin={'2rem 0 0 0'}>
+          <Section centered width={'100%'} margin={'5rem 0 0 0'}>
             <BoldText size={'2.7vw'} color={colors.lightcyan}>
-              Energy =&nbsp;
+              Energy&nbsp;&nbsp;Is&nbsp;&nbsp;
             </BoldText>
             <BoldText size={'2.7vw'} color={colors.lightcyan}>
               Ethereum&nbsp;

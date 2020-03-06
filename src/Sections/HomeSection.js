@@ -65,6 +65,13 @@ const PlayerContainer = styled.div`
   height: 45vw;
   margin-top: 10rem;
   z-index: 1;
+  margin-bottom:  15rem;
+  @media (max-width: 768px) {
+    margin-top:5rem;
+    width: 90vw;
+    height: 50.625vw;
+    margin-bottom: 5rem;
+  }
 `;
 
 const SloganSection = styled(Section)`
@@ -146,7 +153,7 @@ function HomeSection() {
       </Transition>
       <PlayerContainer>
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+          url="https://www.youtube.com/watch?v=TSZxxqHoLzE"
           width="100%"
           height="100%"
 
