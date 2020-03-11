@@ -1,60 +1,84 @@
-import React, { useRef, useImperativeHandle, forwardRef } from 'react';
+import React, {
+  useState,
+  useRef,
+  useImperativeHandle,
+  forwardRef
+} from 'react';
 import styled from 'styled-components';
-import { Backdrop, Section, Text, colors } from '../styles';
+import { Backdrop, Section, Text, MapFruit, colors } from '../styles';
+import { MilestoneContent } from '../components';
 
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin-top: 20rem;
-
-  display: flex;
-  justify-content: center;
-  background: black url(${require('../images/scoreboard.jpg')});
-  background-size: cover;
-  background-position: 50% 35%;
-  background-repeat: no-repeat;
-  @media (max-width: 768px) {
-    background-position: 26% 25%;
-  }
 `;
 const MilestoneMainSection = styled(Section)`
+  position:relative;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 5rem;
   width: 100%;
-  font-size: 9vw;
-  font-weight: 900;
+  height: 100%;
   font-family: 'Electro-Shackle', sans-serif;
   justify-content: center;
+  /* background: black url(${require('../images/Roadmap_Pacman_Map.png')});
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat; */
+`;
+
+const MapImage = styled.img`
+  width: 90%;
+`;
+
+const WatermelonMapImage = styled(MapFruit)`
+  left: 10%;
+`;
+
+
+const GrapeMapImage = styled(MapFruit)`
+  left: 23%;
+  top: 11%;
+`;
+const AppleMapImage = styled(MapFruit)`
+  left: 69%;
+  top: 31%;
+`;
+
+const StrawberryMapImage = styled(MapFruit)`
+  left: 77%;
+  top: 71%;
+`;
+
+const CherryMapImage = styled(MapFruit)`
+  left: 81%;
+  top: 94%;
 `;
 
 const StyledBackdrop = styled(Backdrop)`
+  font-size: 9vw;
+  font-weight: 900;
+  font-family: 'Electro-Shackle', sans-serif;
   width: 100%;
-  padding-top: 20rem;
-  padding-bottom: 10rem;
+  /* padding: 20rem 5% 5% 10rem; */
   display: flex;
   flex-wrap: wrap;
 `;
 
-const Divider = styled.div`
-  height: 0.2rem;
+// const Divider = styled.div`
+//   height: 0.2rem;
 
-  flex-grow: 1;
-  background: rgb(230, 255, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(230, 255, 255, 0) 0%,
-    rgba(230, 255, 255, 1) 6%,
-    rgba(230, 255, 255, 1) 94%,
-    rgba(230, 255, 255, 0) 100%
-  );
-`;
-
-const TextSection = styled(Section)`
-  justify-content: space-between;
-  width: 100%;
-  margin: 5vw 1rem;
-`;
+//   flex-grow: 1;
+//   background: rgb(230, 255, 255);
+//   background: linear-gradient(
+//     90deg,
+//     rgba(230, 255, 255, 0) 0%,
+//     rgba(230, 255, 255, 1) 6%,
+//     rgba(230, 255, 255, 1) 94%,
+//     rgba(230, 255, 255, 0) 100%
+//   );
+// `;
 
 function MilestoneSection(props, ref) {
   const milestoneRef = useRef();
@@ -64,101 +88,93 @@ function MilestoneSection(props, ref) {
     }
   }));
 
+  const [activeMilestone, setActiveMilestone] = useState(null);
+
+  const showMilestoneContent = () => {
+    const watermelon = (
+      <MilestoneContent
+        imgSrc={require('../images/Roadmap_Pacman_01_Watermelon.png')}
+        title={'Q1 2020'}
+        content={'DELIVER OUR MESSAGE TO THE WORLD'}
+        left={'33%'}
+        top={'-5%'}
+      />
+    );
+    const grape = (
+      <MilestoneContent
+        imgSrc={require('../images/Roadmap_Pacman_02_Grapes.png')}
+        title={'Q2 2020'}
+        content={'BUIDL  BUIDL  BUIDL'}
+        left={'35%'}
+        top={'5%'}
+      />
+    );
+    const apple = (
+      <MilestoneContent
+        imgSrc={require('../images/Roadmap_Pacman_03_Apple.png')}
+        title={'Q3 2020'}
+        content={'OPEN SOURCE OUR CODE FOR REVIEW'}
+        left={'12%'}
+        top={'31%'}
+      />
+    );
+    const strawberry = (
+      <MilestoneContent
+        imgSrc={require('../images/Roadmap_Pacman_04_Strawberry.png')}
+        title={'Q4 2020'}
+        content={'GO LIVE WITH SHENANIGAN BETA'}
+        left={'20%'}
+        top={'61%'}
+      />
+    );
+    const cherry = (
+      <MilestoneContent
+        imgSrc={require('../images/Roadmap_Pacman_05_Cherries.png')}
+        title={'2021'}
+        content={'SHENANIGAN RELEASES ON GOOGLE PLAY AND APPLE APP STORES'}
+        left={'20%'}
+        top={'88%'}
+      />
+    );
+    const milestones = [watermelon, grape, apple, strawberry, cherry];
+    return milestones[activeMilestone];
+  };
+
   return (
     <Wrapper ref={milestoneRef} id="roadmap">
-      <StyledBackdrop
-        background={`radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%), 
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0) 70.71%)`}
-      >
+      <StyledBackdrop>
+        <Section textCentered margin={'0 0 10vw 0'}>
+          <Text color={colors.gold}>2020&nbsp;</Text>
+          <Text color={colors.deeppink}>Roadmap</Text>
+        </Section>
         <MilestoneMainSection width={'100%'}>
-          <Section margin={'0 0 25vw 0'}>
-            <Text color={colors.gold}>2020{' '}</Text>
-            <Text color={colors.deeppink}>Roadmap</Text>
-          </Section>
-          <TextSection centered>
-            <Section centered textCentered width={'40%'}>
-              <Text
-                width={'100%'}
-                shadowed
-                margin={'0 0rem 1rem 0'}
-                title
-                color={colors.gold}
-              >
-                Q1 2020
-              </Text>
-              <Text shadowed main color={colors.lightcyan}>
-                DELIVER OUR MESSAGE TO THE WORLD
-              </Text>
-            </Section>
-            <Divider />
-          </TextSection>
-          <TextSection centered>
-            <Divider />
-            <Section centered textCentered width={'40%'}>
-              <Text
-                width={'100%'}
-                shadowed
-                margin={'0 0rem 1rem 0'}
-                title
-                color={colors.gold}
-              >
-                Q2 2020
-              </Text>
-              <Text shadowed main color={colors.lightcyan}>
-                BUILD, BUILD, BUILD
-              </Text>
-            </Section>
-          </TextSection>
-          <TextSection centered>
-            <Section centered textCentered width={'40%'}>
-              <Text
-                width={'100%'}
-                shadowed
-                margin={'0 0rem 1rem 0'}
-                title
-                color={colors.gold}
-              >
-                Q3 2020
-              </Text>
-              <Text shadowed main color={colors.lightcyan}>
-                OPEN SOURCE OUR CODE FOR REVIEW
-              </Text>
-            </Section>
-            <Divider />
-          </TextSection>
-          <TextSection centered>
-            <Divider />
-            <Section centered textCentered width={'40%'}>
-              <Text
-                width={'100%'}
-                shadowed
-                margin={'0 0rem 1rem 0'}
-                title
-                color={colors.gold}
-              >
-                Q4 2020
-              </Text>
-              <Text shadowed main color={colors.lightcyan}>
-                GO LIVE WITH BETA
-              </Text>
-            </Section>
-          </TextSection>
-          <Section centered textCentered>
-            <Section centered width={'80%'}>
-              <Text
-                width={'100%'}
-                shadowed
-                margin={'5rem 0 1rem 0'}
-                title
-                color={colors.lightcyan}
-              >
-                2021
-              </Text>
-            </Section>
-            <Text shadowed main color={colors.lightcyan}>
-              SHENANIGAN RELEASES ON GOOGLE PLAY AND APPLE APP STORES.
-            </Text>
-          </Section>
+          <MapImage src={require('../images/Roadmap_Pacman_Map.png')} />
+          <WatermelonMapImage
+            src={require('../images/Roadmap_Pacman_01_Watermelon.png')}
+            onMouseEnter={() => setActiveMilestone(0)}
+            onMouseLeave={() => setActiveMilestone(null)}
+          />
+          <GrapeMapImage
+            src={require('../images/Roadmap_Pacman_02_Grapes.png')}
+            onMouseEnter={() => setActiveMilestone(1)}
+            onMouseLeave={() => setActiveMilestone(null)}
+          />
+          <AppleMapImage
+            src={require('../images/Roadmap_Pacman_03_Apple.png')}
+            onMouseEnter={() => setActiveMilestone(2)}
+            onMouseLeave={() => setActiveMilestone(null)}
+          />
+          <StrawberryMapImage
+            src={require('../images/Roadmap_Pacman_04_Strawberry.png')}
+            onMouseEnter={() => setActiveMilestone(3)}
+            onMouseLeave={() => setActiveMilestone(null)}
+          />
+          <CherryMapImage
+            src={require('../images/Roadmap_Pacman_05_Cherries.png')}
+            onMouseEnter={() => setActiveMilestone(4)}
+            // onMouseLeave={() => setActiveMilestone(null)}
+          />
+          {showMilestoneContent()}
         </MilestoneMainSection>
       </StyledBackdrop>
     </Wrapper>

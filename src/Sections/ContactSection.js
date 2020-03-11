@@ -19,7 +19,6 @@ const ContentSection = styled(Section)`
 
 const StyledBackdrop = styled(Backdrop)`
   width: 100%;
-  padding-top: 15rem;
   display: flex;
   flex-wrap: wrap;
 `;

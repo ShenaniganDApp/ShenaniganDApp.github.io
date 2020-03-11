@@ -72,7 +72,7 @@ function TeamSection(props, ref) {
       <Divider />
       <StyledBackdrop
         background={
-          'radial-gradient(circle at 65% -7%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%)'
+          'radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%)'
         }
       >
         <TextSection margin={'0 100%'}>

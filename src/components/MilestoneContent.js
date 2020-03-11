@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 const TextSection = styled(Section)`
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
-  width: 45%;
+  width: 55%;
   backdrop-filter: blur(10px);
   -webkit-box-shadow: 0px 0px 15px 0px rgba(230, 255, 255, 1);
   -moz-box-shadow: 0px 0px 15px 0px rgba(230, 255, 255, 1);
@@ -15,26 +15,29 @@ const TextSection = styled(Section)`
 `;
 
 const MilestoneContentImage = styled.img`
-  width: 15%;
-  height: 15%;
-  margin: 0 0 0 1rem;
+  width: 10%;
+  margin: 1rem 0rem 0.5rem 1rem;
+  text-align: right;
 `;
 
 const MilestoneContent = ({ imgSrc, title, content, ...props }) => (
   <TextSection left={props.left} top={props.top}>
-    <Text
-      width={'45%'}
-      shadowed
-      margin={'1rem 0 0 5%'}
-      title
-      color={colors.gold}
-    >
-      {title}
-    </Text>
-    <MilestoneContentImage src={imgSrc} />
-    <Text main margin={'1rem 0 1rem 5%'} color={colors.lightcyan}>
-      {content}
-    </Text>
+    <Section width={'100%'} height={'10%'} centered>
+      <Text shadowed margin={'1rem 0 0 5%'} title color={colors.gold}>
+        {title}
+      </Text>
+      <MilestoneContentImage src={imgSrc} />
+    </Section>
+    <Section textCentered width={'100%'}>
+      <Text
+        main
+        margin={'1rem 0 1rem 5%'}
+        width={'100%'}
+        color={colors.lightcyan}
+      >
+        {content}
+      </Text>
+    </Section>
   </TextSection>
 );
 
