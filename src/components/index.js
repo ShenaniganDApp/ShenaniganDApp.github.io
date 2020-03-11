@@ -1,3 +1,4 @@
 import HeaderTab from './HeaderTab';
+import MilestoneContent from './MilestoneContent';
 
-export { HeaderTab };
+export { HeaderTab, MilestoneContent };
