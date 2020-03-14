@@ -30,6 +30,11 @@ const MilestoneMainSection = styled(Section)`
 
 const MapImage = styled.img`
   width: 90%;
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const WatermelonMapImage = styled(MapFruit)`
