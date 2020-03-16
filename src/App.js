@@ -1,6 +1,6 @@
 import React, { useRef, useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { LandingSection, AboutSection } from './Sections';
+import { LandingSection, AboutSection } from './sections';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const AppWrapper = styled.div`

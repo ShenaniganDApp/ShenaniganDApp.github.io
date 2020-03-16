@@ -29,7 +29,7 @@ const MilestoneMainSection = styled(Section)`
 `;
 
 const MapImage = styled.img`
-  width: 90%;
+  width: 65%;
   @media (max-width: 768px) {
     display: block;
     width: 100%;
@@ -38,27 +38,46 @@ const MapImage = styled.img`
 `;
 
 const WatermelonMapImage = styled(MapFruit)`
-  left: 10%;
+  left: 20.5%;
+  @media (max-width: 768px) {
+    left:6%;
+    width:8%;
+  }
 `;
 
 
 const GrapeMapImage = styled(MapFruit)`
-  left: 23%;
-  top: 11%;
+  left: 30.5%;
+  top: 10.5%;
+  @media (max-width: 768px) {
+    left:20%;
+    top:12%;
+  }
 `;
 const AppleMapImage = styled(MapFruit)`
-  left: 69%;
+  left: 63.5%;
   top: 31%;
+  @media (max-width: 768px) {
+    left:71%;
+    top:32%;
+  }
 `;
 
 const StrawberryMapImage = styled(MapFruit)`
-  left: 77%;
+  left: 69%;
   top: 71%;
+  @media (max-width: 768px) {
+    left:80%;
+    top:72%;
+  }
 `;
 
 const CherryMapImage = styled(MapFruit)`
-  left: 81%;
+  left: 73%;
   top: 94%;
+  @media (max-width: 768px) {
+    left:84%;
+  }
 `;
 
 const StyledBackdrop = styled(Backdrop)`
@@ -110,7 +129,7 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_02_Grapes.png')}
         title={'Q2 2020'}
         content={'BUIDL  BUIDL  BUIDL'}
-        left={'35%'}
+        left={'37%'}
         top={'5%'}
       />
     );
