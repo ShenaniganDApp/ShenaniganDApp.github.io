@@ -47,7 +47,7 @@ const Text = styled.p`
   ${props =>
     props.shadowed &&
     css`
-      text-shadow: black 0px 0px 5px;
+      text-shadow: ${props.shadowed} 0px 0px 5px;
     `}
 `;
 

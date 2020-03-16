@@ -38,37 +38,36 @@ const MapImage = styled.img`
 `;
 
 const WatermelonMapImage = styled(MapFruit)`
-  left: 20.5%;
+  left: 21%;
+  width: 6%;
   @media (max-width: 768px) {
-    left:6%;
-    width:8%;
+    left: 6%;
+    width: 8%;
   }
 `;
-
 
 const GrapeMapImage = styled(MapFruit)`
   left: 30.5%;
   top: 10.5%;
   @media (max-width: 768px) {
-    left:20%;
-    top:12%;
+    left: 20%;
+    top: 12%;
   }
 `;
 const AppleMapImage = styled(MapFruit)`
   left: 63.5%;
   top: 31%;
   @media (max-width: 768px) {
-    left:71%;
-    top:32%;
+    left: 71%;
+    top: 32%;
   }
 `;
 
 const StrawberryMapImage = styled(MapFruit)`
   left: 69%;
-  top: 71%;
+  top: 72%;
   @media (max-width: 768px) {
-    left:80%;
-    top:72%;
+    left: 80%;
   }
 `;
 
@@ -76,7 +75,7 @@ const CherryMapImage = styled(MapFruit)`
   left: 73%;
   top: 94%;
   @media (max-width: 768px) {
-    left:84%;
+    left: 84%;
   }
 `;
 
@@ -111,7 +110,7 @@ function MilestoneSection(props, ref) {
       return milestoneRef.current.getBoundingClientRect().top;
     }
   }));
-
+  const isPhone = window.innerWidth <= 768;
   const [activeMilestone, setActiveMilestone] = useState(null);
 
   const showMilestoneContent = () => {
@@ -120,8 +119,8 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_01_Watermelon.png')}
         title={'Q1 2020'}
         content={'DELIVER OUR MESSAGE TO THE WORLD'}
-        left={'33%'}
-        top={'-5%'}
+        left={isPhone ? '18%' : '30%'}
+        top={isPhone ? '-10%' :'-5%'}
       />
     );
     const grape = (
@@ -129,7 +128,7 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_02_Grapes.png')}
         title={'Q2 2020'}
         content={'BUIDL  BUIDL  BUIDL'}
-        left={'37%'}
+        left={isPhone ? '30%' :'37%'}
         top={'5%'}
       />
     );
@@ -138,7 +137,7 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_03_Apple.png')}
         title={'Q3 2020'}
         content={'OPEN SOURCE OUR CODE FOR REVIEW'}
-        left={'12%'}
+        left={isPhone ? '4%' :'27%'}
         top={'31%'}
       />
     );
@@ -147,8 +146,8 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_04_Strawberry.png')}
         title={'Q4 2020'}
         content={'GO LIVE WITH SHENANIGAN BETA'}
-        left={'20%'}
-        top={'61%'}
+        left={isPhone ? '12%' :'31%'}
+        top={'69%'}
       />
     );
     const cherry = (
@@ -156,7 +155,7 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_05_Cherries.png')}
         title={'2021'}
         content={'SHENANIGAN RELEASES ON GOOGLE PLAY AND APPLE APP STORES'}
-        left={'20%'}
+        left={isPhone ? '17%' :'36%'}
         top={'88%'}
       />
     );
@@ -168,29 +167,29 @@ function MilestoneSection(props, ref) {
     <Wrapper ref={milestoneRef} id="roadmap">
       <StyledBackdrop>
         <Section textCentered margin={'0 0 10vw 0'}>
-          <Text color={colors.gold}>2020&nbsp;</Text>
-          <Text color={colors.deeppink}>Roadmap</Text>
+          <Text shadowed={colors.gold} color={colors.gold}>2020&nbsp;</Text>
+          <Text shadowed={colors.deeppink} color={colors.deeppink}>Roadmap</Text>
         </Section>
         <MilestoneMainSection width={'100%'}>
           <MapImage src={require('../images/Roadmap_Pacman_Map.png')} />
           <WatermelonMapImage
             src={require('../images/Roadmap_Pacman_01_Watermelon.png')}
-            onMouseEnter={() => setActiveMilestone(0)}
+            onMouseOver={() => setActiveMilestone(0)}
             onMouseLeave={() => setActiveMilestone(null)}
           />
           <GrapeMapImage
             src={require('../images/Roadmap_Pacman_02_Grapes.png')}
-            onMouseEnter={() => setActiveMilestone(1)}
+            onMouseOver={() => setActiveMilestone(1)}
             onMouseLeave={() => setActiveMilestone(null)}
           />
           <AppleMapImage
             src={require('../images/Roadmap_Pacman_03_Apple.png')}
-            onMouseEnter={() => setActiveMilestone(2)}
+            onMouseOver={() => setActiveMilestone(2)}
             onMouseLeave={() => setActiveMilestone(null)}
           />
           <StrawberryMapImage
             src={require('../images/Roadmap_Pacman_04_Strawberry.png')}
-            onMouseEnter={() => setActiveMilestone(3)}
+            onMouseOver={() => setActiveMilestone(3)}
             onMouseLeave={() => setActiveMilestone(null)}
           />
           <CherryMapImage

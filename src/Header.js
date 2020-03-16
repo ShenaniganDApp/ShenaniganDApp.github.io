@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useScrollPosition } from "./hooks/useScrollPosition";
-import styled, { css } from "styled-components";
-import { HeaderToggle, LogoFrame } from "./styles";
-import { HashLink as Link } from "react-router-hash-link";
-import { Transition, TransitionGroup } from "react-transition-group";
-import { HeaderTab } from "./components";
+import React, { useState, useEffect } from 'react';
+import { useScrollPosition } from './hooks/useScrollPosition';
+import styled, { css } from 'styled-components';
+import { HeaderToggle, LogoFrame } from './styles';
+import { HashLink as Link } from 'react-router-hash-link';
+import { Transition, TransitionGroup } from 'react-transition-group';
+import { HeaderTab } from './components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,7 +15,10 @@ const Wrapper = styled.div`
   z-index: 100;
   top: 0;
   justify-content: ${props =>
-    props.collapsed ? "space-between" : " flex-start"};
+    props.collapsed ? 'space-between' : ' flex-start'};
+  pointer-events:none;        
+
+
 `;
 
 const Logo = styled.img`
@@ -23,6 +26,7 @@ const Logo = styled.img`
   height: 90%;
 `;
 const Nav = styled.div`
+ 
   transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
     background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s, opacity 0.75s;
   z-index: 1;
@@ -32,7 +36,7 @@ const Nav = styled.div`
   border-bottom-left-radius: 15px;
   width: 100%;
   opacity: ${({ state }) =>
-    state === "entering" || state === "entered" ? 1 : 0};
+    state === 'entering' || state === 'entered' ? 1 : 0};
   ${props =>
     props.scrolled &&
     css`
@@ -53,7 +57,6 @@ const HomeLink = styled(Link)`
   @media (max-width: 768px) {
     margin-left: 0;
   }
-  
 `;
 
 const Hamburger = styled.img`
@@ -99,7 +102,7 @@ function Header(props) {
         num={0}
         handleHeaderChange={handleHeaderChange}
         to=""
-        text={"ShenanIgan"}
+        text={'ShenanIgan'}
       />
     );
     const Energy = (
@@ -109,7 +112,7 @@ function Header(props) {
         handleHeaderChange={handleHeaderChange}
         to="/#energy"
         num={1}
-        text={"Energy"}
+        text={'Energy'}
       />
     );
     const Milestone = (
@@ -119,7 +122,7 @@ function Header(props) {
         num={2}
         handleHeaderChange={handleHeaderChange}
         to="/#roadmap"
-        text={"Roadmap"}
+        text={'Roadmap'}
       />
     );
     const Team = (
@@ -129,7 +132,7 @@ function Header(props) {
         num={3}
         handleHeaderChange={handleHeaderChange}
         to="/#team"
-        text={"Team"}
+        text={'Team'}
       />
     );
     const Contact = (
@@ -139,7 +142,7 @@ function Header(props) {
         num={4}
         handleHeaderChange={handleHeaderChange}
         to="/#contact"
-        text={"Contact"}
+        text={'Contact'}
       />
     );
 
@@ -197,7 +200,7 @@ function Header(props) {
     <Wrapper scrolled={scrolled} collapsed={collapsedStart}>
       <HomeLink onClick={() => handleHeaderChange(0)} to="/#top">
         <LogoFrame>
-          <Logo src={require("./images/She_Logo.png")} />
+          <Logo src={require('./images/She_Logo.png')} />
         </LogoFrame>
       </HomeLink>
       {headerCollapsed()}
@@ -220,7 +223,7 @@ function Header(props) {
               handleHeaderChange={handleHeaderChange}
               to="/#energy"
               num={1}
-              text={"Energy"}
+              text={'Energy'}
             />
             <HeaderTab
               state={state}
@@ -229,7 +232,7 @@ function Header(props) {
               handleHeaderChange={handleHeaderChange}
               to="/#roadmap"
               num={2}
-              text={"Roadmap"}
+              text={'Roadmap'}
             />
             <HeaderTab
               state={state}
@@ -238,7 +241,7 @@ function Header(props) {
               handleHeaderChange={handleHeaderChange}
               to="/#team"
               num={3}
-              text={"Team"}
+              text={'Team'}
             />
             <HeaderTab
               state={state}
@@ -247,7 +250,7 @@ function Header(props) {
               handleHeaderChange={handleHeaderChange}
               to="/#contact"
               num={4}
-              text={"Contact"}
+              text={'Contact'}
             />
           </Nav>
         )}
@@ -259,7 +262,7 @@ function Header(props) {
             collapsed={collapsedEnd}
             onClick={() => handleHeaderToggle()}
           >
-            <Hamburger src={require("./svg/hamburger.svg")} />
+            <Hamburger src={require('./svg/hamburger.svg')} />
           </HeaderToggle>
         )}
       </Transition>

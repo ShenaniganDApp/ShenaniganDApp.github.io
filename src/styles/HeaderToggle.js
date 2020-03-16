@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const HeaderToggle = styled.div`
+  pointer-events: auto;
   transition: all 0.5s ease-in-out;
   top: 0;
   right: 0;

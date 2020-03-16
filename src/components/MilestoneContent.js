@@ -2,16 +2,19 @@ import React from 'react';
 import { Text, Section, colors } from '../styles';
 import styled, { css } from 'styled-components';
 
-const TextSection = styled(Section)`
-  background-color: rgba(0, 0, 0, 0.7);
+const ContentSection = styled(Section)`
+  background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
-  width: 55%;
+  width: 35%;
   backdrop-filter: blur(10px);
   -webkit-box-shadow: 0px 0px 15px 0px rgba(230, 255, 255, 1);
   -moz-box-shadow: 0px 0px 15px 0px rgba(230, 255, 255, 1);
-  box-shadow: 0px 0px 15px 0px rgba(230, 255, 255, 1);
+  box-shadow: 0px 0px 15px 0px ${colors.deeppink};
   left: ${props => props.left};
   top: ${props => props.top};
+  @media (max-width: 768px) {
+    width:65%;
+  }
 `;
 
 const MilestoneContentImage = styled.img`
@@ -21,9 +24,10 @@ const MilestoneContentImage = styled.img`
 `;
 
 const MilestoneContent = ({ imgSrc, title, content, ...props }) => (
-  <TextSection left={props.left} top={props.top}>
+  <ContentSection left={props.left} top={props.top}>
     <Section width={'100%'} height={'10%'} centered>
-      <Text shadowed margin={'1rem 0 0 5%'} title color={colors.gold}>
+      <MilestoneContentImage src={imgSrc} />
+      <Text shadowed={colors.gold} margin={'1rem 0 0 5%'} title color={colors.gold}>
         {title}
       </Text>
       <MilestoneContentImage src={imgSrc} />
@@ -31,6 +35,7 @@ const MilestoneContent = ({ imgSrc, title, content, ...props }) => (
     <Section textCentered width={'100%'}>
       <Text
         main
+        shadowed={colors.lightcyan}
         margin={'1rem 0 1rem 5%'}
         width={'100%'}
         color={colors.lightcyan}
@@ -38,7 +43,7 @@ const MilestoneContent = ({ imgSrc, title, content, ...props }) => (
         {content}
       </Text>
     </Section>
-  </TextSection>
+  </ContentSection>
 );
 
 export default MilestoneContent;

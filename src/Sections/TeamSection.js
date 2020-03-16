@@ -76,10 +76,10 @@ function TeamSection(props, ref) {
         }
       >
         <TextSection margin={'0 100%'}>
-          <Text color={colors.lightcyan}>Team</Text>
+          <Text shadowed={colors.lightcyan} color={colors.lightcyan}>Team</Text>
         </TextSection>
         <TextSection width={"100%"}>
-          <Text color={colors.deeppink}>ComIng Soon</Text>
+          <Text shadowed={colors.deeppink} color={colors.deeppink}>ComIng Soon</Text>
         </TextSection>
        
       </StyledBackdrop>

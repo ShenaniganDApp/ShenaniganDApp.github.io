@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 import { Transition } from 'react-transition-group';
 
 const TabLink = styled(Link)`
+  pointer-events:auto;
   transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   text-decoration: none;
   height: 100%;
