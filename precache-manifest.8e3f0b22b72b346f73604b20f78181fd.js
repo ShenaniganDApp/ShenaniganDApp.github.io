@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d59e4461a53d23e2469ac180c4663f50",
+    "revision": "1ca312639e5075714ef3df938c5157a7",
     "url": "/index.html"
   },
   {
-    "revision": "cbdef9ead5f4e68c59fc",
-    "url": "/static/css/main.3eee09a3.chunk.css"
+    "revision": "2c8199195cea960e01ed",
+    "url": "/static/css/main.50accb1a.chunk.css"
   },
   {
-    "revision": "99d59eca3b7f0d386da3",
-    "url": "/static/js/2.7b0934cb.chunk.js"
+    "revision": "30a85e83085a619e9850",
+    "url": "/static/js/2.a0e25681.chunk.js"
   },
   {
     "revision": "fd228f9b9a68ce6b23a6cf8b0a38a0e3",
-    "url": "/static/js/2.7b0934cb.chunk.js.LICENSE"
+    "url": "/static/js/2.a0e25681.chunk.js.LICENSE"
   },
   {
-    "revision": "cbdef9ead5f4e68c59fc",
-    "url": "/static/js/main.9f1f00c0.chunk.js"
+    "revision": "2c8199195cea960e01ed",
+    "url": "/static/js/main.5d55aaa6.chunk.js"
   },
   {
     "revision": "81e533c300a6f73e3621",
@@ -32,32 +32,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Greenscr.13a00d0a.woff"
   },
   {
-    "revision": "c1b5830b3fe2c45f8418c57361daa447",
-    "url": "/static/media/Roadmap_Pacman_01_Watermelon.c1b5830b.png"
+    "revision": "418142bfeca3f52cdd0b11ec454a7b25",
+    "url": "/static/media/Roadmap_Pacman_01_Watermelon.418142bf.png"
   },
   {
-    "revision": "33bb79c0cc59625b32197ac2786a7a6a",
-    "url": "/static/media/Roadmap_Pacman_02_Grapes.33bb79c0.png"
+    "revision": "b778eb3af5c03ff92af6e367c425294e",
+    "url": "/static/media/Roadmap_Pacman_02_Grapes.b778eb3a.png"
   },
   {
-    "revision": "ec1e4e78d0a32c9570f0d7e8ccb5aade",
-    "url": "/static/media/Roadmap_Pacman_03_Apple.ec1e4e78.png"
+    "revision": "a2d8abcd900c1138a0ff3966d0fea02f",
+    "url": "/static/media/Roadmap_Pacman_03_Apple.a2d8abcd.png"
   },
   {
-    "revision": "0f13b7cb7878bef717d796db115d5599",
-    "url": "/static/media/Roadmap_Pacman_04_Strawberry.0f13b7cb.png"
+    "revision": "e28b4fe5e453a2c8b01265a19058addb",
+    "url": "/static/media/Roadmap_Pacman_04_Strawberry.e28b4fe5.png"
   },
   {
-    "revision": "0369a8d4d53b434e03b631349b8106c5",
-    "url": "/static/media/Roadmap_Pacman_05_Cherries.0369a8d4.png"
+    "revision": "4a6e18cd98e154d19422cff8793a7dff",
+    "url": "/static/media/Roadmap_Pacman_05_Cherries.4a6e18cd.png"
   },
   {
     "revision": "5b1d8b3ea44131b6b2546bab7062ee06",
     "url": "/static/media/Roadmap_Pacman_Map.5b1d8b3e.png"
   },
   {
-    "revision": "ca05b23d5b4186229ae91351c90fb3f8",
-    "url": "/static/media/She_Logo.ca05b23d.png"
+    "revision": "bcfd00e8f4c91b4c078cc47823b1da04",
+    "url": "/static/media/Roadmap_Pacman_Map_Mobile.bcfd00e8.png"
+  },
+  {
+    "revision": "f89b39945aefd36c5ff19a8786cd4f17",
+    "url": "/static/media/She_Logo.f89b3994.png"
   },
   {
     "revision": "3264e29b3fa14fa9eb73ac942dd83843",
@@ -68,8 +72,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/background_mobile.00a08211.png"
   },
   {
-    "revision": "fb666fbbba79266577c1547543666976",
-    "url": "/static/media/ethereumLogo.fb666fbb.svg"
+    "revision": "802c6eacbb13c83b27c39be505228231",
+    "url": "/static/media/ethereumLogo.802c6eac.svg"
   },
   {
     "revision": "ec0c188daf70ada2deb84d12f963dd2d",
@@ -88,8 +92,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/instagram.725d9c80.svg"
   },
   {
-    "revision": "e385a353c06900acb1fc06572c1e2142",
-    "url": "/static/media/iphoneMockup.e385a353.png"
+    "revision": "35d01f07ec30ab108f075568d017c3e0",
+    "url": "/static/media/iphoneMockup.35d01f07.png"
   },
   {
     "revision": "b17ddd008290508680679b9b2e7b994a",
@@ -100,8 +104,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/riot.54dd3d7b.svg"
   },
   {
-    "revision": "0c9fa1ee1e421c65167f4e0335e837f1",
-    "url": "/static/media/spacer.0c9fa1ee.svg"
+    "revision": "ad2edaec4f1b753e97b42fafe57005d1",
+    "url": "/static/media/spacer.ad2edaec.svg"
   },
   {
     "revision": "d1d12ce1ba2af990b4eb003f4883f97e",
