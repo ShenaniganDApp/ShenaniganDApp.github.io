@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   margin-top: 20rem;
 `;
 const MilestoneMainSection = styled(Section)`
-  position:relative;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 5rem;
@@ -22,10 +22,6 @@ const MilestoneMainSection = styled(Section)`
   height: 100%;
   font-family: 'Electro-Shackle', sans-serif;
   justify-content: center;
-  /* background: black url(${require('../images/Roadmap_Pacman_Map.png')});
-  background-size: contain;
-  background-position: 50% 50%;
-  background-repeat: no-repeat; */
 `;
 
 const MapImage = styled.img`
@@ -120,7 +116,7 @@ function MilestoneSection(props, ref) {
         title={'Q1 2020'}
         content={'DELIVER OUR MESSAGE TO THE WORLD'}
         left={isPhone ? '18%' : '30%'}
-        top={isPhone ? '-10%' :'-5%'}
+        top={isPhone ? '-10%' : '-5%'}
       />
     );
     const grape = (
@@ -128,7 +124,7 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_02_Grapes.png')}
         title={'Q2 2020'}
         content={'BUIDL  BUIDL  BUIDL'}
-        left={isPhone ? '30%' :'37%'}
+        left={isPhone ? '30%' : '37%'}
         top={'5%'}
       />
     );
@@ -137,7 +133,7 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_03_Apple.png')}
         title={'Q3 2020'}
         content={'OPEN SOURCE OUR CODE FOR REVIEW'}
-        left={isPhone ? '4%' :'27%'}
+        left={isPhone ? '4%' : '27%'}
         top={'31%'}
       />
     );
@@ -146,7 +142,7 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_04_Strawberry.png')}
         title={'Q4 2020'}
         content={'GO LIVE WITH SHENANIGAN BETA'}
-        left={isPhone ? '12%' :'31%'}
+        left={isPhone ? '12%' : '31%'}
         top={'69%'}
       />
     );
@@ -155,7 +151,7 @@ function MilestoneSection(props, ref) {
         imgSrc={require('../images/Roadmap_Pacman_05_Cherries.png')}
         title={'2021'}
         content={'SHENANIGAN RELEASES ON GOOGLE PLAY AND APPLE APP STORES'}
-        left={isPhone ? '17%' :'36%'}
+        left={isPhone ? '17%' : '36%'}
         top={'88%'}
       />
     );
@@ -167,11 +163,19 @@ function MilestoneSection(props, ref) {
     <Wrapper ref={milestoneRef} id="roadmap">
       <StyledBackdrop>
         <Section textCentered margin={'0 0 10vw 0'}>
-          <Text shadowed={colors.gold} color={colors.gold}>2020&nbsp;</Text>
-          <Text shadowed={colors.deeppink} color={colors.deeppink}>Roadmap</Text>
+          <Text shadowed={colors.gold} color={colors.gold}>
+            2020&nbsp;
+          </Text>
+          <Text shadowed={colors.deeppink} color={colors.deeppink}>
+            Roadmap
+          </Text>
         </Section>
         <MilestoneMainSection width={'100%'}>
-          <MapImage src={require('../images/Roadmap_Pacman_Map.png')} />
+          <MapImage
+            src={require(isPhone
+              ? '../images/Roadmap_Pacman_Map_Mobile.png'
+              : '../images/Roadmap_Pacman_Map.png')}
+          />
           <WatermelonMapImage
             src={require('../images/Roadmap_Pacman_01_Watermelon.png')}
             onMouseOver={() => setActiveMilestone(0)}

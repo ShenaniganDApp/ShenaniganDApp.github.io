@@ -62,14 +62,14 @@ const TitleSection = styled(Section)`
 
 const PlayerContainer = styled.div`
   width: 80vw;
-  height: 45vw;
+  height: 42vw;
   margin-top: 10rem;
   z-index: 1;
   margin-bottom:  15rem;
   @media (max-width: 768px) {
     margin-top:5rem;
-    width: 90vw;
-    height: 50.625vw;
+    width: 98vw;
+    height: 53.25vw;
     margin-bottom: 5rem;
   }
 `;
