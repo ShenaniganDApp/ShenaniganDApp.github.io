@@ -73,10 +73,10 @@ function ContactSection(props, ref) {
             <a href="https://www.facebook.com/shenanigan.dapp/">
               <SocialImg src={require('../svg/facebook.svg')} />
             </a>
-            <a href="https://www.instagram.com/shenanigan.dapp/">
+            <a href="https://www.instagram.com/she.dapp/">
               <SocialImg src={require('../svg/instagram.svg')} />
             </a>
-            <a href="https://twitter.com/shenaniganDapp">
+            <a href="https://twitter.com/She_Dapp">
               <SocialImg src={require('../svg/twitter.svg')} />
             </a>
             <a href="https://www.reddit.com/user/shenanigan_dapp">
@@ -88,7 +88,7 @@ function ContactSection(props, ref) {
             <a href="https://www.youtube.com/channel/UCyENEycuNXfntLJLSeIuWXw">
               <SocialImg src={require('../svg/youtube.svg')} />
             </a>
-            <a href="https://riot.im/app/#/group/+shenanigan:matrix.org">
+            <a href="https://github.com/ShenaniganDApp">
               <SocialImg src={require('../svg/github.svg')} />
             </a>
         </Section>
