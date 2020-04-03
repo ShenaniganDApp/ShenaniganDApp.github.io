@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.50accb1a.chunk.css",
-    "main.js": "/static/js/main.5d55aaa6.chunk.js",
-    "main.js.map": "/static/js/main.5d55aaa6.chunk.js.map",
+    "main.css": "/static/css/main.27fb4af7.chunk.css",
+    "main.js": "/static/js/main.08b1b05a.chunk.js",
+    "main.js.map": "/static/js/main.08b1b05a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7ae70540.js",
     "runtime-main.js.map": "/static/js/runtime-main.7ae70540.js.map",
     "static/js/2.a0e25681.chunk.js": "/static/js/2.a0e25681.chunk.js",
     "static/js/2.a0e25681.chunk.js.map": "/static/js/2.a0e25681.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.8e3f0b22b72b346f73604b20f78181fd.js": "/precache-manifest.8e3f0b22b72b346f73604b20f78181fd.js",
+    "precache-manifest.bdc23ebb9010875c41a2474a651ef1c2.js": "/precache-manifest.bdc23ebb9010875c41a2474a651ef1c2.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.50accb1a.chunk.css.map": "/static/css/main.50accb1a.chunk.css.map",
+    "static/css/main.27fb4af7.chunk.css.map": "/static/css/main.27fb4af7.chunk.css.map",
     "static/js/2.a0e25681.chunk.js.LICENSE": "/static/js/2.a0e25681.chunk.js.LICENSE",
     "static/media/index.css": "/static/media/Greenscr.13a00d0a.woff",
     "static/media/Roadmap_Pacman_01_Watermelon.png": "/static/media/Roadmap_Pacman_01_Watermelon.418142bf.png",
@@ -23,7 +23,7 @@
     "static/media/She_Logo.png": "/static/media/She_Logo.f89b3994.png",
     "static/media/background.jpg": "/static/media/background.3264e29b.jpg",
     "static/media/background_mobile.png": "/static/media/background_mobile.00a08211.png",
-    "static/media/ethereumLogo.svg": "/static/media/ethereumLogo.802c6eac.svg",
+    "static/media/ethereumLogo.svg": "/static/media/ethereumLogo.fb666fbb.svg",
     "static/media/facebook.svg": "/static/media/facebook.ec0c188d.svg",
     "static/media/github.svg": "/static/media/github.9686b31e.svg",
     "static/media/hamburger.svg": "/static/media/hamburger.86595150.svg",
@@ -31,14 +31,14 @@
     "static/media/iphoneMockup.png": "/static/media/iphoneMockup.35d01f07.png",
     "static/media/reddit.svg": "/static/media/reddit.b17ddd00.svg",
     "static/media/riot.svg": "/static/media/riot.54dd3d7b.svg",
-    "static/media/spacer.svg": "/static/media/spacer.ad2edaec.svg",
+    "static/media/spacer.svg": "/static/media/spacer.0c9fa1ee.svg",
     "static/media/twitter.svg": "/static/media/twitter.d1d12ce1.svg",
     "static/media/youtube.svg": "/static/media/youtube.3c3e2628.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7ae70540.js",
     "static/js/2.a0e25681.chunk.js",
-    "static/css/main.50accb1a.chunk.css",
-    "static/js/main.5d55aaa6.chunk.js"
+    "static/css/main.27fb4af7.chunk.css",
+    "static/js/main.08b1b05a.chunk.js"
   ]
 }
