@@ -69,7 +69,7 @@ function LandingSection() {
       </HomeWrapper>
       <Spacer src={require('../svg/spacer.svg')}></Spacer>
       <MainWrapper>
-        <MilestoneSection ref={milestoneRef} />
+        <MilestoneSection ref={milestoneRef} height={heights.milestone} />
         <TeamSection ref={teamRef} />
         <ContactSection ref={contactRef} />
       </MainWrapper>

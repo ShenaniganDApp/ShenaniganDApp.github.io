@@ -171,6 +171,13 @@ function MilestoneSection(props, ref) {
     return milestones[activeMilestone];
   };
 
+  const handleMilestoneTouched = numTouched => {
+    if (!touchedMilestone) {
+      setTouchedMilestone(true);
+    }
+    setActiveMilestone(numTouched);
+  };
+
   useScrollPosition(({ prevPos, currPos }) => {
     if (!startLoop) {
       if (currPos.y <= props.height) {
@@ -199,42 +206,37 @@ function MilestoneSection(props, ref) {
           <WatermelonMapImage
             src={require('../images/Roadmap_Pacman_01_Watermelon.png')}
             onMouseOver={() => {
-              setActiveMilestone(0);
-              setTouchedMilestone(true);
+              handleMilestoneTouched(0);
             }}
-            onMouseLeave={() => setActiveMilestone(null)}
+            onMouseLeave={() => handleMilestoneTouched(null)}
           />
           <GrapeMapImage
             src={require('../images/Roadmap_Pacman_02_Grapes.png')}
             onMouseOver={() => {
-              setActiveMilestone(1);
-              setTouchedMilestone(true);
+              handleMilestoneTouched(1);
             }}
-            onMouseLeave={() => setActiveMilestone(null)}
+            onMouseLeave={() => handleMilestoneTouched(null)}
           />
           <AppleMapImage
             src={require('../images/Roadmap_Pacman_03_Apple.png')}
             onMouseOver={() => {
-              setActiveMilestone(2);
-              setTouchedMilestone(true);
+              handleMilestoneTouched(2);
             }}
-            onMouseLeave={() => setActiveMilestone(null)}
+            onMouseLeave={() => handleMilestoneTouched(null)}
           />
           <StrawberryMapImage
             src={require('../images/Roadmap_Pacman_04_Strawberry.png')}
             onMouseOver={() => {
-              setActiveMilestone(3);
-              setTouchedMilestone(true);
+              handleMilestoneTouched(3);
             }}
-            onMouseLeave={() => setActiveMilestone(null)}
+            onMouseLeave={() => handleMilestoneTouched(null)}
           />
           <CherryMapImage
             src={require('../images/Roadmap_Pacman_05_Cherries.png')}
             onMouseEnter={() => {
-              setActiveMilestone(4);
-              setTouchedMilestone(true);
+              handleMilestoneTouched(4);
             }}
-            onMouseLeave={() => setActiveMilestone(null)}
+            onMouseLeave={() => handleMilestoneTouched(null)}
           />
           {showMilestoneContent()}
         </MilestoneMainSection>

@@ -152,8 +152,6 @@ function Header(props) {
   };
 
   useScrollPosition(({ prevPos, currPos }) => {
-    console.log(currPos.y)
-    console.log(props.heights.team);
     if (currPos.y < -150) {
       setScrolled(true);
     } else if (isPhone) {
