@@ -12,14 +12,14 @@ body {
 @font-face {
   font-family: 'GreenScreen';
   src: local('GreenScreen'), url(./fonts/Greenscr.woff) format('woff');
+  font-display: block;
 }
 @font-face {
   font-family: 'Electro-Shackle';
   src: local('Electro-Shackle'),
     url(./fonts/Electro-Shackle.ttf.woff) format('woff');
+  font-display: block;
 }
-
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

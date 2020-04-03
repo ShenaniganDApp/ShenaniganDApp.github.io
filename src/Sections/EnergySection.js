@@ -91,7 +91,7 @@ const SecondBottomSection = styled(Section)`
 
 const UpperTextSection = styled(Section)`
   width: 40%;
-  margin: 1rem 0rem 0rem -1rem;
+  margin: 1rem 0rem auto 0rem;
   align-items: flex-start;
 `;
 
@@ -121,7 +121,7 @@ const MockupSection = styled(Section)`
   width: 65%;
   margin: 1rem 0rem 1rem -8rem;
   @media (max-width: 768px) {
-    margin: 1rem 0rem 1rem -2rem;
+    margin: 1rem -1rem 1rem -2rem;
   }
 `;
 
@@ -197,7 +197,7 @@ function EnergySection(props, ref) {
           <MockupImg src={require('../images/iphoneMockup.png')} />
         </MockupSection>
         <UpperTextSection>
-          <Section textCentered width={'100%'}>
+          <Section width={'100%'}>
             <Text width={'100%'}>
               <Text width={'100%'} title color={'black'}>
                 What
@@ -212,7 +212,7 @@ function EnergySection(props, ref) {
           </Section>
           <Divider />
           <Section width={'100%'}>
-            <ChargeSection centered margin={'0rem -1rem 1rem 0remx'}>
+            <ChargeSection centered margin={'10% -1rem 1rem 0rem'}>
               <Text main>
                 Set a goal and livestream while you practice and Shenanigan will
                 pay you money when you reach that goal.

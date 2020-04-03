@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const LogoFrame = styled.div`
+  pointer-events: auto;
   transition: all 0.2s ease-in-out;
   top: 0;
   display: flex;
@@ -20,7 +21,7 @@ const LogoFrame = styled.div`
   }
   @media (max-width: 768px) {
     width: 15vw;
-    height: 135%
+    height: 135%;
   }
 `;
 
