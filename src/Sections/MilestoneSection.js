@@ -7,11 +7,12 @@ import React, {
 import styled from 'styled-components';
 import { Backdrop, Section, Text, MapFruit, colors } from '../styles';
 import { MilestoneContent } from '../components';
+import { useScrollPosition } from '../hooks/useScrollPosition';
 
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
-  margin-top: 20rem;
+  padding-top: 20rem;
 `;
 const MilestoneMainSection = styled(Section)`
   position: relative;
@@ -107,7 +108,9 @@ function MilestoneSection(props, ref) {
     }
   }));
   const isPhone = window.innerWidth <= 768;
-  const [activeMilestone, setActiveMilestone] = useState(null);
+  const [activeMilestone, setActiveMilestone] = useState(0);
+  const [startLoop, setStartLoop] = useState(false);
+  const [touchedMilestone, setTouchedMilestone] = useState(false);
 
   const showMilestoneContent = () => {
     const watermelon = (
@@ -156,8 +159,25 @@ function MilestoneSection(props, ref) {
       />
     );
     const milestones = [watermelon, grape, apple, strawberry, cherry];
+    if (startLoop && !touchedMilestone) {
+      setTimeout(() => {
+        if (activeMilestone == 4) {
+          setActiveMilestone(0);
+        } else {
+          setActiveMilestone(activeMilestone + 1);
+        }
+      }, 3000);
+    }
     return milestones[activeMilestone];
   };
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    if (!startLoop) {
+      if (currPos.y <= props.height) {
+        setStartLoop(true);
+      }
+    }
+  });
 
   return (
     <Wrapper ref={milestoneRef} id="roadmap">
@@ -178,28 +198,43 @@ function MilestoneSection(props, ref) {
           />
           <WatermelonMapImage
             src={require('../images/Roadmap_Pacman_01_Watermelon.png')}
-            onMouseOver={() => setActiveMilestone(0)}
+            onMouseOver={() => {
+              setActiveMilestone(0);
+              setTouchedMilestone(true);
+            }}
             onMouseLeave={() => setActiveMilestone(null)}
           />
           <GrapeMapImage
             src={require('../images/Roadmap_Pacman_02_Grapes.png')}
-            onMouseOver={() => setActiveMilestone(1)}
+            onMouseOver={() => {
+              setActiveMilestone(1);
+              setTouchedMilestone(true);
+            }}
             onMouseLeave={() => setActiveMilestone(null)}
           />
           <AppleMapImage
             src={require('../images/Roadmap_Pacman_03_Apple.png')}
-            onMouseOver={() => setActiveMilestone(2)}
+            onMouseOver={() => {
+              setActiveMilestone(2);
+              setTouchedMilestone(true);
+            }}
             onMouseLeave={() => setActiveMilestone(null)}
           />
           <StrawberryMapImage
             src={require('../images/Roadmap_Pacman_04_Strawberry.png')}
-            onMouseOver={() => setActiveMilestone(3)}
+            onMouseOver={() => {
+              setActiveMilestone(3);
+              setTouchedMilestone(true);
+            }}
             onMouseLeave={() => setActiveMilestone(null)}
           />
           <CherryMapImage
             src={require('../images/Roadmap_Pacman_05_Cherries.png')}
-            onMouseEnter={() => setActiveMilestone(4)}
-            // onMouseLeave={() => setActiveMilestone(null)}
+            onMouseEnter={() => {
+              setActiveMilestone(4);
+              setTouchedMilestone(true);
+            }}
+            onMouseLeave={() => setActiveMilestone(null)}
           />
           {showMilestoneContent()}
         </MilestoneMainSection>

@@ -9,14 +9,6 @@ const Wrapper = styled.div`
   background: black;
   flex-wrap: wrap;
 `;
-
-const ContentSection = styled(Section)`
-  margin: 1rem 2rem;
-  padding: 4rem;
-  min-width: 10vw;
-  min-height: 10vw;
-`;
-
 const StyledBackdrop = styled(Backdrop)`
   width: 100%;
   display: flex;
@@ -27,19 +19,8 @@ const Divider = styled.div`
   width: 100%;
   height: 0.5em;
   background-color: black;
-`;
-const TextSection = styled(Section)`
-  margin-bottom: 10rem;
-  width: 80%;
-  font-size: 9vw;
-  font-weight: 900;
-  font-family: 'Electro-Shackle', sans-serif;
-  justify-content: center;
-`;
-
-const SocialSection = styled(Section)`
-  justify-content:center;
 `
+
 
 const SocialImg = styled.img`
   transition:.3s;

@@ -3,7 +3,7 @@ import { useScrollPosition } from './hooks/useScrollPosition';
 import styled, { css } from 'styled-components';
 import { HeaderToggle, LogoFrame } from './styles';
 import { HashLink as Link } from 'react-router-hash-link';
-import { Transition, TransitionGroup } from 'react-transition-group';
+import { Transition } from 'react-transition-group';
 import { HeaderTab } from './components';
 
 const Wrapper = styled.div`
@@ -16,9 +16,7 @@ const Wrapper = styled.div`
   top: 0;
   justify-content: ${props =>
     props.collapsed ? 'space-between' : ' flex-start'};
-  pointer-events:none;        
-
-
+  pointer-events: none;
 `;
 
 const Logo = styled.img`
@@ -26,7 +24,6 @@ const Logo = styled.img`
   height: 90%;
 `;
 const Nav = styled.div`
- 
   transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
     background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s, opacity 0.75s;
   z-index: 1;
@@ -155,6 +152,8 @@ function Header(props) {
   };
 
   useScrollPosition(({ prevPos, currPos }) => {
+    console.log(currPos.y)
+    console.log(props.heights.milestone);
     if (currPos.y < -150) {
       setScrolled(true);
     } else if (isPhone) {
@@ -172,24 +171,24 @@ function Header(props) {
     }
     if (!headerLock) {
       if (
-        currPos.y <= props.heights.energy + 100 &&
-        currPos.y > props.heights.milestone + 100
+        currPos.y <= props.heights.energy &&
+        currPos.y > props.heights.milestone
       ) {
         setCollapsedStart(true);
         setHeader(1);
       } else if (
-        currPos.y <= props.heights.milestone + 100 &&
-        currPos.y > props.heights.team + 100
+        currPos.y <= props.heights.milestone &&
+        currPos.y > props.heights.team
       ) {
         setCollapsedStart(true);
         setHeader(2);
       } else if (
-        currPos.y <= props.heights.team + 100 &&
-        currPos.y > props.heights.contact + 100
+        currPos.y <= props.heights.team &&
+        currPos.y > props.heights.contact
       ) {
         setCollapsedStart(true);
         setHeader(3);
-      } else if (currPos.y <= props.heights.contact + 100) {
+      } else if (currPos.y <= props.heights.contact) {
         setCollapsedStart(true);
         setHeader(4);
       }
