@@ -11,13 +11,6 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const ContentSection = styled(Section)`
-  margin: 1rem 2rem;
-  padding: 4rem;
-  min-width: 10vw;
-  min-height: 10vw;
-`;
-
 const StyledBackdrop = styled(Backdrop)`
   width: 100%;
   padding-top: 15rem;

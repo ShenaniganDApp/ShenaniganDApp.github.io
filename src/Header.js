@@ -97,7 +97,7 @@ function Header(props) {
         scrolled={scrolled}
         selected
         num={0}
-        handleHeaderChange={handleHeaderChange}
+        handleHeaderToggle={handleHeaderToggle}
         to=""
         text={'ShenanIgan'}
       />
@@ -106,7 +106,7 @@ function Header(props) {
       <HeaderTab
         scrolled={scrolled}
         selected
-        handleHeaderChange={handleHeaderChange}
+        handleHeaderToggle={handleHeaderToggle}
         to="/#energy"
         num={1}
         text={'Energy'}
@@ -117,7 +117,7 @@ function Header(props) {
         scrolled={scrolled}
         selected
         num={2}
-        handleHeaderChange={handleHeaderChange}
+        handleHeaderToggle={handleHeaderToggle}
         to="/#roadmap"
         text={'Roadmap'}
       />
@@ -127,7 +127,7 @@ function Header(props) {
         scrolled={scrolled}
         selected
         num={3}
-        handleHeaderChange={handleHeaderChange}
+        handleHeaderToggle={handleHeaderToggle}
         to="/#team"
         text={'Team'}
       />
@@ -137,7 +137,7 @@ function Header(props) {
         scrolled={scrolled}
         selected
         num={4}
-        handleHeaderChange={handleHeaderChange}
+        handleHeaderToggle={handleHeaderToggle}
         to="/#contact"
         text={'Contact'}
       />
@@ -153,7 +153,7 @@ function Header(props) {
 
   useScrollPosition(({ prevPos, currPos }) => {
     console.log(currPos.y)
-    console.log(props.heights.milestone);
+    console.log(props.heights.team);
     if (currPos.y < -150) {
       setScrolled(true);
     } else if (isPhone) {

@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 import { Transition } from 'react-transition-group';
 
 const TabLink = styled(Link)`
-  pointer-events:auto;
+  pointer-events: auto;
   transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   text-decoration: none;
   height: 100%;
@@ -39,7 +39,11 @@ const HeaderTab = props => (
     selected={props.selected}
     to={props.to}
     smooth
-    onClick={() => props.handleHeaderChange(props.num)}
+    onClick={
+      props.selected
+        ? () => props.handleHeaderToggle()
+        : () => props.handleHeaderChange(props.num)
+    }
   >
     <Tab scrolled={props.scrolled}>
       <Text header color={'#e6ffff'}>
