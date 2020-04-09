@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "62272e872fba2237308d670301e92417",
+    "revision": "2f88894ed51af7b29ec2a80d608a3bcd",
     "url": "/index.html"
   },
   {
-    "revision": "d4cb32c8c96d08729a26",
+    "revision": "e8a95ff18f7a9ae089c9",
     "url": "/static/css/main.27fb4af7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.2b437de4.chunk.js.LICENSE"
   },
   {
-    "revision": "d4cb32c8c96d08729a26",
-    "url": "/static/js/main.cbc730e1.chunk.js"
+    "revision": "e8a95ff18f7a9ae089c9",
+    "url": "/static/js/main.fe23fbbb.chunk.js"
   },
   {
     "revision": "81e533c300a6f73e3621",
@@ -72,6 +72,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/background_mobile.00a08211.png"
   },
   {
+    "revision": "f65dc9bb647cecfdb05fd0585f271a74",
+    "url": "/static/media/discord.f65dc9bb.svg"
+  },
+  {
     "revision": "fb666fbbba79266577c1547543666976",
     "url": "/static/media/ethereumLogo.fb666fbb.svg"
   },
@@ -98,10 +102,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b17ddd008290508680679b9b2e7b994a",
     "url": "/static/media/reddit.b17ddd00.svg"
-  },
-  {
-    "revision": "54dd3d7b112852a101fc325a4ed646a9",
-    "url": "/static/media/riot.54dd3d7b.svg"
   },
   {
     "revision": "0c9fa1ee1e421c65167f4e0335e837f1",
