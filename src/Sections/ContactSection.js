@@ -63,8 +63,8 @@ function ContactSection(props, ref) {
             <a href="https://www.reddit.com/user/shenanigan_dapp">
               <SocialImg src={require('../svg/reddit.svg')} />
             </a>
-            <a href="https://riot.im/app/#/group/+shenanigan:matrix.org">
-              <SocialImg src={require('../svg/riot.svg')} />
+            <a href="https://discord.gg/eThfUxt">
+              <SocialImg src={require('../svg/discord.svg')} />
             </a>
             <a href="https://www.youtube.com/channel/UCyENEycuNXfntLJLSeIuWXw">
               <SocialImg src={require('../svg/youtube.svg')} />
