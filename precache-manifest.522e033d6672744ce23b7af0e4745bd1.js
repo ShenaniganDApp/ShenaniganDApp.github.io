@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2f88894ed51af7b29ec2a80d608a3bcd",
+    "revision": "e57734f5998e5a1344728532c321d153",
     "url": "/index.html"
   },
   {
-    "revision": "e8a95ff18f7a9ae089c9",
-    "url": "/static/css/main.27fb4af7.chunk.css"
+    "revision": "773e3ca1f7a6e497f0b7",
+    "url": "/static/css/main.50accb1a.chunk.css"
   },
   {
     "revision": "8aa506314602d260d4b1",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.2b437de4.chunk.js.LICENSE"
   },
   {
-    "revision": "e8a95ff18f7a9ae089c9",
-    "url": "/static/js/main.fe23fbbb.chunk.js"
+    "revision": "773e3ca1f7a6e497f0b7",
+    "url": "/static/js/main.07ec9e45.chunk.js"
   },
   {
     "revision": "81e533c300a6f73e3621",
@@ -76,8 +76,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/discord.f65dc9bb.svg"
   },
   {
-    "revision": "fb666fbbba79266577c1547543666976",
-    "url": "/static/media/ethereumLogo.fb666fbb.svg"
+    "revision": "802c6eacbb13c83b27c39be505228231",
+    "url": "/static/media/ethereumLogo.802c6eac.svg"
   },
   {
     "revision": "ec0c188daf70ada2deb84d12f963dd2d",
@@ -104,8 +104,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/reddit.b17ddd00.svg"
   },
   {
-    "revision": "0c9fa1ee1e421c65167f4e0335e837f1",
-    "url": "/static/media/spacer.0c9fa1ee.svg"
+    "revision": "ad2edaec4f1b753e97b42fafe57005d1",
+    "url": "/static/media/spacer.ad2edaec.svg"
   },
   {
     "revision": "d1d12ce1ba2af990b4eb003f4883f97e",
