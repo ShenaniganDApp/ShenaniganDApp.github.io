@@ -62,7 +62,7 @@ const TitleSection = styled(Section)`
 
 const PlayerContainer = styled.div`
   width: 80vw;
-  height: 42vw;
+  height: 45vw;
   margin-top: 10rem;
   z-index: 1;
   margin-bottom:  15rem;
@@ -153,10 +153,11 @@ function HomeSection() {
       </Transition>
       <PlayerContainer>
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=TSZxxqHoLzE"
+          url="https://youtu.be/RmIfGaPTgUs"
           width="100%"
           height="100%"
-
+          controls="true
+          "
         />
       </PlayerContainer>
     </Wrapper>
