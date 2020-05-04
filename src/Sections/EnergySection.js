@@ -183,7 +183,7 @@ function EnergySection(props, ref) {
   useImperativeHandle(ref, () => ({
     boundingTop: () => {
       return energyRef.current.getBoundingClientRect().top;
-    }
+    },
   }));
 
   return (
@@ -202,7 +202,12 @@ function EnergySection(props, ref) {
               <Text width={'100%'} title color={'black'}>
                 What
               </Text>
-              <Text width={'100%'} title color={colors.deeppink}>
+              <Text
+                width={'100%'}
+                title
+                color={colors.deeppink}
+                shadowed={colors.deeppink}
+              >
                 Charges
               </Text>
               <Text width={'100%'} title color={'black'}>
