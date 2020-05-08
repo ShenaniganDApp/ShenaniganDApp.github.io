@@ -77,8 +77,7 @@ function ContactSection(props, ref) {
           <Text main color={colors.lightcyan}>Coming Soon</Text>
         </Section>
         <Section margin={"2rem 0"} centered width={"100%"}>
-          <Text main color={colors.lightcyan}>MMXX - No Rights Reserved -</Text>
-          <Text main color={colors.deeppink}>Shenanigan</Text>
+          <Text main color={colors.deeppink}>Shenanigan Tech LLC</Text>
         </Section>
       </StyledBackdrop>
     </Wrapper>
