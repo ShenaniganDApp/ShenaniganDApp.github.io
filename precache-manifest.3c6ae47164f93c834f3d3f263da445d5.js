@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e57734f5998e5a1344728532c321d153",
+    "revision": "9c9f36680a9620ce7491f7a2aff88627",
     "url": "/index.html"
   },
   {
-    "revision": "773e3ca1f7a6e497f0b7",
+    "revision": "4e75f8f9533e73360e9b",
     "url": "/static/css/main.50accb1a.chunk.css"
   },
   {
-    "revision": "8aa506314602d260d4b1",
-    "url": "/static/js/2.2b437de4.chunk.js"
+    "revision": "4350d6c9f04bb042f59b",
+    "url": "/static/js/2.284777e7.chunk.js"
   },
   {
     "revision": "fd228f9b9a68ce6b23a6cf8b0a38a0e3",
-    "url": "/static/js/2.2b437de4.chunk.js.LICENSE"
+    "url": "/static/js/2.284777e7.chunk.js.LICENSE"
   },
   {
-    "revision": "773e3ca1f7a6e497f0b7",
-    "url": "/static/js/main.07ec9e45.chunk.js"
+    "revision": "4e75f8f9533e73360e9b",
+    "url": "/static/js/main.cc2f1260.chunk.js"
   },
   {
     "revision": "81e533c300a6f73e3621",
     "url": "/static/js/runtime-main.7ae70540.js"
+  },
+  {
+    "revision": "91366257d46f965f8216f5f6f1762c99",
+    "url": "/static/media/Andrew_Blanchard_Reed_headshot.91366257.jpg"
   },
   {
     "revision": "d0405f5192af34db32cb031e03f7ec22",
@@ -100,6 +104,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/iphoneMockup.35d01f07.png"
   },
   {
+    "revision": "7277b2299c08ef13fb81735099102ad2",
+    "url": "/static/media/malik.7277b229.jpg"
+  },
+  {
+    "revision": "d01bae6dd87e35f61ce2dc8ea820d945",
+    "url": "/static/media/pacman3D.d01bae6d.png"
+  },
+  {
     "revision": "b17ddd008290508680679b9b2e7b994a",
     "url": "/static/media/reddit.b17ddd00.svg"
   },
@@ -110,6 +122,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d1d12ce1ba2af990b4eb003f4883f97e",
     "url": "/static/media/twitter.d1d12ce1.svg"
+  },
+  {
+    "revision": "25ad6238c5b6fb904e775182eded7b09",
+    "url": "/static/media/victor.25ad6238.jpeg"
   },
   {
     "revision": "3c3e26280cf110b40f5c95dc87765e36",

@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.50accb1a.chunk.css",
-    "main.js": "/static/js/main.07ec9e45.chunk.js",
-    "main.js.map": "/static/js/main.07ec9e45.chunk.js.map",
+    "main.js": "/static/js/main.cc2f1260.chunk.js",
+    "main.js.map": "/static/js/main.cc2f1260.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7ae70540.js",
     "runtime-main.js.map": "/static/js/runtime-main.7ae70540.js.map",
-    "static/js/2.2b437de4.chunk.js": "/static/js/2.2b437de4.chunk.js",
-    "static/js/2.2b437de4.chunk.js.map": "/static/js/2.2b437de4.chunk.js.map",
+    "static/js/2.284777e7.chunk.js": "/static/js/2.284777e7.chunk.js",
+    "static/js/2.284777e7.chunk.js.map": "/static/js/2.284777e7.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.522e033d6672744ce23b7af0e4745bd1.js": "/precache-manifest.522e033d6672744ce23b7af0e4745bd1.js",
+    "precache-manifest.3c6ae47164f93c834f3d3f263da445d5.js": "/precache-manifest.3c6ae47164f93c834f3d3f263da445d5.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.50accb1a.chunk.css.map": "/static/css/main.50accb1a.chunk.css.map",
-    "static/js/2.2b437de4.chunk.js.LICENSE": "/static/js/2.2b437de4.chunk.js.LICENSE",
+    "static/js/2.284777e7.chunk.js.LICENSE": "/static/js/2.284777e7.chunk.js.LICENSE",
+    "static/media/Andrew_Blanchard_Reed_headshot.jpg": "/static/media/Andrew_Blanchard_Reed_headshot.91366257.jpg",
     "static/media/index.css": "/static/media/Greenscr.13a00d0a.woff",
     "static/media/Roadmap_Pacman_01_Watermelon.png": "/static/media/Roadmap_Pacman_01_Watermelon.418142bf.png",
     "static/media/Roadmap_Pacman_02_Grapes.png": "/static/media/Roadmap_Pacman_02_Grapes.b778eb3a.png",
@@ -30,15 +31,18 @@
     "static/media/hamburger.svg": "/static/media/hamburger.86595150.svg",
     "static/media/instagram.svg": "/static/media/instagram.725d9c80.svg",
     "static/media/iphoneMockup.png": "/static/media/iphoneMockup.35d01f07.png",
+    "static/media/malik.jpg": "/static/media/malik.7277b229.jpg",
+    "static/media/pacman3D.png": "/static/media/pacman3D.d01bae6d.png",
     "static/media/reddit.svg": "/static/media/reddit.b17ddd00.svg",
     "static/media/spacer.svg": "/static/media/spacer.ad2edaec.svg",
     "static/media/twitter.svg": "/static/media/twitter.d1d12ce1.svg",
+    "static/media/victor.jpeg": "/static/media/victor.25ad6238.jpeg",
     "static/media/youtube.svg": "/static/media/youtube.3c3e2628.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7ae70540.js",
-    "static/js/2.2b437de4.chunk.js",
+    "static/js/2.284777e7.chunk.js",
     "static/css/main.50accb1a.chunk.css",
-    "static/js/main.07ec9e45.chunk.js"
+    "static/js/main.cc2f1260.chunk.js"
   ]
 }
