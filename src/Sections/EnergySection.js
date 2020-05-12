@@ -62,32 +62,6 @@ const TopRightSection = styled(Section)`
   }
 `;
 
-const SecondTopSection = styled(Section)`
-  border: 2.5vw solid ${colors.lightcyan};
-  width: 100%;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  z-index: 0;
-  margin-top: 30vh;
-  backdrop-filter: blur(5px);
-
-  @media (max-width: 768px) {
-    width: calc(90% - 5vw);
-  }
-`;
-const SecondBottomSection = styled(Section)`
-  border-width: 0vw 2.5vw 2.5vw 2.5vw;
-  border-style: solid;
-  border-color: ${colors.lightcyan};
-  width: 100%;
-  z-index: 1;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  backdrop-filter: blur(5px);
-  @media (max-width: 768px) {
-    width: calc(90% - 5vw);
-  }
-`;
 
 const UpperTextSection = styled(Section)`
   width: 40%;
@@ -95,14 +69,6 @@ const UpperTextSection = styled(Section)`
   align-items: flex-start;
 `;
 
-const LowerTextSection = styled(Section)`
-  width: 100%;
-  margin: 1rem 1rem 1rem 1rem;
-
-  @media (max-width: 768px) {
-    margin: 1rem;
-  }
-`;
 const BoldText = styled(Text)`
   font-weight: 900;
   background: -webkit-radial-gradient(
@@ -270,41 +236,6 @@ function EnergySection(props, ref) {
           </StyledLink>
         </Section>
       </TopRightSection>
-      <SecondTopSection
-        margin={'4rem 0 0 0'}
-        xLarge
-        backgroundColor={'rgba(208,0,108,0.7)'}
-      >
-        <LowerTextSection textCentered>
-          <Text shadowed title color={colors.lightcyan}>
-            What Is an iOn?
-          </Text>
-        </LowerTextSection>
-        <LowerTextSection>
-          <Text shadowed width={'100%'} main color={colors.lightcyan}>
-            1. iOns set goals
-          </Text>
-          <Text shadowed width={'100%'} main color={colors.lightcyan}>
-            2. iOns livestream their attempts
-          </Text>
-          <Text shadowed width={'100%'} main color={colors.lightcyan}>
-            3. iOns get energy if their goal is met
-          </Text>
-        </LowerTextSection>
-      </SecondTopSection>
-      <SecondBottomSection xLarge backgroundColor={'rgba(31,51,31,0.7)'}>
-        <LowerTextSection textCentered>
-          <Text shadowed title color={colors.lightcyan}>
-            What are PartIcles?
-          </Text>
-        </LowerTextSection>
-        <LowerTextSection textCentered>
-          <Text shadowed main color={colors.lightcyan}>
-            Particles create a community. A community of particles around an iOn
-            athlete will power the streamer, and also share the energy.
-          </Text>
-        </LowerTextSection>
-      </SecondBottomSection>
     </Wrapper>
   );
 }
