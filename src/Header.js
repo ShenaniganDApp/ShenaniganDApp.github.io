@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   position: sticky;
   z-index: 100;
   top: 0;
-  justify-content: ${props =>
+  justify-content: ${(props) =>
     props.collapsed ? 'space-between' : ' flex-start'};
   pointer-events: none;
 `;
@@ -34,7 +34,7 @@ const Nav = styled.div`
   width: 100%;
   opacity: ${({ state }) =>
     state === 'entering' || state === 'entered' ? 1 : 0};
-  ${props =>
+  ${(props) =>
     props.scrolled &&
     css`
       backdrop-filter: blur(20px);
@@ -77,7 +77,7 @@ function Header(props) {
     }
   }, [isPhone, pagePositionTop]);
 
-  const handleHeaderChange = selection => {
+  const handleHeaderChange = (selection) => {
     setHeader(selection);
     if (!collapsedEnd && selection !== 0) {
       setCollapsedStart(true);
@@ -152,6 +152,9 @@ function Header(props) {
   };
 
   useScrollPosition(({ prevPos, currPos }) => {
+    console.log('currPos: ', currPos.y);
+    console.log(props.heights.contact);
+
     if (currPos.y < -150) {
       setScrolled(true);
     } else if (isPhone) {
@@ -211,7 +214,7 @@ function Header(props) {
         unmountOnExit
         mountOnEnter
       >
-        {state => (
+        {(state) => (
           <Nav state={state} scrolled={scrolled}>
             <HeaderTab
               state={state}
@@ -253,7 +256,7 @@ function Header(props) {
         )}
       </Transition>
       <Transition in={collapsedEnd} timeout={500}>
-        {state => (
+        {(state) => (
           <HeaderToggle
             state={state}
             collapsed={collapsedEnd}

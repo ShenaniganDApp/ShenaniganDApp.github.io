@@ -65,12 +65,12 @@ const PlayerContainer = styled.div`
   height: 45vw;
   margin-top: 10rem;
   z-index: 1;
-  margin-bottom:  15rem;
+  margin-bottom:  25rem;
   @media (max-width: 768px) {
     margin-top:5rem;
     width: 98vw;
     height: 53.25vw;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
   }
 `;
 

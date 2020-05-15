@@ -15,10 +15,25 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 10rem;
+  position:relative;
 `;
 
+const TitleSection = styled(Section)`
+ width: 20%;
+ height: 10%;
+ position:absolute;
+ top:-10%;
+ right:15%;
+ background: rgba(208, 0, 108, 0.7);
+ border-top-left-radius: 25px;
+ border-top-right-radius: 25px;
+ @media (max-width: 768px) {
+  right:10%;
+  }
+`
+
 const BorderWrapper = styled.div`
-  width: 80%;
+  width: 74vw;
   padding: 1vw;
   background: radial-gradient(
     circle at 65% 93%,
@@ -27,11 +42,12 @@ const BorderWrapper = styled.div`
   );
   border-radius: 25px;
   @media (max-width: 768px) {
-    width: 90%;
+    width: 90vw;
   }
 `;
 const QuestionWrapper = styled(Section)`
   border-radius: inherit;
+  background-color: rgba(0, 0, 0, 0.4);
 `;
 const ContentSection = styled(Section)`
   transition: 0.2s;
@@ -50,7 +66,7 @@ const AnswerSection = styled(Section)`
   width: 100%;
   max-height: 0;
   overflow: hidden;
-  background-color: ${colors.lightcyan};
+  background-color: rgba(230, 255, 255,0.6);
   ${(props) =>
     props.expanded &&
     css`
@@ -68,7 +84,10 @@ const AnswerSection = styled(Section)`
 
 const AnswerText = styled(Text)`
   font-family: GreenScreen;
-  font-size: 15px;
+  font-size: 17px;
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 function QuestionSection(props, ref) {
@@ -90,9 +109,10 @@ function QuestionSection(props, ref) {
   };
 
   return (
-    <Wrapper ref={questionRef} img={'./images/scoreboard.jpg'} id="team">
+    <Wrapper ref={questionRef} img={'./images/scoreboard.jpg'} id="question">
+    <TitleSection centered textCentered><Text title color={colors.lightcyan}>FAQ</Text></TitleSection>
       <BorderWrapper>
-        <QuestionWrapper backgroundColor={'black'}>
+        <QuestionWrapper>
           <ContentSection
             expanded={collapsibleNum == 0}
             onClick={() => onClickCollapsible(0)}
@@ -103,7 +123,7 @@ function QuestionSection(props, ref) {
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 0}>
-              <AnswerText>
+              <AnswerText shadowed={colors.lightcyan}>
                 Ethereum is a decentralized worldwide computer that people pay
                 to keep secure. ETH is the currency used to fund this massive
                 computer.
@@ -120,7 +140,7 @@ function QuestionSection(props, ref) {
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 1}>
-              <AnswerText>
+              <AnswerText shadowed={colors.lightcyan}>
                 There are many cryptocurrencies that support Dapps. Ethereum is
                 the first and has the largest ecosystem for users and
                 developers.
@@ -159,7 +179,7 @@ function QuestionSection(props, ref) {
           >
             <Section width={'100%'} margin={'1rem 1rem'}>
               <Text main color={colors.lightcyan}>
-                Is Shenanigan legal?
+                Is the betting legal?
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 4}>

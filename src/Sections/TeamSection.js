@@ -27,11 +27,7 @@ const StyledBackdrop = styled(Backdrop)`
   flex-wrap: wrap;
 `;
 
-const Divider = styled.div`
-  width: 100%;
-  height: 0.5em;
-  background-color: black;
-`;
+
 const TextSection = styled(Section)`
   margin-bottom: 10rem;
   width: 80%;
@@ -39,12 +35,15 @@ const TextSection = styled(Section)`
   font-weight: 900;
   font-family: 'Electro-Shackle', sans-serif;
   justify-content: center;
+  @media (max-width: 768px) {
+    margin-bottom: 5rem;
+  }
 `;
 
 const TeamImg = styled.img`
   margin: 2rem 0;
   flex: 0 auto;
-  width: 30%;
+  width: 25%;
   @media (max-width: 768px) {
     display: block;
     width: 30%;
@@ -75,12 +74,16 @@ const CardSection = styled(Section)`
 
 const TeamGhost = styled.img`
   transition: 0.2s;
-  width: 50%;
+  width: 40%;
   min-width: 80px;
   border-radius: 10px;
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    width: 30%;
   }
 `;
 
@@ -264,10 +267,14 @@ function TeamSection(props, ref) {
               centered
               onClick={() => handleClick(2)}
             >
-              <Text title color={colors.lightcyan}>
-                MalIk
-              </Text>
-              <TeamGhost src={require('../images/inky.png')} />
+              <Section centered width="100%">
+                <Text title color={colors.lightcyan}>
+                  MalIk
+                </Text>
+              </Section>
+              <Section centered width="100%">
+                <TeamGhost src={require('../images/inky.png')} />
+              </Section>
               <Text main color={colors.lightcyan}>
                 Social Media & Photography
               </Text>
