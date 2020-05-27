@@ -109,7 +109,7 @@ function Header(props) {
         handleHeaderToggle={handleHeaderToggle}
         to="/#energy"
         num={1}
-        text={'Energy'}
+        text={'Learn'}
       />
     );
     const Milestone = (
@@ -152,8 +152,6 @@ function Header(props) {
   };
 
   useScrollPosition(({ prevPos, currPos }) => {
-    console.log('currPos: ', currPos.y);
-    console.log(props.heights.contact);
 
     if (currPos.y < -150) {
       setScrolled(true);
@@ -223,7 +221,7 @@ function Header(props) {
               handleHeaderChange={handleHeaderChange}
               to="/#energy"
               num={1}
-              text={'Energy'}
+              text={'Learn'}
             />
             <HeaderTab
               state={state}

@@ -48,6 +48,7 @@ const BorderWrapper = styled.div`
 const QuestionWrapper = styled(Section)`
   border-radius: inherit;
   background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
 `;
 const ContentSection = styled(Section)`
   transition: 0.2s;
@@ -179,7 +180,7 @@ function QuestionSection(props, ref) {
           >
             <Section width={'100%'} margin={'1rem 1rem'}>
               <Text main color={colors.lightcyan}>
-                Is the betting legal?
+                What is different about Shenanigan?
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 4}>
@@ -192,7 +193,7 @@ function QuestionSection(props, ref) {
           >
             <Section width={'100%'} margin={'1rem 1rem'}>
               <Text main color={colors.lightcyan}>
-                Coming Soon
+              How does Shenanigan build trust?
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 5}>
@@ -205,11 +206,11 @@ function QuestionSection(props, ref) {
           >
             <Section width={'100%'} margin={'1rem 1rem'}>
               <Text main color={colors.lightcyan}>
-                Coming Soon
+              Is the betting legal?
               </Text>
             </Section>
             <AnswerSection last expanded={collapsibleNum == 6}>
-              <AnswerText>Coming Soon</AnswerText>
+              <AnswerText>Coming soon but short answer, yes</AnswerText>
             </AnswerSection>
           </ContentSection>
         </QuestionWrapper>

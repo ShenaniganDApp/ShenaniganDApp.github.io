@@ -40,7 +40,7 @@ const TopRightSection = styled(Section)`
   border-bottom-right-radius: 15px;
   /* border: 2vw solid ${colors.lightcyan}; */
   z-index: 0;
-  background: rgba(208, 0, 108, 0.7) url(${require('../svg/ethereumLogo.svg')});
+  /* background: rgba(208, 0, 108, 0.7) url(${require('../svg/ethereumLogo.svg')}); */
   background-size: 60% 60%;
   background-position: 50% 80%;
   background-repeat: no-repeat;
@@ -62,10 +62,9 @@ const TopRightSection = styled(Section)`
   }
 `;
 
-
 const UpperTextSection = styled(Section)`
   width: 40%;
-  margin: 1rem 0rem auto 0rem;
+  margin: 1rem 0rem 10% 0rem;
   align-items: flex-start;
 `;
 
@@ -137,8 +136,15 @@ const ChargeSection = styled(Section)`
     font-size: 4vw;
   }
 `;
+
+const TitleText = styled(Text)`
+  width: 100%;
+  font-size: 2.2vw;
+  font-family: GreenScreen;
+`;
+
 const Divider = styled.div`
-  width: 70%;
+  width: 150%;
   height: 0.5vw;
   max-height: 0.3rem;
   background-color: black;
@@ -163,10 +169,13 @@ function EnergySection(props, ref) {
           <MockupImg src={require('../images/iphoneMockup.png')} />
         </MockupSection>
         <UpperTextSection>
-          <Section width={'100%'}>
+          <Section centered width={'100%'}>
             <Text width={'100%'}>
               <Text width={'100%'} title color={'black'}>
-                What
+                LIve
+              </Text>
+              <Text width={'100%'} title color={'black'}>
+                stream
               </Text>
               <Text
                 width={'100%'}
@@ -174,19 +183,25 @@ function EnergySection(props, ref) {
                 color={colors.deeppink}
                 shadowed={colors.deeppink}
               >
-                Charges
+                Sports
               </Text>
               <Text width={'100%'} title color={'black'}>
-                You?
+                BettIng
               </Text>
             </Text>
           </Section>
           <Divider />
           <Section width={'100%'}>
             <ChargeSection centered margin={'10% -1rem 1rem 0rem'}>
-              <Text main>
-                Set a goal and livestream while you practice and Shenanigan will
-                pay you money when you reach that goal.
+              <Text margin={'5% 0 0 5%'} width={'100%'} main>
+                Rise up to the challenge or fall into the wake
+              </Text>
+
+              <Text margin={'10% 0 0 5%'} width={'100%'} main>
+                Motivate ones self
+              </Text>
+              <Text margin={'10% 0 0 5%'} width={'100%'} main>
+                Connect with friends and foes
               </Text>
               {/* <Text margin={'1rem 0'}>Build Your CommunIty</Text>
                 <Text margin={'1rem 0'}>BEcomE Your BEst</Text> */}
@@ -195,10 +210,10 @@ function EnergySection(props, ref) {
         </UpperTextSection>
       </TopLeftSection>
       <TopRightSection shadowed curved backgroundColor={'rgba(208,0,108,0.7)'}>
-        <Section margin={'1rem 1rem'}>
+        <Section margin={'3rem 1rem 1rem 1rem'}>
           <Text>
             <BoldText size={'3vw'} color={colors.lightcyan}>
-              iOns&nbsp;
+              Crowd Hype&nbsp;
             </BoldText>
             <Text
               shadowed
@@ -206,17 +221,17 @@ function EnergySection(props, ref) {
               margin={'1rem 0 0 1rem'}
               color={colors.lightcyan}
             >
-              Natural ions are made up with both positive and negative energy,
-              conjoining to form an energized element as unique as it is
-              necessary
+              Shenanigan forms a virtual crowd with a positive and negative
+              dichotomy. Join your side and give the streamer a reason to
+              improve.
             </Text>
           </Text>
           <Section width={'100%'} margin={'2rem 0 0 0'}>
-            <BoldText size={'2.7vw'} color={colors.lightcyan}>
-              Energy&nbsp;&nbsp;Is&nbsp;&nbsp;
+            <BoldText size={'3vw'} color={colors.lightcyan}>
+              We&nbsp;&nbsp;Are&nbsp;&nbsp;
             </BoldText>
-            <BoldText size={'2.7vw'} color={colors.lightcyan}>
-              Ethereum&nbsp;
+            <BoldText size={'3vw'} color={colors.lightcyan}>
+              She&nbsp;
             </BoldText>
             <Text
               shadowed
@@ -224,9 +239,8 @@ function EnergySection(props, ref) {
               margin={'1rem 0 0 1rem'}
               color={colors.lightcyan}
             >
-              Energize yourself to push further as an athlete. iOns get energy
-              from the community to accomplish their goals. You will be the
-              center of attention.
+              Login and be a part of a competitive arena where the crowd must
+              gauge athletes drive and power of will.
             </Text>
           </Section>
           <StyledLink style={{ textDecoration: 'none' }} to="/explain">
