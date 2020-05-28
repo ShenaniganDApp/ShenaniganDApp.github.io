@@ -213,7 +213,7 @@ function EnergySection(props, ref) {
         <Section margin={'3rem 1rem 1rem 1rem'}>
           <Text>
             <BoldText size={'3vw'} color={colors.lightcyan}>
-              Crowd Hype&nbsp;
+              Hype Crowd&nbsp;
             </BoldText>
             <Text
               shadowed

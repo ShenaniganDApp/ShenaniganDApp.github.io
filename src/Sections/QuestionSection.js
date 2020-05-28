@@ -15,22 +15,22 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 10rem;
-  position:relative;
+  position: relative;
 `;
 
 const TitleSection = styled(Section)`
- width: 20%;
- height: 10%;
- position:absolute;
- top:-10%;
- right:15%;
- background: rgba(208, 0, 108, 0.7);
- border-top-left-radius: 25px;
- border-top-right-radius: 25px;
- @media (max-width: 768px) {
-  right:10%;
+  width: 20%;
+  height: 10%;
+  position: absolute;
+  top: -10%;
+  right: 15%;
+  background: rgba(208, 0, 108, 0.7);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  @media (max-width: 768px) {
+    right: 10%;
   }
-`
+`;
 
 const BorderWrapper = styled.div`
   width: 74vw;
@@ -67,7 +67,7 @@ const AnswerSection = styled(Section)`
   width: 100%;
   max-height: 0;
   overflow: hidden;
-  background-color: rgba(230, 255, 255,0.6);
+  background-color: rgba(230, 255, 255, 0.6);
   ${(props) =>
     props.expanded &&
     css`
@@ -111,7 +111,11 @@ function QuestionSection(props, ref) {
 
   return (
     <Wrapper ref={questionRef} img={'./images/scoreboard.jpg'} id="question">
-    <TitleSection centered textCentered><Text title color={colors.lightcyan}>FAQ</Text></TitleSection>
+      <TitleSection centered textCentered>
+        <Text title color={colors.lightcyan}>
+          FAQ
+        </Text>
+      </TitleSection>
       <BorderWrapper>
         <QuestionWrapper>
           <ContentSection
@@ -125,9 +129,10 @@ function QuestionSection(props, ref) {
             </Section>
             <AnswerSection expanded={collapsibleNum == 0}>
               <AnswerText shadowed={colors.lightcyan}>
-                Ethereum is a decentralized worldwide computer that people pay
-                to keep secure. ETH is the currency used to fund this massive
-                computer.
+                There are many definitions for Ethereum. In it's most simple
+                form, Ethereum is a cryptocurrency that runs a decentralized
+                worldwide computer where people pay to keep it secure. ETH is
+                the currency used to fund this massive computer.
               </AnswerText>
             </AnswerSection>
           </ContentSection>
@@ -142,9 +147,9 @@ function QuestionSection(props, ref) {
             </Section>
             <AnswerSection expanded={collapsibleNum == 1}>
               <AnswerText shadowed={colors.lightcyan}>
-                There are many cryptocurrencies that support Dapps. Ethereum is
-                the first and has the largest ecosystem for users and
-                developers.
+                Ethereum is no the only cryptocurrency that supports Dapps.
+                However, Ethereum was the first and currently the best place to
+                build for users and developers.
               </AnswerText>
             </AnswerSection>
           </ContentSection>
@@ -158,7 +163,12 @@ function QuestionSection(props, ref) {
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 2}>
-              <AnswerText>Coming Soon</AnswerText>
+              <AnswerText shadowed={colors.lightcyan}>
+                Shenanigan is an entertainment platform directed toward
+                gamifying athlete's intense training regiments. Shenanigan hosts
+                a livestream of an athlete who is allowed to generate financial
+                incentive through placed bets.
+              </AnswerText>
             </AnswerSection>
           </ContentSection>
           <ContentSection
@@ -171,7 +181,13 @@ function QuestionSection(props, ref) {
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 3}>
-              <AnswerText>Coming Soon</AnswerText>
+              <AnswerText shadowed={colors.lightcyan}>
+                Shenanigan uses the Ethereum blockchain to collect bets and
+                donations for our streamed athletes. Users, known as particles,
+                pool their money into a betting pot and cheer the athlete or
+                athletes on from chat. Winners are automatically dealt their
+                winnings using smart contracts
+              </AnswerText>
             </AnswerSection>
           </ContentSection>
           <ContentSection
@@ -184,7 +200,12 @@ function QuestionSection(props, ref) {
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 4}>
-              <AnswerText>Coming Soon</AnswerText>
+              <AnswerText shadowed={colors.lightcyan}>
+                Shenanigan aims to uproot the current social media shill
+                culture. Currently many athletes are required to sell ads with
+                sponsorships or work remedial jobs to make money. Youtube, Twitch, and Instagram are not
+                made with athletes imprpvement in mind. Shenanigan opens a new, non-affiliated revenue stream for athletes
+              </AnswerText>
             </AnswerSection>
           </ContentSection>
           <ContentSection
@@ -193,11 +214,16 @@ function QuestionSection(props, ref) {
           >
             <Section width={'100%'} margin={'1rem 1rem'}>
               <Text main color={colors.lightcyan}>
-              How does Shenanigan build trust?
+                Can I trust Shenanigan?
               </Text>
             </Section>
             <AnswerSection expanded={collapsibleNum == 5}>
-              <AnswerText>Coming Soon</AnswerText>
+              <AnswerText shadowed={colors.lightcyan}>
+                Shenanigan adheres by a few strict rules. All our code is open
+                sourced, all our funds are held in our DAO, and Shenanigan does
+                not touch any betting money. All money is routed through the
+                Ethereum blockchain where transactions are publicly available.
+              </AnswerText>
             </AnswerSection>
           </ContentSection>
           <ContentSection
@@ -206,11 +232,13 @@ function QuestionSection(props, ref) {
           >
             <Section width={'100%'} margin={'1rem 1rem'}>
               <Text main color={colors.lightcyan}>
-              Is the betting legal?
+                Is the betting legal?
               </Text>
             </Section>
             <AnswerSection last expanded={collapsibleNum == 6}>
-              <AnswerText>Coming soon but short answer, yes</AnswerText>
+              <AnswerText shadowed={colors.lightcyan}>
+                Coming soon but short answer, yes
+              </AnswerText>
             </AnswerSection>
           </ContentSection>
         </QuestionWrapper>
