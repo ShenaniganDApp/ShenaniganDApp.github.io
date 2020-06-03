@@ -35,6 +35,7 @@ const Spacer = styled.img`
 function LandingSection() {
   const [heights, setHeights] = useState({});
   const energyRef = useRef();
+  const questionRef = useRef();
   const milestoneRef = useRef();
   const teamRef = useRef();
   const contactRef = useRef();
@@ -43,6 +44,8 @@ function LandingSection() {
     const handleContentHeights = () => {
       const energyHeight =
         -energyRef.current.boundingTop() - window.pageYOffset;
+        const questionHeight =
+        -questionRef.current.boundingTop() - window.pageYOffset;
       const milestoneHeight =
         -milestoneRef.current.boundingTop() - window.pageYOffset;
       const teamHeight = -teamRef.current.boundingTop() - window.pageYOffset;
@@ -50,6 +53,7 @@ function LandingSection() {
         -contactRef.current.boundingTop() - window.pageYOffset;
       setHeights({
         energy: energyHeight,
+        question: questionHeight,
         milestone: milestoneHeight,
         team: teamHeight,
         contact: contactHeight
@@ -67,7 +71,7 @@ function LandingSection() {
       <HomeSection />
       <HomeWrapper>
         <EnergySection ref={energyRef} />
-        <QuestionSection/>
+        <QuestionSection ref={questionRef}/>
       </HomeWrapper>
       <Spacer src={require('../svg/spacer.svg')}></Spacer>
       <MainWrapper>

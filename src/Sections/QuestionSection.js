@@ -74,7 +74,7 @@ const AnswerSection = styled(Section)`
     css`
       max-height: 100%;
       padding: 2rem 2rem;
-    `}10
+    `}
 
   ${(props) =>
     props.last &&

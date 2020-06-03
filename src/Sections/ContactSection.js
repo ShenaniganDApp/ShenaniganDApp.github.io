@@ -13,34 +13,40 @@ const StyledBackdrop = styled(Backdrop)`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin: 1rem 0;
 `;
 
 const Divider = styled.div`
   width: 100%;
   height: 0.5em;
   background-color: black;
-`
-
+`;
 
 const SocialImg = styled.img`
-  transition:.3s;
-  background: rgba(0,0,0,0);
-  width:4vw;
-  min-width: 2rem;
-  margin: 1rem 4vw;
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0);
+  width: 4vw;
+  min-width: 1.5rem;
+  margin: 1rem 3vw;
 
   &:hover {
-      transform: scale(1.2);
-    }
-`
+    transform: scale(1.2);
+  }
+`;
+const AragonImage = styled.img`
+  width: 27%;
+`;
 
+const AragonLink = styled.a`
+  text-align: center;
+`;
 
 function ContactSection(props, ref) {
   const contactRef = useRef();
   useImperativeHandle(ref, () => ({
     boundingTop: () => {
       return contactRef.current.getBoundingClientRect().top;
-    }
+    },
   }));
 
   return (
@@ -60,7 +66,7 @@ function ContactSection(props, ref) {
           <a href="https://www.reddit.com/user/shenanigan_dapp">
             <SocialImg src={require('../svg/reddit.svg')} />
           </a>
-          <a href="https://discord.gg/Tk8gAM9">
+          <a href="https://discord.gg/eThfUxt">
             <SocialImg src={require('../svg/discord.svg')} />
           </a>
           <a href="https://www.youtube.com/channel/UCyENEycuNXfntLJLSeIuWXw">
@@ -70,11 +76,17 @@ function ContactSection(props, ref) {
             <SocialImg src={require('../svg/github.svg')} />
           </a>
         </Section>
-        <Section margin={"2rem 0"} centered width={"100%"}>
-          <Text main color={colors.lightcyan}>Coming Soon</Text>
+        <Section margin={'1rem 0 2rem 0'} centered width={'100%'}>
+          <AragonLink href="https://mainnet.aragon.org/#/shenanigan">
+            <AragonImage
+              src={require('../svg/Powered_By_Blue.svg')}
+            ></AragonImage>
+          </AragonLink>
         </Section>
-        <Section margin={"2rem 0"} centered width={"100%"}>
-          <Text main color={colors.deeppink}>Shenanigan Tech LLC</Text>
+        <Section centered width={'100%'}>
+          <Text main color={colors.deeppink}>
+            Shenanigan Tech LLC
+          </Text>
         </Section>
       </StyledBackdrop>
     </Wrapper>
