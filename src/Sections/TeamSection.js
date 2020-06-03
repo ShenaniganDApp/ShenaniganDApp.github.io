@@ -27,7 +27,6 @@ const StyledBackdrop = styled(Backdrop)`
   flex-wrap: wrap;
 `;
 
-
 const TextSection = styled(Section)`
   margin-bottom: 10rem;
   width: 80%;
@@ -80,10 +79,13 @@ const TeamGhost = styled.img`
 
   &:hover {
     transform: scale(1.1);
+<<<<<<< HEAD
+=======
   }
 
   @media (max-width: 768px) {
     width: 30%;
+>>>>>>> source
   }
 `;
 
@@ -131,7 +133,9 @@ function TeamSection(props, ref) {
       >
         <TeamImg src={require('../images/pacman3D.png')} />
         <TextSection margin={'0 100%'}>
-          <Text shadowet
+          <Text shadowed={colors.lightcyan} color={colors.lightcyan}>
+            Team
+          </Text>
         </TextSection>
         <MemberSection centered>
           <ReactCardFlip
