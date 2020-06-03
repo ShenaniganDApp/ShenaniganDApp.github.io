@@ -43,10 +43,9 @@ function AboutSection(props, ref) {
       </Section>
       <Section>
         <Link to="/">
-          <Button>Back</Button>
+          <Buttoitemsn>Back</Buttoitemsn>
         </Link>
       </Section>
-      >
     </Wrapper>
   );
 }

@@ -47,31 +47,28 @@ function ContactSection(props, ref) {
     <Wrapper ref={contactRef} img={'./images/scoreboard.jpg'} id="contact">
       <Divider />
       <StyledBackdrop background={'black'}>
-        <Section margin={"2rem 0"} centered width={"100%"}>
-          <Text main color={colors.lightcyan}>We're on all popular social media outlets</Text>
-        </Section>
-        <Section title centered width={"100%"}>
-            <a href="https://www.facebook.com/shenanigan.dapp/">
-              <SocialImg src={require('../svg/facebook.svg')} />
-            </a>
-            <a href="https://www.instagram.com/she.dapp/">
-              <SocialImg src={require('../svg/instagram.svg')} />
-            </a>
-            <a href="https://twitter.com/She_Dapp">
-              <SocialImg src={require('../svg/twitter.svg')} />
-            </a>
-            <a href="https://www.reddit.com/user/shenanigan_dapp">
-              <SocialImg src={require('../svg/reddit.svg')} />
-            </a>
-            <a href="https://discord.gg/eThfUxt">
-              <SocialImg src={require('../svg/discord.svg')} />
-            </a>
-            <a href="https://www.youtube.com/channel/UCyENEycuNXfntLJLSeIuWXw">
-              <SocialImg src={require('../svg/youtube.svg')} />
-            </a>
-            <a href="https://github.com/ShenaniganDApp">
-              <SocialImg src={require('../svg/github.svg')} />
-            </a>
+        <Section title centered width={'100%'}>
+          <a href="https://www.facebook.com/shenanigan.dapp/">
+            <SocialImg src={require('../svg/facebook.svg')} />
+          </a>
+          <a href="https://www.instagram.com/she.dapp/">
+            <SocialImg src={require('../svg/instagram.svg')} />
+          </a>
+          <a href="https://twitter.com/She_Dapp">
+            <SocialImg src={require('../svg/twitter.svg')} />
+          </a>
+          <a href="https://www.reddit.com/user/shenanigan_dapp">
+            <SocialImg src={require('../svg/reddit.svg')} />
+          </a>
+          <a href="https://discord.gg/Tk8gAM9">
+            <SocialImg src={require('../svg/discord.svg')} />
+          </a>
+          <a href="https://www.youtube.com/channel/UCyENEycuNXfntLJLSeIuWXw">
+            <SocialImg src={require('../svg/youtube.svg')} />
+          </a>
+          <a href="https://github.com/ShenaniganDApp">
+            <SocialImg src={require('../svg/github.svg')} />
+          </a>
         </Section>
         <Section margin={"2rem 0"} centered width={"100%"}>
           <Text main color={colors.lightcyan}>Coming Soon</Text>

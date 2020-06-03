@@ -1,6 +1,6 @@
 import React, { useRef, useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { LandingSection, AboutSection } from './Sections';
+import { LandingSection, AboutSection, WhitepaperSection } from './Sections';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const AppWrapper = styled.div`
@@ -20,7 +20,7 @@ const AppWrapper = styled.div`
     background-image: url(${require('./images/background_mobile.png')});
     background-repeat: no-repeat;
     background-position: 0 0, 50%, 50%;
-    background-size: auto,auto 30%;
+    background-size: auto, auto 30%;
   }
 `;
 
@@ -35,6 +35,16 @@ function App() {
           <Route path="/explain">
             <AboutSection />
           </Route>
+          <Route path="/whitepaper">
+            <WhitepaperSection />
+          </Route>
+          <Route
+            path="/join"
+            component={() => {
+              window.location.href = 'https://discord.gg/Tk8gAM9';
+              return null;
+            }}
+          />
         </Switch>
       </AppWrapper>
     </Router>

@@ -5,7 +5,8 @@ import {
   EnergySection,
   MilestoneSection,
   TeamSection,
-  ContactSection
+  ContactSection,
+  QuestionSection
 } from './';
 import Header from '../Header';
 
@@ -66,6 +67,7 @@ function LandingSection() {
       <HomeSection />
       <HomeWrapper>
         <EnergySection ref={energyRef} />
+        <QuestionSection/>
       </HomeWrapper>
       <Spacer src={require('../svg/spacer.svg')}></Spacer>
       <MainWrapper>

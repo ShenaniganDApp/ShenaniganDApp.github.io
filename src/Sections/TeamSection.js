@@ -8,6 +8,8 @@ import styled, { css } from 'styled-components';
 import { Section, Text, Backdrop, colors } from '../styles';
 import ReactCardFlip from 'react-card-flip';
 
+const isPhone = window.innerWidth <= 768;
+
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
@@ -53,17 +55,22 @@ const TeamImg = styled.img`
 const CardSection = styled(Section)`
   transition: 0.2s;
   margin: auto;
-  &:hover {
-    -webkit-filter: grayscale(50%);
-    filter: grayscale(50%);
-    transform: rotateY(13deg);
-    background-color: rgba(255, 255, 255, 0.2);
-  }
   ${(props) =>
-    props.isFlipped &&
+    props.flipNum == null &&
     css`
-      pointer-events: none;
+      &:hover {
+        -webkit-filter: grayscale(50%);
+        filter: grayscale(50%);
+        transform: rotateY(13deg);
+        background-color: rgba(255, 255, 255, 0.2);
+      }
     `}
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const TeamGhost = styled.img`
@@ -71,10 +78,9 @@ const TeamGhost = styled.img`
   width: 50%;
   min-width: 80px;
   border-radius: 10px;
-  
+
   &:hover {
     transform: scale(1.1);
-   
   }
 `;
 
@@ -92,7 +98,9 @@ const ImageText = styled(Text)`
   text-decoration: underline;
 `;
 
-const MemberSection = styled(Section)``;
+const MemberSection = styled(Section)`
+  display: flex;
+`;
 
 function TeamSection(props, ref) {
   const teamRef = useRef();
@@ -127,13 +135,21 @@ function TeamSection(props, ref) {
         <MemberSection centered>
           <ReactCardFlip
             containerStyle={{
-              width: '30%',
+              width: `${isPhone ? '100%' : '30%'}`,
               height: '100%',
+              margin: '1rem 0',
+              flex: `${isPhone ? '' : '1'}`,
             }}
             isFlipped={flipNum == 0}
             flipDirection="horizontal"
           >
-            <CardSection width={'80%'} centered onClick={() => handleClick(0)}>
+            <CardSection
+              flipNum={flipNum}
+              width={'80%'}
+              height={'100%'}
+              centered
+              onClick={() => handleClick(0)}
+            >
               <Section centered width="100%">
                 <Text title color={colors.lightcyan}>
                   VIctor
@@ -149,7 +165,7 @@ function TeamSection(props, ref) {
             <Section
               width={'80%'}
               centered
-              margin="auto"
+              margin={'auto'}
               onMouseLeave={() => handleClick(null)}
             >
               <Section centered width="100%">
@@ -175,11 +191,17 @@ function TeamSection(props, ref) {
             </Section>
           </ReactCardFlip>
           <ReactCardFlip
-            containerStyle={{ width: '30%', height: '100%' }}
+            containerStyle={{
+              width: `${isPhone ? '100%' : '30%'}`,
+              height: '100%',
+              margin: '1rem 0',
+              flex: `${isPhone ? '' : '1'}`,
+            }}
             isFlipped={flipNum == 1}
             flipDirection="horizontal"
           >
             <CardSection
+              flipNum={flipNum}
               width={'80%'}
               textCentered
               centered
@@ -202,7 +224,7 @@ function TeamSection(props, ref) {
               width={'80%'}
               textCentered
               centered
-              onClick={() => handleClick(null)}
+              onMouseLeave={() => handleClick(null)}
             >
               <Section centered width="100%">
                 <Text title color={colors.lightcyan}>
@@ -210,8 +232,10 @@ function TeamSection(props, ref) {
                 </Text>
               </Section>
               <Section textCentered centered width="100%">
-                <BoxLink href="" target="_blank">
-                  <TeamGhost src={require('../images/pinky.png')} />
+                <BoxLink href="https://3box.io/0xbce03ce302e22a9e95bdc703328c3b4340058031" target="_blank">
+                  <TeamGhost
+                    src={require('../images/Andrew_Blanchard_Reed_headshot.jpg')}
+                  />
                   <ImageText
                     size="calc(1rem + 2vw)"
                     shadowed={'black'}
@@ -224,11 +248,17 @@ function TeamSection(props, ref) {
             </Section>
           </ReactCardFlip>
           <ReactCardFlip
-            containerStyle={{ width: '30%', height: '100%' }}
+            containerStyle={{
+              width: `${isPhone ? '100%' : '30%'}`,
+              height: '100%',
+              margin: '1rem 0',
+              flex: `${isPhone ? '' : '1'}`,
+            }}
             isFlipped={flipNum == 2}
             flipDirection="horizontal"
           >
             <CardSection
+              flipNum={flipNum}
               width={'80%'}
               textCentered
               centered
@@ -256,7 +286,7 @@ function TeamSection(props, ref) {
               </Section>
               <Section textCentered centered width="100%">
                 <BoxLink href="" target="_blank">
-                  <TeamGhost src={require('../images/inky.png')} />
+                  <TeamGhost src={require('../images/malik.jpg')} />
                   <ImageText
                     size="calc(1rem + 2vw)"
                     shadowed={'black'}
