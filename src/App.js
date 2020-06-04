@@ -45,6 +45,7 @@ function App() {
               return null;
             }}
           />
+         <Route path="/*" render={() => <p>Not Found</p>}/>
         </Switch>
       </AppWrapper>
     </Router>
