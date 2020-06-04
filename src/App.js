@@ -26,7 +26,7 @@ const AppWrapper = styled.div`
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <AppWrapper id="top">
         <Switch>
           <Route exact path="/">
