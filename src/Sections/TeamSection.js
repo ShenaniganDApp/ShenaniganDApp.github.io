@@ -79,13 +79,10 @@ const TeamGhost = styled.img`
 
   &:hover {
     transform: scale(1.1);
-<<<<<<< HEAD
-=======
   }
 
   @media (max-width: 768px) {
     width: 30%;
->>>>>>> source
   }
 `;
 

@@ -6,9 +6,10 @@ import {
   MilestoneSection,
   TeamSection,
   ContactSection,
-  QuestionSection
+  QuestionSection,
 } from './';
 import Header from '../Header';
+import { DiscordButton } from '../components';
 
 const MainWrapper = styled.div`
   width: 100%;
@@ -44,7 +45,7 @@ function LandingSection() {
     const handleContentHeights = () => {
       const energyHeight =
         -energyRef.current.boundingTop() - window.pageYOffset;
-        const questionHeight =
+      const questionHeight =
         -questionRef.current.boundingTop() - window.pageYOffset;
       const milestoneHeight =
         -milestoneRef.current.boundingTop() - window.pageYOffset;
@@ -56,22 +57,23 @@ function LandingSection() {
         question: questionHeight,
         milestone: milestoneHeight,
         team: teamHeight,
-        contact: contactHeight
+        contact: contactHeight,
       });
     };
     handleContentHeights();
     window.addEventListener('resize', handleContentHeights);
-    return _ => {
+    return (_) => {
       window.removeEventListener('resize', handleContentHeights);
     };
   }, [energyRef, milestoneRef, teamRef, contactRef]);
   return (
     <React.Fragment>
+      <DiscordButton />
       <Header heights={heights} />
       <HomeSection />
       <HomeWrapper>
         <EnergySection ref={energyRef} />
-        <QuestionSection ref={questionRef}/>
+        <QuestionSection ref={questionRef} />
       </HomeWrapper>
       <Spacer src={require('../svg/spacer.svg')}></Spacer>
       <MainWrapper>

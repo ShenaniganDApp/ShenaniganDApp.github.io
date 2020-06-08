@@ -33,9 +33,9 @@ const Section = styled.div`
       ${props =>
     (props.shadowed &&
       css`
-        -webkit-box-shadow: -7px 4px 5px 0px rgba(0, 0, 0, 1);
-        -moz-box-shadow: -7px 4px 5px 0px rgba(0, 0, 0, 1);
-        box-shadow: -7px 4px 4px 0px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 7px 4px 5px 0px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 7px 4px 5px 0px rgba(0, 0, 0, 1);
+        box-shadow: 7px 4px 4px 0px rgba(0, 0, 0, 1);
       `) }
       ${props =>
     (props.textCentered &&
