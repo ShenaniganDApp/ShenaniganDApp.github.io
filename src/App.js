@@ -1,6 +1,6 @@
 import React, { useRef, useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { LandingSection, AboutSection, WhitepaperSection } from './Sections';
+import { LandingSection, AboutSection } from './Sections';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const AppWrapper = styled.div`
@@ -34,9 +34,6 @@ function App() {
           </Route>
           <Route path="/explain">
             <AboutSection />
-          </Route>
-          <Route path="/whitepaper">
-            <WhitepaperSection />
           </Route>
           <Route
             path="/join"
