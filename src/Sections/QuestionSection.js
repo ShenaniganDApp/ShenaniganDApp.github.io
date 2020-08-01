@@ -14,9 +14,9 @@ const Wrapper = styled.div`
   height: auto;
   width: 100%;
   display: flex;
-  justify-content: center;
   margin-top: 10rem;
   position: relative;
+  justify-content: center;
 `;
 
 const TitleSection = styled(Section)`
@@ -35,7 +35,7 @@ const TitleSection = styled(Section)`
 
 const BorderWrapper = styled.div`
   width: 74vw;
-  padding: 1vw 1vw 5% 1vw;
+  padding: 1rem;
   background: radial-gradient(
     circle at 65% 93%,
     rgba(255, 255, 68, 0.7) 0%,
@@ -98,13 +98,13 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 4vw;
+  padding: 1vw 2vw;
   box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 20px;
   border-radius: 15px;
   border: 2px solid ${colors.deeppink};
   color: ${colors.lightcyan};
   min-height: 2.5rem;
-  margin: auto;
+  margin: 1rem auto;
   backdrop-filter: blur(5px);
   &:hover {
     transform: scale(0.9);
@@ -266,7 +266,7 @@ function QuestionSection(props, ref) {
             </AnswerSection>
           </ContentSection>
         </QuestionWrapper>
-        <Link to="/whitepaper">
+        <Link style={{textDecoration:"none"}} to="wiki/whitepaper">
           <Button>
             <Text main color={colors.lightcyan}>
               Read the Whitepaper
