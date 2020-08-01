@@ -266,13 +266,13 @@ function QuestionSection(props, ref) {
             </AnswerSection>
           </ContentSection>
         </QuestionWrapper>
-        <Link style={{textDecoration:"none"}} to="wiki/whitepaper">
+        <a style={{textDecoration:"none"}} href="http://she.energy/wiki/whitepaper">
           <Button>
             <Text main color={colors.lightcyan}>
               Read the Whitepaper
             </Text>
           </Button>
-        </Link>
+        </a>
       </BorderWrapper>
     </Wrapper>
   );
