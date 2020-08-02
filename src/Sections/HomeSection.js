@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Section, Text, colors } from '../styles';
 import { Transition, } from 'react-transition-group';
-import ReactPlayer from 'react-player';
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -58,20 +58,6 @@ const TitleSection = styled(Section)`
   align-content: center;
   justify-content: center;
   height: 20vw;
-`;
-
-const PlayerContainer = styled.div`
-  width: 80vw;
-  height: 45vw;
-  margin-top: 10rem;
-  z-index: 1;
-  margin-bottom:  25rem;
-  @media (max-width: 768px) {
-    margin-top:5rem;
-    width: 98vw;
-    height: 53.25vw;
-    margin-bottom: 10rem;
-  }
 `;
 
 const SloganSection = styled(Section)`
@@ -151,15 +137,6 @@ function HomeSection() {
           </SloganSection>
         )}
       </Transition>
-      <PlayerContainer>
-        <ReactPlayer
-          url="https://youtu.be/RmIfGaPTgUs"
-          width="100%"
-          height="100%"
-          controls="true
-          "
-        />
-      </PlayerContainer>
     </Wrapper>
   );
 }
