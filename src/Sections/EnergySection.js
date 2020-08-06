@@ -7,7 +7,7 @@ import ReactPlayer from 'react-player';
 const Wrapper = styled.div`
 	height: auto;
 	width: 75vw;
-  margin-top: 10rem;
+	margin-top: 10rem;
 	display: flex;
 	padding-bottom: 5%;
 	justify-content: center;
@@ -151,8 +151,8 @@ const Divider = styled.div`
 const PlayerContainer = styled.div`
 	width: 80vw;
 	height: 45vw;
-  margin-top: 25rem;
-  margin-bottom: 25rem;
+	margin-top: 25rem;
+	margin-bottom: 25rem;
 	z-index: 1;
 	@media (max-width: 768px) {
 		margin-top: 5rem;
