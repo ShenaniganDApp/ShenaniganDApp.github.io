@@ -1,6 +1,6 @@
 import React, { useRef, useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { LandingSection, AboutSection } from './Sections';
+import { LandingSection, AboutSection, EntrySection } from './Sections';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const AppWrapper = styled.div`
@@ -29,7 +29,10 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <AppWrapper id="top">
         <Switch>
-          <Route exact path="/">
+        <Route exact path="/">
+            <EntrySection />
+          </Route>
+          <Route path="/home">
             <LandingSection />
           </Route>
           <Route path="/explain">
