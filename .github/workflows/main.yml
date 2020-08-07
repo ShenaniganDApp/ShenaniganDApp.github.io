@@ -33,11 +33,10 @@ jobs:
 
     # install yarn
     - run: npm install -g yarn # Extra Step
-    # build step
+    - run: npm install -g gh-pages
+    # install step
     - name: Install and Build 🔧
-      run: | 
-        yarn install
-        yarn global add gh-pages
+      run: yarn install
     # Runs a single command using the runners shell
     - name: Deploy website
       run: gh-pages -b master -d build
