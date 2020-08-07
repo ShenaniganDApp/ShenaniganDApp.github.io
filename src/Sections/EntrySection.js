@@ -10,6 +10,7 @@ const Wrapper = styled.div`
 `;
 
 const BackgroundImage = styled.img`
+	pointer-events: none
 	position: absolute;
 	left: 0;
 	bottom: 0;
