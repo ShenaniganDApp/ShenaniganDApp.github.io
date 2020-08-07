@@ -30,15 +30,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-
-    # install yarn
-    - run: npm install -g yarn # Extra Step
-    - run: npm install -g gh-pages
-    # install step
-    - name: Install and Build 🔧
-      run: |
-        yarn install
-        CI=false yarn run build
-    # Runs a single command using the runners shell
-    - name: Deploy website
-      run: gh-pages -b master -d build
+    - name: Install Packages
+      run: npm install
+    - name: Build page
+      run: CI=false npm run build
+    - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./build
