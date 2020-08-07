@@ -25,7 +25,6 @@ const BackgroundImage = styled.img`
 
 const MainTextSection = styled(Section)`
 	flex-direction: column;
-	height: 25vh;
 `;
 
 const Button = styled.div`
@@ -58,9 +57,9 @@ const EntryText = styled(Text)`
 	color: ${colors.lightcyan};
 	overflow: hidden; /* Ensures the content is not revealed until the animation */
 	white-space: nowrap; /* Keeps the content on a single line */
-	letter-spacing: 0.15em; /* Adjust as needed */
+	letter-spacing: 0.05em; /* Adjust as needed */
 	animation: typing ${(props) => props.length}s steps(40, end);
-	margin: 1rem 0;
+	margin: 2vw 0;
 	@keyframes typing {
 		from {
 			width: 0;
@@ -85,6 +84,7 @@ const StyledImg = styled.img`
 `;
 
 const ButtonsSection = styled(Section)`
+	position: absolute;
 	justify-content: space-around;
 	bottom: 0;
 `;
@@ -113,13 +113,13 @@ function EntrySection(props, ref) {
 					</EntryText>
 				)}
 				{text > 1 && (
-					<EntryText smallMain length={12 * 0.1} onAnimationEnd={() => setText(3)}>
+					<EntryText smallMain length={17 * 0.1} onAnimationEnd={() => setText(3)}>
 						> Who am I?
 					</EntryText>
 				)}
 				{text > 2 && (
 					<EntryText smallMain length={29 * 0.1} onAnimationEnd={() => setText(4)}>
-						> I am SHE, game master and goddess of Shenanigan
+						> I am SHE, goddess and game master for Shenanigan
 					</EntryText>
 				)}
 				{text > 3 && (
@@ -128,21 +128,27 @@ function EntrySection(props, ref) {
 					</EntryText>
 				)}
 				{text > 4 && (
-					<EntryText wrap length={29 * 0.1} smallMain>
-						> This is my world, and you're at the beginning. Click an option below to start your journey.
+					<EntryText wrap length={20 * 0.1} smallMain onAnimationEnd={() => setText(6)}>
+						> This is my world, and you have found the beginning
+					</EntryText>
+				)}
+				{text > 5 && (
+					<EntryText wrap length={20 * 0.1} smallMain>
+						> You can click an option below to start your journey.
 					</EntryText>
 				)}
 			</MainTextSection>
 			{toggleButtons && (
 				<>
-					<Section width="100%" centered margin="10vh 0 1rem 0">
-						<Link to="/home">
-							<Button onAnimationEnd={() => setText(1)}>
-								<Text main>Enter</Text>
-							</Button>
-						</Link>
-					</Section>
 					<ButtonsSection width={'100%'} centered textCentered margin="0 0 1rem 0">
+						<Section width="100%" centered margin="10vh 0 0 0">
+							<Link to="/home">
+								<Button onAnimationEnd={() => setText(1)}>
+									<Text main>Enter</Text>
+								</Button>
+							</Link>
+						</Section>
+
 						<a href="http://she.energy/wiki">
 							<Button>
 								<Text main>Learn</Text>

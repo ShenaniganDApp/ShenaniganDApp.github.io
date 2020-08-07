@@ -41,7 +41,7 @@ const Text = styled.p`
 				background-color: 'black';
 				font-family: GreenScreen;
 				@media (max-width: 768px) {
-					font-size: 2vw;
+					font-size: 2.5vw;
 				}
 			`) ||
 		(props.title &&
