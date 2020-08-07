@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `;
 
 const BackgroundImage = styled.img`
-	pointer-events: none
+	pointer-events: none;
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -70,7 +70,7 @@ const EntryText = styled(Text)`
 	}
 `;
 const StyledImg = styled.img`
-	margin: 5rem 0;
+	margin: 5vh 0;
 	height: 25vh;
 	animation: show 3.5s;
 	@keyframes show {
