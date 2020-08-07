@@ -21,8 +21,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: tschaub/gh-pages@main
-
+    # install yarn
+    - run: npm install -g yarn # Extra Step
+    # build step
+    - name: Install and Build 🔧
+      run: yarn install
     # Runs a single command using the runners shell
     - name: Deploy website
       run: gh-pages -b master -d build
