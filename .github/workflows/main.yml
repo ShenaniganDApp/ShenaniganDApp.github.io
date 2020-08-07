@@ -38,7 +38,7 @@ jobs:
     - name: Install and Build 🔧
       run: |
         yarn install
-        yarn run build
+        CI=false yarn run build
     # Runs a single command using the runners shell
     - name: Deploy website
       run: gh-pages -b master -d build
