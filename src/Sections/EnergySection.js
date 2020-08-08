@@ -183,13 +183,13 @@ function EnergySection(props, ref) {
 								LIve
 							</Text>
 							<Text width={'100%'} title color={'black'}>
-								stream
-							</Text>
-							<Text width={'100%'} title color={colors.deeppink} shadowed={colors.deeppink}>
 								Sports
 							</Text>
+							<Text width={'100%'} title color={colors.deeppink} shadowed={colors.deeppink}>
+								TradIng
+							</Text>
 							<Text width={'100%'} title color={'black'}>
-								BettIng
+								Cards
 							</Text>
 						</Text>
 					</Section>
@@ -213,13 +213,13 @@ function EnergySection(props, ref) {
 				</UpperTextSection>
 			</TopLeftSection>
 			<TopRightSection shadowed curved backgroundColor={'rgba(208,0,108,0.7)'}>
-				<Section margin={'3rem 1rem 1rem 1rem'}>
+				<Section margin={'3rem 1rem 1rem 2rem'}>
 					<Text>
 						<BoldText size={'3vw'} color={colors.lightcyan}>
-							Hype Crowd&nbsp;
+							Athlete PredIctIon Markets&nbsp;
 						</BoldText>
 						<Text shadowed main margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
-							Shenanigan forms a virtual crowd with a positive and negative dichotomy. Join your side and
+							Shenanigan hosts a virtual crowd with a positive and negative dichotomy. Predict outcomes and
 							give the streamer a reason to improve.
 						</Text>
 					</Text>
@@ -231,7 +231,7 @@ function EnergySection(props, ref) {
 							She&nbsp;
 						</BoldText>
 						<Text shadowed main margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
-							Login and be a part of a competitive arena where the crowd must gauge athletes drive and
+							Login and be a part of a competitive arena where the people must invest in athletic drive and
 							power of will.
 						</Text>
 					</Section>
