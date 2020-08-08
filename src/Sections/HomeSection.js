@@ -86,7 +86,7 @@ function HomeSection() {
         <Title>nanIgan</Title>
       </TitleSection>
       <SloganSection margin={'1rem 0 0 15%'}>
-        <Slogan>Energizing Athletes to</Slogan>
+        <Slogan>Go Beyond Immersion</Slogan>
       </SloganSection>
 
       <Transition
@@ -100,8 +100,8 @@ function HomeSection() {
         }}
       >
         {state => (
-          <SloganSection state={state} margin={'0 0 0 42%'}>
-            <Slogan> Jump Higher</Slogan>
+          <SloganSection state={state} margin={'0 0 0 33%'}>
+            <Slogan> Athletes Are Faster</Slogan>
           </SloganSection>
         )}
       </Transition>
@@ -116,8 +116,8 @@ function HomeSection() {
         }}
       >
         {state => (
-          <SloganSection state={state} margin={'0 0 0 42%'}>
-            <Slogan>Throw Farther</Slogan>
+          <SloganSection state={state} margin={'0 0 0 33%'}>
+            <Slogan>Fans Are Louder</Slogan>
           </SloganSection>
         )}
       </Transition>
@@ -132,8 +132,8 @@ function HomeSection() {
         }}
       >
         {state => (
-          <SloganSection state={state} margin={'0 0 0 42%'}>
-            <Slogan>Run Faster</Slogan>
+          <SloganSection state={state} margin={'0 0 0 33%'}>
+            <Slogan>Games are More Than Games</Slogan>
           </SloganSection>
         )}
       </Transition>
