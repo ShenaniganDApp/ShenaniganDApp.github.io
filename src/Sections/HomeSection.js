@@ -133,7 +133,7 @@ function HomeSection() {
       >
         {state => (
           <SloganSection state={state} margin={'0 0 0 33%'}>
-            <Slogan>Games are More Than Games</Slogan>
+            <Slogan>Games Are More Than Games</Slogan>
           </SloganSection>
         )}
       </Transition>
