@@ -1,31 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9215f85d1ba574aadd5b0adae0b18396",
+    "revision": "df1af871dcb922ff8fbf22fa5094ef04",
     "url": "/index.html"
   },
   {
-    "revision": "d2af9d353f3d778bcd07",
+    "revision": "14ca921a57ecc8dd76a3",
     "url": "/static/css/main.50accb1a.chunk.css"
   },
   {
-    "revision": "1cc9dcd8fe3b6036e195",
-    "url": "/static/js/2.c14dce54.chunk.js"
+    "revision": "68163431a123afacc096",
+    "url": "/static/js/2.73e4e1d4.chunk.js"
   },
   {
     "revision": "429165ea31e7a5ddb395be11733e0360",
-    "url": "/static/js/2.c14dce54.chunk.js.LICENSE"
+    "url": "/static/js/2.73e4e1d4.chunk.js.LICENSE"
   },
   {
-    "revision": "d2af9d353f3d778bcd07",
-    "url": "/static/js/main.647ceef2.chunk.js"
+    "revision": "14ca921a57ecc8dd76a3",
+    "url": "/static/js/main.961a897d.chunk.js"
   },
   {
     "revision": "c13daeec8bc1a0c8b965",
     "url": "/static/js/runtime-main.15046bb1.js"
-  },
-  {
-    "revision": "91366257d46f965f8216f5f6f1762c99",
-    "url": "/static/media/Andrew_Blanchard_Reed_headshot.91366257.jpg"
   },
   {
     "revision": "d0405f5192af34db32cb031e03f7ec22",
@@ -68,8 +64,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Roadmap_Pacman_Map_Mobile.bcfd00e8.png"
   },
   {
-    "revision": "f89b39945aefd36c5ff19a8786cd4f17",
-    "url": "/static/media/She_Logo.f89b3994.png"
+    "revision": "ee918af8abdbefbda71b7d9783f1eb9d",
+    "url": "/static/media/She_Logo.ee918af8.png"
   },
   {
     "revision": "3264e29b3fa14fa9eb73ac942dd83843",
