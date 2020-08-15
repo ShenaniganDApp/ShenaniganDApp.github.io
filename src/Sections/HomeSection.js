@@ -47,8 +47,11 @@ const Slogan = styled.p`
 `;
 const StyledImg = styled.img`
   margin: 1rem 0.5rem 1rem 0rem;
-  height: 80%;
+  height: 100%;
   width: auto;
+  @media (max-width: 768px) {
+		height:120%;
+	}
 `;
 
 const TitleSection = styled(Section)`
