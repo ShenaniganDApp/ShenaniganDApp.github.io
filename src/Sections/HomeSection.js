@@ -7,7 +7,7 @@ import { Transition, } from 'react-transition-group';
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center;  
 `;
 const Backdrop = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
@@ -47,7 +47,7 @@ const Slogan = styled.p`
 `;
 const StyledImg = styled.img`
   margin: 1rem 0.5rem 1rem 0rem;
-  height: 100%;
+  height: 80%;
   width: auto;
 `;
 

@@ -7,7 +7,7 @@ import ReactPlayer from 'react-player';
 const Wrapper = styled.div`
 	height: auto;
 	width: 75vw;
-	margin-top: 10rem;
+	margin-top: 15rem;
 	display: flex;
 	padding-bottom: 5%;
 	justify-content: center;
