@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 
 const Logo = styled.img`
   width: auto;
-  height: 90%;
+  height: 100%;
 `;
 const Nav = styled.div`
   transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
@@ -196,7 +196,7 @@ function Header(props) {
 
   return (
     <Wrapper scrolled={scrolled} collapsed={collapsedStart}>
-      <HomeLink onClick={() => handleHeaderChange(0)} to="/#top">
+      <HomeLink onClick={() => handleHeaderChange(0)} to="/home/#top">
         <LogoFrame>
           <Logo src={require('./images/She_Logo.png')} />
         </LogoFrame>
@@ -219,7 +219,7 @@ function Header(props) {
               collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
-              to="/#energy"
+              to="/home/#energy"
               num={1}
               text={'Learn'}
             />
@@ -228,7 +228,7 @@ function Header(props) {
               collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
-              to="/#roadmap"
+              to="/home/#roadmap"
               num={2}
               text={'Roadmap'}
             />
@@ -237,7 +237,7 @@ function Header(props) {
               collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
-              to="/#team"
+              to="/home/#team"
               num={3}
               text={'Team'}
             />
@@ -246,7 +246,7 @@ function Header(props) {
               collapsed={collapsedStart}
               scrolled={scrolled}
               handleHeaderChange={handleHeaderChange}
-              to="/#contact"
+              to="/home/#contact"
               num={4}
               text={'Contact'}
             />

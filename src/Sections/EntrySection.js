@@ -17,6 +17,7 @@ const BackgroundImage = styled.img`
 	right: 0;
 	margin: auto;
 	height: auto;
+	width:100%;
 	opacity: 0.1;
 	@media (max-width: 768px) {
 		width: 100%;
@@ -119,7 +120,7 @@ function EntrySection(props, ref) {
 				)}
 				{text > 2 && (
 					<EntryText smallMain length={29 * 0.1} onAnimationEnd={() => setText(4)}>
-						> I am SHE, goddess and game master for Shenanigan
+						> I am SHE, goddess and game master for Shenanigan.
 					</EntryText>
 				)}
 				{text > 3 && (
@@ -129,7 +130,7 @@ function EntrySection(props, ref) {
 				)}
 				{text > 4 && (
 					<EntryText wrap length={20 * 0.1} smallMain onAnimationEnd={() => setText(6)}>
-						> This is my world, and you have found the beginning
+						> This is my world, and you have found its beginning.
 					</EntryText>
 				)}
 				{text > 5 && (
