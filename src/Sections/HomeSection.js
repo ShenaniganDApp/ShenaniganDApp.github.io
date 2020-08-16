@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Section, Text, colors } from '../styles';
-import { Transition, } from 'react-transition-group';
-
+import { Transition } from 'react-transition-group';
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;  
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 `;
 const Backdrop = styled.div`
-  background-color: rgba(0, 0, 0, 0.4);
-  background: linear-gradient(black, transparent);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	background: linear-gradient(black, transparent);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 0;
 `;
 const Title = styled.h1`
   color: ${colors.deeppink};
@@ -37,111 +36,110 @@ const Title = styled.h1`
   margin:0;
 `;
 const Slogan = styled.p`
-  color: ${colors.lightcyan};
-  width: 100%;
-  font-size: calc(0.4rem + 3vw);
-  font-family: 'GreenScreen';
-  text-shadow: black 0px 0px 10px;
-  padding: 0;
-  margin: 0;
+	color: ${colors.lightcyan};
+	width: 100%;
+	font-size: calc(0.4rem + 3vw);
+	font-family: 'GreenScreen';
+	text-shadow: black 0px 0px 10px;
+	padding: 0;
+	margin: 0;
 `;
 const StyledImg = styled.img`
-  margin: 1rem 0.5rem 1rem 0rem;
-  height: 100%;
-  width: auto;
-  @media (max-width: 768px) {
-		height:120%;
+	margin: 1rem 0rem 1rem -0.5rem;
+	height: 100%;
+	width: auto;
+	@media (max-width: 768px) {
+		height: 110%;
 	}
 `;
 
 const TitleSection = styled(Section)`
-  margin: 10% 1vw 0rem;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  height: 20vw;
+	margin: 10% 1vw 0rem;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	height: 20vw;
 `;
 
 const SloganSection = styled(Section)`
-  transition: 0.7s;
-  width: 100%;
+	transition: 0.7s;
+	width: 100%;
 
-  opacity: ${({ state }) =>
-    state === 'exiting' || state === 'exited' ? 0 : 1};
+	opacity: ${({ state }) => (state === 'exiting' || state === 'exited' ? 0 : 1)};
 `;
 
 function HomeSection() {
-  const [sloganNum, setSloganNum] = useState(0);
-  const [changeSlogan, setChangeSlogan] = useState(false);
-  useEffect(() => {
-    if (!changeSlogan) {
-      setTimeout(() => {
-        setChangeSlogan(true);
-      }, 3000);
-    }
-  }, [changeSlogan]);
-  return (
-    <Wrapper>
-      <Backdrop />
-      <TitleSection width={'100%'}>
-        <Title>Sh</Title> <StyledImg src={require('../images/She_Logo.png')} />
-        <Title>nanIgan</Title>
-      </TitleSection>
-      <SloganSection margin={'1rem 0 0 15%'}>
-        <Slogan>Go Beyond Immersion</Slogan>
-      </SloganSection>
+	const [sloganNum, setSloganNum] = useState(0);
+	const [changeSlogan, setChangeSlogan] = useState(false);
+	useEffect(() => {
+		if (!changeSlogan) {
+			setTimeout(() => {
+				setChangeSlogan(true);
+			}, 3000);
+		}
+	}, [changeSlogan]);
+	return (
+		<Wrapper>
+			<Backdrop />
+			<TitleSection width={'100%'}>
+				<Title>Sh</Title> <StyledImg src={require('../images/She_Logo.png')} />
+				<Title>nanIgan</Title>
+			</TitleSection>
+			<SloganSection margin={'1rem 0 0 15%'}>
+				<Slogan>Go Beyond Immersion</Slogan>
+			</SloganSection>
 
-      <Transition
-        in={sloganNum === 0 && !changeSlogan}
-        timeout={700}
-        unmountOnExit
-        mountOnEnter
-        onExited={() => {
-          setSloganNum(1);
-          setChangeSlogan(false);
-        }}
-      >
-        {state => (
-          <SloganSection state={state} margin={'0 0 0 33%'}>
-            <Slogan> Athletes Are Faster</Slogan>
-          </SloganSection>
-        )}
-      </Transition>
-      <Transition
-        in={sloganNum === 1 && !changeSlogan}
-        timeout={700}
-        unmountOnExit
-        mountOnEnter
-        onExited={() => {
-          setSloganNum(2);
-          setChangeSlogan(false);
-        }}
-      >
-        {state => (
-          <SloganSection state={state} margin={'0 0 0 33%'}>
-            <Slogan>Fans Are Louder</Slogan>
-          </SloganSection>
-        )}
-      </Transition>
-      <Transition
-        in={sloganNum === 2 && !changeSlogan}
-        timeout={700}
-        unmountOnExit
-        mountOnEnter
-        onExited={() => {
-          setSloganNum(0);
-          setChangeSlogan(false);
-        }}
-      >
-        {state => (
-          <SloganSection state={state} margin={'0 0 0 33%'}>
-            <Slogan>Games Are More Than Games</Slogan>
-          </SloganSection>
-        )}
-      </Transition>
-    </Wrapper>
-  );
+			<Transition
+				in={sloganNum === 0 && !changeSlogan}
+				timeout={700}
+				unmountOnExit
+				mountOnEnter
+				onExited={() => {
+					setSloganNum(1);
+					setChangeSlogan(false);
+				}}
+			>
+				{(state) => (
+					<SloganSection state={state} margin={'0 0 0 33%'}>
+						<Slogan> Athletes Are Faster</Slogan>
+					</SloganSection>
+				)}
+			</Transition>
+			<Transition
+				in={sloganNum === 1 && !changeSlogan}
+				timeout={700}
+				unmountOnExit
+				mountOnEnter
+				onExited={() => {
+					setSloganNum(2);
+					setChangeSlogan(false);
+				}}
+			>
+				{(state) => (
+					<SloganSection state={state} margin={'0 0 0 33%'}>
+						<Slogan>Fans Are Louder</Slogan>
+					</SloganSection>
+				)}
+			</Transition>
+			<Transition
+				in={sloganNum === 2 && !changeSlogan}
+				timeout={700}
+				unmountOnExit
+				mountOnEnter
+				onExited={() => {
+					setSloganNum(0);
+					setChangeSlogan(false);
+				}}
+			>
+				{(state) => (
+					<SloganSection state={state} margin={'0 0 0 33%'}>
+						<Slogan>Games Are More Than Games</Slogan>
+					</SloganSection>
+				)}
+			</Transition>
+		</Wrapper>
+	);
 }
 
 export default HomeSection;
