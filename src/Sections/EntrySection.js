@@ -60,7 +60,7 @@ const EntryText = styled(Text)`
 	white-space: nowrap; /* Keeps the content on a single line */
 	letter-spacing: 0.05em; /* Adjust as needed */
 	animation: typing ${(props) => props.length}s steps(40, end);
-	margin: 2vw 0;
+	margin: 2vh 0;
 	@keyframes typing {
 		from {
 			width: 0;
