@@ -98,7 +98,7 @@ function Header(props) {
         selected
         num={0}
         handleHeaderToggle={handleHeaderToggle}
-        to=""
+        to="/home/#top"
         text={'ShenanIgan'}
       />
     );
@@ -107,7 +107,7 @@ function Header(props) {
         scrolled={scrolled}
         selected
         handleHeaderToggle={handleHeaderToggle}
-        to="/#energy"
+        to="/home/#energy"
         num={1}
         text={'Learn'}
       />
@@ -118,7 +118,7 @@ function Header(props) {
         selected
         num={2}
         handleHeaderToggle={handleHeaderToggle}
-        to="/#roadmap"
+        to="/home/#roadmap"
         text={'Roadmap'}
       />
     );
@@ -128,7 +128,7 @@ function Header(props) {
         selected
         num={3}
         handleHeaderToggle={handleHeaderToggle}
-        to="/#team"
+        to="/home/#team"
         text={'Team'}
       />
     );
@@ -138,7 +138,7 @@ function Header(props) {
         selected
         num={4}
         handleHeaderToggle={handleHeaderToggle}
-        to="/#contact"
+        to="/home/#contact"
         text={'Contact'}
       />
     );
