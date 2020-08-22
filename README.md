@@ -20,6 +20,6 @@ Congrats! It's all written in react so it's that simple!
 
 ## Contribution
 
-Source branch is locked. Fork the repo from development and submit a pull request. Make sure you rebase before submitting pull request and squash your commits so the git history stays clean :)
+Fork the repo from source and submit a pull request. Make sure you rebase before submitting pull request and squash your commits so the git history stays clean :)
 
 Also THANK YOU!!!
