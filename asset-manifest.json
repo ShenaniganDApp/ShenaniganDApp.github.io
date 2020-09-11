@@ -5,13 +5,13 @@
     "main.js.map": "/static/js/main.650fe27d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.15046bb1.js",
     "runtime-main.js.map": "/static/js/runtime-main.15046bb1.js.map",
-    "static/js/2.73e4e1d4.chunk.js": "/static/js/2.73e4e1d4.chunk.js",
-    "static/js/2.73e4e1d4.chunk.js.map": "/static/js/2.73e4e1d4.chunk.js.map",
+    "static/js/2.d9ee0617.chunk.js": "/static/js/2.d9ee0617.chunk.js",
+    "static/js/2.d9ee0617.chunk.js.map": "/static/js/2.d9ee0617.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.c923665f7128ac738253f27014913927.js": "/precache-manifest.c923665f7128ac738253f27014913927.js",
+    "precache-manifest.8ebb98b388baf65257fb2431ac4ec0e9.js": "/precache-manifest.8ebb98b388baf65257fb2431ac4ec0e9.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.50accb1a.chunk.css.map": "/static/css/main.50accb1a.chunk.css.map",
-    "static/js/2.73e4e1d4.chunk.js.LICENSE": "/static/js/2.73e4e1d4.chunk.js.LICENSE",
+    "static/js/2.d9ee0617.chunk.js.LICENSE": "/static/js/2.d9ee0617.chunk.js.LICENSE",
     "static/media/index.css": "/static/media/Greenscr.13a00d0a.woff",
     "static/media/Powered_By_Blue.svg": "/static/media/Powered_By_Blue.c6b2c9c2.svg",
     "static/media/Roadmap_Pacman_01_Watermelon.png": "/static/media/Roadmap_Pacman_01_Watermelon.418142bf.png",
@@ -41,7 +41,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.15046bb1.js",
-    "static/js/2.73e4e1d4.chunk.js",
+    "static/js/2.d9ee0617.chunk.js",
     "static/css/main.50accb1a.chunk.css",
     "static/js/main.650fe27d.chunk.js"
   ]
