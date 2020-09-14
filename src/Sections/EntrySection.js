@@ -4,28 +4,18 @@ import { Section, Text, Backdrop, colors } from '../styles';
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
-	display: relative;
-	background-color: black;
-	overflow: hidden;
-`;
-
-const BackgroundImage = styled.img`
-	pointer-events: none;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto;
-	height: auto;
-	width:100%;
-	opacity: 0.1;
-	@media (max-width: 768px) {
-		width: 100%;
-	}
+	background-image: url(${require('../images/she_80s_Background.png')});
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
 `;
 
 const MainTextSection = styled(Section)`
 	flex-direction: column;
+	justify-content: center;
+	background-color: transparent;
 `;
 
 const Button = styled.div`
@@ -98,43 +88,42 @@ function EntrySection(props, ref) {
 	}
 	return (
 		<Wrapper>
-			<BackgroundImage src={require('../images/She_Logo.png')} />
 			<Section width={'100%'} centered>
-				<StyledImg src={require('../images/She_Logo.png')}></StyledImg>
+				<StyledImg></StyledImg>
 			</Section>
 			<MainTextSection>
 				{text == 0 && (
-					<EntryText length={19 * 0.1} smallMain onAnimationEnd={showButtons}>
+					<EntryText shadowed={'black'} length={19 * 0.1} main onAnimationEnd={showButtons}>
 						> Establishing Connection. . .
 					</EntryText>
 				)}
 				{text > 0 && (
-					<EntryText smallMain length={29 * 0.1} onAnimationEnd={() => setText(2)}>
+					<EntryText shadowed={'black'} main length={29 * 0.1} onAnimationEnd={() => setText(2)}>
 						> Nice to see you made it here.
 					</EntryText>
 				)}
 				{text > 1 && (
-					<EntryText smallMain length={17 * 0.1} onAnimationEnd={() => setText(3)}>
+					<EntryText shadowed={'black'} main length={17 * 0.1} onAnimationEnd={() => setText(3)}>
 						> Who am I?
 					</EntryText>
 				)}
 				{text > 2 && (
-					<EntryText smallMain length={29 * 0.1} onAnimationEnd={() => setText(4)}>
+					<EntryText shadowed={'black'} main length={29 * 0.1} onAnimationEnd={() => setText(4)}>
 						> I am SHE, goddess and game master for Shenanigan.
 					</EntryText>
 				)}
 				{text > 3 && (
-					<EntryText length={17 * 0.1} smallMain onAnimationEnd={() => setText(5)}>
+					<EntryText shadowed={'black'} length={17 * 0.1} main onAnimationEnd={() => setText(5)}>
 						> Where are you, you ask?
 					</EntryText>
 				)}
 				{text > 4 && (
-					<EntryText wrap length={20 * 0.1} smallMain onAnimationEnd={() => setText(6)}>
+					<EntryText shadowed={'black'} length={20 * 0.1} main onAnimationEnd={() => setText(6)}>
 						> This is my world, and you have found its beginning.
 					</EntryText>
 				)}
 				{text > 5 && (
-					<EntryText wrap length={20 * 0.1} smallMain>
+					<EntryText shadowed={'black'} length={20 * 0.1} main>
 						> You can click an option below to start your journey.
 					</EntryText>
 				)}

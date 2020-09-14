@@ -133,7 +133,7 @@ function QuestionSection(props, ref) {
 				<QuestionWrapper>
 					<ContentSection expanded={collapsibleNum === 0} onClick={() => onClickCollapsible(0)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
-							<Text main color={colors.lightcyan}>
+							<Text largeMain color={colors.lightcyan}>
 								What does Shenanigan do?
 							</Text>
 						</Section>
@@ -148,7 +148,7 @@ function QuestionSection(props, ref) {
 					</ContentSection>
 					<ContentSection expanded={collapsibleNum === 1} onClick={() => onClickCollapsible(1)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
-							<Text main color={colors.lightcyan}>
+							<Text largeMain color={colors.lightcyan}>
 								How does Shenanigan work?
 							</Text>
 						</Section>
@@ -165,7 +165,7 @@ function QuestionSection(props, ref) {
 					</ContentSection>
 					<ContentSection expanded={collapsibleNum === 2} onClick={() => onClickCollapsible(2)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
-							<Text main color={colors.lightcyan}>
+							<Text largeMain color={colors.lightcyan}>
 								What is an NRG Card?
 							</Text>
 						</Section>
@@ -181,7 +181,7 @@ function QuestionSection(props, ref) {
 					</ContentSection>
 					<ContentSection expanded={collapsibleNum === 3} onClick={() => onClickCollapsible(3)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
-							<Text main color={colors.lightcyan}>
+							<Text largeMain color={colors.lightcyan}>
 								How much does it cost?
 							</Text>
 						</Section>
@@ -195,7 +195,7 @@ function QuestionSection(props, ref) {
 					</ContentSection>
 					<ContentSection expanded={collapsibleNum === 4} onClick={() => onClickCollapsible(4)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
-							<Text main color={colors.lightcyan}>
+							<Text largeMain color={colors.lightcyan}>
 								What is different about Shenanigan?
 							</Text>
 						</Section>
@@ -210,7 +210,7 @@ function QuestionSection(props, ref) {
 					</ContentSection>
 					<ContentSection expanded={collapsibleNum === 5} onClick={() => onClickCollapsible(5)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
-							<Text main color={colors.lightcyan}>
+							<Text largeMain color={colors.lightcyan}>
 								Can I trust Shenanigan?
 							</Text>
 						</Section>
@@ -224,7 +224,7 @@ function QuestionSection(props, ref) {
 					</ContentSection>
 					<ContentSection expanded={collapsibleNum === 6} onClick={() => onClickCollapsible(6)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
-							<Text main color={colors.lightcyan}>
+							<Text largeMain color={colors.lightcyan}>
 								What is a prediction market?
 							</Text>
 						</Section>
@@ -242,7 +242,7 @@ function QuestionSection(props, ref) {
 				</QuestionWrapper>
 				<a style={{ textDecoration: 'none' }} href="http://she.energy/wiki/whitepaper">
 					<Button>
-						<Text main color={colors.lightcyan}>
+						<Text largeMain color={colors.lightcyan}>
 							Read the Whitepaper
 						</Text>
 					</Button>

@@ -228,7 +228,7 @@ function TeamSection(props, ref) {
 							</Section>
 							<Section textCentered centered width="100%">
 								<BoxLink href="" target="_blank">
-									<TeamGhost src={require('../images/She_Logo.png')} />
+									<TeamGhost src={require('../images/SHELogo_Final.png')} />
 									<ImageText size="calc(1rem + 2vw)" shadowed={'black'} color={colors.lightcyan}>
 										3BOX
 									</ImageText>
