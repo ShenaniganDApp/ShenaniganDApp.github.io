@@ -3,19 +3,21 @@ import styled, { css } from 'styled-components';
 import { Section, Text, Backdrop, colors } from '../styles';
 import { Link } from 'react-router-dom';
 
+const isPhone = window.innerWidth <= 768;
+
 const Wrapper = styled.div`
-	background-image: url(${require('../images/she_80s_Background.png')});
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	position: relative;
+	background-color: black;
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 `;
 
 const MainTextSection = styled(Section)`
 	flex-direction: column;
 	justify-content: center;
 	background-color: transparent;
+	z-index: 1;
 `;
 
 const Button = styled.div`
@@ -51,6 +53,7 @@ const EntryText = styled(Text)`
 	letter-spacing: 0.05em; /* Adjust as needed */
 	animation: typing ${(props) => props.length}s steps(40, end);
 	margin: 2vh 0;
+	z-index: 1;
 	@keyframes typing {
 		from {
 			width: 0;
@@ -74,6 +77,27 @@ const StyledImg = styled.img`
 	}
 `;
 
+const BackgroundImageFull = styled.img`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 0;
+	height: ${isPhone && '100vh'};
+	transform: translate(-50%, -50%);
+	transition: opacity 400ms ease 0ms;
+`;
+const BackgroundImageThumb = styled.img`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 100%;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
+	filter: blur(20px);
+	transition: visibility 0ms ease 400ms; ;
+`;
+
 const ButtonsSection = styled(Section)`
 	position: absolute;
 	justify-content: space-around;
@@ -82,12 +106,25 @@ const ButtonsSection = styled(Section)`
 function EntrySection(props, ref) {
 	const [text, setText] = useState(0);
 	const [toggleButtons, setToggleButtons] = useState(false);
+	const [isLoaded, setIsLoaded] = useState(false);
 
 	function showButtons() {
 		setToggleButtons(true);
 	}
 	return (
 		<Wrapper>
+			<BackgroundImageThumb
+				src={require('../images/she_80s_BackgroundMobileBlurry.png')}
+				style={{ visibility: isLoaded ? 'hidden' : 'visible' }}
+			/>
+			<BackgroundImageFull
+				onLoad={() => {
+					setIsLoaded(true);
+				}}
+				style={{ opacity: isLoaded ? 1 : 0 }}
+				src={require(isPhone ? '../images/she_80s_BackgroundMobile.png' : '../images/she_80s_Background.png')}
+			/>
+
 			<Section width={'100%'} centered>
 				<StyledImg></StyledImg>
 			</Section>
