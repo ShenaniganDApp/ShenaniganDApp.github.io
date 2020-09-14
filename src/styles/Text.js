@@ -24,6 +24,16 @@ const Text = styled.p`
 					font-size: 3vw;
 				}
 			`) ||
+			(props.largeMain &&
+			css`
+				font-size: 12px;
+				font-size: 2vw;
+				background-color: 'black';
+				font-family: GreenScreen;
+				@media (max-width: 768px) {
+					font-size: 3vw;
+				}
+			`) ||
 		(props.main &&
 			css`
 				font-size: 15px;
@@ -31,7 +41,7 @@ const Text = styled.p`
 				background-color: 'black';
 				font-family: GreenScreen;
 				@media (max-width: 768px) {
-					font-size: 3vw;
+					font-size: 2.5vw;
 				}
 			`) ||
 		(props.smallMain &&
@@ -41,7 +51,7 @@ const Text = styled.p`
 				background-color: 'black';
 				font-family: GreenScreen;
 				@media (max-width: 768px) {
-					font-size: 2.5vw;
+					font-size: 2vw;
 				}
 			`) ||
 		(props.title &&

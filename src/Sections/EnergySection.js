@@ -12,11 +12,14 @@ const Wrapper = styled.div`
 	padding-bottom: 5%;
 	justify-content: center;
 	flex-wrap: wrap;
+	margin-bottom: 10rem;
 	@media (max-width: 768px) {
 		flex-direction: column;
 		width: 100%;
 		align-items: center;
 		justify-content: center;
+		margin-top: 5rem;
+		margin-bottom: 10rem;
 	}
 `;
 
@@ -196,14 +199,14 @@ function EnergySection(props, ref) {
 					<Divider />
 					<Section width={'100%'}>
 						<ChargeSection centered margin={'10% -1rem 1rem 0rem'}>
-							<Text margin={'5% 0 0 5%'} width={'100%'} main>
+							<Text margin={'5% 0 0 5%'} width={'100%'} largeMain>
 								Rise up to the challenge or fall into the wake
 							</Text>
 
-							<Text margin={'10% 0 0 5%'} width={'100%'} main>
+							<Text margin={'10% 0 0 5%'} width={'100%'} largeMain>
 								Motivate ones self
 							</Text>
-							<Text margin={'10% 0 0 5%'} width={'100%'} main>
+							<Text margin={'10% 0 0 5%'} width={'100%'} largeMain>
 								Connect with friends and foes
 							</Text>
 							{/* <Text margin={'1rem 0'}>Build Your CommunIty</Text>
@@ -218,7 +221,7 @@ function EnergySection(props, ref) {
 						<BoldText size={'3vw'} color={colors.lightcyan}>
 							Athlete PredIctIon Markets&nbsp;
 						</BoldText>
-						<Text shadowed main margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
+						<Text shadowed largeMain margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
 							Shenanigan hosts a virtual crowd with a positive and negative dichotomy. Predict outcomes and
 							give the streamer a reason to improve.
 						</Text>
@@ -230,19 +233,19 @@ function EnergySection(props, ref) {
 						<BoldText size={'3vw'} color={colors.lightcyan}>
 							She&nbsp;
 						</BoldText>
-						<Text shadowed main margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
+						<Text shadowed largeMain margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
 							Login and be a part of a competitive arena where the people must invest in athletic drive and
 							power of will.
 						</Text>
 					</Section>
 					<StyledLink style={{ textDecoration: 'none' }} to="/explain">
 						<Button>
-							<Text main>Read More</Text>
+							<Text largeMain>Read More</Text>
 						</Button>
 					</StyledLink>
 				</Section>
 			</TopRightSection>
-			<PlayerContainer>
+			{/* <PlayerContainer>
 				<ReactPlayer
 					url="https://youtu.be/RmIfGaPTgUs"
 					width="100%"
@@ -250,7 +253,7 @@ function EnergySection(props, ref) {
 					controls="true
           "
 				/>
-			</PlayerContainer>
+			</PlayerContainer> */}
 		</Wrapper>
 	);
 }
