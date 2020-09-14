@@ -18,22 +18,19 @@ const Backdrop = styled.div`
 	z-index: 0;
 `;
 const Title = styled.h1`
-  color: ${colors.deeppink};
-  text-align: center;
-  background: radial-gradient(circle at 50% 200%,
-    ${colors.gold} 25%,
-    ${colors.deeppink}
-  );
-  /* radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%), 
+	color: ${colors.deeppink};
+	text-align: center;
+	background: radial-gradient(circle at 50% 200%, ${colors.deeppink} 25%, ${colors.gold});
+	/* radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%), 
           linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0) 70.71%) */
-  /* background: linear-gradient(to right, ${colors.gold} 20%, ${colors.deeppink} 40%, ${colors.deeppink} 60%, ${colors.gold} 80%); */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: calc(0.8rem + 10vw);
-  font-family: 'Electro-Shackle', sans-serif;
-  font-weight: 500;
-  padding: 0;
-  margin:0;
+	/* background: linear-gradient(to right, ${colors.gold} 20%, ${colors.deeppink} 40%, ${colors.deeppink} 60%, ${colors.gold} 80%); */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: calc(0.8rem + 10vw);
+	font-family: 'Electro-Shackle', sans-serif;
+	font-weight: 500;
+	padding: 0;
+	margin: 0;
 `;
 const Slogan = styled.p`
 	color: ${colors.lightcyan};
@@ -83,10 +80,10 @@ function HomeSection() {
 		<Wrapper>
 			<Backdrop />
 			<TitleSection width={'100%'}>
-				<Title>Sh</Title> <StyledImg src={require('../images/She_Logo.png')} />
+				<Title>Sh</Title> <StyledImg src={require('../images/SHELogo_Final.png')} />
 				<Title>nanIgan</Title>
 			</TitleSection>
-			<SloganSection margin={'1rem 0 0 15%'}>
+			<SloganSection margin={'1rem 0 1rem 15%'}>
 				<Slogan>Go Beyond Immersion</Slogan>
 			</SloganSection>
 
@@ -102,7 +99,7 @@ function HomeSection() {
 			>
 				{(state) => (
 					<SloganSection state={state} margin={'0 0 0 33%'}>
-						<Slogan> Athletes Are Faster</Slogan>
+						<Slogan> Faster Athletes </Slogan>
 					</SloganSection>
 				)}
 			</Transition>
@@ -118,7 +115,7 @@ function HomeSection() {
 			>
 				{(state) => (
 					<SloganSection state={state} margin={'0 0 0 33%'}>
-						<Slogan>Fans Are Louder</Slogan>
+						<Slogan>Louder Fans</Slogan>
 					</SloganSection>
 				)}
 			</Transition>
@@ -134,7 +131,7 @@ function HomeSection() {
 			>
 				{(state) => (
 					<SloganSection state={state} margin={'0 0 0 33%'}>
-						<Slogan>Games Are More Than Games</Slogan>
+						<Slogan>More Than A Game</Slogan>
 					</SloganSection>
 				)}
 			</Transition>

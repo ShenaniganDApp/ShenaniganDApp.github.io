@@ -198,7 +198,7 @@ function Header(props) {
     <Wrapper scrolled={scrolled} collapsed={collapsedStart}>
       <HomeLink onClick={() => handleHeaderChange(0)} to="/home/#top">
         <LogoFrame>
-          <Logo src={require('./images/She_Logo.png')} />
+          <Logo src={require('./images/SHELogo_Final.png')} />
         </LogoFrame>
       </HomeLink>
       {headerCollapsed()}
