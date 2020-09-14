@@ -9,7 +9,7 @@ const AppWrapper = styled.div`
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: auto, cover;
-  background-position: 50% 35%;
+  background-position: 50%;
   z-index: -1;
   /* Preserve aspect ratio */
 
@@ -19,7 +19,7 @@ const AppWrapper = styled.div`
   @media (max-width: 768px) {
     background-image: url(${require('./images/background_mobile.png')});
     background-repeat: no-repeat;
-    background-position: 0 0, 50%, 50%;
+    background-position: 50%;
     background-size: auto, auto 30%;
   }
 `;
