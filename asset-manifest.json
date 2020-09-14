@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.50accb1a.chunk.css",
-    "main.js": "/static/js/main.0227d1d6.chunk.js",
-    "main.js.map": "/static/js/main.0227d1d6.chunk.js.map",
+    "main.js": "/static/js/main.c299163e.chunk.js",
+    "main.js.map": "/static/js/main.c299163e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.15046bb1.js",
     "runtime-main.js.map": "/static/js/runtime-main.15046bb1.js.map",
-    "static/js/2.aea46fa3.chunk.js": "/static/js/2.aea46fa3.chunk.js",
-    "static/js/2.aea46fa3.chunk.js.map": "/static/js/2.aea46fa3.chunk.js.map",
+    "static/js/2.a021a625.chunk.js": "/static/js/2.a021a625.chunk.js",
+    "static/js/2.a021a625.chunk.js.map": "/static/js/2.a021a625.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7563c19558b13e84687420d8dd2dec90.js": "/precache-manifest.7563c19558b13e84687420d8dd2dec90.js",
+    "precache-manifest.5a856b26104d111a8ed67f5d105419e1.js": "/precache-manifest.5a856b26104d111a8ed67f5d105419e1.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.50accb1a.chunk.css.map": "/static/css/main.50accb1a.chunk.css.map",
-    "static/js/2.aea46fa3.chunk.js.LICENSE": "/static/js/2.aea46fa3.chunk.js.LICENSE",
+    "static/js/2.a021a625.chunk.js.LICENSE": "/static/js/2.a021a625.chunk.js.LICENSE",
     "static/media/index.css": "/static/media/Greenscr.13a00d0a.woff",
     "static/media/Powered_By_Blue.svg": "/static/media/Powered_By_Blue.c6b2c9c2.svg",
     "static/media/Roadmap_Pacman_01_Watermelon.png": "/static/media/Roadmap_Pacman_01_Watermelon.418142bf.png",
@@ -35,6 +35,8 @@
     "static/media/pacman3D.png": "/static/media/pacman3D.d01bae6d.png",
     "static/media/reddit.svg": "/static/media/reddit.b17ddd00.svg",
     "static/media/she_80s_Background.png": "/static/media/she_80s_Background.2efdb702.png",
+    "static/media/she_80s_BackgroundMobile.png": "/static/media/she_80s_BackgroundMobile.9ed4e5dc.png",
+    "static/media/she_80s_BackgroundMobileBlurry.png": "/static/media/she_80s_BackgroundMobileBlurry.a694e615.png",
     "static/media/spacer.svg": "/static/media/spacer.ad2edaec.svg",
     "static/media/twitter.svg": "/static/media/twitter.d1d12ce1.svg",
     "static/media/victor.jpeg": "/static/media/victor.25ad6238.jpeg",
@@ -42,8 +44,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.15046bb1.js",
-    "static/js/2.aea46fa3.chunk.js",
+    "static/js/2.a021a625.chunk.js",
     "static/css/main.50accb1a.chunk.css",
-    "static/js/main.0227d1d6.chunk.js"
+    "static/js/main.c299163e.chunk.js"
   ]
 }
