@@ -29,11 +29,11 @@ const TitleSection = styled(Section)`
 
 const BorderWrapper = styled.div`
 	width: 74vw;
-	padding: 1rem;
+	padding: none;
 	background: radial-gradient(circle at 65% 93%, rgba(255, 255, 68, 0.7) 0%, rgba(208, 0, 108, 0.7) 55%);
-	border-radius: 25px;
+	border-radius: 0 0 25px 25px;
 	@media (max-width: 768px) {
-		width: 90vw;
+		width: 100vw;
 	}
 `;
 const QuestionWrapper = styled(Section)`
