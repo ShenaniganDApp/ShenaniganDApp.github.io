@@ -29,12 +29,13 @@ const TitleSection = styled(Section)`
 
 const BorderWrapper = styled.div`
 	width: 74vw;
-	padding: 1rem 0;
+	padding: 1rem;
 	background: radial-gradient(circle at 65% 93%, rgba(255, 255, 68, 0.7) 0%, rgba(208, 0, 108, 0.7) 55%);
 	border-radius: 25px;
 	@media (max-width: 768px) {
 		border-radius: 0 0 25px 25px;
 		width: 100vw;
+		padding: 1rem 0;
 	}
 `;
 const QuestionWrapper = styled(Section)`
@@ -132,7 +133,7 @@ function QuestionSection(props, ref) {
 			</TitleSection>
 			<BorderWrapper>
 				<QuestionWrapper>
-					<ContentSection expanded={collapsibleNum === 0} onClick={() => onClickCollapsible(0)}>
+					<ContentSection noSelect expanded={collapsibleNum === 0} onClick={() => onClickCollapsible(0)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
 							<Text largeMain color={colors.lightcyan}>
 								What does Shenanigan do?
@@ -147,7 +148,7 @@ function QuestionSection(props, ref) {
 							</AnswerText>
 						</AnswerSection>
 					</ContentSection>
-					<ContentSection expanded={collapsibleNum === 1} onClick={() => onClickCollapsible(1)}>
+					<ContentSection noSelect expanded={collapsibleNum === 1} onClick={() => onClickCollapsible(1)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
 							<Text largeMain color={colors.lightcyan}>
 								How does Shenanigan work?
@@ -164,7 +165,7 @@ function QuestionSection(props, ref) {
 							</AnswerText>
 						</AnswerSection>
 					</ContentSection>
-					<ContentSection expanded={collapsibleNum === 2} onClick={() => onClickCollapsible(2)}>
+					<ContentSection noSelect expanded={collapsibleNum === 2} onClick={() => onClickCollapsible(2)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
 							<Text largeMain color={colors.lightcyan}>
 								What is an NRG Card?
@@ -174,13 +175,13 @@ function QuestionSection(props, ref) {
 							<AnswerText shadowed={colors.deeppink}>
 								NRG Cards are a lot like the baseball cards of the 1980s, except we're in the future.
 								With provable uniqueness and security, NRG cards are non-fungibles (NFT) on the Ethereum
-								blockchain that can be traded securely with anyone around the world. Each NRG
-								Card carries unique attributes. A unique address, series number, athlete statistics,
-								etc. Read more on our learn page.
+								blockchain that can be traded securely with anyone around the world. Each NRG Card
+								carries unique attributes. A unique address, series number, athlete statistics, etc.
+								Read more on our learn page.
 							</AnswerText>
 						</AnswerSection>
 					</ContentSection>
-					<ContentSection expanded={collapsibleNum === 3} onClick={() => onClickCollapsible(3)}>
+					<ContentSection noSelect expanded={collapsibleNum === 3} onClick={() => onClickCollapsible(3)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
 							<Text largeMain color={colors.lightcyan}>
 								How much does it cost?
@@ -194,7 +195,7 @@ function QuestionSection(props, ref) {
 							</AnswerText>
 						</AnswerSection>
 					</ContentSection>
-					<ContentSection expanded={collapsibleNum === 4} onClick={() => onClickCollapsible(4)}>
+					<ContentSection noSelect expanded={collapsibleNum === 4} onClick={() => onClickCollapsible(4)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
 							<Text largeMain color={colors.lightcyan}>
 								What is different about Shenanigan?
@@ -209,7 +210,7 @@ function QuestionSection(props, ref) {
 							</AnswerText>
 						</AnswerSection>
 					</ContentSection>
-					<ContentSection expanded={collapsibleNum === 5} onClick={() => onClickCollapsible(5)}>
+					<ContentSection noSelect expanded={collapsibleNum === 5} onClick={() => onClickCollapsible(5)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
 							<Text largeMain color={colors.lightcyan}>
 								Can I trust Shenanigan?
@@ -223,7 +224,7 @@ function QuestionSection(props, ref) {
 							</AnswerText>
 						</AnswerSection>
 					</ContentSection>
-					<ContentSection expanded={collapsibleNum === 6} onClick={() => onClickCollapsible(6)}>
+					<ContentSection noSelect expanded={collapsibleNum === 6} onClick={() => onClickCollapsible(6)}>
 						<Section width={'100%'} margin={'1rem 1rem'}>
 							<Text largeMain color={colors.lightcyan}>
 								What is a prediction market?
