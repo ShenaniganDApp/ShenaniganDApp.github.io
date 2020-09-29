@@ -45,6 +45,13 @@ function App() {
               return null;
             }}
           />
+          <Route
+            path="/swap"
+            component={() => {
+              window.location.href = 'https://honeyswap.org/#/add/ETH/0xB5d592f85ab2D955c25720EbE6FF8D4d1E1Be300';
+              return null;
+            }}
+          />
          <Route path="/*" render={() => <p>Not Found</p>}/>
         </Switch>
       </AppWrapper>
