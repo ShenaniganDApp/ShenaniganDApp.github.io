@@ -41,7 +41,7 @@ function App() {
           <Route
             path="/join"
             component={() => {
-              window.location.href = 'https://discord.gg/Tk8gAM9';
+              window.location.href = 'https://discord.gg/wqMYuYS';
               return null;
             }}
           />
