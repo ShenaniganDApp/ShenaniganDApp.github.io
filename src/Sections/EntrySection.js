@@ -6,10 +6,7 @@ import { Link } from 'react-router-dom';
 const isPhone = window.innerWidth <= 768;
 
 const Wrapper = styled.div`
-	position: relative;
 	background-color: black;
-	width: 100vw;
-	height: 100vh;
 	overflow: hidden;
 `;
 
@@ -22,6 +19,8 @@ const MainTextSection = styled(Section)`
 
 const Button = styled.div`
 	transition: 0.3s;
+	padding: 1rem;
+	backdrop-filter: blur(2px);
 	margin: auto;
 	box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 20px;
 	border-radius: 10px;
@@ -78,13 +77,25 @@ const StyledImg = styled.img`
 `;
 
 const BackgroundImageFull = styled.img`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 0;
-	height: ${isPhone && '100vh'};
-	transform: translate(-50%, -50%);
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1720px;
+
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
 	transition: opacity 400ms ease 0ms;
+
+	@media screen and (max-width: 1720) {
+		/* Specific to this particular image */
+		left: 50%;
+		margin-left: -990px; /* 50% */
+	}
 `;
 const BackgroundImageThumb = styled.img`
 	position: absolute;
@@ -171,19 +182,25 @@ function EntrySection(props, ref) {
 						<Section width="100%" centered margin="10vh 0 0 0">
 							<Link to="/home">
 								<Button onAnimationEnd={() => setText(1)}>
-									<Text main>Enter</Text>
+									<Text shadowed={colors.lightcyan} largeMain>
+										Enter
+									</Text>
 								</Button>
 							</Link>
 						</Section>
 
 						<a href="http://she.energy/wiki">
 							<Button>
-								<Text main>Learn</Text>
+								<Text shadowed={colors.lightcyan} largeMain>
+									Learn
+								</Text>
 							</Button>
 						</a>
 						<Link to="/join">
 							<Button>
-								<Text main>Join</Text>
+								<Text shadowed={colors.lightcyan} largeMain>
+									Join
+								</Text>
 							</Button>
 						</Link>
 					</ButtonsSection>
