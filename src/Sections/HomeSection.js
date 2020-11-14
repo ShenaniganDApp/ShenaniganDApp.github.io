@@ -38,14 +38,15 @@ const Button = styled.div`
 	}
 `;
 const Title = styled.h1`
-	color: ${colors.deeppink};
+	color: ${colors.gold};
 	text-align: center;
-	background: radial-gradient(circle at 50% 200%, ${colors.deeppink} 25%, ${colors.gold});
+	text-shadow: ${colors.gold} 0px 0px 5px;
+	/* background: radial-gradient(circle at 50% 200%, ${colors.gold} 25%, ${colors.deeppink}); */
 	/* radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%), 
           linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0) 70.71%) */
 	/* background: linear-gradient(to right, ${colors.gold} 20%, ${colors.deeppink} 40%, ${colors.deeppink} 60%, ${colors.gold} 80%); */
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	/* -webkit-background-clip: text; */
+	/* -webkit-text-fill-color: transparent; */
 	font-size: calc(0.8rem + 10vw);
 	font-family: 'Electro-Shackle', sans-serif;
 	font-weight: 500;

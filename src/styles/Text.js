@@ -24,7 +24,7 @@ const Text = styled.p`
 					font-size: 3vw;
 				}
 			`) ||
-			(props.largeMain &&
+		(props.largeMain &&
 			css`
 				font-size: 12px;
 				font-size: 2vw;
@@ -47,11 +47,11 @@ const Text = styled.p`
 		(props.smallMain &&
 			css`
 				font-size: 12px;
-				font-size: 1vw;
+				font-size: 1.25vw;
 				background-color: 'black';
 				font-family: GreenScreen;
 				@media (max-width: 768px) {
-					font-size: 2vw;
+					font-size: 2.5vw;
 				}
 			`) ||
 		(props.title &&

@@ -21,9 +21,9 @@ const HomeWrapper = styled.div`
 `;
 
 const FooterSection = styled(Section)`
+	display: flex;
 	justify-content: center;
-	align-items: space-between;
-	width: 20%;
+	align-content: center;
 	position: fixed;
 	bottom: 1rem;
 	right: 1rem;
@@ -68,8 +68,8 @@ function LandingSection() {
 	}, [energyRef, milestoneRef, teamRef, contactRef]);
 	return (
 		<React.Fragment>
-			<FooterSection>
-				{/* <StakeButton /> */}
+			<FooterSection centered>
+				<StakeButton />
 				<DiscordButton />
 			</FooterSection>
 
