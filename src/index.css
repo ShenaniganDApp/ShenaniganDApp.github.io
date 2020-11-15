@@ -1,27 +1,25 @@
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: black;
 }
 @media (max-width: 768px) {
-  body {
-    height: 100vh;
-  }
+	body {
+		height: 100vh;
+	}
 }
 @font-face {
-  font-family: 'GreenScreen';
-  src: local('GreenScreen'), url(./fonts/Greenscr.woff) format('woff');
-  font-display: block;
+	font-family: 'GreenScreen';
+	src: local('GreenScreen'), url(./fonts/Greenscr.woff) format('woff');
+	font-display: block;
 }
 @font-face {
-  font-family: 'Electro-Shackle';
-  src: local('Electro-Shackle'),
-    url(./fonts/Electro-Shackle.ttf.woff) format('woff');
-  font-display: block;
+	font-family: 'Electro-Shackle';
+	src: local('Electro-Shackle'), url(./fonts/Electro-Shackle.ttf.woff) format('woff');
+	font-display: block;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
