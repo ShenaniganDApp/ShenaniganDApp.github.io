@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import Blockies from 'react-blockies';
 import ERC20ABI from '../artifacts/ERC20.json';
 import { MdArrowBack } from 'react-icons/md';
-import { StakeInput } from '../components';
+import { StakeInput, ScrollToTop } from '../components';
 
 const INFURA_ID = '62fd1818438846a984542dd3520611c4';
 
@@ -223,6 +223,7 @@ function StakingSection(props, ref) {
 	let display = '';
 	return (
 		<Wrapper>
+			<ScrollToTop />
 			<Section
 				style={{
 					width: '100%',

@@ -77,24 +77,29 @@ const StyledImg = styled.img`
 `;
 
 const BackgroundImageFull = styled.img`
-	/* Set rules to fill background */
-	min-height: 100%;
-	min-width: 1720px;
-
-	/* Set up proportionate scaling */
-	width: 100%;
-	height: auto;
-
-	/* Set up positioning */
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
-	transition: opacity 400ms ease 0ms;
-
-	@media screen and (max-width: 1720) {
-		/* Specific to this particular image */
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	min-height: 50%;
+	@media (max-width: 728px) {
+		top: 50%;
 		left: 50%;
-		margin-left: -990px; /* 50% */
+		transform: translate(-50%, -50%);
+	}
+`;
+
+const BackgroundWrapper = styled.div`
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	@media (max-width: 728px) {
+		display: hidden;
 	}
 `;
 const BackgroundImageThumb = styled.img`
@@ -128,14 +133,17 @@ function EntrySection(props, ref) {
 				src={require('../images/she_80s_BackgroundMobileBlurry.png')}
 				style={{ visibility: isLoaded ? 'hidden' : 'visible' }}
 			/>
-			<BackgroundImageFull
-				onLoad={() => {
-					setIsLoaded(true);
-				}}
-				style={{ opacity: isLoaded ? 1 : 0 }}
-				src={require(isPhone ? '../images/she_80s_BackgroundMobile.png' : '../images/she_80s_Background.png')}
-			/>
-
+			<BackgroundWrapper>
+				<BackgroundImageFull
+					onLoad={() => {
+						setIsLoaded(true);
+					}}
+					style={{ opacity: isLoaded ? 1 : 0 }}
+					src={require(isPhone
+						? '../images/she_80s_BackgroundMobile.png'
+						: '../images/she_80s_Background.png')}
+				/>
+			</BackgroundWrapper>
 			<Section width={'100%'} centered>
 				<StyledImg></StyledImg>
 			</Section>
