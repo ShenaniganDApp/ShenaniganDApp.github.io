@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { HomeSection, EnergySection, MilestoneSection, TeamSection, ContactSection, QuestionSection } from './';
 import Header from '../Header';
 import { Section } from '../styles';
-import { DiscordButton, StakeButton } from '../components';
+import { DiscordButton } from '../components';
 
 const MainWrapper = styled.div`
 	width: 100%;
@@ -69,8 +69,7 @@ function LandingSection() {
 	return (
 		<React.Fragment>
 			<FooterSection centered>
-				<StakeButton />
-				<DiscordButton />
+S				<DiscordButton />
 			</FooterSection>
 
 			<Header heights={heights} />

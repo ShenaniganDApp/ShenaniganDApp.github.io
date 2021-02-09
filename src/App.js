@@ -52,7 +52,7 @@ function App() {
 						path="/swap"
 						component={() => {
 							window.location.href =
-								'https://honeyswap.org/#/add/ETH/0xB5d592f85ab2D955c25720EbE6FF8D4d1E1Be300';
+								'https://app.uniswap.org/#/swap?outputCurrency=0xd56dac73a4d6766464b38ec6d91eb45ce7457c44';
 							return null;
 						}}
 					/>

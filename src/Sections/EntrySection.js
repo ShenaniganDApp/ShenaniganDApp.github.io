@@ -197,7 +197,7 @@ function EntrySection(props, ref) {
 							</Link>
 						</Section>
 
-						<a href="http://she.energy/wiki">
+						<a href="http://she.energy/docs">
 							<Button>
 								<Text shadowed={colors.lightcyan} largeMain>
 									Learn
