@@ -30,7 +30,14 @@ function App() {
 			<AppWrapper id="top">
 				<Switch>
 					<Route exact path="/">
-						<EntrySection />
+						{/* <EntrySection /> */}
+						<Route
+						path="/"
+						component={() => {
+							window.location.href = 'http://she.energy/docs';
+							return null;
+						}}
+					/>	
 					</Route>
 					<Route path="/home">
 						<LandingSection />
