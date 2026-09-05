@@ -189,19 +189,29 @@ function QuestionSection(_props, ref) {
 				<QuestionWrapper>
 					{questions.map(({ question, answer }, index) => {
 						const expanded = collapsibleNum === index;
+						const questionId = `faq-question-${index}`;
+						const answerId = `faq-answer-${index}`;
 						return (
 							<ContentSection
 								key={question}
 								noSelect
 							>
 								<QuestionButton
+									id={questionId}
 									type="button"
 									aria-expanded={expanded}
+									aria-controls={answerId}
 									onClick={() => onClickCollapsible(index)}
 								>
 									{question}
 								</QuestionButton>
-								<AnswerSection expanded={expanded}>
+								<AnswerSection
+									as="section"
+									id={answerId}
+									aria-labelledby={questionId}
+									aria-hidden={!expanded}
+									expanded={expanded}
+								>
 									<AnswerText shadowed={colors.deeppink}>{answer}</AnswerText>
 								</AnswerSection>
 							</ContentSection>

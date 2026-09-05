@@ -18,6 +18,7 @@ test('the production home page renders and remains interactive', async ({ page }
 	const firstQuestion = page.getByRole('button', { name: 'What does Shenanigan do?' });
 	await firstQuestion.click();
 	await expect(firstQuestion).toHaveAttribute('aria-expanded', 'true');
+	await expect(page.getByRole('region', { name: 'What does Shenanigan do?' })).toBeVisible();
 
 	expect(browserErrors, browserErrors.join('\n')).toEqual([]);
 });

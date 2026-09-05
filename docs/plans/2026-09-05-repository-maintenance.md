@@ -105,5 +105,5 @@ This is a static site, so the relevant hot path is first-page download and parse
 - `npm audit --omit=dev --audit-level=moderate` reports zero vulnerabilities.
 - `npm run check` passes Oxlint, 2 Vitest route tests, the production build, and 4 Playwright desktop/mobile browser tests.
 - The production directory is 3,328 KiB, down 74% from the 12,976 KiB baseline.
-- The production JavaScript is 88.81 KiB gzipped, down 61% from the roughly 228 KiB baseline.
+- The production JavaScript is 88.88 KiB gzipped, down 61% from the roughly 228 KiB baseline.
 - Manual desktop and 390-by-844 mobile checks confirmed the page layout, FAQ mouse/keyboard interaction, mobile navigation, and a clean browser console.
