@@ -1,10 +1,11 @@
-import React from 'react';
 import { Text, Tab } from '../styles';
 import { HashLink as Link } from 'react-router-hash-link';
 import styled, { css } from 'styled-components';
-import { Transition } from 'react-transition-group';
 
-const TabLink = styled(Link)`
+const TabLink = styled(Link).withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    defaultValidatorFn(prop) && !['collapsed', 'selected', 'state'].includes(prop),
+})`
   pointer-events: auto;
   transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
   text-decoration: none;

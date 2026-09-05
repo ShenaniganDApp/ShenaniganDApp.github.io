@@ -6,8 +6,6 @@ import ContactSection from './ContactSection';
 import LandingSection from './LandingSection';
 import AboutSection from './AboutSection';
 import QuestionSection from './QuestionSection';
-import EntrySection from './EntrySection';
-import StakingSection from './StakingSection';
 
 export {
 	MilestoneSection,
@@ -18,6 +16,4 @@ export {
 	LandingSection,
 	AboutSection,
 	QuestionSection,
-	EntrySection,
-	StakingSection,
 };

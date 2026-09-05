@@ -1,7 +1,7 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { colors, Text, Section } from '../styles';
+import { colors } from '../styles';
+import discordImage from '../svg/discord.svg';
 
 const StyledLink = styled(Link)`
 	width: 15vw;
@@ -28,10 +28,10 @@ const Button = styled.div`
 
 const DiscordImage = styled.img``;
 
-const DiscordButton = (props) => (
+const DiscordButton = () => (
 	<StyledLink to="/join">
 		<Button>
-			<DiscordImage src={require('../svg/discord.svg')}></DiscordImage>d
+			<DiscordImage src={discordImage} alt="Join Shenanigan on Discord" />
 		</Button>
 	</StyledLink>
 );

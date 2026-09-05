@@ -1,8 +1,8 @@
-import React, { useRef, forwardRef, useImperativeHandle } from 'react';
+import { forwardRef, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
-import { Section, Text, Backdrop, colors } from '../styles';
+import { Section, Text, colors } from '../styles';
 import { Link } from 'react-router-dom';
-import ReactPlayer from 'react-player';
+import phoneMockupImage from '../images/iphoneMockup.png';
 
 const Wrapper = styled.div`
 	height: auto;
@@ -42,9 +42,7 @@ const TopRightSection = styled(Section)`
   width: 40%;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  /* border: 2vw solid ${colors.lightcyan}; */
   z-index: 0;
-  /* background: rgba(208, 0, 108, 0.7) url(${require('../svg/ethereumLogo.svg')}); */
   background-size: 60% 60%;
   background-position: 50% 80%;
   background-repeat: no-repeat;
@@ -138,31 +136,11 @@ const ChargeSection = styled(Section)`
 	}
 `;
 
-const TitleText = styled(Text)`
-	width: 100%;
-	font-size: 2.2vw;
-	font-family: GreenScreen;
-`;
-
 const Divider = styled.div`
 	width: 150%;
 	height: 0.5vw;
 	max-height: 0.3rem;
 	background-color: black;
-`;
-
-const PlayerContainer = styled.div`
-	width: 80vw;
-	height: 45vw;
-	margin-top: 25rem;
-	margin-bottom: 25rem;
-	z-index: 1;
-	@media (max-width: 768px) {
-		margin-top: 5rem;
-		width: 98vw;
-		height: 53.25vw;
-		margin-bottom: 10rem;
-	}
 `;
 
 function EnergySection(props, ref) {
@@ -177,23 +155,21 @@ function EnergySection(props, ref) {
 		<Wrapper ref={energyRef} id="energy">
 			<TopLeftSection shadowed margin={'0 0 0 0'} backgroundColor={colors.lightcyan}>
 				<MockupSection centered>
-					<MockupImg src={require('../images/iphoneMockup.png')} />
+					<MockupImg src={phoneMockupImage} alt="Shenanigan mobile app" loading="lazy" decoding="async" />
 				</MockupSection>
 				<UpperTextSection>
 					<Section centered width={'100%'}>
-						<Text width={'100%'}>
-							<Text width={'100%'} title color={'black'}>
-								LIve
-							</Text>
-							<Text width={'100%'} title color={'black'}>
-								Sports
-							</Text>
-							<Text width={'100%'} title color={colors.deeppink} shadowed={colors.deeppink}>
-								TradIng
-							</Text>
-							<Text width={'100%'} title color={'black'}>
-								Cards
-							</Text>
+						<Text width={'100%'} title color={'black'}>
+							LIve
+						</Text>
+						<Text width={'100%'} title color={'black'}>
+							Sports
+						</Text>
+						<Text width={'100%'} title color={colors.deeppink} shadowed={colors.deeppink}>
+							TradIng
+						</Text>
+						<Text width={'100%'} title color={'black'}>
+							Cards
 						</Text>
 					</Section>
 					<Divider />
@@ -209,23 +185,21 @@ function EnergySection(props, ref) {
 							<Text margin={'10% 0 0 5%'} width={'100%'} largeMain>
 								Connect with friends and foes
 							</Text>
-							{/* <Text margin={'1rem 0'}>Build Your CommunIty</Text>
-                <Text margin={'1rem 0'}>BEcomE Your BEst</Text> */}
 						</ChargeSection>
 					</Section>
 				</UpperTextSection>
 			</TopLeftSection>
-			<TopRightSection shadowed curved backgroundColor={'rgba(208,0,108,0.7)'}>
+			<TopRightSection shadowed backgroundColor={'rgba(208,0,108,0.7)'}>
 				<Section margin={'3rem 1rem 1rem 2rem'}>
-					<Text>
+					<Section width="100%">
 						<BoldText size={'3vw'} color={colors.lightcyan}>
 							Athlete PredIctIon Markets&nbsp;
 						</BoldText>
-						<Text shadowed largeMain margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
+						<Text shadowed="black" largeMain margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
 							Shenanigan hosts a virtual crowd with a positive and negative dichotomy. Predict outcomes and
 							give the streamer a reason to improve.
 						</Text>
-					</Text>
+					</Section>
 					<Section width={'100%'} margin={'2rem 0 0 0'}>
 						<BoldText size={'3vw'} color={colors.lightcyan}>
 							We&nbsp;&nbsp;Are&nbsp;&nbsp;
@@ -233,7 +207,7 @@ function EnergySection(props, ref) {
 						<BoldText size={'3vw'} color={colors.lightcyan}>
 							She&nbsp;
 						</BoldText>
-						<Text shadowed largeMain margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
+						<Text shadowed="black" largeMain margin={'1rem 0 0 1rem'} color={colors.lightcyan}>
 							Login and be a part of a competitive arena where the people must invest in athletic drive and
 							power of will.
 						</Text>
@@ -245,15 +219,6 @@ function EnergySection(props, ref) {
 					</StyledLink>
 				</Section>
 			</TopRightSection>
-			{/* <PlayerContainer>
-				<ReactPlayer
-					url="https://youtu.be/RmIfGaPTgUs"
-					width="100%"
-					height="100%"
-					controls="true
-          "
-				/>
-			</PlayerContainer> */}
 		</Wrapper>
 	);
 }

@@ -1,6 +1,5 @@
-import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
-import { Section, Text, Backdrop, colors } from '../styles';
+import { Section, Text, colors } from '../styles';
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
@@ -32,7 +31,7 @@ const Button = styled.div`
   }
 `;
 
-function AboutSection(props, ref) {
+function AboutSection() {
   return (
     <Wrapper>
       <Section>

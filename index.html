@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta
+			name="description"
+			content="Shenanigan, powering athletes to jump higher, run faster, and throw farther"
+		/>
+		<meta property="og:image" content="/scoreboard.jpg" />
+		<link rel="apple-touch-icon" href="/logo180.png" />
+		<link rel="manifest" href="/manifest.json" />
+		<title>Shenanigan</title>
+		<script>
+			(function restoreGitHubPagesRoute(location) {
+				if (!location.search) return;
+
+				const query = Object.fromEntries(
+					location.search
+						.slice(1)
+						.split('&')
+						.map((value) => {
+							const [key, ...rest] = value.split('=');
+							return [key, rest.join('=').replace(/~and~/g, '&')];
+						}),
+				);
+
+				if (query.p === undefined) return;
+				window.history.replaceState(
+					null,
+					'',
+					location.pathname.slice(0, -1) +
+						(query.p || '') +
+						(query.q ? `?${query.q}` : '') +
+						location.hash,
+				);
+			})(window.location);
+		</script>
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div id="root"></div>
+		<script type="module" src="/src/main.jsx"></script>
+	</body>
+</html>

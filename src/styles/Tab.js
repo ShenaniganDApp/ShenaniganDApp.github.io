@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
-const Tab = styled.div`
+const Tab = styled.div.withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) => defaultValidatorFn(prop) && prop !== 'scrolled',
+})`
   display: flex;
   align-items: center;
   justify-content: center;

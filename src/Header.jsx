@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { useScrollPosition } from './hooks/useScrollPosition';
 import styled, { css } from 'styled-components';
 import { HeaderToggle, LogoFrame } from './styles';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Transition } from 'react-transition-group';
 import { HeaderTab } from './components';
+import logoImage from './images/SHELogo_Final.png';
+import hamburgerImage from './svg/hamburger.svg';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) => defaultValidatorFn(prop) && prop !== 'collapsed',
+})`
   display: flex;
   height: 5vw;
   min-height: 3rem;
@@ -23,7 +27,10 @@ const Logo = styled.img`
   width: auto;
   height: 100%;
 `;
-const Nav = styled.div`
+const Nav = styled.div.withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    defaultValidatorFn(prop) && !['state', 'scrolled'].includes(prop),
+})`
   transition: backdrop-filter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s,
     background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s, opacity 0.75s;
   z-index: 1;
@@ -41,13 +48,6 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.8);
     `}
 `;
-// const CollapsedNav = styled.div`
-//   display: flex;
-//   height: 100%;
-//   margin-left: auto;
-//   width: auto;
-// `;
-
 const HomeLink = styled(Link)`
   z-index: 100;
   margin-left: 2%;
@@ -63,20 +63,15 @@ const Hamburger = styled.img`
 `;
 
 function Header(props) {
-  const [headerOn, setHeader] = useState();
-  const [collapsedStart, setCollapsedStart] = useState(false);
-  const [collapsedEnd, setCollapsedEnd] = useState(false);
+  const navRef = useRef(null);
+  const toggleRef = useRef(null);
+  const isPhone = window.innerWidth <= 768;
+  const startsCollapsed = isPhone && window.pageYOffset < 150;
+  const [headerOn, setHeader] = useState(startsCollapsed ? 0 : undefined);
+  const [collapsedStart, setCollapsedStart] = useState(startsCollapsed);
+  const [collapsedEnd, setCollapsedEnd] = useState(startsCollapsed);
   const [scrolled, setScrolled] = useState(false);
   const [headerLock, setHeaderToggle] = useState(false);
-  const isPhone = window.innerWidth <= 768;
-  const pagePositionTop = window.pageYOffset < 150;
-  useEffect(() => {
-    if (isPhone && pagePositionTop) {
-      setCollapsedStart(true);
-      setHeader(0);
-    }
-  }, [isPhone, pagePositionTop]);
-
   const handleHeaderChange = (selection) => {
     setHeader(selection);
     if (!collapsedEnd && selection !== 0) {
@@ -151,8 +146,7 @@ function Header(props) {
     }
   };
 
-  useScrollPosition(({ prevPos, currPos }) => {
-
+  useScrollPosition(({ currPos }) => {
     if (currPos.y < -150) {
       setScrolled(true);
     } else if (isPhone) {
@@ -195,10 +189,10 @@ function Header(props) {
   });
 
   return (
-    <Wrapper scrolled={scrolled} collapsed={collapsedStart}>
+    <Wrapper collapsed={collapsedStart}>
       <HomeLink onClick={() => handleHeaderChange(0)} to="/home/#top">
         <LogoFrame>
-          <Logo src={require('./images/SHELogo_Final.png')} />
+          <Logo src={logoImage} alt="Shenanigan" />
         </LogoFrame>
       </HomeLink>
       {headerCollapsed()}
@@ -206,6 +200,7 @@ function Header(props) {
       <Transition
         in={!collapsedStart}
         timeout={700}
+        nodeRef={navRef}
         onExited={() => {
           setCollapsedEnd(true);
         }}
@@ -213,7 +208,7 @@ function Header(props) {
         mountOnEnter
       >
         {(state) => (
-          <Nav state={state} scrolled={scrolled}>
+          <Nav ref={navRef} state={state} scrolled={scrolled}>
             <HeaderTab
               state={state}
               collapsed={collapsedStart}
@@ -253,14 +248,23 @@ function Header(props) {
           </Nav>
         )}
       </Transition>
-      <Transition in={collapsedEnd} timeout={500}>
+      <Transition
+        in={collapsedEnd}
+        timeout={500}
+        nodeRef={toggleRef}
+        unmountOnExit
+        mountOnEnter
+      >
         {(state) => (
           <HeaderToggle
+            ref={toggleRef}
+            type="button"
+            aria-label="Open navigation"
             state={state}
             collapsed={collapsedEnd}
-            onClick={() => handleHeaderToggle()}
+            onClick={handleHeaderToggle}
           >
-            <Hamburger src={require('./svg/hamburger.svg')} />
+            <Hamburger src={hamburgerImage} alt="" />
           </HeaderToggle>
         )}
       </Transition>

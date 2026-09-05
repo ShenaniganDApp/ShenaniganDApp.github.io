@@ -1,7 +1,13 @@
 import styled, { css } from 'styled-components';
 
-const HeaderToggle = styled.div`
+const HeaderToggle = styled.button.withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    defaultValidatorFn(prop) && !['collapsed', 'state'].includes(prop),
+})`
   pointer-events: auto;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
   transition: all 0.5s ease-in-out;
   top: 0;
   right: 0;

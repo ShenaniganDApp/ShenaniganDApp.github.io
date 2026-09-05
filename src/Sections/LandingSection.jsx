@@ -1,9 +1,10 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { HomeSection, EnergySection, MilestoneSection, TeamSection, ContactSection, QuestionSection } from './';
 import Header from '../Header';
 import { Section } from '../styles';
 import { DiscordButton } from '../components';
+import spacerImage from '../svg/spacer.svg';
 
 const MainWrapper = styled.div`
 	width: 100%;
@@ -62,14 +63,14 @@ function LandingSection() {
 		};
 		handleContentHeights();
 		window.addEventListener('resize', handleContentHeights);
-		return (_) => {
+		return () => {
 			window.removeEventListener('resize', handleContentHeights);
 		};
-	}, [energyRef, milestoneRef, teamRef, contactRef]);
+	}, []);
 	return (
-		<React.Fragment>
+		<Fragment>
 			<FooterSection centered>
-S				<DiscordButton />
+				<DiscordButton />
 			</FooterSection>
 
 			<Header heights={heights} />
@@ -78,13 +79,13 @@ S				<DiscordButton />
 				<EnergySection ref={energyRef} />
 				<QuestionSection ref={questionRef} />
 			</HomeWrapper>
-			<Spacer src={require('../svg/spacer.svg')}></Spacer>
+			<Spacer src={spacerImage} alt="" />
 			<MainWrapper>
 				<MilestoneSection ref={milestoneRef} height={heights.milestone} />
 				<TeamSection ref={teamRef} />
 				<ContactSection ref={contactRef} />
 			</MainWrapper>
-		</React.Fragment>
+		</Fragment>
 	);
 }
 

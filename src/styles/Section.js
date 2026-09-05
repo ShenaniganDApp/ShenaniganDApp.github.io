@@ -1,7 +1,25 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Section = styled.div`
+const sectionProps = new Set([
+	'backgroundColor',
+	'centered',
+	'curved',
+	'height',
+	'large',
+	'margin',
+	'noSelect',
+	'overflow',
+	'padding',
+	'shadowed',
+	'small',
+	'textCentered',
+	'width',
+	'xLarge',
+]);
+
+const Section = styled.div.withConfig({
+	shouldForwardProp: (prop, defaultValidatorFn) => defaultValidatorFn(prop) && !sectionProps.has(prop),
+})`
 	width: ${(props) => props.width};
 	height: auto;
 	background-color: ${(props) => props.backgroundColor};

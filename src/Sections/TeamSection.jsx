@@ -1,9 +1,22 @@
-import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { Section, Text, Backdrop, colors } from '../styles';
-import ReactCardFlip from 'react-card-flip';
+import ReactCardFlipModule from 'react-card-flip';
+import pacmanImage from '../images/pacman3D.png';
+import blinkyImage from '../images/blinky.png';
+import victorImage from '../images/victor.jpeg';
+import pinkyImage from '../images/pinky.png';
+import logoImage from '../images/SHELogo_Final.png';
+import inkyImage from '../images/inky.png';
+import malikImage from '../images/malik.jpg';
 
-const isPhone = window.innerWidth <= 768;
+const cardContainerStyle = {
+	width: '100%',
+	height: '100%',
+	margin: '1rem 0',
+};
+
+const ReactCardFlip = ReactCardFlipModule.default ?? ReactCardFlipModule;
 
 const Wrapper = styled.div`
 	height: auto;
@@ -45,11 +58,13 @@ const TeamImg = styled.img`
 	}
 `;
 
-const CardSection = styled(Section)`
+const CardSection = styled(Section).withConfig({
+	shouldForwardProp: (prop, defaultValidatorFn) => defaultValidatorFn(prop) && prop !== 'flipNum',
+})`
 	transition: 0.2s;
 	margin: auto;
 	${(props) =>
-		props.flipNum == null &&
+		props.flipNum === null &&
 		css`
 			&:hover {
 				-webkit-filter: grayscale(50%);
@@ -108,7 +123,7 @@ const MemberSection = styled(Section)`
 	}
 `;
 
-function TeamSection(props, ref) {
+function TeamSection(_props, ref) {
 	const teamRef = useRef();
 	useImperativeHandle(ref, () => ({
 		boundingTop: () => {
@@ -126,13 +141,13 @@ function TeamSection(props, ref) {
 	};
 
 	return (
-		<Wrapper ref={teamRef} img={'./images/scoreboard.jpg'} id="team">
+		<Wrapper ref={teamRef} id="team">
 			<StyledBackdrop
 				background={
 					'radial-gradient(circle at 65% 107%, rgba(255,255,68,0.5) 0%, rgba(208,0,108,0.5) 55%, black 70%)'
 				}
 			>
-				<TeamImg src={require('../images/pacman3D.png')} />
+				<TeamImg src={pacmanImage} alt="" loading="lazy" decoding="async" />
 				<TextSection margin={'0 100%'}>
 					<Text shadowed={colors.lightcyan} color={colors.lightcyan}>
 						Team
@@ -140,12 +155,8 @@ function TeamSection(props, ref) {
 				</TextSection>
 				<MemberSection centered>
 					<ReactCardFlip
-						containerStyle={{
-							width: '100%',
-							height: '100%',
-							margin: '1rem 0',
-						}}
-						isFlipped={flipNum == 0}
+						containerStyle={cardContainerStyle}
+						isFlipped={flipNum === 0}
 						flipDirection="horizontal"
 					>
 						<CardSection
@@ -161,7 +172,7 @@ function TeamSection(props, ref) {
 								</Text>
 							</Section>
 							<Section centered width="100%">
-								<TeamGhost src={require('../images/blinky.png')} />
+								<TeamGhost src={blinkyImage} alt="" loading="lazy" decoding="async" />
 							</Section>
 							<Text main margin={'1rem 0 0 0'} color={colors.lightcyan}>
 								Founder/CTO
@@ -177,8 +188,10 @@ function TeamSection(props, ref) {
 								<BoxLink
 									href="https://www.3box.io/0xe8adaea0ba507a28d1309051beceb4db7fe377af"
 									target="_blank"
+									rel="noreferrer"
+									aria-label="Victor's 3Box profile"
 								>
-									<TeamGhost src={require('../images/victor.jpeg')} />
+									<TeamGhost src={victorImage} alt="Victor" loading="lazy" decoding="async" />
 									<ImageText size="calc(1rem + 2vw)" shadowed={'black'} color={colors.lightcyan}>
 										3BOX
 									</ImageText>
@@ -187,12 +200,8 @@ function TeamSection(props, ref) {
 						</Section>
 					</ReactCardFlip>
 					<ReactCardFlip
-						containerStyle={{
-							width: '100%',
-							height: '100%',
-							margin: '1rem 0',
-						}}
-						isFlipped={flipNum == 1}
+						containerStyle={cardContainerStyle}
+						isFlipped={flipNum === 1}
 						flipDirection="horizontal"
 					>
 						<CardSection
@@ -208,7 +217,7 @@ function TeamSection(props, ref) {
 								</Text>
 							</Section>
 							<Section centered width="100%">
-								<TeamGhost src={require('../images/pinky.png')} />
+								<TeamGhost src={pinkyImage} alt="" loading="lazy" decoding="async" />
 							</Section>
 							<Text main margin={'1rem 0 0 0'} color={colors.lightcyan}>
 								Graphic Designer
@@ -227,22 +236,13 @@ function TeamSection(props, ref) {
 								</Text>
 							</Section>
 							<Section textCentered centered width="100%">
-								<BoxLink href="" target="_blank">
-									<TeamGhost src={require('../images/SHELogo_Final.png')} />
-									<ImageText size="calc(1rem + 2vw)" shadowed={'black'} color={colors.lightcyan}>
-										3BOX
-									</ImageText>
-								</BoxLink>
+								<TeamGhost src={logoImage} alt="Gabe" loading="lazy" decoding="async" />
 							</Section>
 						</Section>
 					</ReactCardFlip>
 					<ReactCardFlip
-						containerStyle={{
-							width: '100%',
-							height: '100%',
-							margin: '1rem 0',
-						}}
-						isFlipped={flipNum == 2}
+						containerStyle={cardContainerStyle}
+						isFlipped={flipNum === 2}
 						flipDirection="horizontal"
 					>
 						<CardSection
@@ -258,7 +258,7 @@ function TeamSection(props, ref) {
 								</Text>
 							</Section>
 							<Section centered width="100%">
-								<TeamGhost src={require('../images/inky.png')} />
+								<TeamGhost src={inkyImage} alt="" loading="lazy" decoding="async" />
 							</Section>
 							<Text main margin={'1rem 0 0 0'} color={colors.lightcyan}>
 								Social Media & Photography
@@ -277,12 +277,7 @@ function TeamSection(props, ref) {
 								</Text>
 							</Section>
 							<Section textCentered centered width="100%">
-								<BoxLink href="" target="_blank">
-									<TeamGhost src={require('../images/malik.jpg')} />
-									<ImageText size="calc(1rem + 2vw)" shadowed={'black'} color={colors.lightcyan}>
-										3BOX
-									</ImageText>
-								</BoxLink>
+								<TeamGhost src={malikImage} alt="Malik" loading="lazy" decoding="async" />
 							</Section>
 						</Section>
 					</ReactCardFlip>

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Section, Text, colors } from '../styles';
+import { Section, colors } from '../styles';
 import { Transition } from 'react-transition-group';
-import { Link } from 'react-router-dom';
+import logoImage from '../images/SHELogo_Final.png';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -17,25 +17,6 @@ const Backdrop = styled.div`
 	position: absolute;
 	top: 0;
 	z-index: 0;
-`;
-const Button = styled.div`
-	transition: 0.3s;
-	margin: 2rem;
-	padding: 2rem 5rem;
-	box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 20px;
-	border-radius: 15px;
-	border: 2px solid ${colors.deeppink};
-	color: ${colors.lightcyan};
-	text-align: center;
-	display: inline-block;
-	&:hover {
-		transform: scale(0.9);
-		background-color: ${colors.lightcyan};
-		color: ${colors.deeppink};
-	}
-	@media (max-width: 768px) {
-		margin-bottom: 2rem;
-	}
 `;
 const Title = styled.h1`
 	color: ${colors.gold};
@@ -80,7 +61,9 @@ const TitleSection = styled(Section)`
 	height: 20vw;
 `;
 
-const SloganSection = styled(Section)`
+const SloganSection = styled(Section).withConfig({
+	shouldForwardProp: (prop, defaultValidatorFn) => defaultValidatorFn(prop) && prop !== 'state',
+})`
 	transition: 0.7s;
 	width: 100%;
 
@@ -88,20 +71,22 @@ const SloganSection = styled(Section)`
 `;
 
 function HomeSection() {
+	const firstSloganRef = useRef(null);
+	const secondSloganRef = useRef(null);
+	const thirdSloganRef = useRef(null);
 	const [sloganNum, setSloganNum] = useState(0);
 	const [changeSlogan, setChangeSlogan] = useState(false);
 	useEffect(() => {
-		if (!changeSlogan) {
-			setTimeout(() => {
-				setChangeSlogan(true);
-			}, 3000);
-		}
+		if (changeSlogan) return undefined;
+
+		const timeoutId = window.setTimeout(() => setChangeSlogan(true), 3000);
+		return () => window.clearTimeout(timeoutId);
 	}, [changeSlogan]);
 	return (
 		<Wrapper>
 			<Backdrop />
 			<TitleSection width={'100%'}>
-				<Title>Sh</Title> <StyledImg src={require('../images/SHELogo_Final.png')} />
+				<Title>Sh</Title> <StyledImg src={logoImage} alt="" />
 				<Title>nanIgan</Title>
 			</TitleSection>
 			<SloganSection margin={'1rem 0 1rem 15%'}>
@@ -111,6 +96,7 @@ function HomeSection() {
 			<Transition
 				in={sloganNum === 0 && !changeSlogan}
 				timeout={700}
+				nodeRef={firstSloganRef}
 				unmountOnExit
 				mountOnEnter
 				onExited={() => {
@@ -119,7 +105,7 @@ function HomeSection() {
 				}}
 			>
 				{(state) => (
-					<SloganSection state={state} margin={'0 0 0 33%'}>
+					<SloganSection ref={firstSloganRef} state={state} margin={'0 0 0 33%'}>
 						<Slogan> Faster Athletes </Slogan>
 					</SloganSection>
 				)}
@@ -127,6 +113,7 @@ function HomeSection() {
 			<Transition
 				in={sloganNum === 1 && !changeSlogan}
 				timeout={700}
+				nodeRef={secondSloganRef}
 				unmountOnExit
 				mountOnEnter
 				onExited={() => {
@@ -135,7 +122,7 @@ function HomeSection() {
 				}}
 			>
 				{(state) => (
-					<SloganSection state={state} margin={'0 0 0 33%'}>
+					<SloganSection ref={secondSloganRef} state={state} margin={'0 0 0 33%'}>
 						<Slogan>Louder Fans</Slogan>
 					</SloganSection>
 				)}
@@ -143,6 +130,7 @@ function HomeSection() {
 			<Transition
 				in={sloganNum === 2 && !changeSlogan}
 				timeout={700}
+				nodeRef={thirdSloganRef}
 				unmountOnExit
 				mountOnEnter
 				onExited={() => {
@@ -151,7 +139,7 @@ function HomeSection() {
 				}}
 			>
 				{(state) => (
-					<SloganSection state={state} margin={'0 0 0 33%'}>
+					<SloganSection ref={thirdSloganRef} state={state} margin={'0 0 0 33%'}>
 						<Slogan>More Than A Game</Slogan>
 					</SloganSection>
 				)}

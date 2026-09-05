@@ -1,8 +1,10 @@
-import React from 'react';
 import { Text, Section, colors } from '../styles';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-const ContentSection = styled(Section)`
+const ContentSection = styled(Section).withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    defaultValidatorFn(prop) && !['left', 'top'].includes(prop),
+})`
   background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   width: 35%;
@@ -26,11 +28,11 @@ const MilestoneContentImage = styled.img`
 const MilestoneContent = ({ imgSrc, title, content, ...props }) => (
   <ContentSection left={props.left} top={props.top}>
     <Section width={'100%'} height={'10%'} centered>
-      <MilestoneContentImage src={imgSrc} />
+      <MilestoneContentImage src={imgSrc} alt="" loading="lazy" decoding="async" />
       <Text shadowed={colors.gold} margin={'1rem 0 0 5%'} title color={colors.gold}>
         {title}
       </Text>
-      <MilestoneContentImage src={imgSrc} />
+      <MilestoneContentImage src={imgSrc} alt="" loading="lazy" decoding="async" />
     </Section>
     <Section textCentered width={'100%'}>
       <Text

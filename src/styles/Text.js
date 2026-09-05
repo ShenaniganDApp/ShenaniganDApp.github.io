@@ -1,7 +1,22 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Text = styled.p`
+const textProps = new Set([
+	'color',
+	'header',
+	'largeMain',
+	'main',
+	'margin',
+	'shadowed',
+	'smallMain',
+	'size',
+	'title',
+	'width',
+	'wrap',
+]);
+
+const Text = styled.p.withConfig({
+	shouldForwardProp: (prop, defaultValidatorFn) => defaultValidatorFn(prop) && !textProps.has(prop),
+})`
 	text-decoration: none;
 	margin: 0;
 	margin: ${(props) => props.margin};

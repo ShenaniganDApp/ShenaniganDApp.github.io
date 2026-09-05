@@ -1,4 +1,5 @@
-import React, {
+import {
+  useEffect,
   useState,
   useRef,
   useImperativeHandle,
@@ -8,6 +9,13 @@ import styled from 'styled-components';
 import { Backdrop, Section, Text, MapFruit, colors } from '../styles';
 import { MilestoneContent } from '../components';
 import { useScrollPosition } from '../hooks/useScrollPosition';
+import watermelonImage from '../images/Roadmap_Pacman_01_Watermelon.png';
+import grapeImage from '../images/Roadmap_Pacman_02_Grapes.png';
+import appleImage from '../images/Roadmap_Pacman_03_Apple.png';
+import strawberryImage from '../images/Roadmap_Pacman_04_Strawberry.png';
+import cherryImage from '../images/Roadmap_Pacman_05_Cherries.png';
+import mapImage from '../images/Roadmap_Pacman_Map.png';
+import mobileMapImage from '../images/Roadmap_Pacman_Map_Mobile.png';
 
 const Wrapper = styled.div`
   height: auto;
@@ -81,26 +89,11 @@ const StyledBackdrop = styled(Backdrop)`
   font-weight: 900;
   font-family: 'Electro-Shackle', sans-serif;
   width: 100%;
-  /* padding: 20rem 5% 5% 10rem; */
   display: flex;
   flex-wrap: wrap;
 `;
 
-// const Divider = styled.div`
-//   height: 0.2rem;
-
-//   flex-grow: 1;
-//   background: rgb(230, 255, 255);
-//   background: linear-gradient(
-//     90deg,
-//     rgba(230, 255, 255, 0) 0%,
-//     rgba(230, 255, 255, 1) 6%,
-//     rgba(230, 255, 255, 1) 94%,
-//     rgba(230, 255, 255, 0) 100%
-//   );
-// `;
-
-function MilestoneSection(props, ref) {
+function MilestoneSection({ height }, ref) {
   const milestoneRef = useRef();
   useImperativeHandle(ref, () => ({
     boundingTop: () => {
@@ -115,7 +108,7 @@ function MilestoneSection(props, ref) {
   const showMilestoneContent = () => {
     const watermelon = (
       <MilestoneContent
-        imgSrc={require('../images/Roadmap_Pacman_01_Watermelon.png')}
+        imgSrc={watermelonImage}
         title={'Q1 2020'}
         content={'DELIVER OUR MESSAGE TO THE WORLD'}
         left={isPhone ? '18%' : '30%'}
@@ -124,7 +117,7 @@ function MilestoneSection(props, ref) {
     );
     const grape = (
       <MilestoneContent
-        imgSrc={require('../images/Roadmap_Pacman_02_Grapes.png')}
+        imgSrc={grapeImage}
         title={'Q2 2020'}
         content={'BUIDL  BUIDL  BUIDL'}
         left={isPhone ? '30%' : '37%'}
@@ -133,7 +126,7 @@ function MilestoneSection(props, ref) {
     );
     const apple = (
       <MilestoneContent
-        imgSrc={require('../images/Roadmap_Pacman_03_Apple.png')}
+        imgSrc={appleImage}
         title={'Q3 2020'}
         content={'OPEN SOURCE OUR CODE FOR REVIEW'}
         left={isPhone ? '4%' : '27%'}
@@ -142,7 +135,7 @@ function MilestoneSection(props, ref) {
     );
     const strawberry = (
       <MilestoneContent
-        imgSrc={require('../images/Roadmap_Pacman_04_Strawberry.png')}
+        imgSrc={strawberryImage}
         title={'Q4 2020'}
         content={'GO LIVE WITH SHENANIGAN BETA'}
         left={isPhone ? '12%' : '31%'}
@@ -151,7 +144,7 @@ function MilestoneSection(props, ref) {
     );
     const cherry = (
       <MilestoneContent
-        imgSrc={require('../images/Roadmap_Pacman_05_Cherries.png')}
+        imgSrc={cherryImage}
         title={'2021'}
         content={'SHENANIGAN RELEASES ON GOOGLE PLAY AND APPLE APP STORES'}
         left={isPhone ? '17%' : '36%'}
@@ -159,17 +152,18 @@ function MilestoneSection(props, ref) {
       />
     );
     const milestones = [watermelon, grape, apple, strawberry, cherry];
-    if (startLoop && !touchedMilestone) {
-      setTimeout(() => {
-        if (activeMilestone == 4) {
-          setActiveMilestone(0);
-        } else {
-          setActiveMilestone(activeMilestone + 1);
-        }
-      }, 3000);
-    }
     return milestones[activeMilestone];
   };
+
+  useEffect(() => {
+    if (!startLoop || touchedMilestone) return undefined;
+
+    const timeoutId = window.setTimeout(() => {
+      setActiveMilestone((current) => (current === 4 ? 0 : current + 1));
+    }, 3000);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [activeMilestone, startLoop, touchedMilestone]);
 
   const handleMilestoneTouched = numTouched => {
     if (!touchedMilestone) {
@@ -178,9 +172,9 @@ function MilestoneSection(props, ref) {
     setActiveMilestone(numTouched);
   };
 
-  useScrollPosition(({ prevPos, currPos }) => {
+  useScrollPosition(({ currPos }) => {
     if (!startLoop) {
-      if (currPos.y <= props.height) {
+      if (currPos.y <= height) {
         setStartLoop(true);
       }
     }
@@ -199,40 +193,56 @@ function MilestoneSection(props, ref) {
         </Section>
         <MilestoneMainSection width={'100%'}>
           <MapImage
-            src={require(isPhone
-              ? '../images/Roadmap_Pacman_Map_Mobile.png'
-              : '../images/Roadmap_Pacman_Map.png')}
+            src={isPhone ? mobileMapImage : mapImage}
+            alt="Shenanigan roadmap"
+            loading="lazy"
+            decoding="async"
           />
           <WatermelonMapImage
-            src={require('../images/Roadmap_Pacman_01_Watermelon.png')}
+            src={watermelonImage}
+            alt="Q1 2020"
+            loading="lazy"
+            decoding="async"
             onMouseOver={() => {
               handleMilestoneTouched(0);
             }}
             onMouseLeave={() => handleMilestoneTouched(null)}
           />
           <GrapeMapImage
-            src={require('../images/Roadmap_Pacman_02_Grapes.png')}
+            src={grapeImage}
+            alt="Q2 2020"
+            loading="lazy"
+            decoding="async"
             onMouseOver={() => {
               handleMilestoneTouched(1);
             }}
             onMouseLeave={() => handleMilestoneTouched(null)}
           />
           <AppleMapImage
-            src={require('../images/Roadmap_Pacman_03_Apple.png')}
+            src={appleImage}
+            alt="Q3 2020"
+            loading="lazy"
+            decoding="async"
             onMouseOver={() => {
               handleMilestoneTouched(2);
             }}
             onMouseLeave={() => handleMilestoneTouched(null)}
           />
           <StrawberryMapImage
-            src={require('../images/Roadmap_Pacman_04_Strawberry.png')}
+            src={strawberryImage}
+            alt="Q4 2020"
+            loading="lazy"
+            decoding="async"
             onMouseOver={() => {
               handleMilestoneTouched(3);
             }}
             onMouseLeave={() => handleMilestoneTouched(null)}
           />
           <CherryMapImage
-            src={require('../images/Roadmap_Pacman_05_Cherries.png')}
+            src={cherryImage}
+            alt="2021"
+            loading="lazy"
+            decoding="async"
             onMouseEnter={() => {
               handleMilestoneTouched(4);
             }}
