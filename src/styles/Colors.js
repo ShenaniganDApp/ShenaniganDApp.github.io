@@ -3,4 +3,5 @@ export default {
 	gold: '#ffca53',
 	lightcyan: '#e6ffff',
 	darkslategray: '#1f331f',
+	black: '#000000',
 };

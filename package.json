@@ -2,51 +2,38 @@
 	"name": "shenanigan-site",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://www.she.energy",
-	"dependencies": {
-		"@testing-library/jest-dom": "^4.2.4",
-		"@testing-library/react": "^9.3.2",
-		"@testing-library/user-event": "^7.1.2",
-		"@walletconnect/web3-provider": "^1.3.1",
-		"ethers": "^5.0.19",
-		"react": "^16.12.0",
-		"react-blockies": "^1.4.1",
-		"react-card-flip": "^1.0.10",
-		"react-dom": "^16.12.0",
-		"react-icons": "^3.11.0",
-		"react-player": "^1.15.2",
-		"react-router-dom": "^5.1.2",
-		"react-router-hash-link": "^1.2.2",
-		"react-scripts": "3.4.0",
-		"react-transition-group": "^4.3.0",
-		"styled-components": "^4.4.1",
-		"web3": "^1.3.0",
-		"web3modal": "^1.9.1"
+	"type": "module",
+	"homepage": "https://www.she.energy",
+	"engines": {
+		"node": ">=20.19.0 <21"
 	},
 	"scripts": {
-		"predeploy": "yarn run build",
-		"deploy": "gh-pages -b master -d build",
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "oxlint --deny-warnings --react-plugin --vitest-plugin --jsx-a11y-plugin -A react-in-jsx-scope src e2e vite.config.js playwright.config.js",
+		"test": "vitest run",
+		"test:e2e": "npm run build && playwright test",
+		"check": "npm run lint && npm test && npm run test:e2e"
 	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+	"dependencies": {
+		"react": "18.3.1",
+		"react-card-flip": "1.2.3",
+		"react-dom": "18.3.1",
+		"react-router-dom": "5.3.4",
+		"react-router-hash-link": "2.4.3",
+		"react-transition-group": "4.4.5",
+		"styled-components": "5.3.11"
 	},
 	"devDependencies": {
-		"gh-pages": "^2.2.0"
+		"@playwright/test": "1.63.0",
+		"@testing-library/dom": "10.4.1",
+		"@testing-library/jest-dom": "6.9.1",
+		"@testing-library/react": "16.3.3",
+		"@vitejs/plugin-react": "6.1.1",
+		"jsdom": "29.1.1",
+		"oxlint": "1.81.0",
+		"vite": "8.2.2",
+		"vitest": "4.1.11"
 	}
 }

@@ -1,7 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Backdrop = styled.div`
+const Backdrop = styled.div.withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    defaultValidatorFn(prop) && !['background', 'backgroundColor'].includes(prop),
+})`
   background-color: ${props => props.backgroundColor};
   background: ${props => props.background};
   width: 100%;
